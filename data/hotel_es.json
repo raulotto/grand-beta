@@ -1,0 +1,9 @@
+{
+    "name": "Wyndham Grand Costa del Sol Lima Airport",
+    "description": "Un hotel de lujo en el aeropuerto de Lima.",
+    "rooms": [
+      { "name": "Suite", "slug": "suite", "price": 200 },
+      { "name": "Superior", "slug": "superior", "price": 150 }
+    ]
+  }
+  
