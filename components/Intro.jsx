@@ -4,10 +4,7 @@ import Image from "next/image";
 const Intro = () => {
   return (
     <section className="bg-white p-10  items-center justify-center flex flex-col">
-      <h3 className="text-xs text-gray-500 tracking-wider uppercase ml-[39%]">
-        Experimenta la exclusividad dentro de la ciudad aeropuerto
-      </h3>
-
+      
       <div className="ContainerFlex">
         {/* Contenedor de imágenes */}
         <div className="relative flex-1 max-w-md lg:max-w-lg">
@@ -39,11 +36,14 @@ const Intro = () => {
         {/* Contenido del hotel */}
         <div className="flex-1 max-w-lg p-6 text-black-grand basis-1/4">
           <div>
-          <h1 className="text-4xl md:text-3xl font-serif text-olive-grand leading-snug">
-            Wyndham Grand Costa del Sol Lima City
-          </h1>
+          <h3 className="suptitle">
+        Experimenta la exclusividad dentro de la ciudad aeropuerto
+      </h3>
 
-            <p className="text-xs">Estancia premium y servicio de clase mundial</p>
+          <h4 className="TitleSection">
+            Wyndham Grand<br></br> Costa del Sol Lima City
+          </h4>
+            <p className="text-sm">Estancia premium y servicio de clase mundial</p>
           </div>
           <div className="flex items-center gap-2 my-4">
             <span className="text-lg font-bold text-olive-grand">★★★★★</span>

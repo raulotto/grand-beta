@@ -5,7 +5,7 @@ const Habitaciones = () => {
     <section className="bg-white p-10 min-h-screen items-center justify-center flex flex-col">
         
   
-    <div className="container mx-auto flex flex-col md:flex-row items-center justify-center gap-10">
+    <div className="ContainerFlex">
       
       {/* Contenedor de imágenes */}
       <div className="flex-1 max-w-md lg:max-w-lg">

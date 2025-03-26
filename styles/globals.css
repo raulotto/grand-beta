@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
 @import "tailwindcss";
+
 
 
 @theme {
@@ -18,8 +20,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+ 
 }
 
 @media (prefers-color-scheme: dark) {
@@ -28,13 +29,51 @@
     --foreground: #ededed;
   }
 }
-
-
-
-body, h1, h2, h3, p, div {
-  font-family: var(--font-manrope), sans-serif;
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham-Bold.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
 }
 
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham-Light.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham-Book.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+.PrataFont {
+  font-family: 'Prata', serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Prata', sans-serif;
+}
+
+p{
+  font-family: 'GothamBook', sans-serif;
+}
+
+.font-gotham-book {
+  font-family: 'gothambook', sans-serif;
+  font-weight: 500;
+}
+
+
+.suptitle{
+  font-family: 'GothamBook', sans-serif;
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 0.8em;
+  margin-bottom: 10px;
+}
 .dropdown_menu {
   transform: translateX(-100%);
   transition: all .7s;
@@ -76,9 +115,7 @@ body, h1, h2, h3, p, div {
   .divider-line {
     @apply w-20 h-[3px] bg-grey-grand mb-4 mt-2;
   }
-  .suptitle{
-    @apply text-suptitle uppercase text-grey-grand tracking-widest;
-  }
+
   .fade-animation {
     @apply  transition-opacity duration-300 ease-in-out;
   }
@@ -105,6 +142,9 @@ body, h1, h2, h3, p, div {
   }
   .OverlayHeader {
     @apply w-full z-[99] absolute top-0 left-0 bg-gradient-to-b from-[rgba(0,0,0,0.4)] to-transparent h-full pointer-events-none;
+  }
+  .TitleSection {
+    @apply text-3xl font-normal text-olive-grand;
   }
   
 }
