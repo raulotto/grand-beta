@@ -3,8 +3,8 @@ import Image from "next/image";
 
 const Ofertas = () => {
   return (
-    <section className="container bg-white p-10 mx-auto">
-      <div className="container flex flex-col md:flex-row gap-8">
+    <section className="SectionDiv">
+      <div className="ContainerFlex">
         {/* Texto vertical "Ofertas" más angosto */}
         <div className="container flex justify-center md:justify-end items-center flex-[1]">
           <h2 className="text-8xl font-serif font-medium text-olive-grand tracking-widest transform -rotate-90 origin-bottom -translate-x-8">

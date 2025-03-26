@@ -2,7 +2,7 @@ import React from 'react'
 
 const Habitaciones = () => {
   return (
-    <section className="bg-white p-10 min-h-screen items-center justify-center flex flex-col">
+    <section className="SectionDiv">
         
   
     <div className="ContainerFlex">
@@ -10,11 +10,11 @@ const Habitaciones = () => {
       {/* Contenedor de imágenes */}
       <div className="flex-1 max-w-md lg:max-w-lg">
         <div> 
-            <h6 className="text-xs text-gray-500 tracking-widest uppercase">CONOCE NUESTRA HABITACIONES</h6>
+            <h6 className="suptitle">Conoce nuestras</h6>
             {/* Título principal */}
-            <h3 className="pb-2 font-bold text-title-section">
-                HABITACIONES
-            </h3>
+            <h4 className="TitleSection">
+              Habitaciones
+            </h4>
             <div className="divider-line"></div>
         </div>
         <div className="mx-auto">

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Intro = () => {
   return (
-    <section className="bg-white p-10  items-center justify-center flex flex-col">
+    <section className="SectionDiv">
       
       <div className="ContainerFlex">
         {/* Contenedor de imágenes */}
@@ -46,7 +46,7 @@ const Intro = () => {
             <p className="text-sm">Estancia premium y servicio de clase mundial</p>
           </div>
           <div className="flex items-center gap-2 my-4">
-            <span className="text-lg font-bold text-olive-grand">★★★★★</span>
+            <span className="text-lg font-bold text-primary-oceanic">★★★★★</span>
             <span className="text-gray-700 text-sm">4.6 | 905 Opiniones</span>
           </div>
           <p className="text-gray-700 leading-relaxed text-parrafos">
