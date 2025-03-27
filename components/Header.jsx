@@ -19,7 +19,7 @@ const Header = () => {
     >
       {/* Menú desplegable */}
       <div className="dropdown_menu">
-        <div className="h-screen flex justify-between items-center w-[1140px] mx-auto py-[40px] text-white">
+        <div className="flex justify-between items-center w-[1140px] mx-auto py-[40px] text-white">
           <ul >
             <li><Link href="#">Contacto</Link></li>
             <li><Link href="#">Contacto</Link></li>

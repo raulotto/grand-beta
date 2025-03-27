@@ -14,7 +14,7 @@ const HeaderTrad = () => {
 
   return (
     <header
-      className="absolute top-0 left-0 right-0 z-[99] font-gotham-book"
+      className="absolute top-0 left-0 right-0 z-[2] font-gotham-book"
      
     >
       {/* Menú desplegable */}
