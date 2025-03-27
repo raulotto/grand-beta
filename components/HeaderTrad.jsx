@@ -32,6 +32,7 @@ const HeaderTrad = () => {
       </div>
 
       {/* Botón hamburguesa / cerrar */}
+      <div className="MobileMenuAccomadation">
       <div className="text-white text-3xl FloatLeft" onClick={toggleMenu}>
         {showMenu ? <FaTimes /> : <FaBars />}
       </div>
@@ -69,6 +70,7 @@ const HeaderTrad = () => {
       >
         <FaGlobe /> EN
       </Link>
+      </div>
     </header>
   );
 };
