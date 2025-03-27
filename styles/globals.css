@@ -106,7 +106,9 @@ p{
 .swiper-button-prev:after, .swiper-button-next:after {
   color: #ffffff;
 }
-
+.TitlesBenefits{
+  
+}
 
 @layer base {
   h1 {
@@ -142,15 +144,18 @@ p{
   .ItemsMenuRight {
     @apply  mr-[90px];
   }
-  .FloatLeft{
-    @apply  absolute top-[65px] left-[calc((100%-1140px)/2)];
+  .FloatLeft {
+    @apply absolute top-[65px] left-[10px] lg:left-[calc((100%-1140px)/2)];
   }
-  .FloatRight{
-    @apply  absolute top-[65px] right-[calc((100%-1140px)/2)];
+  
+  .FloatRight {
+    @apply absolute top-[65px] right-[10px] lg:right-[calc((100%-1140px)/2)];
   }
-  .ContainerFlex{
-    @apply flex justify-between w-[1140px] mx-auto py-[60px] items-center;
+  
+  .ContainerFlex {
+    @apply flex flex-row lg:flex-row justify-between items-center gap-10 mx-auto py-[60px] w-full max-w-[1140px];
   }
+   
   .ContainerFull{
     @apply flex justify-between w-[100%] mx-auto py-[60px] items-center;
   }
@@ -164,7 +169,7 @@ p{
     @apply w-full z-[99] absolute top-0 left-0 bg-gradient-to-b from-[rgba(0,0,0,0.4)] to-transparent h-full pointer-events-none;
   }
   .TitleSection {
-    @apply text-3xl font-normal text-primary-oceanic;
+    @apply text-3xl font-normal text-light-oceanic;
   }
   .SectionDiv {
     @apply bg-white p-10  items-center justify-center flex flex-col;

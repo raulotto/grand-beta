@@ -3,7 +3,7 @@ import path from "path";
 import Intro from "../../components/Intro";
 import RestBar from "../../components/RestBar";
 import Link from "next/link";
-import Header from "@/components/Header";
+import HeaderTrad from "@/components/HeaderTrad";
 import Beneficios from "@/components/Beneficios";
 import Habitaciones from "@/components/Habitaciones";
 import Meeting from "@/components/Meeting";
@@ -27,7 +27,7 @@ export default function Home({ hotel }) {
   return (
     <main className="mx-auto">
       {/* Título y descripción del hotel */}
-      <Header />
+      <HeaderTrad />
       <HeroSlider />
       <BookingForm />
       {/* Componentes de la página */}
@@ -38,7 +38,6 @@ export default function Home({ hotel }) {
       <RestBar />
       <Ofertas  />
       <Gallery  />
-      <Meeting />
       <header className="text-center mb-6">
         <h1 className="text-2xl font-bold">{hotel.name}</h1>
         <p className="text-gray-700">{hotel.description}</p>

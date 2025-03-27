@@ -5,9 +5,9 @@ const Intro = () => {
   return (
     <section className="SectionDiv">
       
-      <div className="ContainerFlex">
+      <div className="ContainerFlex flex flex-col lg:flex-row">
         {/* Contenedor de imágenes */}
-        <div className="relative flex-1 max-w-md lg:max-w-lg">
+        <div className="flex-1 max-w-lg mx-auto">
           <div className="relative h-[400px] mx-auto">
             {/* Imagen grande (fondo) */}
             <Image
@@ -34,7 +34,7 @@ const Intro = () => {
         </div>
 
         {/* Contenido del hotel */}
-        <div className="flex-1 max-w-lg p-6 text-black-grand basis-1/4">
+        <div className="flex-1 max-w-lg mx-auto">
           <div>
           <h3 className="suptitle">
         Experimenta la exclusividad dentro de la ciudad aeropuerto

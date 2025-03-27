@@ -15,15 +15,7 @@ const RestBar = () => {
 
         
 
-        {/* Texto en la esquina inferior derecha */}
-        <div className="absolute bottom-8 right-8 md:bottom-12 md:right-12 z-10 text-right">
-          <h2 className="text-white text-3xl md:text-5xl font-light tracking-wide backdrop-blur-sm">
-            RESTAURANTES Y BARES
-          </h2>
-          <p className="text-sm font-light tracking-wide md:text-white bg-olive-grand px-4 py-2 mt-2 rounded-md inline-block shadow-lg">
-            Wyndham Grand Costa del Sol Lima Airport
-          </p>
-        </div>
+
       </div>
 
       {/* Contenedor de contenido */}
@@ -32,8 +24,10 @@ const RestBar = () => {
         {/* Contenedor de texto */}
         <div className="flex-1 max-w-md lg:max-w-lg">
           <div> 
-          <h6 className="text-xs text-gray-500 tracking-widest uppercase">SERVICIOS DE PRIMERA CLASE</h6>
-            <h3 className="pb-2 font-bold text-title-section">COMER Y BEBER</h3>
+          <h6 className="suptitle">Servicios de primera clase</h6>
+            <h4 className="TitleSection">
+            Comer & Beber
+            </h4>
             <div className="divider-line"></div>
           </div>
           <div className="mx-auto">
