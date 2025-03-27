@@ -145,15 +145,15 @@ p{
     @apply  mr-[90px];
   }
   .FloatLeft {
-    @apply absolute top-[65px] left-[20px]  lg:left-[calc((100%-1140px)/2)];
+    @apply absolute top-[inherit] lg:top-[65px] left-[20px]  lg:left-[calc((100%-1140px)/2)];
   }
   
   .FloatRight {
-    @apply absolute top-[65px] right-[20px] lg:right-[calc((100%-1140px)/2)];
+    @apply absolute top-[inherit] lg:top-[65px] right-[20px] lg:right-[calc((100%-1140px)/2)];
   }
   
   .ContainerFlex {
-    @apply flex flex-row lg:flex-row justify-between items-center gap-[5px] lg:gap-10 mx-auto py-[60px] w-full max-w-[1140px];
+    @apply flex flex-row lg:flex-row justify-between items-center gap-[25px] lg:gap-10 mx-auto py-[60px] w-full max-w-[1140px];
   }
    
   .ContainerFull{
