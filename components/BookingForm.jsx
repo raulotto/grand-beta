@@ -1,140 +1,246 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { format } from "date-fns";
 
 export default function BookingForm() {
-  const [startDate, setStartDate] = useState(null);
-  const [endDate, setEndDate] = useState(null);
-  const [open, setOpen] = useState(false);
-  const [focusedField, setFocusedField] = useState("start");
+  const today = new Date();
+  const tomorrow = new Date();
+  tomorrow.setDate(today.getDate() + 1);
 
-  const handleChange = (dates) => {
-    const [start, end] = dates;
-    setStartDate(start);
-    setEndDate(end);
+  const [dateRange, setDateRange] = useState([today, tomorrow]);
+  const [startDate, endDate] = dateRange;
 
-    // Cierra el calendario solo si ya hay fecha de salida
-    if (start && end) {
-      setOpen(false);
+  const [query, setQuery] = useState("");
+  const [selectedHotel, setSelectedHotel] = useState(null);
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const hotelsGrouped = {
+    Arequipa: [{ name: "Costa del Sol Wyndham Arequipa", id: "109836" }],
+    Cajamarca: [{ name: "Costa del Sol Wyndham Cajamarca", id: "104307" }],
+    Chiclayo: [{ name: "Costa del Sol Wyndham Chiclayo", id: "104314" }],
+    Cusco: [{ name: "Costa del Sol Wyndham Cusco", id: "104313" }],
+    Lima: [
+      { name: "Costa del Sol Wyndham Lima Airport", id: "105840" },
+      { name: "Costa del Sol Wyndham Lima City", id: "104308" },
+      { name: "Wyndham Grand Costa del Sol Lima Airport", id: "104308" },
+    ],
+    Piura: [{ name: "Costa del Sol Wyndham Piura", id: "104305" }],
+    Pucallpa: [{ name: "Costa del Sol Wyndham Pucallpa", id: "104310" }],
+    Trujillo: [
+      { name: "Costa del Sol Wyndham Trujillo Golf", id: "104309" },
+      { name: "Costa del Sol Trujillo Centro", id: "109838" },
+    ],
+    Tumbes: [{ name: "Costa del Sol Wyndham Tumbes", id: "104326" }],
+  };
+
+  const formatDate = (date) =>
+    date?.toLocaleDateString("es-PE", {
+      weekday: "short",
+      day: "numeric",
+      month: "short",
+    });
+
+  const CustomDateInput = React.forwardRef(({ value, onClick }, ref) => (
+    <button
+      type="button"
+      onClick={onClick}
+      ref={ref}
+      className="flex items-center gap-2 border border-gray-300 px-4 py-2 rounded-md text-left w-full text-sm"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="h-5 w-5 text-gray-500"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+        />
+      </svg>
+      {startDate && endDate ? (
+        <span>
+          {formatDate(startDate)} — {formatDate(endDate)}
+        </span>
+      ) : (
+        <span className="text-gray-400">Seleccionar fechas</span>
+      )}
+    </button>
+  ));
+
+  const handleSubmit = (e) => {
+    if (!selectedHotel) {
+      e.preventDefault();
+      alert("Selecciona un hotel");
+      return;
     }
+
+    e.target.action = `https://reservations.travelclick.com/${selectedHotel.id}`;
+  };
+
+  const renderGroupedHotels = () => {
+    const lowerQuery = query.toLowerCase();
+
+    return Object.entries(hotelsGrouped).map(([region, hotels]) => {
+      const matched = hotels.filter((h) =>
+        h.name.toLowerCase().includes(lowerQuery)
+      );
+
+      if (matched.length === 0) return null;
+
+      return (
+        <div key={region} className="py-1">
+          <div className="px-4 py-1 text-xs font-semibold text-gray-500 uppercase">
+            {region}
+          </div>
+          {matched.map((hotel) => (
+            <div
+              key={hotel.id}
+              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+              onClick={() => {
+                setSelectedHotel(hotel);
+                setQuery(hotel.name);
+                setShowDropdown(false);
+              }}
+            >
+              <strong>{hotel.name}</strong>
+            </div>
+          ))}
+        </div>
+      );
+    });
   };
 
   return (
     <div className="FormTC">
-    <form
-      name="resform"
-      id="resform"
-      className="w-full grid grid-cols-6 gap-4 items-center px-6 py-4"
-      action="https://search.travelclick.com/cds/"
-      method="get"
-      target="_blank"
-    >
-      <input name="LanguageID" type="hidden" value="2" />
-      {startDate && (
-        <input
-          type="hidden"
-          name="datein"
-          value={format(startDate, "yyyy-MM-dd")}
-        />
-      )}
-      {endDate && (
-        <input
-          type="hidden"
-          name="dateout"
-          value={format(endDate, "yyyy-MM-dd")}
-        />
-      )}
+      <form
+        name="resform"
+        id="resform"
+        className="w-full grid grid-cols-12 gap-4 items-center px-6 py-4"
+        method="get"
+        target="_blank"
+        onSubmit={handleSubmit}
+      >
+        <input name="LanguageID" type="hidden" value="2" />
+        {selectedHotel && (
+          <input type="hidden" name="HotelID" value={selectedHotel.id} />
+        )}
 
-      {/* Hotel */}
-      <div className="flex flex-col col-span-1">
-        <label className="text-xs text-gray-500 uppercase tracking-wide">
-          Hotel
-        </label>
-        <select className="selectorhotel" id="ub-hotel" name="hotelid">
-          <option value="">Seleccionar Hotel</option>
-          <option value="104326">Tumbes</option>
-          <option value="104305">Piura</option>
-          {/* ...otros hoteles */}
-        </select>
-      </div>
+        {/* Campo búsqueda de hotel con limpieza */}
+        <div className="flex flex-col col-span-3 relative">
+          <label className="text-xs text-gray-500 uppercase tracking-wide mb-1">
+            ¿Adónde vas?
+          </label>
+          <div className="relative">
+            <input
+              type="text"
+              value={query}
+              onChange={(e) => {
+                setQuery(e.target.value);
+                setShowDropdown(true);
+                setSelectedHotel(null);
+              }}
+              onFocus={() => setShowDropdown(true)}
+              placeholder="¿Adónde vas?"
+              className="border border-gray-300 rounded-md px-4 py-2 text-sm w-full pr-8"
+            />
+            {/* X para limpiar */}
+            {selectedHotel && (
+              <button
+                type="button"
+                onClick={() => {
+                  setSelectedHotel(null);
+                  setQuery("");
+                }}
+                className="absolute right-2 top-2 text-gray-500 hover:text-red-600 text-sm"
+              >
+                ✕
+              </button>
+            )}
+            {/* Dropdown */}
+            {showDropdown && (
+              <div className="absolute z-10 bg-white border border-gray-200 w-full mt-1 rounded-md shadow-md max-h-64 overflow-y-auto">
+                {renderGroupedHotels()}
+              </div>
+            )}
+          </div>
+        </div>
 
-      {/* Check-in */}
-      <div className="flex flex-col relative col-span-2">
-        <label className="text-xs text-gray-500 uppercase tracking-wide">
-          Fechas
-        </label>
-        <div
-          className="grid grid-cols-2 gap-2"
-          onClick={() => setOpen(true)}
-        >
-          <input
-            readOnly
-            value={startDate ? format(startDate, "dd MMM yyyy") : ""}
-            onFocus={() => {
-              setFocusedField("start");
-              setOpen(true);
-            }}
-            placeholder="Check-in"
-            className="border border-gray-300 rounded-md px-2 py-1 text-sm cursor-pointer"
+        {/* Fecha Check-in + Check-out */}
+        <div className="flex flex-col col-span-3">
+          <span className="text-xs text-gray-500 uppercase tracking-wide">
+            Fechas
+          </span>
+          <DatePicker
+            selectsRange={true}
+            startDate={startDate}
+            endDate={endDate}
+            onChange={(update) => setDateRange(update)}
+            monthsShown={2}
+            minDate={today}
+            customInput={<CustomDateInput />}
+            dateFormat="MM/dd/yyyy"
           />
+          {startDate && endDate && (
+            <>
+              <input
+                type="hidden"
+                name="datein"
+                value={`${(startDate.getMonth() + 1)
+                  .toString()
+                  .padStart(2, "0")}/${startDate
+                  .getDate()
+                  .toString()
+                  .padStart(2, "0")}/${startDate.getFullYear()}`}
+              />
+              <input
+                type="hidden"
+                name="dateout"
+                value={`${(endDate.getMonth() + 1)
+                  .toString()
+                  .padStart(2, "0")}/${endDate
+                  .getDate()
+                  .toString()
+                  .padStart(2, "0")}/${endDate.getFullYear()}`}
+              />
+            </>
+          )}
+        </div>
+
+        {/* Occupancy */}
+        <div className="flex flex-col col-span-2">
+          <span className="text-xs text-gray-500 uppercase tracking-wide">
+            Occupancy
+          </span>
+          <span className="text-lg font-medium">2-0-0</span>
+        </div>
+
+        {/* Promo code */}
+        <div className="flex flex-col col-span-2">
+          <span className="text-xs text-gray-500 uppercase tracking-wide">
+            Promocode
+          </span>
           <input
-            readOnly
-            value={endDate ? format(endDate, "dd MMM yyyy") : ""}
-            onFocus={() => {
-              setFocusedField("end");
-              setOpen(true);
-            }}
-            placeholder="Check-out"
-            className="border border-gray-300 rounded-md px-2 py-1 text-sm cursor-pointer"
+            type="text"
+            name="discount"
+            placeholder=""
+            className="border border-gray-300 rounded-md px-2 py-1 text-sm"
           />
         </div>
 
-        {open && (
-          <div className="absolute z-50 mt-2">
-            <DatePicker
-              selected={focusedField === "start" ? startDate : endDate}
-              onChange={handleChange}
-              startDate={startDate}
-              endDate={endDate}
-              selectsRange
-              inline
-              monthsShown={2}
-            />
-          </div>
-        )}
-      </div>
-
-      {/* Occupancy */}
-      <div className="flex flex-col">
-        <label className="text-xs text-gray-500 uppercase tracking-wide">
-          Occupancy
-        </label>
-        <span className="text-lg font-medium">2-0-0</span>
-      </div>
-
-      {/* Promo Code */}
-      <div className="flex flex-col">
-        <label className="text-xs text-gray-500 uppercase tracking-wide">
-          Promocode
-        </label>
-        <input
-          type="text"
-          name="discount"
-          className="border border-gray-300 rounded-md px-2 py-1 text-sm"
-        />
-      </div>
-
-      {/* Submit */}
-      <div>
-        <button
-          type="submit"
-          className="h-full w-full bg-[#40666a] text-white text-lg font-serif px-6 py-3"
-        >
-          Book here
-        </button>
-      </div>
-    </form>
+        {/* Submit */}
+        <div className="flex flex-col col-span-2">
+          <button
+            type="submit"
+            className="h-full w-full bg-[#40666a] text-white text-lg font-serif px-6 py-3"
+          >
+            Book here
+          </button>
+        </div>
+      </form>
     </div>
   );
 }
