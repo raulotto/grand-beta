@@ -5,7 +5,7 @@ const Intro = () => {
   return (
     <section className="SectionDiv">
       
-      <div className="ContainerFlex flex flex-col lg:flex-row">
+      <div className="ContainerFlex">
         {/* Contenedor de imágenes */}
         <div className="flex-1 max-w-lg mx-auto">
           <div className="relative h-[400px] mx-auto">

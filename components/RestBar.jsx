@@ -2,21 +2,10 @@ import React from 'react';
 
 const RestBar = () => {
   return (
-    <section className="SectionDiv p-0">
+    <section className="SectionDiv">
       
       {/* Cabecera principal con imagen de fondo a pantalla completa */}
-      <div
-        className="ContainerFull bg-fixed bg-center bg-cover bg-no-repeat"
-        style={{
-          backgroundImage: "url('https://cdn2.paraty.es/wyndham-grand-cancun/images/868847eb274c834')",
-          height: "40vh",
-        }}
-      >
-
-        
-
-
-      </div>
+     
 
       {/* Contenedor de contenido */}
       <div className="ContainerFlex">

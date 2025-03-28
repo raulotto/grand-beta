@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Meeting = () => {
   return (
-    <section className="bg-white py-10">
+    <section className="SectionDiv  ">
       <div className="ContainerFlex">
         {/* CARD 1 */}
         <div className="w-[500px] grid bg-white rounded-lg shadow-md overflow-hidden">

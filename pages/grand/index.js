@@ -12,6 +12,7 @@ import Gallery from "@/components/Gallery";
 import HeroSlider from "@/components/HeroSlider";
 import BookingForm from "@/components/BookingForm";
 import { useState, useEffect } from "react";
+import Parallax from "@/components/Parallax";
 
 export async function getStaticProps() {
   const filePath = path.join(process.cwd(), "data", "hotel_es.json");
@@ -25,22 +26,44 @@ export async function getStaticProps() {
 
 export default function Home({ hotel }) {
   const [showForm, setShowForm] = useState(false);
+  const [formIsSticky, setFormIsSticky] = useState(false); // <- nuevo estado
 
+  // Bloquea el scroll del body al mostrar el formulario móvil
   useEffect(() => {
     document.body.style.overflow = showForm ? "hidden" : "auto";
   }, [showForm]);
+
+  // Detecta el scroll para fijar el BookingForm
+  useEffect(() => {
+    const handleScroll = () => {
+      const triggerPoint = window.innerHeight * 0.75; // 50% de la pantalla
+      const offset = window.scrollY;
+      setFormIsSticky(offset > triggerPoint);
+    };
+  
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  
 
   return (
     <main className="mx-auto">
       <HeaderTrad onOpenForm={() => setShowForm(true)} />
       <HeroSlider />
-      <BookingForm showForm={showForm} onCloseForm={() => setShowForm(false)} />
+  <BookingForm
+    showForm={showForm}
+    onCloseForm={() => setShowForm(false)}
+    isFixed={formIsSticky}
+  />
+
 
       {/* Contenido del hotel */}
       <Intro />
       <Beneficios />
       <Habitaciones />
+      <Parallax />
       <RestBar />
+      <Meeting />
       <Ofertas />
       <Gallery />
 

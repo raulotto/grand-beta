@@ -10,7 +10,8 @@ import { IoLocationOutline } from "react-icons/io5";
 import es from "date-fns/locale/es";
 registerLocale("es", es);
 
-export default function BookingForm({ showForm, onCloseForm }) {
+export default function BookingForm({ showForm, onCloseForm, isFixed })
+ {
   const today = new Date();
   const tomorrow = new Date();
   tomorrow.setDate(today.getDate() + 1);
@@ -112,7 +113,10 @@ export default function BookingForm({ showForm, onCloseForm }) {
   };
 
   return (
-    <div className={`FormTC ${showForm ? "transition-all duration-500 ease-in-out opacity-100 fixed " : " -translate-y-full  z-[1] bg-white transition-all duration-500 ease-in-out"}`}>
+    <div className={`FormTC 
+    ${showForm ? "transition-all duration-500 ease-in-out lg:transition-none opacity-100 fixed " : 
+    " -translate-y-full  z-[1] bg-white transition-all duration-500 ease-in-out lg:transition-none "}
+    ${isFixed ? "fixed max-w-full right-0 top-22 left-50% w-full z-50 bg-white shadow-md" : ""}`}>
 
 
       <div className="HeadHiddenForm">
