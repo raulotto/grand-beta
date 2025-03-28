@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import { registerLocale } from "react-datepicker";
+import { RxCalendar } from "react-icons/rx";
+import { IoLocationOutline } from "react-icons/io5";
+
+import es from "date-fns/locale/es";
+registerLocale("es", es);
 
 export default function BookingForm() {
   const today = new Date();
@@ -47,20 +53,9 @@ export default function BookingForm() {
       ref={ref}
       className="flex items-center gap-2 border border-gray-300 px-4 py-2 rounded-md text-left w-full text-sm"
     >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        className="h-5 w-5 text-gray-500"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-        />
-      </svg>
+      <RxCalendar />
+  
+
       {startDate && endDate ? (
         <span>
           {formatDate(startDate)} — {formatDate(endDate)}
@@ -93,20 +88,20 @@ export default function BookingForm() {
 
       return (
         <div key={region} className="py-1">
-          <div className="px-4 py-1 text-xs font-semibold text-gray-500 uppercase">
+          <div className="RegionLocation">
             {region}
           </div>
           {matched.map((hotel) => (
             <div
               key={hotel.id}
-              className="px-4 py-2 hover:bg-gray-100 cursor-pointer"
+              className="px-4 py-2 text-light-oceanic hover:bg-gray-100 cursor-pointer"
               onClick={() => {
                 setSelectedHotel(hotel);
                 setQuery(hotel.name);
                 setShowDropdown(false);
               }}
             >
-              <strong>{hotel.name}</strong>
+              <div className="text-sm">{hotel.name}</div>
             </div>
           ))}
         </div>
@@ -130,7 +125,7 @@ export default function BookingForm() {
         )}
 
         {/* Campo búsqueda de hotel con limpieza */}
-        <div className="flex flex-col col-span-3 relative">
+        <div className="flex flex-col col-span-4 relative">
           <label className="text-xs text-gray-500 uppercase tracking-wide mb-1">
             ¿Adónde vas?
           </label>
@@ -144,7 +139,7 @@ export default function BookingForm() {
                 setSelectedHotel(null);
               }}
               onFocus={() => setShowDropdown(true)}
-              placeholder="¿Adónde vas?"
+              placeholder="Seleccionar Hotel"
               className="border border-gray-300 rounded-md px-4 py-2 text-sm w-full pr-8"
             />
             {/* X para limpiar */}
@@ -155,7 +150,7 @@ export default function BookingForm() {
                   setSelectedHotel(null);
                   setQuery("");
                 }}
-                className="absolute right-2 top-2 text-gray-500 hover:text-red-600 text-sm"
+                className="absolute right-2 top-2 text-secondary-terracota font-bold hover:text-red-600 text-sm"
               >
                 ✕
               </button>
@@ -181,8 +176,10 @@ export default function BookingForm() {
             onChange={(update) => setDateRange(update)}
             monthsShown={2}
             minDate={today}
+            locale="es"
             customInput={<CustomDateInput />}
             dateFormat="MM/dd/yyyy"
+            className="font-gotham-book "
           />
           {startDate && endDate && (
             <>
@@ -211,12 +208,7 @@ export default function BookingForm() {
         </div>
 
         {/* Occupancy */}
-        <div className="flex flex-col col-span-2">
-          <span className="text-xs text-gray-500 uppercase tracking-wide">
-            Occupancy
-          </span>
-          <span className="text-lg font-medium">2-0-0</span>
-        </div>
+        
 
         {/* Promo code */}
         <div className="flex flex-col col-span-2">
@@ -232,7 +224,7 @@ export default function BookingForm() {
         </div>
 
         {/* Submit */}
-        <div className="flex flex-col col-span-2">
+        <div className="flex flex-col col-span-3">
           <button
             type="submit"
             className="h-full w-full bg-[#40666a] text-white text-lg font-serif px-6 py-3"

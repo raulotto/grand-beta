@@ -72,19 +72,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p{
-  font-family: 'GothamBook', sans-serif;
+  font-family: 'Gotham', sans-serif;
 }
 
 .font-gotham-book {
-  font-family: 'gothambook', sans-serif;
+  font-family: 'gotham', sans-serif;
   font-weight: 500;
 }
 .FormTC{
-  font-family: 'GothamBook', sans-serif;
+  font-family: 'gotham', sans-serif;
+}
+.react-datepicker__current-month {
+  font-family: 'gotham', sans-serif !important; /* o cualquier fuente que estés usando */
 }
 
 .suptitle{
-  font-family: 'GothamBook', sans-serif;
+  font-family: 'Gotham', sans-serif;
   text-transform: uppercase;
   font-weight: 300;
   font-size: 0.8em;
@@ -178,5 +181,8 @@ p{
   }
   .MobileMenuAccomadation {
     @apply flex justify-evenly items-center relative;
+  }
+  .RegionLocation {
+    @apply flex flex-col gap-2 pl-4 py-1 text-sm font-bold text-secondary-terracota;
   }
 }
