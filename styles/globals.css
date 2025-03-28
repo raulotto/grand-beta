@@ -196,4 +196,7 @@ p{
   .ResForm {
     @apply w-full grid grid-cols-1 lg:grid-cols-12 gap-4 items-center px-6 py-4;
   }
+  .ButtonSolid  {
+    @apply bg-[#405d65] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#2e4448] transition;
+  }
 }

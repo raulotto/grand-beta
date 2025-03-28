@@ -11,7 +11,7 @@ import Ofertas from "@/components/Ofertas";
 import Gallery from "@/components/Gallery";
 import HeroSlider from "@/components/HeroSlider";
 import BookingForm from "@/components/BookingForm";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export async function getStaticProps() {
   const filePath = path.join(process.cwd(), "data", "hotel_es.json");
@@ -26,15 +26,14 @@ export async function getStaticProps() {
 export default function Home({ hotel }) {
   const [showForm, setShowForm] = useState(false);
 
+  useEffect(() => {
+    document.body.style.overflow = showForm ? "hidden" : "auto";
+  }, [showForm]);
+
   return (
     <main className="mx-auto">
-      {/* Header con botón Reservar */}
       <HeaderTrad onOpenForm={() => setShowForm(true)} />
-
-      {/* Slider principal */}
       <HeroSlider />
-
-      {/* Formulario de reservas flotante */}
       <BookingForm showForm={showForm} onCloseForm={() => setShowForm(false)} />
 
       {/* Contenido del hotel */}

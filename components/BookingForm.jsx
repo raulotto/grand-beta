@@ -112,8 +112,7 @@ export default function BookingForm({ showForm, onCloseForm }) {
   };
 
   return (
-    <div className={`FormTC transition-all duration-300 ease-in-out ${showForm ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none fixed top-0 left-0 w-full h-full z-50 bg-white"}`}>
-
+    <div className={`FormTC ${showForm ? "bg-amber-600 opacity-100 fixed z-[999]" : " -translate-y-full pointer-events-none  bg-white"}`}>
       <div className="HeadHiddenForm">
         <Link href={"#"} onClick={(e) => {
             e.preventDefault();

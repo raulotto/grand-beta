@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaBars, FaTimes, FaPhoneSquareAlt, FaBell, FaGlobe, FaCalendarAlt } from "react-icons/fa";
 
+
 const HeaderTrad = ({ onOpenForm }) => {
   const [showMenu, setShowMenu] = useState(false);
   const toggleMenu = () => {
@@ -20,7 +21,7 @@ const HeaderTrad = ({ onOpenForm }) => {
     >
       {/* Menú desplegable */}
       <div className="dropdown_menu">
-        <div className="h-screen flex justify-between items-center w-[1140px] mx-auto py-[40px] text-white">
+        <div className="h-screen flex justify-between items-center w-[1140px] mx-auto py-[40px] text-white overflow-y-auto">
           <ul >
             <li><Link href="#">Contacto</Link></li>
             <li><Link href="#">Contacto</Link></li>
@@ -72,7 +73,7 @@ const HeaderTrad = ({ onOpenForm }) => {
         <FaGlobe /> EN
       </Link>
       </div>
-      <div className="FloatRight top-[100%] lg:hidden text-white ActivateForm"><Link href={"#"} onClick={(e) => {
+      <div className="FloatRight top-[90%] lg:hidden text-white ActivateForm"><Link className="ButtonSolid" href={"#"} onClick={(e) => {
         e.preventDefault();
         onOpenForm();
       }}>Reservar</Link></div>
