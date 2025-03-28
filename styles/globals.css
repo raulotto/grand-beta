@@ -149,7 +149,7 @@ p{
     @apply  transition-opacity duration-300 ease-in-out;
   }
   .ItemsMenuLeft {
-    @apply  ml-[90px] ;
+    @apply  ml-[70px] lg:ml-[90px];
   }
   .ItemsMenuRight {
     @apply  mr-[90px];
@@ -163,7 +163,7 @@ p{
   }
   
   .ContainerFlex {
-    @apply flex flex-row lg:flex-row justify-between items-center gap-[25px] lg:gap-10 mx-auto py-[60px] w-full max-w-[1140px];
+    @apply flex flex-row lg:flex-row justify-between items-center gap-[25px] lg:gap-10 mx-auto py-[30px] lg:py-[60px] w-full max-w-[1140px];
   }
    
   .ContainerFull{

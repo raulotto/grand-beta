@@ -35,7 +35,7 @@ const HeaderTrad = ({ onOpenForm }) => {
 
       {/* Botón hamburguesa / cerrar */}
       <div className="MobileMenuAccomadation">
-      <div className="text-white text-3xl FloatLeft" onClick={toggleMenu}>
+      <div className="text-white text-2xl lg:text-3xl FloatLeft" onClick={toggleMenu}>
         {showMenu ? <FaTimes /> : <FaBars />}
       </div>
 
