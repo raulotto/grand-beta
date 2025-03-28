@@ -112,7 +112,9 @@ export default function BookingForm({ showForm, onCloseForm }) {
   };
 
   return (
-    <div className={`FormTC ${showForm ? "bg-amber-600 opacity-100 fixed z-[999]" : " -translate-y-full pointer-events-none  bg-white"}`}>
+    <div className={`FormTC ${showForm ? "transition-all duration-500 ease-in-out opacity-100 fixed " : " -translate-y-full  z-[1] bg-white transition-all duration-500 ease-in-out"}`}>
+
+
       <div className="HeadHiddenForm">
         <Link href={"#"} onClick={(e) => {
             e.preventDefault();
@@ -133,7 +135,7 @@ export default function BookingForm({ showForm, onCloseForm }) {
         )}
 
         {/* Campo búsqueda de hotel con limpieza */}
-        <div className="flex flex-col col-span-4 relative">
+        <div className="flex flex-col col-span-4 lg:col-span-4 relative">
           <label className="text-xs text-gray-500 uppercase tracking-wide mb-1">
             ¿Adónde vas?
           </label>
@@ -173,7 +175,7 @@ export default function BookingForm({ showForm, onCloseForm }) {
         </div>
 
         {/* Fecha Check-in + Check-out */}
-        <div className="flex flex-col col-span-3">
+        <div className="flex flex-col col-span-4 lg:col-span-3">
           <span className="text-xs text-gray-500 uppercase tracking-wide">
             Fechas
           </span>
@@ -219,7 +221,7 @@ export default function BookingForm({ showForm, onCloseForm }) {
         
 
         {/* Promo code */}
-        <div className="flex flex-col col-span-2">
+        <div className="flex flex-col col-span-4 lg:col-span-2">
           <span className="text-xs text-gray-500 uppercase tracking-wide">
             Promocode
           </span>
@@ -232,7 +234,7 @@ export default function BookingForm({ showForm, onCloseForm }) {
         </div>
 
         {/* Submit */}
-        <div className="flex flex-col col-span-3">
+        <div className="flex flex-col col-span-4 lg:col-span-3">
           <button
             type="submit"
             className="h-full w-full bg-[#40666a] text-white text-lg font-serif px-6 py-3"
