@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Link from "next/link";
+
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { registerLocale } from "react-datepicker";
@@ -8,7 +10,7 @@ import { IoLocationOutline } from "react-icons/io5";
 import es from "date-fns/locale/es";
 registerLocale("es", es);
 
-export default function BookingForm() {
+export default function BookingForm({ showForm, onCloseForm }) {
   const today = new Date();
   const tomorrow = new Date();
   tomorrow.setDate(today.getDate() + 1);
@@ -110,11 +112,18 @@ export default function BookingForm() {
   };
 
   return (
-    <div className="FormTC">
+    <div className={`FormTC transition-all duration-300 ease-in-out ${showForm ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-full pointer-events-none fixed top-0 left-0 w-full h-full z-50 bg-white"}`}>
+
+      <div className="HeadHiddenForm">
+        <Link href={"#"} onClick={(e) => {
+            e.preventDefault();
+            onCloseForm();
+          }}>X Cerrar</Link>
+      </div>
       <form
         name="resform"
         id="resform"
-        className="w-full grid grid-cols-12 gap-4 items-center px-6 py-4"
+        className="ResForm"
         method="get"
         target="_blank"
         onSubmit={handleSubmit}

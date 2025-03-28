@@ -3,14 +3,15 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaBars, FaTimes, FaPhoneSquareAlt, FaBell, FaGlobe, FaCalendarAlt } from "react-icons/fa";
 
-const HeaderTrad = () => {
+const HeaderTrad = ({ onOpenForm }) => {
   const [showMenu, setShowMenu] = useState(false);
-
   const toggleMenu = () => {
     const menu = document.querySelector(".dropdown_menu");
     menu.classList.toggle("show-menu");
     setShowMenu(!showMenu);
   };
+
+  
 
   return (
     <header
@@ -71,6 +72,10 @@ const HeaderTrad = () => {
         <FaGlobe /> EN
       </Link>
       </div>
+      <div className="FloatRight top-[100%] lg:hidden text-white ActivateForm"><Link href={"#"} onClick={(e) => {
+        e.preventDefault();
+        onOpenForm();
+      }}>Reservar</Link></div>
     </header>
   );
 };

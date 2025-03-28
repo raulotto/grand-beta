@@ -11,9 +11,9 @@ import Ofertas from "@/components/Ofertas";
 import Gallery from "@/components/Gallery";
 import HeroSlider from "@/components/HeroSlider";
 import BookingForm from "@/components/BookingForm";
+import { useState } from "react";
 
 export async function getStaticProps() {
-  // Obtener el JSON con los datos del hotel
   const filePath = path.join(process.cwd(), "data", "hotel_es.json");
   const jsonData = fs.readFileSync(filePath, "utf-8");
   const hotel = JSON.parse(jsonData);
@@ -24,26 +24,34 @@ export async function getStaticProps() {
 }
 
 export default function Home({ hotel }) {
+  const [showForm, setShowForm] = useState(false);
+
   return (
     <main className="mx-auto">
-      {/* Título y descripción del hotel */}
-      <HeaderTrad />
+      {/* Header con botón Reservar */}
+      <HeaderTrad onOpenForm={() => setShowForm(true)} />
+
+      {/* Slider principal */}
       <HeroSlider />
-      <BookingForm />
-      {/* Componentes de la página */}
-      
+
+      {/* Formulario de reservas flotante */}
+      <BookingForm showForm={showForm} onCloseForm={() => setShowForm(false)} />
+
+      {/* Contenido del hotel */}
       <Intro />
       <Beneficios />
       <Habitaciones />
       <RestBar />
-      <Ofertas  />
-      <Gallery  />
+      <Ofertas />
+      <Gallery />
+
+      {/* Nombre y descripción */}
       <header className="text-center mb-6">
         <h1 className="text-2xl font-bold">{hotel.name}</h1>
         <p className="text-gray-700">{hotel.description}</p>
       </header>
 
-      {/* Enlace a la versión en inglés */}
+      {/* Versión en inglés */}
       <div className="text-center my-4">
         <Link href="/en/hotel-wyndham-grand-costa-del-sol-lima-airport">
           🇬🇧 English Version.

@@ -85,6 +85,9 @@ p{
 .react-datepicker__current-month {
   font-family: 'gotham', sans-serif !important; /* o cualquier fuente que estés usando */
 }
+.react-datepicker__day{
+  
+}
 
 .suptitle{
   font-family: 'Gotham', sans-serif;
@@ -107,6 +110,7 @@ p{
 
 .dropdown_menu.show-menu {
   transform: translateX(0);
+  z-index: 9;
 }
 .swiper-button-prev:after, .swiper-button-next:after {
   color: #ffffff;
@@ -131,6 +135,7 @@ p{
   p {
     @apply text-base text-gray-600 leading-relaxed;
   }
+  
 }
 
 @layer components {
@@ -150,7 +155,7 @@ p{
     @apply  mr-[90px];
   }
   .FloatLeft {
-    @apply absolute top-[inherit] lg:top-[65px] left-[20px]  lg:left-[calc((100%-1140px)/2)];
+    @apply absolute top-[inherit] lg:top-[65px] left-[20px]  lg:left-[calc((100%-1140px)/2)] z-[9];
   }
   
   .FloatRight {
@@ -167,8 +172,11 @@ p{
   .MenuLight{
     @apply flex gap-[10px] text-white;
   }
+  .HeadHiddenForm {
+    @apply flex p-10 lg:hidden;
+  }
   .FormTC {
-    @apply absolute left-1/2 z-[98] top-[80%] w-[1140px] h-[85px] bg-white translate-x-[-50%] m-0 rounded-none  w-full max-w-6xl mx-auto bg-white shadow-md flex items-center;
+    @apply   lg:block absolute left-1/2 z-[6] top-0 lg:top-[80%] w-[1140px] h-screen lg:h-auto lg:h-[85px] bg-white translate-x-[-50%] m-0 rounded-none  w-full max-w-6xl mx-auto bg-white shadow-md flex flex-col justify-start lg:items-center;
   }
   .OverlayHeader {
     @apply w-full z-[99] absolute top-0 left-0 bg-gradient-to-b from-[rgba(0,0,0,0.4)] to-transparent h-full pointer-events-none;
@@ -184,5 +192,8 @@ p{
   }
   .RegionLocation {
     @apply flex flex-col gap-2 pl-4 py-1 text-sm font-bold text-secondary-terracota;
+  }
+  .ResForm {
+    @apply w-full grid grid-cols-1 lg:grid-cols-12 gap-4 items-center px-6 py-4;
   }
 }
