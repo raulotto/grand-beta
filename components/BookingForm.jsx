@@ -116,7 +116,7 @@ export default function BookingForm({ showForm, onCloseForm, isFixed })
     <div className={`FormTC 
     ${showForm ? "transition-all duration-500 ease-in-out lg:transition-none opacity-100 fixed " : 
     " -translate-y-full  z-[1] bg-white transition-all duration-500 ease-in-out lg:transition-none "}
-    ${isFixed ? "fixed max-w-full right-0 top-22 left-50% w-full z-50 bg-white shadow-md" : ""}`}>
+    ${isFixed ? "fixed max-w-full right-0 top-0 lg:top-22 left-50% w-full z-50 bg-white shadow-md" : ""}`}>
 
 
       <div className="HeadHiddenForm">

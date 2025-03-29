@@ -13,6 +13,7 @@ import HeroSlider from "@/components/HeroSlider";
 import BookingForm from "@/components/BookingForm";
 import { useState, useEffect } from "react";
 import Parallax from "@/components/Parallax";
+import Footer from "@/components/Footer";
 
 export async function getStaticProps() {
   const filePath = path.join(process.cwd(), "data", "hotel_es.json");
@@ -63,10 +64,8 @@ export default function Home({ hotel }) {
       <Habitaciones />
       <Parallax />
       <RestBar />
-      <Meeting />
       <Ofertas />
       <Gallery />
-
       {/* Nombre y descripción */}
       <header className="text-center mb-6">
         <h1 className="text-2xl font-bold">{hotel.name}</h1>
@@ -79,6 +78,9 @@ export default function Home({ hotel }) {
           🇬🇧 English Version.
         </Link>
       </div>
+      <Footer />
+
+      
     </main>
   );
 }

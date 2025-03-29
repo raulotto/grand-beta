@@ -72,18 +72,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p{
-  font-family: 'Gotham', sans-serif;
+  font-family: 'Gotham-book', sans-serif;
 }
 
 .font-gotham-book {
-  font-family: 'gotham', sans-serif;
+  font-family: 'gotham-book', sans-serif;
   font-weight: 500;
 }
 .FormTC{
-  font-family: 'gotham', sans-serif;
+  font-family: 'gothamgotham-book', sans-serif;
 }
 .react-datepicker__current-month {
-  font-family: 'gotham', sans-serif !important; /* o cualquier fuente que estés usando */
+  font-family: 'gothamgotham-book', sans-serif !important; /* o cualquier fuente que estés usando */
 }
 .react-datepicker__day{
   
@@ -163,7 +163,7 @@ p{
   }
   
   .ContainerFlex {
-    @apply flex flex-col lg:flex-row justify-between items-center gap-[25px] lg:gap-10 mx-auto py-[30px] lg:py-[60px] w-full max-w-[1140px];
+    @apply flex flex-col  lg:flex-row justify-between items-center gap-[25px] lg:gap-10 mx-auto py-[30px] lg:py-[60px] w-full max-w-[1140px];
   }
    
   .ContainerFull{
