@@ -209,7 +209,10 @@ p{
     @apply flex  items-start w-full h-screen relative mx-auto px-4 lg:px-0 py-[25%] lg:py-[10%] text-white;
   }
   .MegaMenu {
-    @apply overflow-scroll lg:overflow-hidden justify-start lg:justify-between;
+    @apply lg:w-auto overflow-scroll lg:overflow-hidden justify-start lg:justify-between;
+  }
+  .MegaGroup {
+    @apply w-full lg:w-auto;
   }
   .MegaGroupTitle{
     @apply mb-0;
@@ -221,6 +224,6 @@ p{
     @apply mb-2;
   }
   .MegaGroupHeader{
-    @apply flex items-center justify-between;
+    @apply border-b-[1px] border-white lg:border-none flex items-center justify-between;
   }
 }
