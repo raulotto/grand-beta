@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Intro = () => {
   return (
-    <section className="SectionDiv">
+    <section className="SectionDiv BgImageRight" style={{ backgroundPosition: 'calc(100% + 18%) 0px' }}>
       
       <div className="ContainerFlex">
         {/* Contenedor de imágenes */}

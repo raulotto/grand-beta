@@ -2,7 +2,7 @@ import React from 'react'
 
 const Habitaciones = () => {
   return (
-    <section className="SectionDiv">
+    <section className="SectionDiv BgImageLeft">
         
   
     <div className="ContainerFlex">

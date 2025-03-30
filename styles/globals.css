@@ -176,7 +176,7 @@ p{
     @apply flex p-10 lg:hidden justify-end;
   }
   .FormTC {
-    @apply   lg:block absolute left-1/2 z-[6] top-0 lg:top-[90%] w-[1140px] h-screen lg:h-auto lg:h-[85px] bg-white translate-x-[-50%] m-0 rounded-none  w-full max-w-6xl mx-auto bg-white shadow-md flex flex-col justify-start lg:items-center;
+    @apply   lg:rounded-sm lg:block absolute left-1/2 z-[6] top-0 lg:top-[90%] w-[1140px] h-screen lg:h-auto lg:h-[85px] bg-white translate-x-[-50%] m-0 rounded-none  w-full max-w-6xl mx-auto bg-white shadow-md flex flex-col justify-start lg:items-center;
   }
   .OverlayHeader {
     @apply w-full z-[99] absolute top-0 left-0 bg-gradient-to-b from-[rgba(0,0,0,0.4)] to-transparent h-full pointer-events-none;
@@ -198,5 +198,29 @@ p{
   }
   .ButtonSolid  {
     @apply bg-[#405d65] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#2e4448] transition;
+  }
+  .BgImageLeft {
+    @apply w-full  bg-[url('/images/pattern-10r.png')] bg-contain  bg-no-repeat bg-[position:-18%_0px];
+  }
+  .BgImageRight {
+    @apply w-full bg-[url('/images/pattern-10r.png')] bg-contain bg-no-repeat;
+  }
+  .InnerDropdownMenu {
+    @apply flex  items-start w-full h-screen relative mx-auto px-4 lg:px-0 py-[25%] lg:py-[10%] text-white;
+  }
+  .MegaMenu {
+    @apply overflow-scroll lg:overflow-hidden justify-start lg:justify-between;
+  }
+  .MegaGroupTitle{
+    @apply mb-0;
+  }
+  .MegaGroupOpen{
+    @apply block lg:hidden text-[#ffffff] text-sm;
+  }
+  .MegaGroup ul li {
+    @apply mb-2;
+  }
+  .MegaGroupHeader{
+    @apply flex items-center justify-between;
   }
 }

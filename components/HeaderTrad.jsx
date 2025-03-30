@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaBars, FaTimes, FaPhoneSquareAlt, FaBell, FaGlobe, FaCalendarAlt } from "react-icons/fa";
+import MegaGroup from "./MegaGroup";
 
 
 const HeaderTrad = ({ onOpenForm }) => {
@@ -12,7 +13,11 @@ const HeaderTrad = ({ onOpenForm }) => {
     setShowMenu(!showMenu);
   };
 
-  
+   const [activeGroupId, setActiveGroupId] = useState("hoteles"); // primero abierto
+
+  const toggleGroup = (id) => {
+    setActiveGroupId((prev) => (prev === id ? null : id));
+  };
 
   return (
     <header
@@ -21,15 +26,83 @@ const HeaderTrad = ({ onOpenForm }) => {
     >
       {/* Menú desplegable */}
       <div className="dropdown_menu">
-        <div className="h-screen flex justify-between items-center w-[1140px] mx-auto py-[40px] text-white overflow-y-auto">
-          <ul >
-            <li><Link href="#">Contacto</Link></li>
-            <li><Link href="#">Contacto</Link></li>
-          </ul>
-          <ul>
-            <li><Link href="#">Contacto</Link></li>
-            <li><Link href="#">Contacto</Link></li>
-          </ul>
+
+        <div className="InnerDropdownMenu ContainerFlex MegaMenu">
+        <MegaGroup
+  id="hoteles"
+  title="Hoteles"
+  titleHref="/hoteles"
+  isOpen={activeGroupId === "hoteles"}
+  onToggle={toggleGroup}
+  items={[
+    { label: "Costa Del Sol Wyndham Tumbes", href: "#" },
+    { label: "Costa Del Sol Wyndham Piura", href: "#" },
+    { label: "Costa Del Sol Wyndham Chiclayo", href: "#" },
+    { label: "Costa Del Sol Wyndham Trujillo Golf", href: "#" },
+    { label: "Costa Del Sol Trujillo Centro", href: "#" },
+    { label: "Costa Del Sol Wyndham Cajamarca", href: "#" },
+    { label: "Costa Del Sol Wyndham Lima City", href: "#" },
+    { label: "Costa Del Sol Wyndham Lima Airport", href: "#" },
+    { label: "Wyndham Grand Lima Airport", href: "#" },
+    { label: "Costa Del Sol Wyndham Cusco", href: "#" },
+    { label: "Costa Del Sol Wyndham Arequipa", href: "#" },
+    { label: "Costa Del Sol Wyndham Pucallpa", href: "#" },
+  ]}
+/>
+
+<MegaGroup
+  id="promociones"
+  title="Promociones"
+  titleHref="/promociones"
+  isOpen={activeGroupId === "promociones"}
+  onToggle={toggleGroup}
+  items={[
+    { label: "Interbank Cuenta Sueldo 20%", href: "#" },
+    { label: "Interbank 20% Saria Sky Bar", href: "#" },
+    { label: "Interbank 20% Paprika Restaurante", href: "#" },
+    { label: "Scotiabank 25% Saria Sky Bar", href: "#" },
+    { label: "Scotiabank 20% Walak Cafe Bar", href: "#" },
+    { label: "Scotiabank 25% Paprika Restaurante", href: "#" },
+    { label: "BBVA 20% Paprika Restaurante", href: "#" },
+    { label: "Banco Falabella 20% Restaurantes & Bares", href: "#" },
+    { label: "Club El Comercio 20% Saria Sky Bar", href: "#" },
+    { label: "Qualitas 20% Paprika Restaurante", href: "#" },
+  ]}
+/>
+
+<MegaGroup
+  id="paquetes"
+  title="Paquetes"
+  titleHref="/paquetes"
+  isOpen={activeGroupId === "paquetes"}
+  onToggle={toggleGroup}
+  items={[
+    { label: "Paquete Romántico", href: "#" },
+    { label: "Paquete Familiar", href: "#" },
+    { label: "Paquete Noche de Bodas", href: "#" },
+    { label: "Full Day", href: "#" },
+    { label: "Cyber CDS", href: "#" },
+    { label: "Destino del Mes", href: "#" },
+  ]}
+/>
+
+<MegaGroup
+  id="duplicado-promociones"
+  title="Promociones"
+  titleHref="/promociones-especiales"
+  isOpen={activeGroupId === "duplicado-promociones"}
+  onToggle={toggleGroup}
+  items={[
+    { label: "Paquete Romántico", href: "#" },
+    { label: "Paquete Familiar", href: "#" },
+    { label: "Paquete Noche de Bodas", href: "#" },
+    { label: "Paquete Familiar", href: "#" },
+    { label: "Destino del Mes", href: "#" },
+  ]}
+/>
+
+
+
         </div>
       </div>
 

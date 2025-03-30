@@ -2,7 +2,7 @@ import React from 'react';
 
 const RestBar = () => {
   return (
-    <section className="SectionDiv">
+    <section className="SectionDiv BgImageLeft">
       
       {/* Cabecera principal con imagen de fondo a pantalla completa */}
      
