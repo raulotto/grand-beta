@@ -87,17 +87,17 @@ const HeaderTrad = ({ onOpenForm }) => {
 />
 
 <MegaGroup
-  id="duplicado-promociones"
-  title="Promociones"
-  titleHref="/promociones-especiales"
-  isOpen={activeGroupId === "duplicado-promociones"}
+  id="nosotros"
+  title="Nosotros"
+  titleHref=""
+  isOpen={activeGroupId === "nosotros"}
   onToggle={toggleGroup}
   items={[
-    { label: "Paquete Romántico", href: "#" },
-    { label: "Paquete Familiar", href: "#" },
-    { label: "Paquete Noche de Bodas", href: "#" },
-    { label: "Paquete Familiar", href: "#" },
-    { label: "Destino del Mes", href: "#" },
+    { label: "Eventos", href: "#" },
+    { label: "Blog", href: "#" },
+    { label: "Dog Friendly", href: "#" },
+    { label: "Reclamos", href: "#" },
+    { label: "Contáctenos", href: "#" },
   ]}
 />
 
@@ -146,7 +146,7 @@ const HeaderTrad = ({ onOpenForm }) => {
         <FaGlobe /> EN
       </Link>
       </div>
-      <div className="FloatRight top-[90%] lg:hidden text-white ActivateForm"><Link className="ButtonSolid" href={"#"} onClick={(e) => {
+      <div className="FloatRight ButtonBooking ActivateForm"><Link className="ButtonSolid" href={"#"} onClick={(e) => {
         e.preventDefault();
         onOpenForm();
       }}>Reservar</Link></div>

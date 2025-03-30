@@ -11,9 +11,11 @@ import Ofertas from "@/components/Ofertas";
 import Gallery from "@/components/Gallery";
 import HeroSlider from "@/components/HeroSlider";
 import BookingForm from "@/components/BookingForm";
-import { useState, useEffect } from "react";
 import Parallax from "@/components/Parallax";
 import Footer from "@/components/Footer";
+import HotelesGrid from "@/components/HotelesGrid";
+import { useState, useEffect } from "react";
+
 
 export async function getStaticProps() {
   const filePath = path.join(process.cwd(), "data", "hotel_es.json");
@@ -78,6 +80,7 @@ export default function Home({ hotel }) {
           🇬🇧 English Version.
         </Link>
       </div>
+      <HotelesGrid />
       <Footer />
 
       
