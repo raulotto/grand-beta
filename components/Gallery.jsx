@@ -1,58 +1,93 @@
-import React, { useState } from "react";
-import Image from "next/image";
+import { useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/autoplay";
+import Lightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
 
-const images = [
-  { src: "https://picsum.photos/id/1015/500/600", width: 200, height: 300 },
-  { src: "https://picsum.photos/id/1025/600/400", width: 300, height: 300 },
-  { src: "https://picsum.photos/id/1035/350/500", width: 240, height: 190 },
-  { src: "https://picsum.photos/id/1045/500/500", width: 240, height: 230 },
-  { src: "https://picsum.photos/id/1055/600/700", width: 280, height: 400 },
-  { src: "https://picsum.photos/id/1065/300/300", width: 200, height: 240 },
-  { src: "https://picsum.photos/id/1075/450/350", width: 180, height: 280 },
+const imageGroups = [
+  [
+    "https://picsum.photos/id/1015/500/300",
+    "https://picsum.photos/id/1016/400/500",
+    "https://picsum.photos/id/1018/600/400"
+  ],
+  [
+    "https://picsum.photos/id/1024/480/320",
+    "https://picsum.photos/id/1021/530/330",
+    "https://picsum.photos/id/1027/460/360"
+  ],
+  [
+    "https://picsum.photos/id/1035/420/500",
+    "https://picsum.photos/id/1040/640/480",
+    "https://picsum.photos/id/1031/500/420"
+  ]
 ];
 
 const Gallery = () => {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [open, setOpen] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Aplanar las imágenes en un solo array para el lightbox
+  const flatImages = imageGroups.flat();
+
+  // Formatear para Lightbox
+  const slides = flatImages.map((src) => ({ src }));
+
+  const handleClick = (index) => {
+    setCurrentIndex(index);
+    setOpen(true);
+  };
 
   return (
-    <section className="container mx-auto py-10">
-      <div className="flex flex-wrap justify-center gap-4">
-        {images.map((img, index) => (
-          <div
-            key={index}
-            className="overflow-hidden rounded-lg cursor-pointer hover:scale-105 transition-transform duration-300"
-            onClick={() => setSelectedImage(img.src)}
-            style={{ width: `${img.width}px`, height: `${img.height}px` }}
-          >
-            <Image
-              src={img.src}
-              alt={`Imagen ${index + 1}`}
-              width={img.width}
-              height={img.height}
-              className="rounded-lg object-cover w-full h-full"
-            />
-          </div>
-        ))}
-      </div>
+    <div className="w-full overflow-hidden">
+   
+    <Swiper
+  modules={[Autoplay]}
+  spaceBetween={32}
+  slidesPerView="auto"
+  loop={true}
+  speed={118000}
+  autoplay={{
+    delay: 1, // ¡cambia de 0 a 1 para que funcione al cargar!
+    disableOnInteraction: false,
+    pauseOnMouseEnter: true,
+  }}
+  grabCursor={true}
+  className="w-full"
+>
 
-      {/* Modal */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
-          onClick={() => setSelectedImage(null)}
-        >
-          <div className="relative max-w-4xl w-full">
-            <Image
-              src={selectedImage}
-              alt="Selected"
-              width={1200}
-              height={800}
-              className="rounded-lg mx-auto"
-            />
-          </div>
-        </div>
-      )}
-    </section>
+
+        {imageGroups.map((group, groupIndex) => (
+          <SwiperSlide key={groupIndex} className="!w-auto">
+            <div className="inline-flex gap-4">
+              {group.map((src, index) => {
+                const flatIndex = groupIndex * 3 + index;
+                const heights = ["h-[160px]", "h-[220px]", "h-[280px]"];
+                const heightClass = heights[index % heights.length];
+
+                return (
+                  <img
+                    key={index}
+                    src={src}
+                    alt={`gallery-${flatIndex}`}
+                    onClick={() => handleClick(flatIndex)}
+                    className={`rounded-lg object-cover w-full cursor-pointer ${heightClass}`}
+                  />
+                );
+              })}
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+
+      <Lightbox
+        open={open}
+        close={() => setOpen(false)}
+        index={currentIndex}
+        slides={slides}
+      />
+    </div>
   );
 };
 

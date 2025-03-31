@@ -11,7 +11,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="SectionDiv">
+    <footer className="bg-[#40666a] SectionDiv">
         <div className="ContainerFlex flex-col">
       <div className="mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 w-full
 ">
@@ -69,7 +69,7 @@ const Footer = () => {
           <Link href="#">Política de uso aceptable</Link>|
           <Link href="#">Dog Friendly</Link>
         </div>
-        <p className="text-white/60">Wyndham Grand New Lima Airport © Copyright 2023</p>
+        <p className="text-white mt-10">Wyndham Grand New Lima Airport © Copyright 2025</p>
       </div>
       </div>
     </footer>
