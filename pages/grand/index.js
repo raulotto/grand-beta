@@ -69,17 +69,7 @@ export default function Home({ hotel }) {
       <Ofertas />
       <Gallery />
       {/* Nombre y descripción */}
-      <header className="text-center mb-6">
-        <h1 className="text-2xl font-bold">{hotel.name}</h1>
-        <p className="text-gray-700">{hotel.description}</p>
-      </header>
-
-      {/* Versión en inglés */}
-      <div className="text-center my-4">
-        <Link href="/en/hotel-wyndham-grand-costa-del-sol-lima-airport">
-          🇬🇧 English Version.
-        </Link>
-      </div>
+      <Meeting />
       <HotelesGrid />
       <Footer />
 

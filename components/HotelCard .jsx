@@ -3,8 +3,8 @@ import Link from "next/link";
 
 const HotelCard = ({ href, image, badge, title, city, tags = [] }) => {
   return (
-    <Link href={href} className="rounded-xl overflow-hidden border shadow-sm bg-white hover:shadow-md transition">
-      <div className="relative w-full h-[180px]">
+    <Link href={href} className="CardHotel">
+      <div className="CardHotelImage">
         <Image
           src={image}
           alt={`Hotel ${city}`}
@@ -36,7 +36,7 @@ const HotelCard = ({ href, image, badge, title, city, tags = [] }) => {
         )}
       </div>
 
-      <div className="p-3">
+      <div className="CardHotelContent">
         <span className="text-xs text-gray-500 block leading-none">{title}</span>
         <span className="text-base text-black font-semibold">{city}</span>
       </div>

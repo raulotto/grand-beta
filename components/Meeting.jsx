@@ -6,7 +6,7 @@ const Meeting = () => {
     <section className="SectionDiv  ">
       <div className="ContainerFlex">
         {/* CARD 1 */}
-        <div className="w-[500px] grid bg-white rounded-lg shadow-md overflow-hidden">
+        <div className="grid bg-white rounded-lg shadow-md overflow-hidden">
           <div className="relative w-full h-80"> {/* más altura */}
             <Image
               src="https://picsum.photos/id/1015/600/400"
@@ -31,7 +31,7 @@ const Meeting = () => {
         </div>
 
         {/* CARD 2 */}
-        <div className="w-[500px] grid bg-white rounded-lg shadow-md overflow-hidden">
+        <div className="grid bg-white rounded-lg shadow-md overflow-hidden">
           <div className="relative w-full h-80">
             <Image
               src="https://picsum.photos/id/1025/600/400"
@@ -55,7 +55,7 @@ const Meeting = () => {
         </div>
 
         {/* CARD 3 */}
-        <div className="w-[500px] grid bg-white rounded-lg shadow-md overflow-hidden">
+        <div className="grid bg-white rounded-lg shadow-md overflow-hidden">
           <div className="relative w-full h-80">
             <Image
               src="https://picsum.photos/id/1039/600/400"

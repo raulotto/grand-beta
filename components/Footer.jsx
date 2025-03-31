@@ -11,7 +11,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-[#40666a] text-white text-sm pt-12">
+    <footer className="SectionDiv">
         <div className="ContainerFlex flex-col">
       <div className="mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 w-full
 ">

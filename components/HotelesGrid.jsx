@@ -18,12 +18,12 @@ const HotelesGrid = () => {
           slidesPerView="auto"
           loop={true}
           autoplay={{
-            delay: 1500, // 2.5 segundos
+            delay: 350, // 2.5 segundos
             disableOnInteraction: false, // sigue moviéndose aunque lo toques
           }}
-          speed={800}
+          speed={1600}
           grabCursor={true}
-          className="w-[300px]"
+          className=" w-[300px]"
         
           
           breakpoints={{
@@ -36,7 +36,7 @@ const HotelesGrid = () => {
           }}
         >
           {hotelCards.map((hotel, index) => (
-            <SwiperSlide key={index} className="!w-[180px]">
+            <SwiperSlide key={index} className=" !w-[230px]">
             <HotelCard
               href={hotel.href}
               image={hotel.image}
