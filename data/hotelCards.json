@@ -1,0 +1,90 @@
+[
+  {
+    "href": "#",
+    "image": "/images/hotels/Oferta-Chiclayo-1.jpg",
+    "badge": "/images/trip-tiny-logo.svg",
+    "title": "Costa del Sol Wyndham",
+    "city": "Chiclayo"
+  },
+  {
+    "href": "#",
+    "image": "/images/hotels/Oferta-Cusco-1.jpg",
+    "badge": "/images/trip-tiny-logo.svg",
+    "title": "Costa del Sol Wyndham",
+    "city": "Cusco"
+  },
+  {
+    "href": "#",
+    "image": "/images/hotels/Oferta-Arequipa-1.jpg",
+    "badge": "/images/trip-tiny-logo.svg",
+    "title": "Costa del Sol Wyndham",
+    "city": "Arequipa"
+  },
+  {
+    "href": "#",
+    "image": "/images/hotels/Oferta-Cajamarca-1.jpg",
+    "badge": "/images/trip-tiny-logo.svg",
+    "title": "Costa del Sol Wyndham",
+    "city": "Cajamarca"
+  },
+  {
+    "href": "#",
+    "image": "/images/hotels/Oferta-Pucallpa-1.jpg",
+    "badge": "/images/trip-tiny-logo.svg",
+    "title": "Costa del Sol Wyndham",
+    "city": "Pucallpa"
+  },
+  {
+    "href": "#",
+    "image": "/images/hotels/Oferta-trujillo-golf-1.jpg",
+    "badge": "/images/trip-tiny-logo.svg",
+    "title": "Costa del Sol Wyndham",
+    "city": "Trujillo Golf"
+  },
+  {
+    "href": "#",
+    "image": "/images/hotels/Oferta-trujillo-centro-1.jpg",
+    "badge": "/images/trip-tiny-logo.svg",
+    "title": "Costa del Sol",
+    "city": "Trujillo Centro"
+  },
+  {
+    "href": "#",
+    "image": "/images/hotels/Oferta-Piura-1.jpg",
+    "badge": "/images/trip-tiny-logo.svg",
+    "title": "Costa del Sol Wyndham",
+    "city": "Piura"
+  },
+  {
+    "href": "#",
+    "image": "/images/hotels/Oferta-tumbes-1.jpg",
+    "badge": "/images/trip-tiny-logo.svg",
+    "title": "Costa del Sol Wyndham",
+    "city": "Tumbes"
+  },
+  {
+    "href": "#",
+    "image": "/images/hotels/Oferta-Lima-Airport-1.jpg",
+    "badge": "/images/trip-tiny-logo.svg",
+    "title": "Costa del Sol Wyndham",
+    "city": "Lima Aeropuerto"
+  },
+  {
+    "href": "#",
+    "image": "/images/hotels/Oferta-Lima-City-1.jpg",
+    "badge": "/images/trip-tiny-logo.svg",
+    "title": "Costa del Sol Wyndham",
+    "city": "Lima City"
+  },
+  {
+    "href": "#",
+    "image": "/images/hotels/Oferta-Grand-1.jpg",
+    "badge": "/images/trip-tiny-logo.svg",
+    "title": "Wyndham Grand Costa del Sol",
+    "city": "Lima Airport",
+    "tags": [
+      "Ver más",
+      "Nuevo"
+    ]
+  }
+]

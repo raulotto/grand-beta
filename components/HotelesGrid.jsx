@@ -1,96 +1,71 @@
 import HotelCard from "./HotelCard ";
+import hotelCards from "../data/hotelCards.json";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay } from "swiper/modules"; // para Swiper v9+
+
+import "swiper/css";
 
 const HotelesGrid = () => {
   return (
     <section className="SectionDiv">
       <h2 className="text-2xl font-semibold mb-6">Encuentra un destino especial</h2>
-      <div className="ContainerFlex">
-      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
-      <HotelCard
-  href="#"
-  image="/images/chiclayo.jpg"
-  badge="/images/tripadvisor-badge.png"
-  title="Costa del Sol Wyndham"
-  city="Chiclayo"
-/>
-<HotelCard
-  href="#"
-  image="/images/cusco.jpg"
-  badge="/images/tripadvisor-badge.png"
-  title="Costa del Sol Wyndham"
-  city="Cusco"
-/>
-<HotelCard
-  href="#"
-  image="/images/arequipa.jpg"
-  badge="/images/tripadvisor-badge.png"
-  title="Costa del Sol Wyndham"
-  city="Arequipa"
-/>
-<HotelCard
-  href="#"
-  image="/images/cajamarca.jpg"
-  badge="/images/tripadvisor-badge.png"
-  title="Costa del Sol Wyndham"
-  city="Cajamarca"
-/>
-<HotelCard
-  href="#"
-  image="/images/pucallpa.jpg"
-  badge="/images/tripadvisor-badge.png"
-  title="Costa del Sol Wyndham"
-  city="Pucallpa"
-/>
-<HotelCard
-  href="#"
-  image="/images/trujillo-golf.jpg"
-  badge="/images/tripadvisor-badge.png"
-  title="Costa del Sol Wyndham"
-  city="Trujillo Golf"
-/>
-<HotelCard
-  href="#"
-  image="/images/trujillo-centro.jpg"
-  title="Costa del Sol"
-  city="Trujillo Centro"
-/>
-<HotelCard
-  href="#"
-  image="/images/piura.jpg"
-  badge="/images/tripadvisor-badge.png"
-  title="Costa del Sol Wyndham"
-  city="Piura"
-/>
-<HotelCard
-  href="#"
-  image="/images/tumbes.jpg"
-  badge="/images/tripadvisor-badge.png"
-  title="Costa del Sol Wyndham"
-  city="Tumbes"
-/>
-<HotelCard
-  href="#"
-  image="/images/lima-aeropuerto.jpg"
-  badge="/images/tripadvisor-badge.png"
-  title="Costa del Sol Wyndham"
-  city="Lima Aeropuerto"
-/>
-<HotelCard
-  href="#"
-  image="/images/lima-ciudad.jpg"
-  badge="/images/tripadvisor-badge.png"
-  title="Costa del Sol Wyndham"
-  city="Lima City"
-/>
-<HotelCard
-  href="#"
-  image="/images/lima-grand.jpg"
-  title="Wyndham Grand Costa del Sol"
-  city="Lima Airport"
-  tags={["Ver más", "Nuevo"]}
-/>
 
+      {/* Mobile Carousel */}
+      <div className="lg:hidden">
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={16}
+          slidesPerView="auto"
+          loop={true}
+          autoplay={{
+            delay: 1500, // 2.5 segundos
+            disableOnInteraction: false, // sigue moviéndose aunque lo toques
+          }}
+          speed={800}
+          grabCursor={true}
+          className="w-[300px]"
+        
+          
+          breakpoints={{
+            640: {
+              slidesPerView: 2.2,
+            },
+            768: {
+              slidesPerView: 3.2,
+            },
+          }}
+        >
+          {hotelCards.map((hotel, index) => (
+            <SwiperSlide key={index} className="!w-[180px]">
+            <HotelCard
+              href={hotel.href}
+              image={hotel.image}
+              badge={hotel.badge}
+              title={hotel.title}
+              city={hotel.city}
+              tags={hotel.tags}
+            />
+          </SwiperSlide>
+          
+          ))}
+        </Swiper>
       </div>
+
+      {/* Desktop Grid */}
+      <div className="hidden lg:block">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-4">
+          {hotelCards.map((hotel, index) => (
+            <HotelCard
+              key={index}
+              href={hotel.href}
+              image={hotel.image}
+              badge={hotel.badge}
+              title={hotel.title}
+              city={hotel.city}
+              tags={hotel.tags}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );
