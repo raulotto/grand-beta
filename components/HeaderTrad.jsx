@@ -116,7 +116,7 @@ const HeaderTrad = ({ onOpenForm }) => {
       <div className="ContainerFlex flex-row">
         <div className="ItemsMenuLeft">
           <Image
-            src="../images/new-grand-costa-aeropuerto-logo-blanco.svg"
+            src="/images/new-grand-costa-aeropuerto-logo-blanco.svg"
             alt="Restaurante del hotel"
             width={250}
             height={130}

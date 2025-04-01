@@ -31,7 +31,7 @@ export default function BookingForm({ showForm, onCloseForm, isFixed })
     Lima: [
       { name: "Costa del Sol Wyndham Lima Airport", id: "105840" },
       { name: "Costa del Sol Wyndham Lima City", id: "104308" },
-      { name: "Wyndham Grand Costa del Sol Lima Airport", id: "104308" },
+      { name: "Wyndham Grand Costa del Sol Lima Airport", id: "9878731" },
     ],
     Piura: [{ name: "Costa del Sol Wyndham Piura", id: "104305" }],
     Pucallpa: [{ name: "Costa del Sol Wyndham Pucallpa", id: "104310" }],
