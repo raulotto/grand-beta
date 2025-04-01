@@ -1,4 +1,8 @@
 import React from 'react'
+import Link from "next/link";
+import Image from "next/image";
+
+
 
 const Habitaciones = () => {
   return (
@@ -26,22 +30,27 @@ const Habitaciones = () => {
         Recarga energías entre vuelos en Wyndham Grand Costa del Sol Lima Airport y disfruta de una de nuestras 249 habitaciones de última tecnología. Con express self check-in y opciones libres de humo, cada habitación y suite está diseñada para ofrecerte el máximo confort y una estancia sin complicaciones. Gracias a la tecnología inteligente, puedes solicitar servicio de lavandería o room service 24/7 con solo tocar un botón, mientras que las ventanas insonorizadas te brindan vistas espectaculares de la capital peruana y el ambiente perfecto para un descanso reparador
         </p>
         <div className="mt-8">
-    <button className="bg-olive-grand text-white px-6 py-3 text-xs rounded-md flex items-center gap-2">
-      <a href="#">Descubre
-      </a>
-    </button>
+      <Link className="PrimaryColor ButtonRounded" href="#">Descubre
+      </Link>
   </div>
         </div>
       </div>
   
       {/* Contenido del hotel */}
-      <div className="flex-1 max-w-lg p-6 text-black-grand">
-      <img
-            src="https://cdn2.paraty.es/wyndham-grand-cancun/images/868847eb274c834"
-            alt="Piscina del hotel"
-            className="w-full h-full object-cover rounded-lg"
-          />
-      </div>
+      <div className="flex-1 max-w-lg mx-auto">
+                <div className="relative h-[400px] mx-auto">
+                  {/* Imagen grande (fondo) */}
+                  <Image
+        src="../images/WG-Habitacion-Suite-Presidencial-1.jpg"
+        alt="Habitación"
+        width={600}
+        height={400}
+        className="rounded-lg object-cover w-full h-full"
+      />
+      
+      
+                </div>
+              </div>
     </div>
   </section>
 

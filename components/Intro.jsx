@@ -11,25 +11,14 @@ const Intro = () => {
           <div className="relative h-[400px] mx-auto">
             {/* Imagen grande (fondo) */}
             <Image
-              src="https://cdn2.paraty.es/wyndham-grand-cancun/images/868847eb274c834"
-              alt="Piscina del hotel"
-              fill
-              style={{ objectFit: "cover" }}
-              className="rounded-lg fade-animation"
-          
-            />
+  src="/images/Lobby.jpg"
+  alt="Piscina"
+  width={600}
+  height={400}
+  className="rounded-lg object-cover w-full h-full"
+/>
 
-            {/* Imagen pequeña sobrepuesta */}
-            <div className="absolute bottom-4 right-4 md:bottom-6 md:right-6 w-1/2">
-              <Image
-                src="https://cdn2.paraty.es/wyndham-grand-cancun/images/309dcb0bb60a7f8"
-                alt="Restaurante del hotel"
-                width={200} // Ajusta según el tamaño deseado
-                height={130} // Ajusta según el tamaño deseado
-                className="rounded-lg shadow-lg"
-             
-              />
-            </div>
+
           </div>
         </div>
 

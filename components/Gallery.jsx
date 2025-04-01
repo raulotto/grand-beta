@@ -8,21 +8,22 @@ import "yet-another-react-lightbox/styles.css";
 
 const imageGroups = [
   [
-    "https://picsum.photos/id/1015/500/300",
-    "https://picsum.photos/id/1016/400/500",
-    "https://picsum.photos/id/1018/600/400"
+    "../images/Gran-Salon.jpg",
+    "../images/Hall-Ascensores.jpg",
+    "../images/Lobby.jpg"
   ],
   [
-    "https://picsum.photos/id/1024/480/320",
-    "https://picsum.photos/id/1021/530/330",
-    "https://picsum.photos/id/1027/460/360"
+    "../images/Paprika.jpg",
+    "../images/Recepcion.jpg",
+    "../images/Terraza_foodcourt.jpg"
   ],
   [
-    "https://picsum.photos/id/1035/420/500",
-    "https://picsum.photos/id/1040/640/480",
-    "https://picsum.photos/id/1031/500/420"
+    "../images/Walak.jpg",
+    "../images/WG-Habitacion-Suite-1-2.jpg",
+    "../images/WG-Habitacion-Suite-1-3.jpg"
   ]
 ];
+
 
 const Gallery = () => {
   const [open, setOpen] = useState(false);
@@ -40,14 +41,14 @@ const Gallery = () => {
   };
 
   return (
-    <div className="w-full overflow-hidden">
-   
+    <div className="SectionDiv p-0 z-[0] relative">
+   <div className="ContainerFull">
     <Swiper
   modules={[Autoplay]}
-  spaceBetween={32}
+  spaceBetween={20}
   slidesPerView="auto"
   loop={true}
-  speed={118000}
+  speed={7000}
   autoplay={{
     delay: 1, // ¡cambia de 0 a 1 para que funcione al cargar!
     disableOnInteraction: false,
@@ -60,10 +61,10 @@ const Gallery = () => {
 
         {imageGroups.map((group, groupIndex) => (
           <SwiperSlide key={groupIndex} className="!w-auto">
-            <div className="inline-flex gap-4">
+            <div className="grid grid-cols-3 gap-4">
               {group.map((src, index) => {
                 const flatIndex = groupIndex * 3 + index;
-                const heights = ["h-[160px]", "h-[220px]", "h-[280px]"];
+                const heights = ["h-[220px]", "h-[220px]", "h-[220px]"];
                 const heightClass = heights[index % heights.length];
 
                 return (
@@ -87,6 +88,7 @@ const Gallery = () => {
         index={currentIndex}
         slides={slides}
       />
+      </div>
     </div>
   );
 };

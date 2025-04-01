@@ -9,7 +9,7 @@ const HotelesGrid = () => {
   return (
     <section className="SectionDiv">
       <h2 className="text-2xl font-semibold mb-6">Encuentra un destino especial</h2>
-
+    <div className="ContainerFlex">
       {/* Mobile Carousel */}
       <div className="lg:hidden">
         <Swiper
@@ -66,6 +66,7 @@ const HotelesGrid = () => {
             />
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

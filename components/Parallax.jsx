@@ -5,7 +5,7 @@ const Parallax = () => {
     <div
     className="ContainerFull bg-fixed bg-center bg-cover bg-no-repeat"
     style={{
-      backgroundImage: "url('https://cdn2.paraty.es/wyndham-grand-cancun/images/868847eb274c834')",
+      backgroundImage: "url('../images/Recepcion.jpg')",
       height: "40vh",
     }}
   >

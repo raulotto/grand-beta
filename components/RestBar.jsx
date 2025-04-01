@@ -1,4 +1,6 @@
 import React from 'react';
+import Image from "next/image";
+
 
 const RestBar = () => {
   return (
@@ -38,13 +40,20 @@ const RestBar = () => {
         </div>
 
         {/* Imagen del hotel */}
-        <div className="flex-1 max-w-lg p-6 text-black-grand">
-          <img
-            src="https://cdn2.paraty.es/wyndham-grand-cancun/images/868847eb274c834"
-            alt="Piscina del hotel"
-            className="w-full h-full object-cover rounded-lg"
-          />
-        </div>
+        <div className="flex-1 max-w-lg mx-auto">
+                        <div className="relative h-[400px] mx-auto">
+                          {/* Imagen grande (fondo) */}
+                          <Image
+                src="../images/Paprika.jpg"
+                alt="Paprika"
+                width={600}
+                height={300}
+                className="rounded-lg object-cover w-full h-full"
+              />
+              
+              
+                        </div>
+                      </div>
       </div>
     </section>
   );

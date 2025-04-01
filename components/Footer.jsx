@@ -19,7 +19,7 @@ const Footer = () => {
         <div className="flex flex-col items-start gap-4">
           
           <Image
-                      src="/images/new-grand-costa-aeropuerto-logo-blanco.svg"
+                      src="../images/new-grand-costa-aeropuerto-logo-blanco.svg"
                       alt="Restaurante del hotel"
                       width={200}
                       height={130}

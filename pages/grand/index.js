@@ -66,7 +66,6 @@ export default function Home({ hotel }) {
       <Habitaciones />
       <Parallax />
       <RestBar />
-      <Ofertas />
       <Gallery />
       {/* Nombre y descripción */}
       <Meeting />
