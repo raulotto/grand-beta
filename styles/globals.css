@@ -101,7 +101,6 @@ p{
 
 .bar {
   height: 3px;
-  background-color: white;
   transition: 0.4s;
   border-radius: 2px;
 }

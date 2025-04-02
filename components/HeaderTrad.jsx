@@ -13,20 +13,23 @@ const [lastScrollTop, setLastScrollTop] = useState(0);
 
 useEffect(() => {
   const handleScroll = () => {
-    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    const currentScroll = window.scrollY;
 
-    if (currentScroll > 100 && currentScroll > lastScrollTop) {
-      setIsVisible(true); // bajando
-    } else if (currentScroll < lastScrollTop) {
-      setIsVisible(false); // subiendo
+    // Mostrar solo si estás por debajo de 100px
+    if (currentScroll > 100) {
+      setIsVisible(true);
     }
 
-    setLastScrollTop(currentScroll <= 0 ? 0 : currentScroll); // para evitar valores negativos
+    // Ocultar si regresas hacia arriba a 80px o menos
+    if (currentScroll < 80) {
+      setIsVisible(false);
+    }
   };
 
   window.addEventListener("scroll", handleScroll);
   return () => window.removeEventListener("scroll", handleScroll);
-}, [lastScrollTop]);
+}, []);
+
 
 
   const booking = useBooking();
@@ -47,8 +50,8 @@ useEffect(() => {
 
   return (
     <header
-  className={`absolute transition-all duration-500 ease-in-out z-[999] font-gotham-book w-full ${
-    isVisible ? 'fixed lg:absolute top-0 bg-[#000000cc] lg:bg-transparent' : ''
+  className={`absolute transition-all duration-500 ease-in-out z-[4] font-gotham-book w-full ${
+    isVisible ? 'fixed lg:absolute top-0 bg-white z-0 lg:bg-transparent shadow-lg' : ''
   }`}
 >
 
@@ -144,22 +147,42 @@ useEffect(() => {
       {/* Botón hamburguesa / cerrar */}
       {/* Botón hamburguesa / cerrar */}
 <div className="MobileMenuAccomadation">
-  <div className="HamburgerIcon FloatLeft" onClick={toggleMenu}>
-    <div className={`bar ${showMenu ? "bar1" : ""}`}></div>
-    <div className={`bar ${showMenu ? "bar2" : ""}`}></div>
-    <div className={`bar ${showMenu ? "bar3" : ""}`}></div>
-  </div>
+<div
+  className="HamburgerIcon FloatLeft"
+  onClick={toggleMenu}
+>
+  <div
+    className={`bar ${showMenu ? "bar1" : ""} ${
+      showMenu || !isVisible ? "bg-white" : "bg-primary-oceanic"
+    }`}
+  ></div>
+  <div
+    className={`bar ${showMenu ? "bar2" : ""} ${
+      showMenu || !isVisible ? "bg-white" : "bg-primary-oceanic"
+    }`}
+  ></div>
+  <div
+    className={`bar ${showMenu ? "bar3" : ""} ${
+      showMenu || !isVisible ? "bg-white" : "bg-primary-oceanic"
+    }`}
+  ></div>
+</div>
 
 
-      <ItemsRightMenu/>
+
+
+  <ItemsRightMenu isVisible={isVisible} />
+
 
       {/* Idioma */}
       <Link
-        className="SwitchLang lg:right-[calc((100%-1140px)/2)] lg:absolute flex ml-5 items-center MenuLight "
-        href="/en/hotel-wyndham-grand-costa-del-sol-lima-airport"
-      >
-        <FaGlobe /> EN
-      </Link>
+  className={`SwitchLang lg:right-[calc((100%-1140px)/2)] lg:absolute flex ml-5 items-center MenuLight transition-colors duration-300
+    ${isVisible ? "text-primary-oceanic" : "text-white"} lg:text-white`}
+  href="/en/hotel-wyndham-grand-costa-del-sol-lima-airport"
+>
+  <FaGlobe /> EN
+</Link>
+
       <div className="ButtonBooking ActivateForm ml-5 mr-5">
       <Link className="ButtonSolid" href="#" onClick={(e) => {
         e.preventDefault();
