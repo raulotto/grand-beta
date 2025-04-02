@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaBars, FaTimes, FaPhoneSquareAlt, FaBell, FaGlobe, FaCalendarAlt } from "react-icons/fa";
 import MegaGroup from "./MegaGroup";
@@ -7,6 +7,28 @@ import ItemsRightMenu from "./ItemsRightMenu";
 
 
 const HeaderTrad = () => {
+
+  const [isVisible, setIsVisible] = useState(false);
+const [lastScrollTop, setLastScrollTop] = useState(0);
+
+useEffect(() => {
+  const handleScroll = () => {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll > 100 && currentScroll > lastScrollTop) {
+      setIsVisible(true); // bajando
+    } else if (currentScroll < lastScrollTop) {
+      setIsVisible(false); // subiendo
+    }
+
+    setLastScrollTop(currentScroll <= 0 ? 0 : currentScroll); // para evitar valores negativos
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  return () => window.removeEventListener("scroll", handleScroll);
+}, [lastScrollTop]);
+
+
   const booking = useBooking();
 
   console.log("BookingContext", booking)
@@ -25,10 +47,18 @@ const HeaderTrad = () => {
 
   return (
     <header
+  className={`absolute transition-all duration-500 ease-in-out z-[999] font-gotham-book w-full ${
+    isVisible ? 'fixed lg:absolute top-0 bg-[#000000cc] lg:bg-transparent' : ''
+  }`}
+>
+
+
+      {/* 
+      <header
       className="absolute top-0 left-0 right-0 z-[2] font-gotham-book"
      
     >
-      {/* Menú desplegable */}
+      */}
       <div className="dropdown_menu">
 
         <div className="InnerDropdownMenu ContainerFlex MegaMenu">
@@ -125,7 +155,7 @@ const HeaderTrad = () => {
 
       {/* Idioma */}
       <Link
-        className="SwitchLang flex ml-5 items-center MenuLight "
+        className="SwitchLang lg:right-[calc((100%-1140px)/2)] lg:absolute flex ml-5 items-center MenuLight "
         href="/en/hotel-wyndham-grand-costa-del-sol-lima-airport"
       >
         <FaGlobe /> EN
