@@ -88,8 +88,35 @@ p{
 .react-datepicker__current-month {
   font-family: 'gothamgotham-book', sans-serif !important; /* o cualquier fuente que estés usando */
 }
-.react-datepicker__day{
-  
+
+.HamburgerIcon {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 25px;
+  height: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.bar {
+  height: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 2px;
+}
+
+/* Animaciones para convertir en X */
+.bar1 {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.bar2 {
+  opacity: 0;
+}
+
+.bar3 {
+  transform: rotate(45deg) translate(-5px, -6px);
 }
 
 
@@ -152,8 +179,14 @@ p{
   .ItemsMenuLeft {
     @apply  ml-[70px] lg:ml-[90px];
   }
+  .ItemsMenuCenter{ 
+    @apply hidden lg:block;
+  }
   .ItemsMenuRight {
-    @apply  mr-[90px];
+    @apply  mr-[90px] hidden lg:block;
+  }
+  .SwitchLang{
+    @apply  lg:block;
   }
   .FloatLeft {
     @apply absolute top-[inherit] lg:top-[65px] left-[20px]  lg:left-[calc((100%-1140px)/2)] z-[9];
@@ -171,7 +204,7 @@ p{
     @apply flex justify-between w-[100%] mx-auto py-[60px] items-center;
   }
   .MenuLight{
-    @apply flex gap-[10px] text-white;
+    @apply lg:items-center lg:flex gap-[10px] text-white;
   }
   .HeadHiddenForm {
     @apply flex p-10 lg:hidden justify-end;
@@ -208,6 +241,15 @@ p{
   }
   .InnerDropdownMenu {
     @apply flex  items-start w-full h-screen relative mx-auto px-4 lg:px-0 py-[25%] lg:py-[10%] text-white;
+  }
+  .InnerDropdownMenu .ContainerFlex{
+    @apply lg:hidden flex;
+  }
+  .InnerDropdownMenu .ContainerFlex > div{
+    @apply lg:hidden flex;
+  }
+  .InnerDropdownMenu .ContainerFlex .ItemsMenuLeft, .InnerDropdownMenu .ContainerFlex .ItemsMenuRight{
+    @apply m-0 ;
   }
   .MegaMenu {
     @apply lg:w-auto overflow-scroll lg:overflow-hidden justify-start lg:justify-between;

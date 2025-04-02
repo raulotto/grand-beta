@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { FaBars, FaTimes, FaPhoneSquareAlt, FaBell, FaGlobe, FaCalendarAlt } from "react-icons/fa";
 import MegaGroup from "./MegaGroup";
 import { useBooking } from "@/context/BookingContext";
+import ItemsRightMenu from "./ItemsRightMenu";
 
 
 const HeaderTrad = () => {
@@ -106,51 +106,31 @@ const HeaderTrad = () => {
 />
 
 
-
+<ItemsRightMenu className="block lg:hidden"/>
         </div>
+        
       </div>
 
       {/* Botón hamburguesa / cerrar */}
-      <div className="MobileMenuAccomadation">
-      <div className="text-white text-2xl lg:text-3xl FloatLeft" onClick={toggleMenu}>
-        {showMenu ? <FaTimes /> : <FaBars />}
-      </div>
+      {/* Botón hamburguesa / cerrar */}
+<div className="MobileMenuAccomadation">
+  <div className="HamburgerIcon FloatLeft" onClick={toggleMenu}>
+    <div className={`bar ${showMenu ? "bar1" : ""}`}></div>
+    <div className={`bar ${showMenu ? "bar2" : ""}`}></div>
+    <div className={`bar ${showMenu ? "bar3" : ""}`}></div>
+  </div>
 
-      {/* Contenido principal del header */}
-      <div className="ContainerFlex flex-row">
-        <div className="ItemsMenuLeft">
-          <Image
-            src="/images/new-grand-costa-aeropuerto-logo-blanco.svg"
-            alt="Restaurante del hotel"
-            width={250}
-            height={130}
-          />
-        </div>
-        <div className="">
-          <ul className="MenuLight">
-            <li><Link href="tel:+5102009200" className="flex items-center gap-2"><FaPhoneSquareAlt /><span className="hidden sm:inline">Reservas: +51(01) 2009200</span></Link></li>
 
-          </ul>
-        </div>
-
-        
-
-        <div className="ItemsMenuRight">
-          <ul className="MenuLight">
-            <li><Link href="#" className="flex items-center gap-2"><FaCalendarAlt /><span className="hidden sm:inline">Modificar Reserva</span></Link></li>
-          </ul>
-        </div>
-      </div>
+      <ItemsRightMenu/>
 
       {/* Idioma */}
       <Link
-        className="FloatRight MenuLight items-center"
+        className="SwitchLang flex ml-5 items-center MenuLight "
         href="/en/hotel-wyndham-grand-costa-del-sol-lima-airport"
       >
         <FaGlobe /> EN
       </Link>
-      </div>
-      <div className="FloatRight ButtonBooking ActivateForm">
+      <div className="ButtonBooking ActivateForm ml-5 mr-5">
       <Link className="ButtonSolid" href="#" onClick={(e) => {
         e.preventDefault();
         if (booking?.setShowForm) {
@@ -160,6 +140,8 @@ const HeaderTrad = () => {
         Reservar
       </Link>
     </div>
+      </div>
+      
     </header>
   );
 };
