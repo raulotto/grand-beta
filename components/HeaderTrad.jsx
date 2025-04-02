@@ -3,9 +3,13 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaBars, FaTimes, FaPhoneSquareAlt, FaBell, FaGlobe, FaCalendarAlt } from "react-icons/fa";
 import MegaGroup from "./MegaGroup";
+import { useBooking } from "@/context/BookingContext";
 
 
-const HeaderTrad = ({ onOpenForm }) => {
+const HeaderTrad = () => {
+  const booking = useBooking();
+
+  console.log("BookingContext", booking)
   const [showMenu, setShowMenu] = useState(false);
   const toggleMenu = () => {
     const menu = document.querySelector(".dropdown_menu");
@@ -146,10 +150,16 @@ const HeaderTrad = ({ onOpenForm }) => {
         <FaGlobe /> EN
       </Link>
       </div>
-      <div className="FloatRight ButtonBooking ActivateForm"><Link className="ButtonSolid" href={"#"} onClick={(e) => {
+      <div className="FloatRight ButtonBooking ActivateForm">
+      <Link className="ButtonSolid" href="#" onClick={(e) => {
         e.preventDefault();
-        onOpenForm();
-      }}>Reservar</Link></div>
+        if (booking?.setShowForm) {
+          booking.setShowForm(true);
+        }
+      }}>
+        Reservar
+      </Link>
+    </div>
     </header>
   );
 };

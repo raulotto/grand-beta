@@ -17,6 +17,7 @@ import HotelesGrid from "@/components/HotelesGrid";
 import { useState, useEffect } from "react";
 
 
+
 export async function getStaticProps() {
   const filePath = path.join(process.cwd(), "data", "hotel_es.json");
   const jsonData = fs.readFileSync(filePath, "utf-8");
@@ -28,35 +29,14 @@ export async function getStaticProps() {
 }
 
 export default function Home({ hotel }) {
-  const [showForm, setShowForm] = useState(false);
-  const [formIsSticky, setFormIsSticky] = useState(false); // <- nuevo estado
 
-  // Bloquea el scroll del body al mostrar el formulario móvil
-  useEffect(() => {
-    document.body.style.overflow = showForm ? "hidden" : "auto";
-  }, [showForm]);
-
-  // Detecta el scroll para fijar el BookingForm
-  useEffect(() => {
-    const handleScroll = () => {
-      const triggerPoint = window.innerHeight * 0.75; // 50% de la pantalla
-      const offset = window.scrollY;
-      setFormIsSticky(offset > triggerPoint);
-    };
-  
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-  
 
   return (
     <main className="mx-auto">
-      <HeaderTrad onOpenForm={() => setShowForm(true)} />
+      <HeaderTrad  />
       <HeroSlider />
   <BookingForm
-    showForm={showForm}
-    onCloseForm={() => setShowForm(false)}
-    isFixed={formIsSticky}
+    
   />
 
 

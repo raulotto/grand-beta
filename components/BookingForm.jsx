@@ -1,24 +1,33 @@
-import React, { useState } from "react";
+// ✅ BookingForm.jsx usando contexto
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { registerLocale } from "react-datepicker";
 import { RxCalendar } from "react-icons/rx";
-import { IoLocationOutline } from "react-icons/io5";
-
 import es from "date-fns/locale/es";
+import { useBooking } from "@/context/BookingContext";
+
 registerLocale("es", es);
 
-export default function BookingForm({ showForm, onCloseForm, isFixed })
- {
+export default function BookingForm() {
+  const { showForm, setShowForm, formIsSticky } = useBooking();
+  const [shouldRender, setShouldRender] = useState(showForm);
+  useEffect(() => {
+    if (showForm) {
+      setShouldRender(true); // mostrar inmediatamente
+    } else {
+      const timeout = setTimeout(() => setShouldRender(false), 700); // espera que termine la animación
+      return () => clearTimeout(timeout);
+    }
+  }, [showForm]);
+  
   const today = new Date();
   const tomorrow = new Date();
   tomorrow.setDate(today.getDate() + 1);
 
   const [dateRange, setDateRange] = useState([today, tomorrow]);
   const [startDate, endDate] = dateRange;
-
   const [query, setQuery] = useState("");
   const [selectedHotel, setSelectedHotel] = useState(null);
   const [showDropdown, setShowDropdown] = useState(false);
@@ -57,8 +66,6 @@ export default function BookingForm({ showForm, onCloseForm, isFixed })
       className="flex items-center gap-2 border border-gray-300 px-4 py-2 rounded-md text-left w-full text-sm"
     >
       <RxCalendar />
-  
-
       {startDate && endDate ? (
         <span>
           {formatDate(startDate)} — {formatDate(endDate)}
@@ -75,25 +82,19 @@ export default function BookingForm({ showForm, onCloseForm, isFixed })
       alert("Selecciona un hotel");
       return;
     }
-
     e.target.action = `https://reservations.travelclick.com/${selectedHotel.id}`;
   };
 
   const renderGroupedHotels = () => {
     const lowerQuery = query.toLowerCase();
-
     return Object.entries(hotelsGrouped).map(([region, hotels]) => {
       const matched = hotels.filter((h) =>
         h.name.toLowerCase().includes(lowerQuery)
       );
-
       if (matched.length === 0) return null;
-
       return (
         <div key={region} className="py-1">
-          <div className="RegionLocation">
-            {region}
-          </div>
+          <div className="RegionLocation">{region}</div>
           {matched.map((hotel) => (
             <div
               key={hotel.id}
@@ -113,18 +114,29 @@ export default function BookingForm({ showForm, onCloseForm, isFixed })
   };
 
   return (
+   
     <div className={`FormTC 
+      ${showForm ? "transition-all duration-600 ease-in-out lg:transition-none opacity-100 fixed " : 
+      " -translate-y-full  z-[1] bg-white transition-all duration-600 ease-in-out lg:transition-none "}
+      ${formIsSticky ? "fixed max-w-full right-0 top-0 lg:top-22 left-50% w-full z-50 bg-white shadow-md rounded-none" : ""}`}> 
+{/* 
+<div className={`FormTC 
     ${showForm ? "transition-all duration-500 ease-in-out lg:transition-none opacity-100 fixed " : 
     " -translate-y-full  z-[1] bg-white transition-all duration-500 ease-in-out lg:transition-none "}
-    ${isFixed ? "fixed max-w-full right-0 top-0 lg:top-22 left-50% w-full z-50 bg-white shadow-md rounded-none" : ""}`}>
-
-
+    ${isFixed ? "fixed max-w-full right-0 top-0 lg:top-22 left-50% w-full z-50 bg-white shadow-md rounded-none" : ""}`}>  
+*/}
       <div className="HeadHiddenForm">
-        <Link href={"#"} onClick={(e) => {
+        <Link
+          href="#"
+          onClick={(e) => {
             e.preventDefault();
-            onCloseForm();
-          }}>X Cerrar</Link>
+            setShowForm(false);
+          }}
+        >
+          X Cerrar
+        </Link>
       </div>
+
       <form
         name="resform"
         id="resform"
@@ -138,7 +150,6 @@ export default function BookingForm({ showForm, onCloseForm, isFixed })
           <input type="hidden" name="HotelID" value={selectedHotel.id} />
         )}
 
-        {/* Campo búsqueda de hotel con limpieza */}
         <div className="flex flex-col col-span-4 lg:col-span-4 relative">
           <label className="text-xs text-gray-500 uppercase tracking-wide mb-1">
             ¿Adónde vas?
@@ -156,7 +167,6 @@ export default function BookingForm({ showForm, onCloseForm, isFixed })
               placeholder="Seleccionar Hotel"
               className="border border-gray-300 rounded-md px-4 py-2 text-sm w-full pr-8"
             />
-            {/* X para limpiar */}
             {selectedHotel && (
               <button
                 type="button"
@@ -169,7 +179,6 @@ export default function BookingForm({ showForm, onCloseForm, isFixed })
                 ✕
               </button>
             )}
-            {/* Dropdown */}
             {showDropdown && (
               <div className="absolute z-10 bg-white border border-gray-200 w-full mt-1 rounded-md shadow-md max-h-64 overflow-y-auto">
                 {renderGroupedHotels()}
@@ -178,7 +187,6 @@ export default function BookingForm({ showForm, onCloseForm, isFixed })
           </div>
         </div>
 
-        {/* Fecha Check-in + Check-out */}
         <div className="flex flex-col col-span-4 lg:col-span-3">
           <span className="text-xs text-gray-500 uppercase tracking-wide">
             Fechas
@@ -193,7 +201,6 @@ export default function BookingForm({ showForm, onCloseForm, isFixed })
             locale="es"
             customInput={<CustomDateInput />}
             dateFormat="MM/dd/yyyy"
-            className="font-gotham-book "
           />
           {startDate && endDate && (
             <>
@@ -221,10 +228,6 @@ export default function BookingForm({ showForm, onCloseForm, isFixed })
           )}
         </div>
 
-        {/* Occupancy */}
-        
-
-        {/* Promo code */}
         <div className="flex flex-col col-span-4 lg:col-span-2">
           <span className="text-xs text-gray-500 uppercase tracking-wide">
             Promocode
@@ -232,12 +235,10 @@ export default function BookingForm({ showForm, onCloseForm, isFixed })
           <input
             type="text"
             name="discount"
-            placeholder=""
             className="border border-gray-300 rounded-md px-2 py-1 text-sm"
           />
         </div>
 
-        {/* Submit */}
         <div className="flex flex-col col-span-4 lg:col-span-3">
           <button
             type="submit"
@@ -248,5 +249,6 @@ export default function BookingForm({ showForm, onCloseForm, isFixed })
         </div>
       </form>
     </div>
+ 
   );
 }

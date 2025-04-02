@@ -8,19 +8,18 @@ import IntroHab from '@/components/IntroHab'
 import Gallery from '@/components/Gallery'
 import MatriSup from '@/components/MatriSup'
 import Footer from '@/components/Footer'
+import { useBooking } from "@/context/BookingContext";
+
 
 const Habitaciones = () => {
   return (
     <main className="mx-auto">
-      {/* Título y descripción del hotel */}
       <HeaderTrad />
 
-      {/* Componentes de la página */}
       <HeroSliderCompact />
 
-      <div className="relative z-10 -mt-[60px] w-full max-w-6xl mx-auto px-4">
         <BookingForm />
-      </div>
+     
 
       <IntroHab />
       <MatriSup />

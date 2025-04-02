@@ -2,8 +2,9 @@ import React from 'react'
 
 const IntroHab = () => {
   return (
-    <section className="pt-45 pb-10"> {/* <-- aquí agregamos espacio arriba */}
-      <div className="max-w-3xl mx-auto text-center">
+    <section className="SectionDiv"> {/* <-- aquí agregamos espacio arriba */}
+      <div className="ContainerFlex">
+        <div>
         <h2 className="text-4xl font-normal text-light-oceanic">
           Habitaciones y Suites
         </h2>
@@ -19,6 +20,7 @@ const IntroHab = () => {
           <br /><br />
           Tanto si desea aislamiento y vistas panorámicas al mar, un espacio contemporáneo sólo para adultos o el ambiente relajado de un complejo familiar, Wyndham Grand cuenta con el espacio ideal para usted.
         </p>
+      </div>
       </div>
     </section>
   )
