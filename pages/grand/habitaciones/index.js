@@ -21,6 +21,9 @@ const Habitaciones = () => {
         <BookingForm />
      
 
+      <IntroHab />
+      <MatriSup />
+      <Gallery  />
 
       
 
