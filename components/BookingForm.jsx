@@ -244,7 +244,7 @@ export default function BookingForm() {
             type="submit"
             className="h-full w-full bg-[#40666a] text-white text-lg font-serif px-6 py-3"
           >
-            Book here
+            Reservar
           </button>
         </div>
       </form>
