@@ -18,6 +18,7 @@ const Habitaciones = () => {
 
       <HeroSliderCompact />
 
+        <BookingForm />
      
 
       <IntroHab />
