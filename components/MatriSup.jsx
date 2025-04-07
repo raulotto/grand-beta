@@ -11,6 +11,10 @@ import Lightbox from "yet-another-react-lightbox";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
+import BotonHabitacion from "./BotonHabitacion";
+import data from '@/data/habitaciones.json';
+
+
 
 import {
   FaBed,
@@ -20,6 +24,8 @@ import {
   FaChevronLeft,
   FaChevronRight,
 } from "react-icons/fa";
+
+const habitacion = data.find((h) => h.id === 'matrisup');
 
 const images = [
   "https://www.costadelsolperu.com/wp-content/uploads/2025/01/WG-Habitacion-King-2.jpg",
@@ -147,11 +153,7 @@ const MatriSup = () => {
             </div>
           </div>
 
-          <Link href="http://localhost:3004/grand/habitaciones/matrisup/" passHref>
-  <button className="bg-[#3A6C74] text-white px-8 py-3 rounded-md text-lg font-semibold shadow hover:bg-[#2d545b] transition">
-    Ver más
-  </button>
-</Link>
+        <BotonHabitacion  habitacion={habitacion} isDetalle={true}/>
         </div>
       </div>
 

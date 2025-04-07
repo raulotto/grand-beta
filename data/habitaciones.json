@@ -1,0 +1,15 @@
+[
+    {
+      "id": "matrisup",
+      "nombre": "Matrimonial Superior",
+      "urlInterna": "/grand/habitaciones/matrisup",
+      "urlReserva": "https://externo.com/reserva-matrisup"
+    },
+    {
+      "id": "suitepremium",
+      "nombre": "Suite Premium",
+      "urlInterna": "/grand/habitaciones/suitepremium",
+      "urlReserva": "https://externo.com/reserva-suitepremium"
+    }
+  ]
+  
