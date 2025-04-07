@@ -2,9 +2,8 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules"; // solo Navigation ahora
+import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import Lightbox from "yet-another-react-lightbox";
@@ -22,12 +21,14 @@ import {
 } from "react-icons/fa";
 
 const images = [
-  "https://www.costadelsolperu.com/wp-content/uploads/2025/01/WG-Habitacion-King-2.jpg",
-  "https://www.costadelsolperu.com/wp-content/uploads/2025/01/WG-Habitacion-King-2.jpg",
-  "https://www.costadelsolperu.com/wp-content/uploads/2025/01/WG-Habitacion-King-2.jpg",
-  "https://www.costadelsolperu.com/wp-content/uploads/2025/01/WG-Habitacion-King-2.jpg",
-  "https://www.costadelsolperu.com/wp-content/uploads/2025/01/WG-Habitacion-King-2.jpg",
-  "https://www.costadelsolperu.com/wp-content/uploads/2025/01/WG-Habitacion-King-2.jpg",
+  "https://www.costadelsolperu.com/wp-content/uploads/2025/01/WG-Habitacion-Doble-3.jpg",
+  "https://www.costadelsolperu.com/wp-content/uploads/2025/01/WG-Habitacion-Doble-3.jpg",
+  "https://www.costadelsolperu.com/wp-content/uploads/2025/01/WG-Habitacion-Doble-3.jpg",
+  "https://www.costadelsolperu.com/wp-content/uploads/2025/01/WG-Habitacion-Doble-3.jpg",
+  "https://www.costadelsolperu.com/wp-content/uploads/2025/01/WG-Habitacion-Doble-3.jpg",
+  "https://www.costadelsolperu.com/wp-content/uploads/2025/01/WG-Habitacion-Doble-3.jpg",
+
+  
 ];
 
 const MatriSup = () => {
@@ -37,11 +38,46 @@ const MatriSup = () => {
   return (
     <section className="SectionDiv pt-5">
       <div className="ContainerFlex">
-        {/* Columna izquierda con fondo beige y medidas */}
+        {/* Columna de texto (ahora a la izquierda) */}
+        <div className="basis-full md:basis-[40%] lg:basis-[35%] p-6 text-black-grand relative">
+          <h4 className="TitleSection">Matrimonial Superior</h4>
+          <br />
+          <p className="text-sm text-justify">
+            Nuestra habitación estándar matrimonial de 32 m² combina confort, estilo y
+            funcionalidad. Con tonos tierra y texturas suaves, la cama King garantiza un
+            descanso reparador, mientras que el chaise lounge junto a la ventana ofrece un
+            rincón para relajarse. Equipada con Smart TV LED de 55 pulgadas y baño privado con
+            ducha amplia y amenidades premium, esta habitación es perfecta para quienes
+            buscan una estancia cómoda y sofisticada.
+          </p>
+          <br />
+          <div className="grid grid-cols-2 gap-4 text-[#3A6C74] mb-8">
+            <div className="flex items-center gap-2">
+              <FaBed className="w-5 h-5" />
+              <p className="text-xs">1 cama king o 2 dobles</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <FaWifi className="w-5 h-5" />
+              <p className="text-xs">Wi-Fi gratis</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <FaUsb className="w-5 h-5" />
+              <p className="text-xs">Conexiones USB</p>
+            </div>
+            <div className="flex items-center gap-2">
+              <FaTv className="w-5 h-5" />
+              <p className="text-xs">TV pantalla plana</p>
+            </div>
+          </div>
+
+          <button className="bg-[#3A6C74] text-white px-8 py-3 rounded-md text-lg font-semibold shadow hover:bg-[#2d545b] transition">
+            Ver Más
+          </button>
+        </div>
+
+        {/* Columna de imágenes (ahora a la derecha) */}
         <div className="flex-1 max-w-xl lg:max-w-2xl relative">
           <div className="relative z-0 w-full h-[420px]">
-            
-
             <div
               className="relative w-full h-full rounded-lg overflow-hidden shadow-md z-10 cursor-pointer"
               onClick={() => setLightboxOpen(true)}
@@ -78,7 +114,7 @@ const MatriSup = () => {
             </button>
 
             <Swiper
-              modules={[Navigation]} // solo Navigation
+              modules={[Navigation]}
               slidesPerView={4}
               spaceBetween={10}
               navigation={{
@@ -114,45 +150,6 @@ const MatriSup = () => {
             </button>
           </div>
         </div>
-
-        {/* Columna derecha */}
-        <div className="basis-full md:basis-[40%] lg:basis-[35%] p-6 text-black-grand relative">
-          <h4 className="TitleSection">Matrimonial Superior</h4>
-          <br />
-          <p className="text-sm text-justify">
-            Nuestra habitación estándar matrimonial de 32 m² combina confort, estilo y
-            funcionalidad. Con tonos tierra y texturas suaves, la cama King garantiza un
-            descanso reparador, mientras que el chaise lounge junto a la ventana ofrece un
-            rincón para relajarse. Equipada con Smart TV LED de 55 pulgadas y baño privado con
-            ducha amplia y amenidades premium, esta habitación es perfecta para quienes
-            buscan una estancia cómoda y sofisticada.
-          </p>
-          <br />
-          <div className="grid grid-cols-2 gap-4 text-[#3A6C74] mb-8">
-            <div className="flex items-center gap-2">
-              <FaBed className="w-5 h-5" />
-              <p className="text-xs">1 cama king o 2 dobles</p>
-            </div>
-            <div className="flex items-center gap-2">
-              <FaWifi className="w-5 h-5" />
-              <p className="text-xs">Wi-Fi gratis</p>
-            </div>
-            <div className="flex items-center gap-2">
-              <FaUsb className="w-5 h-5" />
-              <p className="text-xs">Conexiones USB</p>
-            </div>
-            <div className="flex items-center gap-2">
-              <FaTv className="w-5 h-5" />
-              <p className="text-xs">TV pantalla plana</p>
-            </div>
-          </div>
-
-          <Link href="http://localhost:3004/grand/habitaciones/matrisup/" passHref>
-  <button className="bg-[#3A6C74] text-white px-8 py-3 rounded-md text-lg font-semibold shadow hover:bg-[#2d545b] transition">
-    Ver más
-  </button>
-</Link>
-        </div>
       </div>
 
       {/* Lightbox */}
@@ -162,7 +159,6 @@ const MatriSup = () => {
         closeOnBackdropClick={true}
         slides={images.map((src) => ({ src }))}
         index={selectedIndex}
-        
       />
     </section>
   );

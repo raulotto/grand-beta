@@ -9,6 +9,8 @@ import Gallery from '@/components/Gallery'
 import MatriSup from '@/components/MatriSup'
 import Footer from '@/components/Footer'
 import { useBooking } from "@/context/BookingContext";
+import DobleSup from '@/components/DobleSup'
+
 
 
 const Habitaciones = () => {
@@ -18,15 +20,15 @@ const Habitaciones = () => {
 
       <HeroSliderCompact />
 
-        <BookingForm />
      
 
       <IntroHab />
       <MatriSup />
-      <Gallery  />
+      <DobleSup />
+      <Gallery />
 
       
-
+      
 
       <Footer />
     </main>
