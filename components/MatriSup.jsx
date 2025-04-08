@@ -36,7 +36,7 @@ const images = [
   "https://www.costadelsolperu.com/wp-content/uploads/2025/01/WG-Habitacion-King-2.jpg",
 ];
 
-const MatriSup = () => {
+const MatriSup = ({ isDetalle = false }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
 
@@ -153,7 +153,8 @@ const MatriSup = () => {
             </div>
           </div>
 
-          <BotonHabitacion habitacion={habitacion} />
+          <BotonHabitacion habitacion={habitacion} isDetalle={isDetalle} />
+
         
         </div>
       </div>

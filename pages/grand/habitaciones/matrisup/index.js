@@ -21,8 +21,6 @@ import {
 
 
 
-
-
 const MatriSupPage = () => {
   return (
     <>
@@ -31,7 +29,8 @@ const MatriSupPage = () => {
 
       <BookingForm />
       {/* Componente MatriSup */}
-      <MatriSup />
+      <MatriSup isDetalle={true} />
+
 
       {/* SECTION PRINCIPAL */}
       <section className="SectionDiv">
@@ -137,7 +136,7 @@ const MatriSupPage = () => {
 
           {/* SEGUNDO BLOQUE: THING'S YOU WILL LOVE */}
           <div className="w-full mt-30 max-w-[900px] mx-auto">
-            <h4 className="TitleSection mb-8 text-center">Thing's You Will Love</h4>
+            <h4 className="TitleSection mb-8 text-center">Things You Will Love</h4>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10 text-center">
               {/* 10 beneficios con íconos */}
               <div className="flex flex-col items-center text-black-grand">
