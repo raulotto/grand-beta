@@ -15,13 +15,9 @@ import {
   FaCouch,
   FaDoorOpen
 } from 'react-icons/fa';
-import data from '@/data/habitaciones.json';
-import BotonHabitacion from '@/components/BotonHabitacion';
 
 
-const habitacion = data.find((h) => h.id === 'matrisup');
 
-<BotonHabitacion habitacion={habitacion} isDetalle={true} />;
 
 
 const MatriSupPage = () => {

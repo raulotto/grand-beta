@@ -20,17 +20,6 @@ const Habitaciones = () => {
       <MatriSup />
       <DobleSup />
 
-      {/* ✅ Aquí va tu sección con el botón "Ver más" */}
-      <section className="SectionDiv">
-        <div className="ContainerFlex flex-col">
-          {data.map((habitacion) => (
-            <div key={habitacion.id} className="mb-10">
-              <h3 className="text-xl font-semibold mb-2">{habitacion.nombre}</h3>
-              <BotonHabitacion habitacion={habitacion} isDetalle={false} />
-            </div>
-          ))}
-        </div>
-      </section>
 
       <Gallery />
       <Footer />

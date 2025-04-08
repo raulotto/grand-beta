@@ -153,7 +153,8 @@ const MatriSup = () => {
             </div>
           </div>
 
-        <BotonHabitacion  habitacion={habitacion} isDetalle={true}/>
+          <BotonHabitacion habitacion={habitacion} />
+        
         </div>
       </div>
 
