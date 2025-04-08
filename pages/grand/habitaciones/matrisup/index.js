@@ -1,3 +1,6 @@
+import BookingForm from '@/components/BookingForm';
+import HeaderTrad from '@/components/HeaderTrad';
+import HeroSlider from '@/components/HeroSlider';
 import MatriSup from '@/components/MatriSup';
 import React from 'react';
 import {
@@ -23,6 +26,10 @@ import {
 const MatriSupPage = () => {
   return (
     <>
+    <HeaderTrad />
+    <HeroSlider />
+
+      <BookingForm />
       {/* Componente MatriSup */}
       <MatriSup />
 
