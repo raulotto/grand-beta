@@ -6,11 +6,14 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
+
 import {
   FaBed,
   FaWifi,
@@ -26,6 +29,7 @@ const HabitacionTemplate = ({ habitacion }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [images, setImages] = useState([]);
+  const [mainSwiper, setMainSwiper] = useState(null);
 
   useEffect(() => {
     if (habitacion?.imagenes) {
@@ -36,14 +40,14 @@ const HabitacionTemplate = ({ habitacion }) => {
   return (
     <section className="SectionDiv pt-5">
       <div className="ContainerFlex">
-        {/* Galería izquierda */}
+        {/* Columna izquierda: Galería */}
         <div className="flex-1 max-w-xl lg:max-w-2xl relative">
-          <div className="relative z-0 w-full h-[420px]">
-            {/* Flechas grandes */}
-            <button className="thumbs-prev absolute z-20 top-1/2 -left-5 transform -translate-y-1/2 bg-white p-2 rounded-full shadow border text-[#3A6C74] hover:text-[#2d545b]">
+          <div className="relative z-0 w-full h-[420px] rounded-lg overflow-hidden shadow-md cursor-pointer">
+            {/* Flechas dentro del slider */}
+            <button className="thumbs-prev absolute z-20 top-1/2 left-3 transform -translate-y-1/2 bg-white/90 p-2 rounded-full shadow border text-[#3A6C74] hover:bg-white hover:text-[#2d545b] transition">
               <FaChevronLeft size={18} />
             </button>
-            <button className="thumbs-next absolute z-20 top-1/2 -right-5 transform -translate-y-1/2 bg-white p-2 rounded-full shadow border text-[#3A6C74] hover:text-[#2d545b]">
+            <button className="thumbs-next absolute z-20 top-1/2 right-3 transform -translate-y-1/2 bg-white/90 p-2 rounded-full shadow border text-[#3A6C74] hover:bg-white hover:text-[#2d545b] transition">
               <FaChevronRight size={18} />
             </button>
 
@@ -56,8 +60,9 @@ const HabitacionTemplate = ({ habitacion }) => {
                 prevEl: ".thumbs-prev",
                 nextEl: ".thumbs-next",
               }}
+              onSwiper={setMainSwiper}
               onSlideChange={(swiper) => setSelectedIndex(swiper.realIndex)}
-              className="w-full h-full rounded-lg overflow-hidden shadow-md z-10 cursor-pointer"
+              className="w-full h-full"
             >
               {images.map((src, idx) => (
                 <SwiperSlide key={idx}>
@@ -72,6 +77,7 @@ const HabitacionTemplate = ({ habitacion }) => {
                       className="object-cover"
                       loading="lazy"
                     />
+                    {/* Icono de lupa */}
                     <div className="absolute top-2 right-3 bg-white p-1.5 rounded-full shadow-md">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -108,7 +114,6 @@ const HabitacionTemplate = ({ habitacion }) => {
                 prevEl: ".thumbs-prev",
                 nextEl: ".thumbs-next",
               }}
-              onSlideChange={(swiper) => setSelectedIndex(swiper.realIndex)}
               className="w-full"
             >
               {images.map((src, idx) => (
@@ -119,7 +124,10 @@ const HabitacionTemplate = ({ habitacion }) => {
                         ? "border-[#3A6C74]"
                         : "border-gray-200 hover:border-[#3A6C74]"
                     }`}
-                    onClick={() => setSelectedIndex(idx)}
+                    onClick={() => {
+                      setSelectedIndex(idx);
+                      mainSwiper?.slideTo(idx);
+                    }}
                   >
                     <Image
                       src={src}
@@ -139,7 +147,7 @@ const HabitacionTemplate = ({ habitacion }) => {
           </div>
         </div>
 
-        {/* Texto a la derecha */}
+        {/* Columna derecha: Contenido */}
         <div className="basis-full md:basis-[40%] lg:basis-[35%] p-6 text-black-grand relative">
           <h4 className="TitleSection">{habitacion?.titulo}</h4>
           <br />
@@ -173,13 +181,17 @@ const HabitacionTemplate = ({ habitacion }) => {
         <Lightbox
           open={lightboxOpen}
           close={() => setLightboxOpen(false)}
-          closeOnBackdropClick={true}
-          animation={{ fade: 250 }}
-          styles={{
-            container: { backgroundColor: "rgba(0, 0, 0, 0.7)" },
-          }}
           slides={images.map((src) => ({ src }))}
           index={selectedIndex}
+          plugins={[Zoom, Thumbnails]}
+          animation={{ fade: 300, zoom: 300 }}
+          styles={{
+            container: { backgroundColor: "rgba(0, 0, 0, 0.75)" },
+          }}
+          thumbnails={{
+            border: 0,
+            padding: 4,
+          }}
         />
       )}
     </section>
