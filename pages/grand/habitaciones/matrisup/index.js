@@ -1,8 +1,9 @@
-import BookingForm from '@/components/BookingForm';
-import HeaderTrad from '@/components/HeaderTrad';
-import HeroSlider from '@/components/HeroSlider';
-import MatriSup from '@/components/MatriSup';
-import React from 'react';
+import HabitacionTemplate from "@/components/HabitacionTemplate";
+import data from "@/data/habitaciones.json";
+import HeaderTrad from "@/components/HeaderTrad";
+import HeroSlider from "@/components/HeroSlider";
+import BookingForm from "@/components/BookingForm";
+import Footer from "@/components/Footer";
 import {
   FaBed,
   FaWifi,
@@ -19,19 +20,15 @@ import {
   FaDoorOpen
 } from 'react-icons/fa';
 
+const habitacion = data.find((h) => h.id === "matrisup");
 
-
-const MatriSupPage = () => {
+export default function MatriSupPage() {
   return (
     <>
-    <HeaderTrad />
-    <HeroSlider />
-
+      <HeaderTrad />
+      <HeroSlider />
       <BookingForm />
-      {/* Componente MatriSup */}
-      <MatriSup isDetalle={true} />
-
-
+      <HabitacionTemplate habitacion={habitacion} />
       {/* SECTION PRINCIPAL */}
       <section className="SectionDiv">
         {/* DIV CONTENEDOR */}
@@ -194,8 +191,7 @@ const MatriSupPage = () => {
 
         </div>
       </section>
+      <Footer />
     </>
   );
-};
-
-export default MatriSupPage;
+}

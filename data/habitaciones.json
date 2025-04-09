@@ -1,15 +1,77 @@
 [
-    {
-      "id": "matrisup",
-      "nombre": "Matrimonial Superior",
-      "urlInterna": "/grand/habitaciones/matrisup",
-      "urlReserva": "https://externo.com/reserva-matrisup"
-    },
-    {
-      "id": "suitepremium",
-      "nombre": "Suite Premium",
-      "urlInterna": "/grand/habitaciones/suitepremium",
-      "urlReserva": "https://externo.com/reserva-suitepremium"
-    }
-  ]
-  
+  {
+    "id": "matrisup",
+    "titulo": "Matrimonial Superior",
+    "descripcion": "Nuestra habitación estándar matrimonial de 32 m² combina confort, estilo y funcionalidad...",
+    "ocupacion": "2 adultos y 1 niño",
+    "tamano": "32 m²",
+    "cama": "1 cama King",
+    "categoria": "Superior",
+    "imagenPrincipal": "/images/WG-Habitacion-King-1.jpg",
+    "imagenes": [
+      "/images/WG-Habitacion-King-1.jpg",
+      "/images/WG-Habitacion-King-2.jpg",
+      "/images/WG-Habitacion-King-3.jpg",
+      "/images/WG-Habitacion-King-4.jpg",
+      "/images/WG-Habitacion-King-5.jpg"
+    ]
+  },
+  {
+    "id": "doblesup",
+    "titulo": "Habitación Doble Superior",
+    "descripcion": "En 32 m², nuestras habitaciones dobles combinan estilo, confort y funcionalidad...",
+    "ocupacion": "2 adultos y 1 niño",
+    "tamano": "32 m²",
+    "cama": "2 camas doble plaza",
+    "categoria": "Superior",
+    "imagenPrincipal": "/images/WG-Habitacion-DobleSup-1.jpg",
+    "imagenes": [
+      "/images/WG-Habitacion-DobleSup-1.jpg",
+      "/images/WG-Habitacion-DobleSup-2.jpg",
+      "/images/WG-Habitacion-DobleSup-3.jpg"
+    ]
+  },
+  {
+    "id": "accsup",
+    "titulo": "Superior Matrimonial Accesible",
+    "descripcion": "En 32 m², nuestras habitaciones accesibles ofrecen un equilibrio perfecto entre confort y funcionalidad...",
+    "ocupacion": "2 adultos y 1 niño",
+    "tamano": "32 m²",
+    "cama": "1 cama tipo Queen",
+    "categoria": "Superior",
+    "imagenPrincipal": "/images/WG-Habitacion-Accesible-1.jpg",
+    "imagenes": [
+      "/images/WG-Habitacion-Accesible-1.jpg",
+      "/images/WG-Habitacion-Accesible-2.jpg"
+    ]
+  },
+  {
+    "id": "suite",
+    "titulo": "Suite",
+    "descripcion": "Nuestras Suites de 45 y 47 m² ofrecen una estancia espaciosa y sofisticada...",
+    "ocupacion": "2 adultos y 1 niño",
+    "tamano": "45 y 47 m²",
+    "cama": "1 cama King y 1 sofá cama",
+    "categoria": "Suite",
+    "imagenPrincipal": "/images/WG-Suite-1.jpg",
+    "imagenes": [
+      "/images/WG-Suite-1.jpg",
+      "/images/WG-Suite-2.jpg"
+    ]
+  },
+  {
+    "id": "suitepremium",
+    "titulo": "Suite Premium",
+    "descripcion": "Nuestra Suite Premium de 75 m² combina diseño contemporáneo y herencia cultural peruana...",
+    "ocupacion": "2 adultos y 1 niño",
+    "tamano": "75 m²",
+    "cama": "1 cama King y 1 sofá cama",
+    "categoria": "Suite",
+    "imagenPrincipal": "/images/WG-SuitePremium-1.jpg",
+    "imagenes": [
+      "/images/WG-SuitePremium-1.jpg",
+      "/images/WG-SuitePremium-2.jpg",
+      "/images/WG-SuitePremium-3.jpg"
+    ]
+  }
+]
