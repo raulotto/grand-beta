@@ -296,6 +296,17 @@ p{
   @apply px-6 py-3 text-xs rounded-md;  
 }
 }
+@layer utilities {
+  .swiper-pagination-bullet {
+    background-color: #c4c4c4 !important;
+    opacity: 1 !important;
+  }
+
+  .swiper-pagination-bullet-active {
+    background-color: #3A6C74 !important;
+    opacity: 1 !important;
+  }
+}
 
 
 @keyframes marquee {

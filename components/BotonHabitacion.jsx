@@ -1,31 +1,25 @@
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
+import Link from "next/link";
 
 const BotonHabitacion = ({ habitacion, isDetalle = false }) => {
   if (!habitacion) return null;
 
-  const label = isDetalle ? 'Reservar' : 'Ver más';
-  const url = isDetalle ? habitacion.urlReserva : habitacion.urlInterna;
-
   return isDetalle ? (
-    <a
-      href={url}
+    <Link
+      href={habitacion.urlReserva}
       target="_blank"
       rel="noopener noreferrer"
-      className="bg-[#3A6C74] text-white px-8 py-3 rounded-md text-lg font-semibold shadow hover:bg-[#2d545b] transition inline-block"
+      className="inline-block bg-[#3A6C74] text-white px-6 py-2 rounded-lg text-sm font-semibold hover:bg-[#2d545b] transition"
     >
-      {label}
-    </a>
+      Reservar
+    </Link>
   ) : (
     <Link
-      href={url}
-      className="bg-[#3A6C74] text-white px-8 py-3 rounded-md text-lg font-semibold shadow hover:bg-[#2d545b] transition inline-block"
+      href={habitacion.urlInterna}
+      className="inline-block bg-[#c74c11] text-white px-6 py-2 rounded-lg text-sm font-semibold hover:bg-[#a7420d] transition"
     >
-      {label}
+      Ver habitación
     </Link>
   );
 };
-
-
 
 export default BotonHabitacion;
