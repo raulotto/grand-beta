@@ -17,7 +17,7 @@ const images = [
 
 export default function HeroSlider() {
     return (
-      <div className="w-full h-screen relative">
+      <div className="w-full h-[50vh] relative">
         <Swiper
         modules={[Autoplay, Pagination, EffectFade, Navigation]}
         autoplay={{ delay: 4000, disableOnInteraction: false }}

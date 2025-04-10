@@ -6,10 +6,14 @@ import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 import "yet-another-react-lightbox/plugins/thumbnails.css";
 import Thumbnails from "yet-another-react-lightbox/plugins/thumbnails";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { Navigation, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import "swiper/css/effect-fade";
+
 import {
   FaBed,
   FaWifi,
@@ -20,59 +24,80 @@ import {
 } from "react-icons/fa";
 
 import BotonHabitacion from "./BotonHabitacion";
-import data from "@/data/habitaciones.json";
 
-const habitacion = data.find((h) => h.id === "matrisup");
-
-const MatriSup = ({ isDetalle = false }) => {
+const HabitacionTemplate = ({ habitacion }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [images, setImages] = useState([]);
+  const [mainSwiper, setMainSwiper] = useState(null);
 
   useEffect(() => {
-    setImages([
-      "/images/WG-Habitacion-King-1.jpg",
-      "/images/WG-Habitacion-King-2.jpg",
-      "/images/WG-Habitacion-King-3.jpg",
-      "/images/WG-Habitacion-King-4.jpg",
-      "/images/WG-Habitacion-King-5.jpg",
-    ]);
-  }, []);
+    if (habitacion?.imagenes) {
+      setImages(habitacion.imagenes);
+    }
+  }, [habitacion]);
 
   return (
     <section className="SectionDiv pt-5">
       <div className="ContainerFlex">
-        {/* Columna izquierda con imágenes */}
+        {/* Columna izquierda: Galería */}
         <div className="flex-1 max-w-xl lg:max-w-2xl relative">
-          <div className="relative z-0 w-full h-[420px]">
-            <div
-              className="relative w-full h-full rounded-lg overflow-hidden shadow-md z-10 cursor-pointer"
-              onClick={() => setLightboxOpen(true)}
+          <div className="relative z-0 w-full h-[420px] rounded-lg overflow-hidden shadow-md cursor-pointer">
+            {/* Flechas dentro del slider */}
+            <button className="thumbs-prev absolute z-20 top-1/2 left-3 transform -translate-y-1/2 bg-white/90 p-2 rounded-full shadow border text-[#3A6C74] hover:bg-white hover:text-[#2d545b] transition">
+              <FaChevronLeft size={18} />
+            </button>
+            <button className="thumbs-next absolute z-20 top-1/2 right-3 transform -translate-y-1/2 bg-white/90 p-2 rounded-full shadow border text-[#3A6C74] hover:bg-white hover:text-[#2d545b] transition">
+              <FaChevronRight size={18} />
+            </button>
+
+            <Swiper
+              modules={[Navigation, EffectFade]}
+              slidesPerView={1}
+              effect="fade"
+              fadeEffect={{ crossFade: true }}
+              navigation={{
+                prevEl: ".thumbs-prev",
+                nextEl: ".thumbs-next",
+              }}
+              onSwiper={setMainSwiper}
+              onSlideChange={(swiper) => setSelectedIndex(swiper.realIndex)}
+              className="w-full h-full"
             >
-              <Image
-                src={images[selectedIndex] || "/images/default.jpg"}
-                alt={`Imagen ${selectedIndex + 1}`}
-                fill
-                className="object-cover"
-                loading="lazy"
-              />
-              <div className="absolute top-2 right-3 bg-white p-1.5 rounded-full shadow-md">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-5 h-5 text-[#3A6C74]"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"
-                  />
-                </svg>
-              </div>
-            </div>
+              {images.map((src, idx) => (
+                <SwiperSlide key={idx}>
+                  <div
+                    className="relative w-full h-full"
+                    onClick={() => setLightboxOpen(true)}
+                  >
+                    <Image
+                      src={src}
+                      alt={`Imagen ${idx + 1}`}
+                      fill
+                      className="object-cover"
+                      loading="lazy"
+                    />
+                    {/* Icono de lupa */}
+                    <div className="absolute top-2 right-3 bg-white p-1.5 rounded-full shadow-md">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="w-5 h-5 text-[#3A6C74]"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M21 21l-4.35-4.35M11 19a8 8 0 100-16 8 8 0 000 16z"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
 
           {/* Miniaturas */}
@@ -89,7 +114,6 @@ const MatriSup = ({ isDetalle = false }) => {
                 prevEl: ".thumbs-prev",
                 nextEl: ".thumbs-next",
               }}
-              onSlideChange={(swiper) => setSelectedIndex(swiper.realIndex)}
               className="w-full"
             >
               {images.map((src, idx) => (
@@ -100,7 +124,10 @@ const MatriSup = ({ isDetalle = false }) => {
                         ? "border-[#3A6C74]"
                         : "border-gray-200 hover:border-[#3A6C74]"
                     }`}
-                    onClick={() => setSelectedIndex(idx)}
+                    onClick={() => {
+                      setSelectedIndex(idx);
+                      mainSwiper?.slideTo(idx);
+                    }}
                   >
                     <Image
                       src={src}
@@ -120,23 +147,16 @@ const MatriSup = ({ isDetalle = false }) => {
           </div>
         </div>
 
-        {/* Columna derecha */}
+        {/* Columna derecha: Contenido */}
         <div className="basis-full md:basis-[40%] lg:basis-[35%] p-6 text-black-grand relative">
-          <h4 className="TitleSection">Matrimonial Superior</h4>
+          <h4 className="TitleSection">{habitacion?.titulo}</h4>
           <br />
-          <p className="text-sm text-justify">
-            Nuestra habitación estándar matrimonial de 32 m² combina confort, estilo y
-            funcionalidad. Con tonos tierra y texturas suaves, la cama King garantiza un
-            descanso reparador, mientras que el chaise lounge junto a la ventana ofrece un
-            rincón para relajarse. Equipada con Smart TV LED de 55 pulgadas y baño privado con
-            ducha amplia y amenidades premium, esta habitación es perfecta para quienes
-            buscan una estancia cómoda y sofisticada.
-          </p>
+          <p className="text-sm text-justify">{habitacion?.descripcion}</p>
           <br />
           <div className="grid grid-cols-2 gap-4 text-[#3A6C74] mb-8">
             <div className="flex items-center gap-2">
               <FaBed className="w-5 h-5" />
-              <p className="text-xs">1 cama king o 2 dobles</p>
+              <p className="text-xs">{habitacion?.cama}</p>
             </div>
             <div className="flex items-center gap-2">
               <FaWifi className="w-5 h-5" />
@@ -152,7 +172,7 @@ const MatriSup = ({ isDetalle = false }) => {
             </div>
           </div>
 
-          <BotonHabitacion habitacion={habitacion} isDetalle={isDetalle} />
+          <BotonHabitacion habitacion={habitacion} isDetalle />
         </div>
       </div>
 
@@ -161,13 +181,21 @@ const MatriSup = ({ isDetalle = false }) => {
         <Lightbox
           open={lightboxOpen}
           close={() => setLightboxOpen(false)}
-          closeOnBackdropClick={true}
           slides={images.map((src) => ({ src }))}
           index={selectedIndex}
+          plugins={[Zoom, Thumbnails]}
+          animation={{ fade: 300, zoom: 300 }}
+          styles={{
+            container: { backgroundColor: "rgba(0, 0, 0, 0.75)" },
+          }}
+          thumbnails={{
+            border: 0,
+            padding: 4,
+          }}
         />
       )}
     </section>
   );
 };
 
-export default MatriSup;
+export default HabitacionTemplate;
