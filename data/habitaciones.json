@@ -1,12 +1,14 @@
 [
   {
-    "id": "matrisup",
+    "id": "matrimonial-superior",
     "titulo": "Matrimonial Superior",
-    "descripcion": "Nuestra habitación estándar matrimonial de 32 m² combina confort, estilo y funcionalidad...",
+    "descripcion": "Nuestra habitación estándar matrimonial de 32 m² combina confort, estilo y funcionalidad. Con tonos tierra y texturas suaves, la cama King garantiza un descanso reparador, mientras que el chaise lounge junto a la ventana ofrece un rincón para relajarse. Equipada con Smart TV LED de 55 pulgadas y baño privado con ducha amplia y amenidades premium, esta habitación es perfecta para quienes buscan una estancia cómoda y sofisticada.",
     "ocupacion": "2 adultos y 1 niño",
     "tamano": "32 m²",
     "cama": "1 cama King",
     "categoria": "Superior",
+    "urlInterna": "./habitaciones/matrimonial-superior",
+    "urlReserva": "https://externo.com/reserva-matrisup",
     "imagenPrincipal": "/images/WG-Habitacion-King-1.jpg",
     "imagenes": [
       "/images/WG-Habitacion-King-1.jpg",
@@ -17,18 +19,21 @@
     ]
   },
   {
-    "id": "doblesup",
+    "id": "doble-superior",
     "titulo": "Habitación Doble Superior",
-    "descripcion": "En 32 m², nuestras habitaciones dobles combinan estilo, confort y funcionalidad...",
+    "descripcion": "En 32 m², nuestras habitaciones dobles combinan estilo, confort y funcionalidad, ideales tanto para viajes de negocios como de descanso. Equipadas con dos camas de 2 plazas de diseño moderno y cabeceras tapizadas en tonos cálidos, ofrecen un ambiente armonioso y relajante. Un rincón junto a la ventana con butaca, mesa auxiliar y cortinas opacas permite regular la luz y disfrutar de vistas al paisaje urbano o al aeropuerto.​​ El baño privado, con acabados elegantes, destaca por su estética minimalista. Un espejo con iluminación LED y amenidades premium completan la experiencia. Para el entretenimiento, un Smart TV LED de 55 pulgadas y detalles de iluminación ajustable refuerzan la sensación de sofisticación y confort. Cada elemento ha sido pensado para proporcionar una estancia cómoda y equilibrada.",
     "ocupacion": "2 adultos y 1 niño",
     "tamano": "32 m²",
     "cama": "2 camas doble plaza",
     "categoria": "Superior",
-    "imagenPrincipal": "/images/WG-Habitacion-DobleSup-1.jpg",
+    "urlInterna": "./habitaciones/doble-superior",
+    "urlReserva": "https://externo.com/reserva-matrisup",
+    "imagenPrincipal": "/images/WG-Habitacion-Doble-1.jpg",
     "imagenes": [
-      "/images/WG-Habitacion-DobleSup-1.jpg",
-      "/images/WG-Habitacion-DobleSup-2.jpg",
-      "/images/WG-Habitacion-DobleSup-3.jpg"
+      "/images/WG-Habitacion-Doble-1.jpg",
+      "/images/WG-Habitacion-Doble-2.jpg",
+      "/images/WG-Habitacion-Doble-3.jpg",
+      "/images/WG-Habitacion-Doble-4.jpg"
     ]
   },
   {
