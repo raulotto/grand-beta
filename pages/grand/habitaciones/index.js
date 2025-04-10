@@ -21,7 +21,9 @@ export default function HabitacionesPage() {
       <HeaderTrad />
       <HeroSlider />
 <BookingForm />
-
+<section className="SectionDiv">
+        {/* DIV CONTENEDOR */}
+        <div className="ContainerFlex flex-col">
 
           {/* Tabs */}
           <div className="flex gap-6 border-b border-gray-200">
