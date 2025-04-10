@@ -42,8 +42,8 @@ const HabitacionCard = ({ habitacion }) => {
 
       <div className="p-4 flex-1 flex flex-col justify-between">
         <div>
-          <h3 className="text-lg font-semibold mb-2">{habitacion.titulo}</h3>
-          <p className="text-sm text-gray-700 text-justify">{descripcionCorta}</p>
+          <h3 className="text-sm font-semibold mb-2">{habitacion.titulo}</h3>
+          <p className="text-xs text-gray-700">{descripcionCorta}</p>
         </div>
 
         <div className="mt-4 text-[#3A6C74] text-xs space-y-1">
