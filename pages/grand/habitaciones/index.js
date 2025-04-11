@@ -19,12 +19,12 @@ export default function HabitacionesPage() {
   return (
     <main className="mx-auto">
       <HeaderTrad />
-      <HeroSlider />
-      <BookingForm /> 
-      
-      <section className="SectionDiv pt-5">
-        <div className="ContainerFlex flex flex-col items-start">
-          <h1 className="text-2xl font-semibold">Habitaciones</h1>
+      <HeroSlider page="habitaciones" />
+
+<BookingForm />
+<section className="SectionDiv">
+        {/* DIV CONTENEDOR */}
+        <div className="ContainerFlex flex-col">
 
           {/* Tabs */}
           <div className="flex gap-6 border-b border-gray-200">

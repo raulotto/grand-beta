@@ -198,7 +198,9 @@ p{
   .ContainerFlex {
     @apply flex flex-col  lg:flex-row justify-between items-center gap-[25px] lg:gap-10 mx-auto py-[30px] lg:py-[60px] w-full max-w-[1140px];
   }
-   
+  .ContainerFlexSlider {
+    @apply flex flex-col justify-between items-center gap-[0] lg:gap-1 mx-auto py-[30px] lg:py-[60px] w-[75%] max-w-[1140px];
+  }
   .ContainerFull{
     @apply flex justify-between w-[100%] mx-auto py-[60px] items-center;
   }
@@ -209,7 +211,7 @@ p{
     @apply flex p-10 lg:hidden justify-end;
   }
   .FormTC {
-    @apply   lg:rounded-sm lg:block absolute left-1/2 z-[6] top-0 lg:top-[54%] w-[1140px] h-screen lg:h-auto lg:h-[85px] bg-white translate-x-[-50%] m-0 rounded-none  w-full max-w-6xl mx-auto bg-white shadow-md flex flex-col justify-start lg:items-center;
+    @apply   lg:rounded-sm lg:block absolute left-1/2 z-[6] top-0 lg:top-[65%] w-[1140px] h-screen lg:h-auto lg:h-[85px] bg-white translate-x-[-50%] m-0 rounded-none  w-full max-w-6xl mx-auto bg-white shadow-md flex flex-col justify-start lg:items-center;
   }
   .OverlayHeader {
     @apply w-full z-[99] absolute top-0 left-0 bg-gradient-to-b from-[rgba(0,0,0,0.4)] to-transparent h-full pointer-events-none;
@@ -295,6 +297,30 @@ p{
 .ButtonRounded{
   @apply px-6 py-3 text-xs rounded-md;  
 }
+.HeroSliderData{
+  @apply absolute z-10 inset-0 flex flex-col justify-center px-4 bg-support-iron/50;  
+}
+.CenterData{
+  @apply items-center  ;  
+}
+.LeftData{
+  @apply items-start ;  
+}
+.RightData{
+  @apply items-end ;  
+}
+.LightSlider h3{
+  @apply text-primary-dune ;  
+}
+.LightSlider p{
+  @apply text-primary-dune ;  
+}
+.LightSlider a{
+  @apply text-primary-dune ;  
+}
+.CardServices{
+  @apply mt-4 text-primary-oceanic text-xs space-y-1 grid grid-cols-1 lg:grid-cols-2 gap-1;
+}
 }
 @layer utilities {
   .swiper-pagination-bullet {
@@ -305,6 +331,9 @@ p{
   .swiper-pagination-bullet-active {
     background-color: #3A6C74 !important;
     opacity: 1 !important;
+  }
+  .text-shadow {
+    text-shadow: 0px 0px 4px #000000b5;
   }
 }
 

@@ -15,8 +15,9 @@ import Header from '@/components/Header'
 export default function Eventos() {
   return (
     <main className="mx-auto">
-      <HeroSlider />
-      <Header />
+      <HeaderTrad />
+
+      <HeroSlider page="eventos" />
 
       {/* SECCIÓN: UNFORGETTABLE MEETINGS */}
       <section className="SectionDiv">

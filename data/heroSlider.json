@@ -1,0 +1,50 @@
+[
+    {
+      "page": "home",
+      "slides": [
+        {
+          "src": "/images/WG-Habitacion-Doble-1.jpg",
+          "titulo": "Bienvenidos",
+          "subtitulo": "Ubicado en la puerta de entrada más importante para los turistas en Perú.",
+          "ctaTexto": "",
+          "ctaLink": "/reserva"
+        },
+        {
+          "src": "/images/WG-Habitacion-Doble-1.jpg"
+        }
+      ]
+    },
+    {
+      "page": "habitaciones",
+      "slides": [
+        {
+          "src": "/images/WG-Habitacion-Doble-1.jpg",
+          "titulo": "Nuestras Habitaciones",
+          "subtitulo": "Elige la comodidad que mereces"
+        }
+      ]
+    },
+    {
+        "page": "matrimonial-superior",
+        "slides": [
+          {
+            "src": "/images/WG-Habitacion-King-1.jpg",
+            "titulo": "Matrimonial Superior",
+            "subtitulo": ""
+          }
+        ]
+      },
+      {
+        "page": "eventos",
+        "slides": [
+          {
+            "src": "/images/WG-Habitacion-Doble-1.jpg",
+            "titulo": "Eventos & Reuniones",
+            "subtitulo": "",
+            "ctaTexto": "",
+            "ctaLink": "/reserva"
+          }
+        ]
+      }
+  ]
+  

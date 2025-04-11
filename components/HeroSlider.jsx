@@ -1,51 +1,65 @@
-// components/HeroSlider.jsx
+"use client";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, EffectFade, Navigation } from "swiper/modules";
-
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 
 import Image from "next/image";
+import sliderData from "@/data/heroSlider.json";
 
-const images = [
-  "https://www.costadelsolperu.com/wp-content/uploads/2025/01/back-new-hotel-render.jpg",
-  "https://www.costadelsolperu.com/wp-content/uploads/2025/01/Gran-Salon.jpg",
-  "https://www.costadelsolperu.com/wp-content/uploads/2025/01/Terraza_foodcourt.jpg",
-];
+export default function HeroSlider({ page = "home" }) {
+  const slideSet = sliderData.find((entry) => entry.page === page);
+  const slides = slideSet?.slides || [];
 
-export default function HeroSlider() {
-    return (
-      <div className="w-full h-[50vh] relative">
-        <Swiper
+  return (
+    <div className="w-full h-[60vh] relative">
+      <Swiper
         modules={[Autoplay, Pagination, EffectFade, Navigation]}
-        autoplay={{ delay: 4000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
+        autoplay={{ delay: 4000, disableOnInteraction: false }}
         navigation
         loop={true}
         effect="fade"
         fadeEffect={{ crossFade: true }}
         className="h-full"
-        >
-
-          {/* 👇 Overlay debe ir antes de los slides */}
-          <div className="OverlayHeader" />
-  
-          {/* Slides */}
-          {images.map((src, i) => (
-            <SwiperSlide key={i}>
+      >
+        {slides.map((slide, i) => (
+          <SwiperSlide key={i}>
+            <div className="relative w-full h-[60vh]">
               <Image
-                src={src}
+                src={slide.src}
                 alt={`Slide ${i + 1}`}
                 fill
                 className="object-cover"
                 priority
               />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-    );
-  }
-  
+
+              {(slide.titulo || slide.subtitulo || slide.ctaTexto) && (
+                <div className="HeroSliderData">
+                  <div className="ContainerFlexSlider LeftData LightSlider text-shadow">
+                  {slide.titulo && (
+                    <h3 className="text-2xl md:text-4xl font-bold">{slide.titulo}</h3>
+                  )}
+                  {slide.subtitulo && (
+                    <p className="mt-2 text-lg md:text-xl">{slide.subtitulo}</p>
+                  )}
+                  {slide.ctaTexto && slide.ctaLink && (
+                    <a
+                      href={slide.ctaLink}
+                      className="mt-4 px-6 py-2 bg-[#3A6C74] rounded text-white hover:bg-[#2c5057]"
+                    >
+                      {slide.ctaTexto}
+                    </a>
+                  )}
+                  </div>
+                </div>
+              )}
+            </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  );
+}

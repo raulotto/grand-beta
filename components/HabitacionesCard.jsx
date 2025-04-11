@@ -3,7 +3,9 @@ import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay  } from "swiper/modules";
-import { FaBed, FaUsers, FaRulerCombined } from "react-icons/fa";
+import { CiRuler } from "react-icons/ci";
+import { IoBedOutline, IoPeopleOutline  } from "react-icons/io5";
+
 import "swiper/css";
 import "swiper/css/pagination";
 
@@ -46,17 +48,17 @@ const HabitacionCard = ({ habitacion }) => {
           <p className="text-xs text-gray-700">{descripcionCorta}</p>
         </div>
 
-        <div className="mt-4 text-[#3A6C74] text-xs space-y-1">
+        <div className="CardServices">
           <div className="flex items-center gap-2">
-            <FaUsers className="w-4 h-4" />
+            <IoPeopleOutline className="w-4 h-4" />
             {habitacion.ocupacion}
           </div>
           <div className="flex items-center gap-2">
-            <FaRulerCombined className="w-4 h-4" />
+            <CiRuler className="w-4 h-4" />
             {habitacion.tamano}
           </div>
           <div className="flex items-center gap-2">
-            <FaBed className="w-4 h-4" />
+            <IoBedOutline className="w-4 h-4" />
             {habitacion.cama}
           </div>
         </div>
@@ -66,7 +68,7 @@ const HabitacionCard = ({ habitacion }) => {
     href={habitacion.urlInterna}
     className="mt-4 inline-block text-center bg-primary-oceanic text-white py-2 px-4 rounded text-sm hover:bg-dark-oceanic"
   >
-    Ver habitación
+    Ver más
   </Link>
 )}
 

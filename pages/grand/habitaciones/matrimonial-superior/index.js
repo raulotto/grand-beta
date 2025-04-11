@@ -26,7 +26,7 @@ export default function MatriSupPage() {
   return (
     <>
       <HeaderTrad />
-      <HeroSlider />
+      <HeroSlider page="matrimonial-superior" />
       <BookingForm />
       <HabitacionTemplate habitacion={habitacion} />
       {/* SECTION PRINCIPAL */}

@@ -34,7 +34,8 @@ export default function Home({ hotel }) {
   return (
     <main className="mx-auto">
       <HeaderTrad  />
-      <HeroSlider />
+      <HeroSlider page="home" />
+
   <BookingForm
     
   />

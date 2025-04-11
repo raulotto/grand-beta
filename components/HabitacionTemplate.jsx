@@ -13,7 +13,8 @@ import { Navigation, EffectFade } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-
+import { TfiRulerAlt2 } from "react-icons/tfi";
+import { IoBedOutline, IoPeopleOutline  } from "react-icons/io5";
 import {
   FaBed,
   FaWifi,
@@ -21,9 +22,29 @@ import {
   FaTv,
   FaChevronLeft,
   FaChevronRight,
+  FaLock,
+  FaCoffee,
+  FaWineBottle,
+  FaBlender,
+  FaFan,
+  FaTshirt,
+  FaHotTub,
+  FaThermometerHalf
 } from "react-icons/fa";
 
 import BotonHabitacion from "./BotonHabitacion";
+
+const iconosServicios = {
+  "Smart TV LED 65”": <FaTv className="w-4 h-4 text-primary-oceanic" />,
+  "Cama King": <FaBed className="w-4 h-4 text-primary-oceanic" />,
+  "Caja fuerte": <FaLock className="w-4 h-4 text-primary-oceanic" />,
+  "Minibar": <FaWineBottle className="w-4 h-4 text-primary-oceanic" />,
+  "Cafetera": <FaCoffee className="w-4 h-4 text-primary-oceanic" />,
+  "Plancha y planchador": <FaTshirt className="w-4 h-4 text-primary-oceanic" />,
+  "Secadora": <FaHotTub className="w-4 h-4 text-primary-oceanic" />,
+  "Bata y pantuflas": <FaBlender className="w-4 h-4 text-primary-oceanic" />,
+  "Calefacción y aire acondicionado": <FaThermometerHalf className="w-4 h-4 text-primary-oceanic" />
+};
 
 const HabitacionTemplate = ({ habitacion }) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
@@ -40,14 +61,14 @@ const HabitacionTemplate = ({ habitacion }) => {
   return (
     <section className="SectionDiv pt-5">
       <div className="ContainerFlex">
-        {/* Columna izquierda: Galería */}
-        <div className="flex-1 max-w-xl lg:max-w-2xl relative">
-          <div className="relative z-0 w-full h-[420px] rounded-lg overflow-hidden shadow-md cursor-pointer">
-            {/* Flechas dentro del slider */}
-            <button className="thumbs-prev absolute z-20 top-1/2 left-3 transform -translate-y-1/2 bg-white/90 p-2 rounded-full shadow border text-[#3A6C74] hover:bg-white hover:text-[#2d545b] transition">
+        {/* Galería izquierda */}
+        <div className="flex-1 w-full max-w-xl  relative">
+          <div className="relative z-0 w-full h-[210px] lg:h-[420px] rounded-lg overflow-hidden shadow-md cursor-pointer">
+            {/* Flechas */}
+            <button className="thumbs-prev absolute z-20 top-1/2 left-3 transform -translate-y-1/2 bg-white/90 p-2 rounded-full shadow border text-primary-oceanic hover:bg-white hover:text-[#2d545b] transition">
               <FaChevronLeft size={18} />
             </button>
-            <button className="thumbs-next absolute z-20 top-1/2 right-3 transform -translate-y-1/2 bg-white/90 p-2 rounded-full shadow border text-[#3A6C74] hover:bg-white hover:text-[#2d545b] transition">
+            <button className="thumbs-next absolute z-20 top-1/2 right-3 transform -translate-y-1/2 bg-white/90 p-2 rounded-full shadow border text-primary-oceanic hover:bg-white hover:text-[#2d545b] transition">
               <FaChevronRight size={18} />
             </button>
 
@@ -58,7 +79,7 @@ const HabitacionTemplate = ({ habitacion }) => {
               fadeEffect={{ crossFade: true }}
               navigation={{
                 prevEl: ".thumbs-prev",
-                nextEl: ".thumbs-next",
+                nextEl: ".thumbs-next"
               }}
               onSwiper={setMainSwiper}
               onSlideChange={(swiper) => setSelectedIndex(swiper.realIndex)}
@@ -77,11 +98,11 @@ const HabitacionTemplate = ({ habitacion }) => {
                       className="object-cover"
                       loading="lazy"
                     />
-                    {/* Icono de lupa */}
+                    {/* Lupa */}
                     <div className="absolute top-2 right-3 bg-white p-1.5 rounded-full shadow-md">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
-                        className="w-5 h-5 text-[#3A6C74]"
+                        className="w-5 h-5 text-primary-oceanic"
                         fill="none"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
@@ -102,7 +123,7 @@ const HabitacionTemplate = ({ habitacion }) => {
 
           {/* Miniaturas */}
           <div className="relative mt-5 flex items-center gap-2">
-            <button className="thumbs-prev z-10 p-2 rounded-full bg-white shadow border text-[#3A6C74] hover:text-[#2d545b]">
+            <button className="thumbs-prev z-10 p-2 rounded-full bg-white shadow border text-primary-oceanic hover:text-[#2d545b]">
               <FaChevronLeft size={18} />
             </button>
 
@@ -112,14 +133,14 @@ const HabitacionTemplate = ({ habitacion }) => {
               spaceBetween={10}
               navigation={{
                 prevEl: ".thumbs-prev",
-                nextEl: ".thumbs-next",
+                nextEl: ".thumbs-next"
               }}
               className="w-full"
             >
               {images.map((src, idx) => (
                 <SwiperSlide key={idx}>
                   <div
-                    className={`relative w-full h-[80px] rounded-md overflow-hidden cursor-pointer border transition ${
+                    className={`relative w-full h-[50px] lg:h-[80px] rounded-md overflow-hidden cursor-pointer border transition ${
                       selectedIndex === idx
                         ? "border-[#3A6C74]"
                         : "border-gray-200 hover:border-[#3A6C74]"
@@ -141,36 +162,51 @@ const HabitacionTemplate = ({ habitacion }) => {
               ))}
             </Swiper>
 
-            <button className="thumbs-next z-10 p-2 rounded-full bg-white shadow border text-[#3A6C74] hover:text-[#2d545b]">
+            <button className="thumbs-next z-10 p-2 rounded-full bg-white shadow border text-primary-oceanic hover:text-[#2d545b]">
               <FaChevronRight size={18} />
             </button>
           </div>
         </div>
 
-        {/* Columna derecha: Contenido */}
-        <div className="basis-full md:basis-[40%] lg:basis-[35%] p-6 text-black-grand relative">
+        {/* Columna derecha */}
+        <div className="basis-full p-6 text-black-grand relative">
           <h4 className="TitleSection">{habitacion?.titulo}</h4>
           <br />
           <p className="text-sm text-justify">{habitacion?.descripcion}</p>
           <br />
-          <div className="grid grid-cols-2 gap-4 text-[#3A6C74] mb-8">
-            <div className="flex items-center gap-2">
-              <FaBed className="w-5 h-5" />
-              <p className="text-xs">{habitacion?.cama}</p>
+
+          {/* Características principales */}
+          {/* Características principales (ocupación, tamaño, cama) */}
+            <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 text-primary-oceanic mb-6">
+            <div className="flex  gap-2">
+                <IoBedOutline className="w-5 h-5" />
+                <p className="text-xs">{habitacion?.cama}</p>
             </div>
-            <div className="flex items-center gap-2">
-              <FaWifi className="w-5 h-5" />
-              <p className="text-xs">Wi-Fi gratis</p>
+            <div className="flex  gap-2">
+                <IoPeopleOutline className="w-5 h-5" />
+                <p className="text-xs">{habitacion?.ocupacion}</p>
             </div>
-            <div className="flex items-center gap-2">
-              <FaUsb className="w-5 h-5" />
-              <p className="text-xs">Conexiones USB</p>
+            <div className="flex  gap-2">
+                <TfiRulerAlt2 className="w-5 h-5" />
+                <p className="text-xs">{habitacion?.tamano}</p>
             </div>
-            <div className="flex items-center gap-2">
-              <FaTv className="w-5 h-5" />
-              <p className="text-xs">TV pantalla plana</p>
+            
             </div>
-          </div>
+
+
+          {/* Servicios adicionales */}
+          {habitacion?.servicios?.length > 0 && (
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-gray-800 mb-6">
+              {habitacion.servicios.map((servicio, idx) => (
+                <div key={idx} className="flex items-center gap-2">
+                  {iconosServicios[servicio] || (
+                    <FaBed className="w-4 h-4 text-primary-oceanic" />
+                  )}
+                  {servicio}
+                </div>
+              ))}
+            </div>
+          )}
 
           <BotonHabitacion habitacion={habitacion} isDetalle />
         </div>
@@ -186,11 +222,11 @@ const HabitacionTemplate = ({ habitacion }) => {
           plugins={[Zoom, Thumbnails]}
           animation={{ fade: 300, zoom: 300 }}
           styles={{
-            container: { backgroundColor: "rgba(0, 0, 0, 0.75)" },
+            container: { backgroundColor: "rgba(0, 0, 0, 0.75)" }
           }}
           thumbnails={{
             border: 0,
-            padding: 4,
+            padding: 4
           }}
         />
       )}

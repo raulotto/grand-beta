@@ -2,13 +2,10 @@
   {
     "id": "matrimonial-superior",
     "titulo": "Matrimonial Superior",
-    "descripcion": "Nuestra habitación estándar matrimonial de 32 m² combina confort, estilo y funcionalidad. Con tonos tierra y texturas suaves, la cama King garantiza un descanso reparador, mientras que el chaise lounge junto a la ventana ofrece un rincón para relajarse. Equipada con Smart TV LED de 55 pulgadas y baño privado con ducha amplia y amenidades premium, esta habitación es perfecta para quienes buscan una estancia cómoda y sofisticada.",
-    "ocupacion": "2 adultos y 1 niño",
+    "descripcion": "Esta habitación combina confort, funcionalidad y estilo. Decorada con tonos tierra y suaves texturas, ofrece un ambiente cálido y acogedor para descansar. La cama King, con ropa de cama de alta calidad, garantiza un sueño reparador. El chaise lounge junto a la ventana es ideal para relajarse o, si se necesita, puede convertirse en una cama auxiliar. El baño privado, con duchas amplias y amenidades premium, complementa la experiencia de lujo. Con luz natural y acabados de diseño, esta habitación es perfecta para quienes buscan relajarse o disfrutar de una estancia funcional.",
     "tamano": "32 m²",
-    "cama": "1 cama King",
-    "categoria": "Superior",
-    "urlInterna": "./habitaciones/matrimonial-superior",
-    "urlReserva": "https://externo.com/reserva-matrisup",
+    "ocupacion": "2 adultos",
+    "cama": "1 cama king o 2 dobles",
     "imagenPrincipal": "/images/WG-Habitacion-King-1.jpg",
     "imagenes": [
       "/images/WG-Habitacion-King-1.jpg",
@@ -16,8 +13,23 @@
       "/images/WG-Habitacion-King-3.jpg",
       "/images/WG-Habitacion-King-4.jpg",
       "/images/WG-Habitacion-King-5.jpg"
+    ],
+    "urlInterna": "/grand/habitaciones/matrimonial-superior",
+    "urlReserva": "https://externo.com/reserva-matrisup",
+    "categoria": "Superior",
+    "servicios": [
+      "Smart TV LED 65”",
+      "Cama King",
+      "Caja fuerte",
+      "Minibar",
+      "Cafetera",
+      "Plancha y planchador",
+      "Secadora",
+      "Bata y pantuflas",
+      "Calefacción y aire acondicionado"
     ]
   },
+  
   {
     "id": "doble-superior",
     "titulo": "Habitación Doble Superior",
