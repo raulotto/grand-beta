@@ -1,5 +1,5 @@
 // ✅ BookingForm.jsx usando contexto
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -13,6 +13,7 @@ registerLocale("es", es);
 export default function BookingForm() {
   const { showForm, setShowForm, formIsSticky } = useBooking();
   const [shouldRender, setShouldRender] = useState(showForm);
+  
   useEffect(() => {
     if (showForm) {
       setShouldRender(true); // mostrar inmediatamente
@@ -30,7 +31,25 @@ export default function BookingForm() {
   const [startDate, endDate] = dateRange;
   const [query, setQuery] = useState("");
   const [selectedHotel, setSelectedHotel] = useState(null);
+
+  // Controla si mostramos el dropdown
   const [showDropdown, setShowDropdown] = useState(false);
+
+  // Ref para detectar clics fuera del contenedor
+  const locationRef = useRef(null);
+
+  // Cerrar dropdown al hacer clic fuera
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (locationRef.current && !locationRef.current.contains(event.target)) {
+        setShowDropdown(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const hotelsGrouped = {
     Arequipa: [{ name: "Costa del Sol Wyndham Arequipa", id: "109836" }],
@@ -58,6 +77,7 @@ export default function BookingForm() {
       month: "short",
     });
 
+  // Input para datepicker
   const CustomDateInput = React.forwardRef(({ value, onClick }, ref) => (
     <button
       type="button"
@@ -76,6 +96,7 @@ export default function BookingForm() {
     </button>
   ));
 
+  // Al enviar el form sin hotel, no dejamos avanzar.
   const handleSubmit = (e) => {
     if (!selectedHotel) {
       e.preventDefault();
@@ -85,13 +106,20 @@ export default function BookingForm() {
     e.target.action = `https://reservations.travelclick.com/${selectedHotel.id}`;
   };
 
+  // Renderiza la lista de hoteles, filtrando por `query`
   const renderGroupedHotels = () => {
-    const lowerQuery = query.toLowerCase();
+    const lowerQuery = query.toLowerCase().trim();
+
+    // Si `query` está vacío, mostramos TODO
+    // Si no, filtramos por coincidencia
     return Object.entries(hotelsGrouped).map(([region, hotels]) => {
-      const matched = hotels.filter((h) =>
-        h.name.toLowerCase().includes(lowerQuery)
-      );
+      const matched =
+        !lowerQuery
+          ? hotels
+          : hotels.filter((h) => h.name.toLowerCase().includes(lowerQuery));
+
       if (matched.length === 0) return null;
+
       return (
         <div key={region} className="py-1">
           <div className="RegionLocation">{region}</div>
@@ -114,17 +142,12 @@ export default function BookingForm() {
   };
 
   return (
-   
-    <div className={`FormTC 
-      ${showForm ? "transition-all duration-600 ease-in-out lg:transition-none opacity-100 fixed " : 
-      " -translate-y-full  z-[1] bg-white transition-all duration-600 ease-in-out lg:transition-none "}
-      ${formIsSticky ? "fixed max-w-full right-0 top-0 lg:top-22 left-50% w-full z-50 bg-white shadow-md rounded-none" : ""}`}> 
-{/* 
-<div className={`FormTC 
-    ${showForm ? "transition-all duration-500 ease-in-out lg:transition-none opacity-100 fixed " : 
-    " -translate-y-full  z-[1] bg-white transition-all duration-500 ease-in-out lg:transition-none "}
-    ${isFixed ? "fixed max-w-full right-0 top-0 lg:top-22 left-50% w-full z-50 bg-white shadow-md rounded-none" : ""}`}>  
-*/}
+    <div
+      className={`FormTC 
+      ${showForm ? "transition-all duration-600 ease-in-out lg:transition-none opacity-100 fixed" : 
+      "-translate-y-full  z-[1] bg-white transition-all duration-600 ease-in-out lg:transition-none"}
+      ${formIsSticky ? "fixed max-w-full right-0 top-0 lg:top-22 left-50% w-full z-50 bg-white shadow-md rounded-none" : ""}`}
+    >
       <div className="HeadHiddenForm">
         <Link
           href="#"
@@ -154,7 +177,9 @@ export default function BookingForm() {
           <label className="text-xs text-gray-500 uppercase tracking-wide mb-1">
             ¿Adónde vas?
           </label>
-          <div className="relative">
+
+          {/* Contenedor con ref para detectar click outside */}
+          <div className="relative" ref={locationRef}>
             <input
               type="text"
               value={query}
@@ -163,10 +188,19 @@ export default function BookingForm() {
                 setShowDropdown(true);
                 setSelectedHotel(null);
               }}
-              onFocus={() => setShowDropdown(true)}
+              onFocus={() => {
+                // Si ya había un hotel, lo limpiamos para iniciar búsqueda nueva
+                if (selectedHotel) {
+                  setSelectedHotel(null);
+                  setQuery("");
+                }
+                setShowDropdown(true);
+              }}
               placeholder="Seleccionar Hotel"
               className="border border-gray-300 rounded-md px-4 py-2 text-sm w-full pr-8"
             />
+
+            {/* Botón para resetear la selección */}
             {selectedHotel && (
               <button
                 type="button"
@@ -179,6 +213,8 @@ export default function BookingForm() {
                 ✕
               </button>
             )}
+
+            {/* Dropdown */}
             {showDropdown && (
               <div className="absolute z-10 bg-white border border-gray-200 w-full mt-1 rounded-md shadow-md max-h-64 overflow-y-auto">
                 {renderGroupedHotels()}
@@ -187,6 +223,7 @@ export default function BookingForm() {
           </div>
         </div>
 
+        {/* Sección de fechas */}
         <div className="flex flex-col col-span-4 lg:col-span-3">
           <span className="text-xs text-gray-500 uppercase tracking-wide">
             Fechas
@@ -228,6 +265,7 @@ export default function BookingForm() {
           )}
         </div>
 
+        {/* Promocode */}
         <div className="flex flex-col col-span-4 lg:col-span-2">
           <span className="text-xs text-gray-500 uppercase tracking-wide">
             Promocode
@@ -239,6 +277,7 @@ export default function BookingForm() {
           />
         </div>
 
+        {/* Botón Reservar */}
         <div className="flex flex-col col-span-4 lg:col-span-3">
           <button
             type="submit"
@@ -249,6 +288,5 @@ export default function BookingForm() {
         </div>
       </form>
     </div>
- 
   );
 }

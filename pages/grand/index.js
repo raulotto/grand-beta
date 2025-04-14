@@ -15,8 +15,7 @@ import Parallax from "@/components/Parallax";
 import Footer from "@/components/Footer";
 import HotelesGrid from "@/components/HotelesGrid";
 import { useState, useEffect } from "react";
-
-
+import Script from "next/script";
 
 export async function getStaticProps() {
   const filePath = path.join(process.cwd(), "data", "hotel_es.json");
@@ -29,18 +28,11 @@ export async function getStaticProps() {
 }
 
 export default function Home({ hotel }) {
-
-
   return (
     <main className="mx-auto">
-      <HeaderTrad  />
+      <HeaderTrad />
       <HeroSlider page="home" />
-
-  <BookingForm
-    
-  />
-
-
+      <BookingForm />
       {/* Contenido del hotel */}
       <Intro />
       <Beneficios />
@@ -52,8 +44,12 @@ export default function Home({ hotel }) {
       <Meeting />
       <HotelesGrid />
       <Footer />
-
       
+      {/* Script para el widget, se carga con lazyOnload */}
+      <Script
+        src="https://www.thehotelsnetwork.com/js/hotel_price_widget.js?hotel_id=1599080&property_id=1026923&account_key=759990a7c11770efa4dc4e332fafe0d9"
+        strategy="lazyOnload"
+      />
     </main>
   );
 }
