@@ -6,8 +6,8 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/autoplay'
+
 import ContadorEventos from '@/components/ContadorEventos'
-import HeaderTrad from '@/components/HeaderTrad'
 import Footer from '@/components/Footer'
 import HeroSlider from '@/components/HeroSlider'
 import Header from '@/components/Header'
@@ -15,9 +15,8 @@ import Header from '@/components/Header'
 export default function Eventos() {
   return (
     <main className="mx-auto">
-      <HeaderTrad />
-
-      <HeroSlider page="eventos" />
+      <HeroSlider />
+      <Header />
 
       {/* SECCIÓN: UNFORGETTABLE MEETINGS */}
       <section className="SectionDiv">
@@ -43,14 +42,14 @@ export default function Eventos() {
       <section className="SectionDiv">
         <div className="ContainerFlex flex-col w-full">
 
-          {/* VERSIÓN ESCRITORIO: GRILLA DE 4 TARJETAS */}
+          {/* GRILLA EN ESCRITORIO */}
           <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
-            {data.map((card, index) => (
+            {eventCards.map((card, index) => (
               <GridCard key={index} card={card} />
             ))}
           </div>
 
-          {/* MOBILE: CARRUSEL SLIDE POR SLIDE CON AUTOPLAY */}
+          {/* CARRUSEL EN MOBILE */}
           <div className="block lg:hidden w-full">
             <Swiper
               modules={[Autoplay]}
@@ -63,7 +62,7 @@ export default function Eventos() {
               }}
               className="w-full"
             >
-              {data.map((card, index) => (
+              {eventCards.map((card, index) => (
                 <SwiperSlide key={index}>
                   <GridCard card={card} />
                 </SwiperSlide>
@@ -112,7 +111,6 @@ export default function Eventos() {
       {/* SECCIÓN: CATERING */}
       <section className="SectionDiv">
         <div className="ContainerFlex flex-col lg:flex-row items-center gap-10">
-
           {/* TEXTO */}
           <div className="w-full lg:w-1/2 text-left">
             <h2 className="TitleSection mb-3">CATERING</h2>
@@ -164,8 +162,8 @@ const GridCard = ({ card }) => {
   )
 }
 
-// DATOS DE LAS TARJETAS
-const data = [
+// Lista de tarjetas
+const eventCards = [
   {
     title: 'Reuniones y conferencias',
     text: 'Encuentra soluciones innovadoras y versátiles que te acompañan.',
