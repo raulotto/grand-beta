@@ -1,0 +1,222 @@
+[
+    {
+      "id": "el-colibri",
+      "titulo": "Sala El Colibrí",
+      "descripcion": "La sala El Loro cuenta con 162 m² y un ventanal amplio que permite disfrutar de una vista panorámica a la calle. Este salón moderno y funcional es ideal para conferencias, eventos de networking, cocteles, etc. Además, su estilo minimalista con una altura de 3,1 m y abundante luz natural lo convierten en un espacio ideal para almuerzos, cenas y celebraciones sociales.",
+      "imagenes": ["/images/test-sala-1.jpg", "/images/test-sala-2.jpg"],
+      "tamaño": "140 m²",
+      "altura": "3.1 mts",
+      "nombreHotel": "Wyndham Grand Lima Airport",
+      "capacidadMax": "120 personas",
+      "urlInterna": "/grand/eventos/el-colibri",
+
+      "disposiciones": [
+        {
+          "nombre": "Directorio",
+          "capacidad": 50,
+          "icono": "/images/CDS_eventos_layout_Directorio-2025-min.jpg"
+        },
+        {
+          "nombre": "Auditorio",
+          "capacidad": 160,
+          "icono": "/images/CDS_eventos_layout_Auditorio-2025-min.jpg"
+        },
+        {
+          "nombre": "Escuela",
+          "capacidad": 66,
+          "icono": "/images/CDS_eventos_layout_Escuela-2025-min.jpg"
+        },
+        {
+          "nombre": "U",
+          "capacidad": 40,
+          "icono": "/images/CDS_eventos_layout_U-2025-min.jpg"
+        },
+        {
+          "nombre": "Banquete",
+          "capacidad": 130,
+          "icono": "/images/CDS_eventos_layout_Banquete-2025-min.jpg"
+        },
+        {
+          "nombre": "Coctel",
+          "capacidad": 100,
+          "icono": "/images/CDS_eventos_layout_Coctel-2025-min.jpg"
+        }
+      ]
+    },
+    {
+      "id": "el-condor",
+      "titulo": "Sala El Condor",
+      "descripcion": "La sala El Loro cuenta con 162 m² y un ventanal amplio que permite disfrutar de una vista panorámica a la calle. Este salón moderno y funcional es ideal para conferencias, eventos de networking, cocteles, etc. Además, su estilo minimalista con una altura de 3,1 m y abundante luz natural lo convierten en un espacio ideal para almuerzos, cenas y celebraciones sociales.",
+      "imagenes": ["/images/test-sala-1.jpg", "/images/test-sala-2.jpg"],
+      "tamaño": "140 m²",
+      "altura": "3.1 mts",
+      "nombreHotel": "Wyndham Grand Lima Airport",
+      "capacidadMax": "120 personas",
+      "urlInterna": "/grand/eventos/el-condor",
+
+      "disposiciones": [
+        {
+          "nombre": "Directorio",
+          "capacidad": 50,
+          "icono": "/images/CDS_eventos_layout_Directorio-2025-min.jpg"
+        },
+        {
+          "nombre": "Auditorio",
+          "capacidad": 160,
+          "icono": "/images/CDS_eventos_layout_Auditorio-2025-min.jpg"
+        },
+        {
+          "nombre": "Escuela",
+          "capacidad": 66,
+          "icono": "/images/CDS_eventos_layout_Escuela-2025-min.jpg"
+        },
+        {
+          "nombre": "U",
+          "capacidad": 40,
+          "icono": "/images/CDS_eventos_layout_U-2025-min.jpg"
+        },
+        {
+          "nombre": "Banquete",
+          "capacidad": 130,
+          "icono": "/images/CDS_eventos_layout_Banquete-2025-min.jpg"
+        },
+        {
+          "nombre": "Coctel",
+          "capacidad": 100,
+          "icono": "/images/CDS_eventos_layout_Coctel-2025-min.jpg"
+        }
+      ]
+    },
+    {
+      "id": "el-candelabro",
+      "titulo": "Sala El Candelabro",
+      "descripcion": "La sala El Loro cuenta con 162 m² y un ventanal amplio que permite disfrutar de una vista panorámica a la calle. Este salón moderno y funcional es ideal para conferencias, eventos de networking, cocteles, etc. Además, su estilo minimalista con una altura de 3,1 m y abundante luz natural lo convierten en un espacio ideal para almuerzos, cenas y celebraciones sociales.",
+      "imagenes": ["/images/test-sala-1.jpg", "/images/test-sala-2.jpg"],
+      "tamaño": "140 m²",
+      "altura": "3.1 mts",
+      "nombreHotel": "Wyndham Grand Lima Airport",
+      "capacidadMax": "120 personas",
+      "urlInterna": "/grand/eventos/el-candelabro",
+
+      "disposiciones": [
+        {
+          "nombre": "Directorio",
+          "capacidad": 50,
+          "icono": "/images/CDS_eventos_layout_Directorio-2025-min.jpg"
+        },
+        {
+          "nombre": "Auditorio",
+          "capacidad": 160,
+          "icono": "/images/CDS_eventos_layout_Auditorio-2025-min.jpg"
+        },
+        {
+          "nombre": "Escuela",
+          "capacidad": 66,
+          "icono": "/images/CDS_eventos_layout_Escuela-2025-min.jpg"
+        },
+        {
+          "nombre": "U",
+          "capacidad": 40,
+          "icono": "/images/CDS_eventos_layout_U-2025-min.jpg"
+        },
+        {
+          "nombre": "Banquete",
+          "capacidad": 130,
+          "icono": "/images/CDS_eventos_layout_Banquete-2025-min.jpg"
+        },
+        {
+          "nombre": "Coctel",
+          "capacidad": 100,
+          "icono": "/images/CDS_eventos_layout_Coctel-2025-min.jpg"
+        }
+      ]
+    },
+    {
+      "id": "pacifico",
+      "titulo": "Sala Pacífico",
+      "descripcion": "La sala El Loro cuenta con 162 m² y un ventanal amplio que permite disfrutar de una vista panorámica a la calle. Este salón moderno y funcional es ideal para conferencias, eventos de networking, cocteles, etc. Además, su estilo minimalista con una altura de 3,1 m y abundante luz natural lo convierten en un espacio ideal para almuerzos, cenas y celebraciones sociales.",
+      "imagenes": ["/images/test-sala-1.jpg", "/images/test-sala-2.jpg"],
+      "tamaño": "140 m²",
+      "altura": "3.1 mts",
+      "nombreHotel": "Wyndham Grand Lima Airport",
+      "capacidadMax": "120 personas",
+      "urlInterna": "/grand/eventos/pacifico",
+
+      "disposiciones": [
+        {
+          "nombre": "Directorio",
+          "capacidad": 50,
+          "icono": "/images/CDS_eventos_layout_Directorio-2025-min.jpg"
+        },
+        {
+          "nombre": "Auditorio",
+          "capacidad": 160,
+          "icono": "/images/CDS_eventos_layout_Auditorio-2025-min.jpg"
+        },
+        {
+          "nombre": "Escuela",
+          "capacidad": 66,
+          "icono": "/images/CDS_eventos_layout_Escuela-2025-min.jpg"
+        },
+        {
+          "nombre": "U",
+          "capacidad": 40,
+          "icono": "/images/CDS_eventos_layout_U-2025-min.jpg"
+        },
+        {
+          "nombre": "Banquete",
+          "capacidad": 130,
+          "icono": "/images/CDS_eventos_layout_Banquete-2025-min.jpg"
+        },
+        {
+          "nombre": "Coctel",
+          "capacidad": 100,
+          "icono": "/images/CDS_eventos_layout_Coctel-2025-min.jpg"
+        }
+      ]
+    },{
+      "id": "nazca",
+      "titulo": "Sala Nazca",
+      "descripcion": "La sala El Loro cuenta con 162 m² y un ventanal amplio que permite disfrutar de una vista panorámica a la calle. Este salón moderno y funcional es ideal para conferencias, eventos de networking, cocteles, etc. Además, su estilo minimalista con una altura de 3,1 m y abundante luz natural lo convierten en un espacio ideal para almuerzos, cenas y celebraciones sociales.",
+      "imagenes": ["/images/test-sala-1.jpg", "/images/test-sala-2.jpg"],
+      "tamaño": "140 m²",
+      "altura": "3.1 mts",
+      "nombreHotel": "Wyndham Grand Lima Airport",
+      "capacidadMax": "120 personas",
+      "urlInterna": "/grand/eventos/nazca",
+
+      "disposiciones": [
+        {
+          "nombre": "Directorio",
+          "capacidad": 50,
+          "icono": "/images/CDS_eventos_layout_Directorio-2025-min.jpg"
+        },
+        {
+          "nombre": "Auditorio",
+          "capacidad": 160,
+          "icono": "/images/CDS_eventos_layout_Auditorio-2025-min.jpg"
+        },
+        {
+          "nombre": "Escuela",
+          "capacidad": 66,
+          "icono": "/images/CDS_eventos_layout_Escuela-2025-min.jpg"
+        },
+        {
+          "nombre": "U",
+          "capacidad": 40,
+          "icono": "/images/CDS_eventos_layout_U-2025-min.jpg"
+        },
+        {
+          "nombre": "Banquete",
+          "capacidad": 130,
+          "icono": "/images/CDS_eventos_layout_Banquete-2025-min.jpg"
+        },
+        {
+          "nombre": "Coctel",
+          "capacidad": 100,
+          "icono": "/images/CDS_eventos_layout_Coctel-2025-min.jpg"
+        }
+      ]
+    }
+  ]
+  

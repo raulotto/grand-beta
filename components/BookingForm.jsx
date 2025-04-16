@@ -145,8 +145,8 @@ export default function BookingForm() {
     <div
       className={`FormTC 
       ${showForm ? "transition-all duration-600 ease-in-out lg:transition-none opacity-100 fixed" : 
-      "-translate-y-full  z-[1] bg-white transition-all duration-600 ease-in-out lg:transition-none"}
-      ${formIsSticky ? "fixed max-w-full right-0 top-0 lg:top-22 left-50% w-full z-50 bg-white shadow-md rounded-none" : ""}`}
+      "-translate-y-full  z-[2] bg-white transition-all duration-600 ease-in-out lg:transition-none"}
+      ${formIsSticky ? "fixed max-w-full right-0 top-0 lg:top-39 left-50% w-full z-50 bg-white shadow-md rounded-none" : ""}`}
     >
       <div className="HeadHiddenForm">
         <Link

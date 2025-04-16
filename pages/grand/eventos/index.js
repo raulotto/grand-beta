@@ -1,22 +1,31 @@
 'use client'
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/autoplay'
-
 import ContadorEventos from '@/components/ContadorEventos'
+import HeaderTrad from '@/components/HeaderTrad'
 import Footer from '@/components/Footer'
 import HeroSlider from '@/components/HeroSlider'
 import Header from '@/components/Header'
+import eventos from '@/data/eventos.json'
 
 export default function Eventos() {
+  const categorias = ['Todas', 'Bodas', 'Reuniones']
+  const [categoriaActiva, setCategoriaActiva] = useState('Todas')
+
+  const eventosFiltrados =
+    categoriaActiva === 'Todas'
+      ? eventos
+      : eventos.filter((e) => e.categoria === categoriaActiva)
+
   return (
     <main className="mx-auto">
-      <HeroSlider />
-      <Header />
+      <HeaderTrad />
+      <HeroSlider page="eventos" />
 
       {/* SECCIÓN: UNFORGETTABLE MEETINGS */}
       <section className="SectionDiv">
@@ -42,14 +51,14 @@ export default function Eventos() {
       <section className="SectionDiv">
         <div className="ContainerFlex flex-col w-full">
 
-          {/* GRILLA EN ESCRITORIO */}
+          {/* VERSIÓN ESCRITORIO: GRILLA DE 4 TARJETAS */}
           <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
-            {eventCards.map((card, index) => (
+            {data.map((card, index) => (
               <GridCard key={index} card={card} />
             ))}
           </div>
 
-          {/* CARRUSEL EN MOBILE */}
+          {/* MOBILE: CARRUSEL SLIDE POR SLIDE CON AUTOPLAY */}
           <div className="block lg:hidden w-full">
             <Swiper
               modules={[Autoplay]}
@@ -62,7 +71,7 @@ export default function Eventos() {
               }}
               className="w-full"
             >
-              {eventCards.map((card, index) => (
+              {data.map((card, index) => (
                 <SwiperSlide key={index}>
                   <GridCard card={card} />
                 </SwiperSlide>
@@ -75,11 +84,26 @@ export default function Eventos() {
 
       {/* CONTADOR EVENTOS */}
       <ContadorEventos />
+{/* SECCIÓN: SALAS FILTRABLES */}
+<section className="SectionDiv">
+        <div className="ContainerFlex flex-col items-start">
+          <h2 className="TitleSection mb-6">Salas para tus eventos</h2>
 
+          <div className="w-full sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 flex overflow-x-auto sm:overflow-visible snap-x snap-mandatory scroll-smooth">
+            {eventosFiltrados.map((evento) => (
+              <div
+                key={evento.id}
+                className="w-[120px] min-w-[270px] sm:w-auto sm:min-w-0 mr-4 snap-start flex-shrink-0"
+              >
+                <EventosCard evento={evento} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
       {/* SECCIÓN: REUNIONES Y EVENTOS */}
       <section className="SectionDiv">
         <div className="ContainerFlex flex-col lg:flex-row items-start gap-10">
-          {/* IMAGEN */}
           <div className="w-full lg:w-1/2 h-[300px] lg:h-[400px] relative">
             <Image
               src="https://picsum.photos/800/600"
@@ -89,7 +113,6 @@ export default function Eventos() {
             />
           </div>
 
-          {/* TEXTO */}
           <div className="w-full lg:w-1/2 text-left">
             <h2 className="TitleSection text-primary-oceanic mb-2">Reuniones y eventos</h2>
             <h3 className="text-base font-semibold text-gray-700 mb-4">
@@ -111,7 +134,6 @@ export default function Eventos() {
       {/* SECCIÓN: CATERING */}
       <section className="SectionDiv">
         <div className="ContainerFlex flex-col lg:flex-row items-center gap-10">
-          {/* TEXTO */}
           <div className="w-full lg:w-1/2 text-left">
             <h2 className="TitleSection mb-3">CATERING</h2>
             <p className="text-sm text-gray-600 mb-4">
@@ -127,7 +149,6 @@ export default function Eventos() {
             <button className="ButtonSolid ButtonRounded">BANQUET MENU</button>
           </div>
 
-          {/* IMAGEN */}
           <div className="w-full lg:w-1/2 h-[300px] lg:h-[400px] relative">
             <Image
               src="https://picsum.photos/700/500?grayscale&blur=1"
@@ -139,12 +160,13 @@ export default function Eventos() {
         </div>
       </section>
 
+      
+
       <Footer />
     </main>
   )
 }
 
-// COMPONENTE DE TARJETA INDIVIDUAL
 const GridCard = ({ card }) => {
   return (
     <div className="CardHotel w-full">
@@ -162,8 +184,7 @@ const GridCard = ({ card }) => {
   )
 }
 
-// Lista de tarjetas
-const eventCards = [
+const data = [
   {
     title: 'Reuniones y conferencias',
     text: 'Encuentra soluciones innovadoras y versátiles que te acompañan.',
@@ -193,3 +214,5 @@ const eventCards = [
     image: 'https://picsum.photos/id/1042/600/400',
   },
 ]
+
+import EventosCard from '@/components/EventosCard'
