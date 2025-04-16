@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay  } from "swiper/modules";
 import { CiRuler } from "react-icons/ci";
+import { FaCheck } from "react-icons/fa6";
 import { IoBedOutline, IoPeopleOutline  } from "react-icons/io5";
 
 import "swiper/css";
@@ -44,8 +45,7 @@ const HabitacionCard = ({ habitacion }) => {
 
       <div className="p-4 flex-1 flex flex-col justify-between">
         <div>
-          <h3 className="text-sm font-semibold mb-2">{habitacion.titulo}</h3>
-          <p className="text-xs text-gray-700">{descripcionCorta}</p>
+          <h3 className="text-sm font-semibold">{habitacion.titulo}</h3>
         </div>
 
         <div className="CardServices">
@@ -63,14 +63,42 @@ const HabitacionCard = ({ habitacion }) => {
           </div>
         </div>
 
+        {habitacion?.servicios?.length > 0 && (
+          <>
+          <h3 className="text-xs font-semibold mt-5 mb-2">Servicios Adicionales</h3>
+                    <div className="CardExtraServices">
+                      
+                      {habitacion.servicios.map((servicio, idx) => (
+                        <div key={idx} className="flex items-center gap-2 text-xs">
+                          {(
+                            <FaCheck className="w-4 h-4 text-primary-oceanic" />
+                          )}
+                          {servicio}
+                        </div>
+                      ))}
+                    </div>
+                    </>
+                  )}
+
+        <div className="CardButtons">
         {habitacion.urlInterna && (
   <Link
     href={habitacion.urlInterna}
-    className="mt-4 inline-block text-center bg-primary-oceanic text-white py-2 px-4 rounded text-sm hover:bg-dark-oceanic"
+    className="mt-2 inline-block text-center text-oceanic-primary underline text-sm "
   >
     Ver más
   </Link>
 )}
+{habitacion.urlReserva && (
+  <Link
+    href={habitacion.urlReserva}
+    className="mt-2 inline-block text-center bg-primary-oceanic text-white py-2 px-4 rounded text-sm hover:bg-dark-oceanic"
+  >
+    Reservar
+  </Link>
+)}
+
+        </div>
 
       </div>
     </div>

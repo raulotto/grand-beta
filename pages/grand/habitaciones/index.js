@@ -51,12 +51,12 @@ export default function HabitacionesPage() {
     animate={{ opacity: 1 }}
     exit={{ opacity: 0 }}
     transition={{ duration: 0.3 }}
-    className="w-full sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-6 flex overflow-x-auto sm:overflow-visible snap-x snap-mandatory scroll-smooth"
+    className="w-full sm:grid sm:grid-cols-2 lg:grid-cols-3 gap-4 flex overflow-x-auto sm:overflow-visible snap-x snap-mandatory scroll-smooth"
   >
     {habitacionesFiltradas.map((hab) => (
       <div
         key={hab.id}
-        className="w-[120px] min-w-[270px] sm:w-auto sm:min-w-0 mr-4 snap-start flex-shrink-0"
+        className="w-[120px] min-w-[280px] sm:w-auto sm:min-w-0 mr-4 snap-start flex-shrink-0"
       >
         <HabitacionesCard habitacion={hab} />
       </div>

@@ -46,6 +46,17 @@
       "/images/WG-Habitacion-Doble-2.jpg",
       "/images/WG-Habitacion-Doble-3.jpg",
       "/images/WG-Habitacion-Doble-4.jpg"
+    ],
+    "servicios": [
+      "Smart TV LED 65”",
+      "Cama King",
+      "Caja fuerte",
+      "Minibar",
+      "Cafetera",
+      "Plancha y planchador",
+      "Secadora",
+      "Bata y pantuflas",
+      "Calefacción y aire acondicionado"
     ]
   },
   {
@@ -67,6 +78,17 @@
       "/images/WG-Habitacion-King-5.jpg"
       
       
+    ],
+    "servicios": [
+      "Smart TV LED 65”",
+      "Cama King",
+      "Caja fuerte",
+      "Minibar",
+      "Cafetera",
+      "Plancha y planchador",
+      "Secadora",
+      "Bata y pantuflas",
+      "Calefacción y aire acondicionado"
     ]
   },
   {
@@ -90,6 +112,17 @@
       "/images/WG-Habitacion-Suite-2-2.jpg",
       "/images/WG-Habitacion-Suite-2-3.jpg"
 
+    ],
+    "servicios": [
+      "Smart TV LED 65”",
+      "Cama King",
+      "Caja fuerte",
+      "Minibar",
+      "Cafetera",
+      "Plancha y planchador",
+      "Secadora",
+      "Bata y pantuflas",
+      "Calefacción y aire acondicionado"
     ]
   },
   {
@@ -109,6 +142,17 @@
       "/images/WG-Habitacion-Suite-Presidencial-3.jpg",
       "/images/WG-Habitacion-Suite-Presidencial-4.jpg",
       "/images/WG-Habitacion-Suite-Presidencial-5.jpg"
+    ],
+    "servicios": [
+      "Smart TV LED 65”",
+      "Cama King",
+      "Caja fuerte",
+      "Minibar",
+      "Cafetera",
+      "Plancha y planchador",
+      "Secadora",
+      "Bata y pantuflas",
+      "Calefacción y aire acondicionado"
     ]
   }
 ]
