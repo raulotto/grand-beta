@@ -62,6 +62,9 @@
   font-weight: 500;
   font-style: normal;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 .PrataFont {
   font-family: 'Prata', serif;
@@ -198,6 +201,12 @@ p{
   .ContainerFlex {
     @apply flex flex-col  lg:flex-row justify-between items-center gap-[25px] lg:gap-10 mx-auto py-[30px] lg:py-[60px] w-full max-w-[1140px];
   }
+  .ContainerFlexOSize {
+    @apply flex flex-col  lg:flex-row justify-between items-center  lg:gap-10 mx-auto w-full max-w-[1140px] text-light-oceanic;
+  }
+  .StickyFormCar .ContainerFlexOSize form {
+    @apply px-4 lg:px-0;
+}
   .ContainerFlexSlider {
     @apply flex flex-col justify-between items-center gap-[0] lg:gap-1 mx-auto py-[30px] lg:py-[60px] w-[75%] max-w-[1140px];
   }
@@ -211,7 +220,7 @@ p{
     @apply flex p-10 lg:hidden justify-end;
   }
   .FormTC {
-    @apply   lg:rounded-sm lg:block absolute left-1/2 z-[6] top-0 lg:top-[65%] w-[1140px] h-screen lg:h-auto lg:h-[85px] bg-white translate-x-[-50%] m-0 rounded-none  w-full max-w-6xl mx-auto bg-white shadow-md flex flex-col justify-start lg:items-center;
+    @apply   lg:rounded-sm lg:block absolute left-1/2 z-[6] top-0 lg:top-[63%] w-[1140px] h-screen lg:h-auto lg:h-[85px] bg-white translate-x-[-50%] m-0 rounded-none  w-full max-w-6xl mx-auto bg-white shadow-md flex flex-col justify-start lg:items-center;
   }
   .OverlayHeader {
     @apply w-full z-[99] absolute top-0 left-0 bg-gradient-to-b from-[rgba(0,0,0,0.4)] to-transparent h-full pointer-events-none;
@@ -222,6 +231,9 @@ p{
   .SectionDiv {
     @apply bg-white p-10  items-center justify-center flex flex-col;
   }
+  .SectionDivInnerMenu {
+    @apply bg-white pt-15  items-center justify-center flex flex-col;
+  }
   .MobileMenuAccomadation {
     @apply flex justify-evenly items-center relative;
   }
@@ -229,7 +241,7 @@ p{
     @apply flex flex-col gap-2 pl-4 py-1 text-sm font-bold text-secondary-terracota;
   }
   .ResForm {
-    @apply w-full grid grid-cols-1 lg:grid-cols-12 gap-4 items-center px-6 py-4;
+    @apply w-full grid grid-cols-1  gap-4 items-center px-6 py-4;
   }
   .ButtonSolid  {
     @apply bg-[#405d65] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#2e4448] transition;

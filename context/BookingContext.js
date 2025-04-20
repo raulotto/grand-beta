@@ -10,7 +10,7 @@ export const BookingProvider = ({ children }) => {
   // Controla el scroll para activar sticky solo en escritorio
   useEffect(() => {
     const handleScroll = () => {
-      const triggerPoint = window.innerHeight * 0.75;
+      const triggerPoint = window.innerHeight * 0.51;
       const offset = window.scrollY;
       setFormIsSticky(offset > triggerPoint);
     };

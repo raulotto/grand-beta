@@ -1,21 +1,22 @@
 import fs from "fs";
 import path from "path";
-import Intro from "../../components/Intro";
-import RestBar from "../../components/RestBar";
-import Link from "next/link";
-import HeaderTrad from "@/components/HeaderTrad";
-import Beneficios from "@/components/Beneficios";
-import Habitaciones from "@/components/Habitaciones";
-import Meeting from "@/components/Meeting";
-import Ofertas from "@/components/Ofertas";
-import Gallery from "@/components/Gallery";
-import HeroSlider from "@/components/HeroSlider";
-import BookingForm from "@/components/BookingForm";
-import Parallax from "@/components/Parallax";
-import Footer from "@/components/Footer";
-import HotelesGrid from "@/components/HotelesGrid";
 import { useState, useEffect } from "react";
 import Script from "next/script";
+
+import HeaderTrad from "@/components/HeaderTrad";
+import HeroSlider from "@/components/HeroSlider";
+import BookingForm from "@/components/BookingForm";
+import MenuInterno from "@/components/MenuInterno";
+import Intro from "@/components/Intro";
+import Beneficios from "@/components/Beneficios";
+import Habitaciones from "@/components/Habitaciones";
+import Parallax from "@/components/Parallax";
+import RestBar from "@/components/RestBar";
+import Gallery from "@/components/Gallery";
+import Meeting from "@/components/Meeting";
+import Ofertas from "@/components/Ofertas";
+import HotelesGrid from "@/components/HotelesGrid";
+import Footer from "@/components/Footer";
 
 export async function getStaticProps() {
   const filePath = path.join(process.cwd(), "data", "hotel_es.json");
@@ -28,24 +29,47 @@ export async function getStaticProps() {
 }
 
 export default function Home({ hotel }) {
+  const [embedMenu, setEmbedMenu] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      const triggerPoint = window.innerHeight * 0.51;
+      const margin = 20; // margen de seguridad para evitar parpadeo
+  
+      if (window.innerWidth >= 1024) {
+        if (!embedMenu && scrollY > triggerPoint + margin) {
+          setEmbedMenu(true);
+        } else if (embedMenu && scrollY < triggerPoint - margin) {
+          setEmbedMenu(false);
+        }
+      } else {
+        setEmbedMenu(false);
+      }
+    };
+  
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [embedMenu]);
+  
+
   return (
     <main className="mx-auto">
       <HeaderTrad />
       <HeroSlider page="home" />
-      <BookingForm />
-      {/* Contenido del hotel */}
+      <BookingForm embedMenu={embedMenu} />
+      {!embedMenu && <MenuInterno />}
+
       <Intro />
-      <Beneficios />
+      <Beneficios id="beneficios" />
       <Habitaciones />
       <Parallax />
       <RestBar />
       <Gallery />
-      {/* Nombre y descripción */}
       <Meeting />
       <HotelesGrid />
       <Footer />
-      
-      {/* Script para el widget, se carga con lazyOnload */}
+
       <Script
         src="https://www.thehotelsnetwork.com/js/hotel_price_widget.js?hotel_id=1599080&property_id=1026923&account_key=759990a7c11770efa4dc4e332fafe0d9"
         strategy="lazyOnload"

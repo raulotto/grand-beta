@@ -3,7 +3,8 @@ import { FaHotel, FaConciergeBell, FaUtensils, FaMapMarkerAlt, FaMobileAlt, FaSp
 
 const Beneficios = () => {
   return (
-    <section className="SectionDiv">
+    <section id="beneficios" className="SectionDiv">
+
       {/* Contenedor del título */}
 
       <h3 className="suptitle">

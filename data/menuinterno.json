@@ -1,0 +1,9 @@
+[
+    { "id": "beneficios", "label": "Beneficios", "href": "/grand/#benefits" },
+    { "id": "habitaciones", "label": "Habitaciones", "href": "/grand/#rooms" },
+    { "id": "restaurantes", "label": "Restaurantes", "href": "/grand/#restaurants" },
+    { "id": "promociones", "label": "Promociones", "href": "/grand/#offers" },
+    { "id": "eventos", "label": "Eventos", "href": "/grand/#events" },
+    { "id": "wellness", "label": "Wellness", "href": "/grand/#wellness" }
+  ]
+  

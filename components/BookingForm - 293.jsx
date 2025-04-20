@@ -1,6 +1,4 @@
-// BookingForm.jsx
-"use client";
-
+// ✅ BookingForm.jsx usando contexto
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import DatePicker from "react-datepicker";
@@ -9,18 +7,39 @@ import { registerLocale } from "react-datepicker";
 import { RxCalendar } from "react-icons/rx";
 import es from "date-fns/locale/es";
 import { useBooking } from "@/context/BookingContext";
-import MenuInterno from "./MenuInterno";
+
 
 registerLocale("es", es);
 
-
-export default function BookingForm({ embedMenu }) {
+export default function BookingForm() {
   const { showForm, setShowForm, formIsSticky } = useBooking();
-const locationRef = useRef(null);
-
   const [shouldRender, setShouldRender] = useState(showForm);
-
   
+  useEffect(() => {
+    if (showForm) {
+      setShouldRender(true); // mostrar inmediatamente
+    } else {
+      const timeout = setTimeout(() => setShouldRender(false), 700); // espera que termine la animación
+      return () => clearTimeout(timeout);
+    }
+  }, [showForm]);
+  
+  const today = new Date();
+  const tomorrow = new Date();
+  tomorrow.setDate(today.getDate() + 1);
+
+  const [dateRange, setDateRange] = useState([today, tomorrow]);
+  const [startDate, endDate] = dateRange;
+  const [query, setQuery] = useState("");
+  const [selectedHotel, setSelectedHotel] = useState(null);
+
+  // Controla si mostramos el dropdown
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  // Ref para detectar clics fuera del contenedor
+  const locationRef = useRef(null);
+
+  // Cerrar dropdown al hacer clic fuera
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (locationRef.current && !locationRef.current.contains(event.target)) {
@@ -32,31 +51,6 @@ const locationRef = useRef(null);
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
-
-  useEffect(() => {
-    if (showForm) {
-      setShouldRender(true);
-    } else {
-      const timeout = setTimeout(() => setShouldRender(false), 700);
-      return () => clearTimeout(timeout);
-    }
-  }, [showForm]);
-
-  const today = new Date();
-  const tomorrow = new Date();
-  tomorrow.setDate(today.getDate() + 1);
-  
-  const defaultHotel = {
-    name: "Costa del Sol Wyndham Lima Airport",
-    id: "105840"
-  };
-  
-  const [dateRange, setDateRange] = useState([today, tomorrow]);
-  const [startDate, endDate] = dateRange;
-  const [selectedHotel, setSelectedHotel] = useState(defaultHotel);
-  const [query, setQuery] = useState(defaultHotel.name);
-  
-  const [showDropdown, setShowDropdown] = useState(false);
 
   const hotelsGrouped = {
     Arequipa: [{ name: "Costa del Sol Wyndham Arequipa", id: "109836" }],
@@ -84,12 +78,13 @@ const locationRef = useRef(null);
       month: "short",
     });
 
+  // Input para datepicker
   const CustomDateInput = React.forwardRef(({ value, onClick }, ref) => (
     <button
       type="button"
       onClick={onClick}
       ref={ref}
-      className="flex items-center gap-2 border border-gray-300 px-4 py-2 rounded-md text-left w-full text-sm"
+      className="flex items-center gap-2 border border-gray-300 rounded-md px-4 py-2 text-sm text-left w-full"
     >
       <RxCalendar />
       {startDate && endDate ? (
@@ -102,6 +97,7 @@ const locationRef = useRef(null);
     </button>
   ));
 
+  // Al enviar el form sin hotel, no dejamos avanzar.
   const handleSubmit = (e) => {
     if (!selectedHotel) {
       e.preventDefault();
@@ -111,13 +107,20 @@ const locationRef = useRef(null);
     e.target.action = `https://reservations.travelclick.com/${selectedHotel.id}`;
   };
 
+  // Renderiza la lista de hoteles, filtrando por `query`
   const renderGroupedHotels = () => {
-    const lowerQuery = query.toLowerCase();
+    const lowerQuery = query.toLowerCase().trim();
+
+    // Si `query` está vacío, mostramos TODO
+    // Si no, filtramos por coincidencia
     return Object.entries(hotelsGrouped).map(([region, hotels]) => {
-      const matched = hotels.filter((h) =>
-        h.name.toLowerCase().includes(lowerQuery)
-      );
+      const matched =
+        !lowerQuery
+          ? hotels
+          : hotels.filter((h) => h.name.toLowerCase().includes(lowerQuery));
+
       if (matched.length === 0) return null;
+
       return (
         <div key={region} className="py-1">
           <div className="RegionLocation">{region}</div>
@@ -157,36 +160,26 @@ const locationRef = useRef(null);
           X Cerrar
         </Link>
       </div>
-
-      <div className="ContainerFlexOSize">
-  {embedMenu && (
-    <div className="lg:block ">
-      <MenuInterno embedMenu={embedMenu} />
-
-    </div>
-  )}
-
-<form
-  name="resform"
-  id="resform"
-  className={`ResForm ${embedMenu ? "lg:grid-cols-6" : "lg:grid-cols-12"}`}
-  method="get"
-  target="_blank"
-  onSubmit={handleSubmit}
->
-
+<div className="ContainerFlexOSize">
+      <form
+        name="resform"
+        id="resform"
+        className="ResForm"
+        method="get"
+        target="_blank"
+        onSubmit={handleSubmit}
+      >
         <input name="LanguageID" type="hidden" value="2" />
         {selectedHotel && (
           <input type="hidden" name="HotelID" value={selectedHotel.id} />
         )}
 
-        <div
-          className={`flex flex-col col-span-4 lg:col-span-4 relative ${
-            embedMenu ? "hidden" : ""
-          }`}
-        >
+        <div className="flex flex-col col-span-4 lg:col-span-4 relative">
           <label className="text-xs text-gray-500 uppercase tracking-wide mb-1">
+           
           </label>
+
+          {/* Contenedor con ref para detectar click outside */}
           <div className="relative" ref={locationRef}>
             <input
               type="text"
@@ -197,16 +190,18 @@ const locationRef = useRef(null);
                 setSelectedHotel(null);
               }}
               onFocus={() => {
-                if (query !== "") {
-                  setQuery("");
+                // Si ya había un hotel, lo limpiamos para iniciar búsqueda nueva
+                if (selectedHotel) {
                   setSelectedHotel(null);
+                  setQuery("");
                 }
                 setShowDropdown(true);
               }}
-              
               placeholder="Seleccionar Hotel"
-              className="border border-gray-300 rounded-md px-4 py-2 text-sm w-full pr-8"
+              className="border border-gray-300  rounded-md px-4 py-2 text-sm w-full pr-8"
             />
+
+            {/* Botón para resetear la selección */}
             {selectedHotel && (
               <button
                 type="button"
@@ -219,14 +214,17 @@ const locationRef = useRef(null);
                 ✕
               </button>
             )}
+
+            {/* Dropdown */}
             {showDropdown && (
-              <div className="absolute z-10 bg-white border border-gray-200 w-full mt-1 rounded-md shadow-md max-h-64 overflow-y-auto">
+              <div className="absolute z-10 bg-white border border-gray-200 w-full mt-1  shadow-md max-h-64 overflow-y-auto">
                 {renderGroupedHotels()}
               </div>
             )}
           </div>
         </div>
 
+        {/* Sección de fechas */}
         <div className="flex flex-col col-span-4 lg:col-span-3">
           <span className="text-xs text-gray-500 uppercase tracking-wide">
           </span>
@@ -267,30 +265,28 @@ const locationRef = useRef(null);
           )}
         </div>
 
-        <div
-          className={`flex flex-col col-span-4 lg:col-span-2 ${
-            embedMenu ? "hidden" : ""
-          }`}
-        >
+        {/* Promocode */}
+        <div className="flex flex-col col-span-4 lg:col-span-2">
           <span className="text-xs text-gray-500 uppercase tracking-wide">
           </span>
           <input
             type="text"
             name="discount"
-            className="border border-gray-300 rounded-md px-4 py-2 text-sm"
+            className="border border-gray-300  rounded-md px-4 py-2 text-sm"
           />
         </div>
 
+        {/* Botón Reservar */}
         <div className="flex flex-col col-span-4 lg:col-span-3">
           <button
             type="submit"
-            className="h-full w-full bg-[#40666a] text-white text-lg font-serif px-4 py-2"
+            className="h-full w-full bg-[#40666a] text-white text-lg font-serif rounded-md px-4 py-1"
           >
             Reservar
           </button>
         </div>
       </form>
-      </div>
+    </div>
     </div>
   );
 }

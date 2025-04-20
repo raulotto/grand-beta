@@ -53,7 +53,7 @@ useEffect(() => {
   return (
     <header
       className={`transition-all duration-500 ease-in-out z-[4] font-gotham-book w-full ${
-        isVisible || modoClaro ? 'fixed top-0 bg-white shadow-lg' : 'absolute'
+        isVisible || modoClaro ? 'fixed top-0 bg-white shadow-md' : 'absolute'
       }`}
     >
 
@@ -147,6 +147,7 @@ useEffect(() => {
         Reservar
       </Link>
     </div>
+    
       </div>
       
     </header>
