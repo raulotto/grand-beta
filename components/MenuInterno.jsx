@@ -2,7 +2,19 @@
 import React, { useEffect, useState, useRef } from 'react';
 import menuData from '@/data/menuinterno.json';
 import { usePathname, useRouter } from 'next/navigation';
-import * as Icons from 'react-icons/fa';
+import * as FaIcons from 'react-icons/fa';
+import * as CiIcons from 'react-icons/ci';
+import * as io5Icons from 'react-icons/io5';
+import * as GrIcons from 'react-icons/gr';
+
+
+
+const iconMap = {
+  ...FaIcons,
+  ...CiIcons,
+  ...io5Icons,
+  ...GrIcons,
+};
 
 const MenuInterno = ({ embedMenu }) => {
   const pathname = usePathname();
@@ -49,20 +61,20 @@ const MenuInterno = ({ embedMenu }) => {
     <section
       ref={menuRef}
       className={`SectionDivInnerMenu ${embedMenu ? 'pt-0' : ''} ${
-        isStickyMobile ? 'fixed top-[81px] z-40 w-full bg-white shadow-md' : ''
+        isStickyMobile ? 'fixed top-[81px] z-2 w-full bg-white shadow-md' : ''
       }`}
     >
-      <div className={`ContainerFlexOSize ${embedMenu ? '' : 'px-10 py-4'} ${isStickyMobile ? 'bg-[#e9e9e9]' : ''}`}>
-        <ul className="flex overflow-x-auto no-scrollbar gap-6 p-0 w-full lg:items-center lg:justify-center lg:justify-center">
+      <div className={`ContainerFlexOSize ${embedMenu ? '' : 'px-10 py-4'} ${isStickyMobile ? 'bg-[#f5f5f5]' : ''}`}>
+        <ul className="flex overflow-x-auto no-scrollbar gap-6 p-0 w-full lg:items-center lg:justify-center">
           {menuData.map((item) => {
-            const Icon = Icons[item.icon] || Icons.FaQuestionCircle;
+            const Icon = iconMap[item.icon] || FaIcons.FaQuestionCircle;
             return (
               <li
                 key={item.id}
-                className="flex-shrink-0 flex flex-col-2 gap-2 items-center text-sm cursor-pointer hover:text-primary-oceanic transition"
+                className="flex-shrink-0 flex flex-col-2 gap-2 items-center text-sm items-center cursor-pointer hover:text-primary-oceanic transition"
                 onClick={() => handleClick(item)}
               >
-                <Icon className="w-6 h-6 mb-1 lg:hidden" />
+                <Icon className="w-6 h-6 lg:hidden" />
                 {item.label}
               </li>
             );

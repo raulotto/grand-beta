@@ -1,9 +1,9 @@
 [
-    { "id": "beneficios", "label": "Beneficios", "href": "/grand/#benefits", "icon": "FaGift" },
-    { "id": "habitaciones", "label": "Habitaciones", "href": "/grand/#rooms","icon": "FaBed" },
-    { "id": "restaurantes", "label": "Restaurantes", "href": "/grand/#restaurants" },
-    { "id": "promociones", "label": "Promociones", "href": "/grand/#offers" },
-    { "id": "eventos", "label": "Eventos", "href": "/grand/#events" },
-    { "id": "wellness", "label": "Wellness", "href": "/grand/#wellness" }
+    { "id": "beneficios", "label": "Beneficios", "href": "/grand/#benefits", "icon": "CiGift" },
+    { "id": "habitaciones", "label": "Habitaciones", "href": "/grand/#rooms","icon": "IoBedOutline" },
+    { "id": "restaurantes", "label": "Restaurantes", "href": "/grand/#restaurants","icon": "CiForkAndKnife" },
+    { "id": "promociones", "label": "Promociones", "href": "/grand/#offers","icon": "IoMegaphoneOutline" },
+    { "id": "eventos", "label": "Eventos", "href": "/grand/#events","icon": "CiCalendar" },
+    { "id": "wellness", "label": "Wellness", "href": "/grand/#wellness","icon": "GrSpa" }
   ]
   
