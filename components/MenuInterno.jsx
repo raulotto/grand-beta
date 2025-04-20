@@ -2,6 +2,9 @@
 import React from 'react';
 import menuData from '@/data/menuinterno.json';
 import { usePathname, useRouter } from 'next/navigation';
+import * as Icons from "react-icons/fa";
+
+
 
 const MenuInterno = ({ embedMenu }) => {
     const pathname = usePathname();
@@ -29,17 +32,24 @@ const MenuInterno = ({ embedMenu }) => {
         }`}
       >
         <div className="ContainerFlexOSize">
-          <ul className="w-full flex flex-col lg:flex-row gap-2 lg:gap-5 items-center justify-center lg:justify-center">
-            {menuData.map((item) => (
-              <li
-                key={item.id}
-                className="cursor-pointer hover:text-primary-oceanic transition"
-                onClick={() => handleClick(item)}
-              >
-                {item.label}
-              </li>
-            ))}
-          </ul>
+        <ul className="flex overflow-x-auto no-scrollbar gap-4 px-4 py-2 w-full lg:items-center lg:justify-center lg:justify-center">
+        {menuData.map((item) => {
+    const Icon = Icons[item.icon] || Icons.FaQuestionCircle;
+
+    return (
+        <li
+        key={item.id}
+        className="flex-shrink-0 flex flex-col items-center text-sm cursor-pointer hover:text-primary-oceanic transition"
+        onClick={() => handleClick(item)}
+      >
+        <Icon className="w-6 h-6 mb-1 lg:hidden" /> {/* Aquí va el ícono dinámico */}
+        {item.label}
+      </li>
+    );
+  })}
+</ul>
+
+
         </div>
       </section>
     );

@@ -1,6 +1,6 @@
 [
-    { "id": "beneficios", "label": "Beneficios", "href": "/grand/#benefits" },
-    { "id": "habitaciones", "label": "Habitaciones", "href": "/grand/#rooms" },
+    { "id": "beneficios", "label": "Beneficios", "href": "/grand/#benefits", "icon": "FaGift" },
+    { "id": "habitaciones", "label": "Habitaciones", "href": "/grand/#rooms","icon": "FaBed" },
     { "id": "restaurantes", "label": "Restaurantes", "href": "/grand/#restaurants" },
     { "id": "promociones", "label": "Promociones", "href": "/grand/#offers" },
     { "id": "eventos", "label": "Eventos", "href": "/grand/#events" },
