@@ -16,11 +16,26 @@ registerLocale("es", es);
 
 export default function BookingForm({ embedMenu }) {
   const { showForm, setShowForm, formIsSticky } = useBooking();
-const locationRef = useRef(null);
+  const locationRef = useRef(null);
+  const dropdownRef = useRef(null);
 
   const [shouldRender, setShouldRender] = useState(showForm);
+  const [showDropdown, setShowDropdown] = useState(false);
+  const [selectedRateType, setSelectedRateType] = useState("discount");
+  const [discountCode, setDiscountCode] = useState("");
+  const [corporateCode, setCorporateCode] = useState("");
+  const [showPromoBox, setShowPromoBox] = useState(false);
 
-  
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setShowPromoBox(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (locationRef.current && !locationRef.current.contains(event.target)) {
@@ -47,8 +62,8 @@ const locationRef = useRef(null);
   tomorrow.setDate(today.getDate() + 1);
   
   const defaultHotel = {
-    name: "Costa del Sol Wyndham Lima Airport",
-    id: "105840"
+    name: "Wyndham Grand Costa del Sol Lima Airport",
+    id: "9878731"
   };
   
   const [dateRange, setDateRange] = useState([today, tomorrow]);
@@ -56,7 +71,6 @@ const locationRef = useRef(null);
   const [selectedHotel, setSelectedHotel] = useState(defaultHotel);
   const [query, setQuery] = useState(defaultHotel.name);
   
-  const [showDropdown, setShowDropdown] = useState(false);
 
   const hotelsGrouped = {
     Arequipa: [{ name: "Costa del Sol Wyndham Arequipa", id: "109836" }],
@@ -103,12 +117,39 @@ const locationRef = useRef(null);
   ));
 
   const handleSubmit = (e) => {
+    e.preventDefault();
     if (!selectedHotel) {
-      e.preventDefault();
       alert("Selecciona un hotel");
       return;
     }
-    e.target.action = `https://reservations.travelclick.com/${selectedHotel.id}`;
+
+    const baseUrl = `https://reservations.travelclick.com/${selectedHotel.id}?LanguageID=2`;
+
+    const params = new URLSearchParams();
+    if (selectedRateType === "discount" && discountCode) {
+      params.append("discount", discountCode);
+    } else if (selectedRateType === "identifier" && corporateCode) {
+      params.append("identifier", corporateCode);
+    }
+
+    if (startDate && endDate) {
+      const format = (d) =>
+        `${(d.getMonth() + 1).toString().padStart(2, "0")}/${d
+          .getDate()
+          .toString()
+          .padStart(2, "0")}/${d.getFullYear()}`;
+      params.append("datein", format(startDate));
+      params.append("dateout", format(endDate));
+    }
+
+    const finalUrl = `${baseUrl}&${params.toString()}`;
+    window.open(finalUrl, "_blank");
+
+    // Reset
+    setDiscountCode("");
+    setCorporateCode("");
+    setSelectedRateType("discount");
+    setShowPromoBox(false);
   };
 
   const renderGroupedHotels = () => {
@@ -266,20 +307,75 @@ const locationRef = useRef(null);
             </>
           )}
         </div>
-
         <div
-          className={`flex flex-col col-span-4 lg:col-span-2 ${
+        ref={dropdownRef}
+          className={`flex flex-col col-span-4 lg:col-span-2 relative  ${
             embedMenu ? "hidden" : ""
           }`}
         >
-          <span className="text-xs text-gray-500 uppercase tracking-wide">
-          </span>
-          <input
-            type="text"
-            name="discount"
-            className="border border-gray-300 rounded-md px-4 py-2 text-sm"
-          />
-        </div>
+            <input
+              type="text"
+              readOnly
+              value={
+                selectedRateType === "discount" ? discountCode : corporateCode
+              }
+              onClick={() => setShowPromoBox(!showPromoBox)}
+              placeholder="Código"
+              className="border border-gray-300 rounded-md px-4 py-2 text-sm"
+            />
+
+            {showPromoBox && (
+              <div className="absolute z-10 bg-white border border-gray-200 w-[230px] mt-9 rounded-md shadow-md p-4 space-y-4">
+                <p className="text-sm font-semibold mb-1">Seleccionar tipo de tarifa</p>
+
+                <div>
+                  <label className="flex items-center gap-2">
+                    <input
+                      type="radio"
+                      name="rateType"
+                      value="discount"
+                      checked={selectedRateType === "discount"}
+                      onChange={() => setSelectedRateType("discount")}
+                    />
+                    Código Promocional
+                  </label>
+                  {selectedRateType === "discount" && (
+  <input
+    type="text"
+    className="border border-gray-300 mt-1 px-2 py-1 w-full text-sm"
+    placeholder="Ingresar código"
+    value={discountCode}
+    onChange={(e) => setDiscountCode(e.target.value)}
+  />
+)}
+
+                </div>
+
+                <div>
+                  <label className="flex items-center gap-2">
+                    <input
+                      type="radio"
+                      name="rateType"
+                      value="identifier"
+                      checked={selectedRateType === "identifier"}
+                      onChange={() => setSelectedRateType("identifier")}
+                    />
+                    Código Corporativo
+                  </label>
+                  {selectedRateType === "identifier" && (
+  <input
+    type="text"
+    className="border border-gray-300 mt-1 px-2 py-1 w-full text-sm"
+    placeholder="Ingresar código"
+    value={corporateCode}
+    onChange={(e) => setCorporateCode(e.target.value)}
+  />
+)}
+
+                </div>
+              </div>
+            )}
+          </div>
 
         <div className="flex flex-col col-span-4 lg:col-span-3">
           <button
