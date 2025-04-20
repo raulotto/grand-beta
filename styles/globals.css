@@ -240,7 +240,7 @@ p{
     @apply bg-white p-10  items-center justify-center flex flex-col;
   }
   .SectionDivInnerMenu {
-    @apply bg-white pt-15  items-center justify-center flex flex-col;
+    @apply bg-white lg:pt-15  items-center justify-center flex flex-col;
   }
   .MobileMenuAccomadation {
     @apply flex justify-evenly items-center relative;
