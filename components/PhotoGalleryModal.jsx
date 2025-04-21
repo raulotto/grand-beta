@@ -37,33 +37,51 @@ export default function PhotoGalleryModal({ galleryData }) {
 
   return (
     <section className="SectionDiv">
-      {/* Vista previa */}
-      <div className="grid grid-cols-2 gap-2">
-        {Object.entries(galleryData)
-          .slice(0, 2)
-          .map(([section, images]) => (
-            <div key={section} onClick={openModal} className="cursor-pointer">
-              <Image
-                src={images[0].src}
-                alt={images[0].alt}
-                width={300}
-                height={200}
-                className="rounded aspect-[16/9] object-cover"
-              />
-              <p className="text-xs text-gray-600 mt-1">{images[0].alt}</p>
-            </div>
-          ))}
-      </div>
+      {/* Vista previa estilo Airbnb */}
+      <div className="ContainerFlex relative flex flex-cols-2 gap-2 max-h-[570px] overflow-hidden rounded-lg">
+  {/* Imagen grande a la izquierda */}
+  {allImages[0] && (
+    <div
+      onClick={openModal}
+      className="col-span-2 row-span-2 cursor-pointer"
+    >
+      <Image
+        src={allImages[0].src}
+        alt={allImages[0].alt}
+        width={800}
+        height={600}
+        className="w-full h-full object-cover rounded-lg"
+      />
+    </div>
+  )}
 
-      {/* Botón para abrir modal */}
-      <div className="mt-4">
-        <button
-          onClick={openModal}
-          className="px-4 py-2 bg-[#223e44] text-white rounded hover:bg-[#1a3236] transition"
-        >
-          Mostrar todas las fotos
-        </button>
+  {/* Cuadrícula derecha (2x2) */}
+  <div className="grid grid-cols-2 grid-rows-2 gap-2 max-h-[620px]">
+    {allImages.slice(1, 5).map((img, idx) => (
+      <div
+        key={idx}
+        onClick={openModal}
+        className="cursor-pointer"
+      >
+        <Image
+          src={img.src}
+          alt={img.alt}
+          width={300}
+          height={300}
+          className="w-full h-[300px] object-cover "
+        />
       </div>
+    ))}
+  </div>
+
+  {/* Botón superpuesto */}
+  <button
+    onClick={openModal}
+    className="absolute bottom-2 right-2 z-10 bg-white bg-opacity-80 text-sm text-black font-medium px-4 py-2 rounded-full hover:bg-opacity-100 transition"
+  >
+    Mostrar todas las fotos
+  </button>
+</div>
 
       {/* Modal */}
       {isOpen && (
