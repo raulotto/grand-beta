@@ -70,8 +70,8 @@ export default function PhotoGalleryModal({ galleryData }) {
         <div className="fixed inset-0 bg-white z-50 flex flex-col overflow-y-auto">
           {/* Header navegación */}
           <div className="ContainerFlex flex-col px-6 pb-0 pt-6 flex-start">
-            <div className="w-full flex items-center justify-between">
-            <h2 className="text-xl font-semibold mb-2">Recorrido fotográfico</h2>
+            <div className='w-full flex items-center justify-between'>
+            <h2 className="text-xl font-semibold ">Recorrido fotográfico</h2>
             <button
               onClick={closeModal}
               className="text-gray-600 hover:text-black text-lg"
@@ -101,13 +101,13 @@ export default function PhotoGalleryModal({ galleryData }) {
             
           </div>
 
-          {/* Secciones con disposición escalonada */}
+          {/* Galería escalonada */}
           <div className="ContainerFlex flex-col px-6 pb-10 pt-6">
             {Object.entries(galleryData).map(([section, images]) => (
               <div
                 key={section}
                 id={`section-${section}`}
-                className="SectionAmenities mb-10 flex flex-col lg:flex-row lg:items-start lg:gap-6"
+                className="SectionAmenities mb-10 pt-6 flex flex-col lg:flex-row lg:items-start lg:gap-6"
               >
                 <h3 className="text-lg font-medium mb-3 lg:mb-0 lg:w-1/4">{section}</h3>
                 <div className="w-full lg:w-3/4">
@@ -116,34 +116,37 @@ export default function PhotoGalleryModal({ galleryData }) {
                     let i = 0;
 
                     while (i < images.length) {
-                      // Imagen sola (full)
-                      blocks.push(
-                        <div
-                          key={`solo-${i}`}
-                          className="break-inside-avoid mb-4 cursor-pointer"
-                          onClick={() => {
-                            const globalIndex = allImages.findIndex(img => img.src === images[i].src);
-                            setLightboxIndex(globalIndex);
-                            setLightboxOpen(true);
-                          }}
-                        >
-                          <Image
-                            src={images[i].src}
-                            alt={images[i].alt}
-                            width={600}
-                            height={400}
-                            className="rounded w-full object-cover aspect-[16/9]"
-                          />
-                        </div>
-                      );
+                      // Imagen completa
+                      if (images[i]) {
+                        const globalIndex = allImages.findIndex(img => img?.src === images[i].src);
+                        blocks.push(
+                          <div
+                            key={`solo-${i}`}
+                            className="break-inside-avoid mb-4 cursor-pointer"
+                            onClick={() => {
+                              setLightboxIndex(globalIndex);
+                              setLightboxOpen(true);
+                            }}
+                          >
+                            <Image
+                              src={images[i].src}
+                              alt={images[i].alt}
+                              width={600}
+                              height={400}
+                              className="rounded w-full object-cover aspect-[16/9]"
+                            />
+                          </div>
+                        );
+                      }
                       i++;
 
-                      // Par de imágenes (si hay 2 disponibles)
-                      if (i + 1 < images.length) {
+                      // Par de imágenes
+                      if (images[i] && images[i + 1]) {
                         blocks.push(
-                          <div key={`pair-${i}`} className="columns-2 gap-4">
+                          <div key={`pair-${i}`} className="lg:columns-2 gap-4">
                             {[images[i], images[i + 1]].map((img, j) => {
-                              const globalIndex = allImages.findIndex(image => image.src === img.src);
+                              const globalIndex = allImages.findIndex(im => im?.src === img?.src);
+                              if (!img) return null;
                               return (
                                 <div
                                   key={`pair-${i + j}`}
@@ -178,7 +181,7 @@ export default function PhotoGalleryModal({ galleryData }) {
         </div>
       )}
 
-      {/* Lightbox con contador */}
+      {/* Lightbox */}
       <Lightbox
         open={lightboxOpen}
         close={() => setLightboxOpen(false)}
