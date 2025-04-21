@@ -17,6 +17,9 @@ import Meeting from "@/components/Meeting";
 import Ofertas from "@/components/Ofertas";
 import HotelesGrid from "@/components/HotelesGrid";
 import Footer from "@/components/Footer";
+import PhotoGalleryModal from '@/components/PhotoGalleryModal';
+import galleryData from '@/data/photoGallery.json';
+
 
 export async function getStaticProps() {
   const filePath = path.join(process.cwd(), "data", "hotel_es.json");
@@ -65,7 +68,7 @@ export default function Home({ hotel }) {
       <Habitaciones />
       <Parallax />
       <RestBar />
-      <Gallery />
+      <PhotoGalleryModal galleryData={galleryData} />
       <Meeting />
       <HotelesGrid />
       <Footer />

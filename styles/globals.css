@@ -212,6 +212,9 @@ p{
   .ContainerFlexOSize {
     @apply flex flex-col  lg:flex-row justify-between items-center  lg:gap-10 mx-auto w-full max-w-[1140px] text-light-oceanic;
   }
+  .SectionAmenities  {
+    @apply flex flex-col ;
+  }
   .StickyFormCar .ContainerFlexOSize form {
     @apply px-4 lg:px-0;
 }

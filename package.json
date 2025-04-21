@@ -10,6 +10,7 @@
     "postexport": "node relative-links.js"
   },
   "dependencies": {
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/postcss": "^4.0.14",
     "date-fns": "^4.1.0",
     "framer-motion": "^12.6.3",

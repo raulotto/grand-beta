@@ -1,0 +1,21 @@
+{
+  "Mostrador del concierge": [
+    { "src": "/images/wg-recepcion.jpg", "alt": "Recepción" },
+    { "src": "/images/wg-hall-ascensores.jpg", "alt": "Ascensores" },
+    { "src": "/images/wg-lobby.jpg", "alt": "Lobby" }
+  ],
+  "Habitaciones": [
+    { "src": "/images/WG-Habitacion-Doble-1.jpg", "alt": "Habitación doble" },
+    { "src": "/images/WG-Habitacion-Doble-2.jpg", "alt": "Habitación doble" },
+    { "src": "/images/WG-Habitacion-Doble-3.jpg", "alt": "Habitación doble" },
+    { "src": "/images/WG-Habitacion-Doble-4.jpg", "alt": "Habitación doble" }
+  ],
+  "Hotel dogfriendly": [
+    { "src": "/images/wg-gran-salon.jpg", "alt": "Gran salón" }
+  ],
+  "Sabor peruano": [
+    { "src": "/images/wg-paprika.jpg", "alt": "Paprika" },
+    { "src": "/images/wg-walak.jpg", "alt": "Walak" },
+    { "src": "/images/wg-terraza_foodcourt.jpg", "alt": "Terraza foodcourt" }
+  ]
+}

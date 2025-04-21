@@ -44,7 +44,7 @@ const RestBar = () => {
                         <div className="relative h-[400px] mx-auto">
                           {/* Imagen grande (fondo) */}
                           <Image
-                src="../images/Paprika.jpg"
+                src="../images/WG-paprika.jpg"
                 alt="Paprika"
                 width={600}
                 height={300}

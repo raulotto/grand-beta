@@ -1,4 +1,5 @@
-// ✅ Correcto para tailwind.config.js
+const aspectRatio = require('@tailwindcss/aspect-ratio');
+
 module.exports = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx}",
@@ -12,5 +13,6 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/aspect-ratio')],
+
 }

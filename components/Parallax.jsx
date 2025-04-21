@@ -5,7 +5,7 @@ const Parallax = () => {
     <div
     className="ContainerFull bg-fixed bg-center bg-cover bg-no-repeat"
     style={{
-      backgroundImage: "url('../images/Recepcion.jpg')",
+      backgroundImage: "url('../images/WG-recepcion.jpg')",
       height: "40vh",
     }}
   >
