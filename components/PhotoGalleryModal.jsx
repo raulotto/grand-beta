@@ -143,7 +143,7 @@ export default function PhotoGalleryModal({ galleryData }) {
                       // Par de imágenes
                       if (images[i] && images[i + 1]) {
                         blocks.push(
-                          <div key={`pair-${i}`} className="lg:columns-2 gap-4">
+                          <div key={`pair-${i}`} className="columns-2 gap-4">
                             {[images[i], images[i + 1]].map((img, j) => {
                               const globalIndex = allImages.findIndex(im => im?.src === img?.src);
                               if (!img) return null;
