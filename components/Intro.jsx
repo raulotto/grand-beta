@@ -11,7 +11,7 @@ const Intro = () => {
           <div className="relative h-[400px] mx-auto">
             {/* Imagen grande (fondo) */}
             <Image
-  src="/images/WG-lobby.jpg"
+  src="/images/wg-lobby.jpg"
   alt="Piscina"
   width={600}
   height={400}
