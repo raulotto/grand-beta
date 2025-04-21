@@ -116,7 +116,7 @@ export default function Restaurantes() {
     {/* Imagen */}
     <div className="w-full lg:w-1/2 h-[300px] lg:h-[400px] relative">
       <Image
-        src="https://picsum.photos/id/1080/700/500"
+        src="https://www.costadelsolperu.com/wp-content/uploads/2022/10/Hotel_Costa_del_Sol_wyndham_Lima_galeria-2022-6-1536x1072.jpg"
         alt="Desayuno buffet"
         fill
         className="object-cover rounded-md shadow-md"
@@ -187,7 +187,7 @@ export default function Restaurantes() {
     {/* Imagen a la derecha */}
     <div className="w-full lg:w-1/2 h-[300px] lg:h-[400px] relative">
       <Image
-        src="https://www.costadelsolperu.com/wp-content/uploads/2022/10/Hotel_Costa_del_Sol_wyndham_Lima_galeria-2022-14.jpg"
+        src="https://www.costadelsolperu.com/wp-content/uploads/2022/03/Hotel_Costa_del_Sol_wyndham_Lima_bar_2-845x684-1-768x622.jpeg"
         alt="Saria Bar"
         fill
         className="object-cover rounded-md shadow-md"

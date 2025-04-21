@@ -10,7 +10,6 @@
     "postexport": "node relative-links.js"
   },
   "dependencies": {
-    "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/postcss": "^4.0.14",
     "date-fns": "^4.1.0",
     "framer-motion": "^12.6.3",
@@ -28,6 +27,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@tailwindcss/aspect-ratio": "^0.4.2",
     "eslint": "^9",
     "eslint-config-next": "15.2.3"
   }
