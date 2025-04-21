@@ -318,7 +318,7 @@ p{
   @apply bg-primary-oceanic text-white ;    
 }
 .ButtonRounded{
-  @apply px-6 py-3 text-xs rounded-md;  
+  @apply px-6 py-3 text-[14px] rounded-md;  
 }
 .HeroSliderData{
   @apply absolute z-10 inset-0 flex flex-col justify-center px-4 bg-support-iron/50;  
@@ -350,6 +350,13 @@ p{
 .CardButtons{
   @apply flex justify-between items-center;
 }
+.TitlesBenefits{
+  @apply text-sm font-semibold;
+}
+.ButtonInfoStatic{
+  @apply flex text-primary-oceanic mt-4 justify-end lg:justify-start;
+}
+
 }
 @layer utilities {
   .swiper-pagination-bullet {

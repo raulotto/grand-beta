@@ -1,0 +1,43 @@
+[
+    {
+      "icon": "FaHotel",
+      "titulo": "249 habitaciones",
+      "descripcion": "Superiores, Suite y Suite Premium con un servicio de talla mundial."
+    },
+    {
+      "icon": "FaConciergeBell",
+      "titulo": "Room service 24 hrs",
+      "descripcion": "Disponible para ti en cualquier momento del día."
+    },
+    {
+      "icon": "FaUtensils",
+      "titulo": "Restaurantes y bares",
+      "descripcion": "Disfruta de la mejor gastronomía en Páprika, Saria Bar y Paraka Gourmet."
+    },
+    {
+      "icon": "FaMapMarkerAlt",
+      "titulo": "Ubicación estratégica",
+      "descripcion": "Relájate con impresionantes vistas a la pista aérea del aeropuerto."
+    },
+    {
+      "icon": "FaSpa",
+      "titulo": "Wellness",
+      "descripcion": "Renueva tu energía en nuestro spa, piscina y sauna."
+    },
+    {
+      "icon": "FaMobileAlt",
+      "titulo": "Self check-in",
+      "descripcion": "Registro rápido sin colas, sin esperas."
+    },
+    {
+      "icon": "FaCheckCircle",
+      "titulo": "Habitación inteligente",
+      "descripcion": "Automatiza iluminación, climatización y otros servicios."
+    },
+    {
+      "icon": "FaUsers",
+      "titulo": "Eventos",
+      "descripcion": "Cinco salas para eventos de clase mundial."
+    }
+  ]
+  

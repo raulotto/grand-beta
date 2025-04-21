@@ -11,7 +11,7 @@ const Meeting = () => {
         <div className="flex-1 bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
           <div className="relative w-full h-80"> {/* más altura */}
             <Image
-              src="https://picsum.photos/id/1015/600/400"
+              src="../images/wg-paquete-featured.jpg"
               alt="Paquetes"
               fill
               className="object-cover"
@@ -36,13 +36,13 @@ const Meeting = () => {
         <div className="flex-1 bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
           <div className="relative w-full h-80">
             <Image
-              src="https://picsum.photos/id/1025/600/400"
-              alt="Meetings"
+              src="../images/wg-eventos-featured.jpg"
+              alt="Eventos"
               fill
               className="object-cover"
             />
             <h4 className="absolute inset-0 flex items-center justify-center text-white font-serif text-title-section bg-black/30">
-              Meetings
+              Eventos
             </h4>
           </div>
           <div className="p-6 text-center text-black-grand">
@@ -60,13 +60,13 @@ const Meeting = () => {
         <div className="flex-1 bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
           <div className="relative w-full h-80">
             <Image
-              src="https://picsum.photos/id/1039/600/400"
-              alt="Wellness"
+              src="../images/wg-restaurantes-featured.jpg"
+              alt="Restaurantes"
               fill
               className="object-cover"
             />
             <h4 className="absolute inset-0 flex items-center justify-center text-white font-serif text-title-section bg-black/30">
-              Wellness
+            Restaurantes
             </h4>
           </div>
           <div className="p-6 text-center text-black-grand">

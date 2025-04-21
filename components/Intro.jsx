@@ -3,27 +3,24 @@ import Image from "next/image";
 
 const Intro = () => {
   return (
-    <section className="pt-0 SectionDiv BgImageRight" style={{ backgroundPosition: 'calc(100% + 18%) 0px' }}>
+    <section className="pt-0 SectionDiv">
       
-      <div className="ContainerFlex">
+      <div className="ContainerFlex ">
         {/* Contenedor de imágenes */}
-        <div className="flex-1 max-w-lg mx-auto">
-          <div className="relative h-[400px] mx-auto">
-            {/* Imagen grande (fondo) */}
-            <Image
-  src="/images/wg-lobby.jpg"
-  alt="Piscina"
-  width={600}
-  height={400}
-  className="rounded-lg object-cover w-full h-full"
-/>
+        <div className="w-full md:max-w-lg hidden lg:block">
+  <div className="relative w-full h-[200px] md:h-[400px] rounded-lg overflow-hidden">
+    <Image
+      src="/images/wg-lobby.jpg"
+      alt="Piscina"
+      fill
+      className="object-cover"
+    />
+  </div>
+</div>
 
-
-          </div>
-        </div>
 
         {/* Contenido del hotel */}
-        <div className="flex-1 max-w-lg mx-auto">
+        <div className="flex-1 max-w-lg">
           <div>
           <h3 className="suptitle">
         Experimenta la exclusividad dentro de la ciudad aeropuerto

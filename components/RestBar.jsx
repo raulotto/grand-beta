@@ -1,4 +1,6 @@
 import React from 'react';
+import Link from "next/link";
+
 import Image from "next/image";
 
 
@@ -31,29 +33,30 @@ const RestBar = () => {
               peruana, perfecto para viajeros en movimiento. Y para la máxima comodidad, nuestro room service 24/7 te 
               lleva lo mejor de la gastronomía peruana directamente a tu habitación.
             </p>
-            <div className="mt-8">
-              <button className="bg-olive-grand text-white px-6 py-3 text-xs rounded-md flex items-center gap-2">
-                <a href="#">VER RESTAURANTES Y BARES</a>
-              </button>
-            </div>
+            <div className="ButtonInfoStatic">
+        <Link
+  className="PrimaryColor ButtonRounded"
+  href="/grand/restaurantes"
+  aria-label="Descubre nuestras habitaciones"
+>
+  Descubre
+</Link>
+
+  </div>
           </div>
         </div>
 
         {/* Imagen del hotel */}
-        <div className="flex-1 max-w-lg mx-auto">
-                        <div className="relative h-[400px] mx-auto">
-                          {/* Imagen grande (fondo) */}
-                          <Image
-                src="../images/wg-paprika.jpg"
-                alt="Paprika"
-                width={600}
-                height={300}
-                className="rounded-lg object-cover w-full h-full"
-              />
-              
-              
-                        </div>
-                      </div>
+        <div className="w-full md:max-w-lg hidden lg:block">
+          <div className="relative w-full h-[200px] md:h-[400px] rounded-lg overflow-hidden">
+            <Image
+              src="/images/wg-paprika.jpg"
+              alt="Piscina"
+              fill
+              className="object-cover"
+            />
+          </div>
+        </div>
       </div>
     </section>
   );
