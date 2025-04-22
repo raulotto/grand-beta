@@ -149,7 +149,7 @@ export default function Eventos() {
       <HeroSlider page="eventos" />
 
       {/* SECCIÓN: UNFORGETTABLE MEETINGS */}
-      <section className="SectionDiv">
+      <section className="SectionDiv BgImageLeft">
         <div className="ContainerFlex flex-col text-center">
           <h2 className="TitleSection">Organiza un evento inolvidable y empieza a planificar con nosotros​</h2>
           <p className="max-w-3xl text-base text-gray-600 leading-relaxed mt-4">
@@ -160,8 +160,8 @@ export default function Eventos() {
 
       {/* SECCIÓN: PLANIFICA TUS EVENTOS */}
       <section className="SectionDiv">
-        <div className="ContainerFlex flex-col text-center">
-          <h2 className="TitleSection">Empieza a planificar tus reuniones o eventos aquí</h2>
+        <div className="ContainerFlex p-0 flex-col text-center">
+          <h2 className="TitleSectionMd">Empieza a planificar tus reuniones o eventos aquí</h2>
           <p >
           ¡Bienvenido al Hotel Costa Del Sol Wyndham Lima, ubíquese en un lugar privilegiado de la ciudad para que pueda conocer los atractivos turísticos que esta hermosa región del país tiene para ofrecerte! Con más de 60 metros cuadrados de espacio para eventos y 1 sala de eventos para elegir, Costa del Sol Wyndham Cusco es el lugar ideal para celebrar tu próxima conferencia, reunión de negocios o evento social.
           </p>
@@ -169,8 +169,8 @@ export default function Eventos() {
       </section>
 
       {/* SECCIÓN: TARJETAS EN GRILLA / CARRUSEL */}
-      <section className="SectionDiv">
-        <div className="ContainerFlex">
+      <section className="SectionDiv BgImageRight">
+        <div className="ContainerFlex p-0">
 
           {/* VERSIÓN ESCRITORIO: GRILLA DE 4 TARJETAS */}
           <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
@@ -249,7 +249,7 @@ export default function Eventos() {
           </section>
 {/* SECCIÓN: SALAS FILTRABLES */}
 <section className="SectionDiv">
-        <div className="ContainerFlex flex-col items-start">
+        <div className="ContainerFlex p-0 flex-col items-start">
 
           <div className="w-full sm:grid sm:grid-cols-2 lg:grid-cols-4 gap-6 flex overflow-x-auto pb-4 sm:overflow-visible snap-x snap-mandatory scroll-smooth">
             {eventosFiltrados.map((evento) => (
@@ -264,7 +264,7 @@ export default function Eventos() {
         </div>
       </section>
 <section className="SectionDiv">
-      <div className="ContainerFlex flex-col w-full">
+      <div className="ContainerFlex p-0 flex-col w-full">
         {items.map((item, index) => (
           <div
             key={index}
@@ -281,12 +281,12 @@ export default function Eventos() {
 
             </div>
             <div
-  className={`transition-all duration-500 ease-in-out overflow-hidden ${
-    openIndex === index ? "max-h-auto mt-2" : "max-h-0"
-  }`}
->
-  <div className="text-sm text-gray-600 px-1">{item.content}</div>
-</div>
+      className={`transition-all duration-500 ease-in-out overflow-hidden ${
+        openIndex === index ? "max-h-[500px] mt-2" : "max-h-0"
+      }`}
+    >
+      <div className="text-sm text-gray-600 px-1">{item.content}</div>
+    </div>
 
           </div>
         ))}
@@ -297,7 +297,7 @@ export default function Eventos() {
       <section  className="SectionDiv BgImageLeft">
         
   
-    <div className="ContainerFlex">
+    <div className="ContainerFlex p-0">
       
       {/* Contenedor de imágenes */}
       <div className="flex-1 max-w-md lg:max-w-lg">

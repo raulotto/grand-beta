@@ -239,6 +239,9 @@ p{
   .TitleSection {
     @apply text-3xl font-normal text-light-oceanic;
   }
+  .TitleSectionMd {
+    @apply text-xl text-light-oceanic;
+  }
   .SectionDiv {
     @apply bg-white p-10  items-center justify-center flex flex-col;
   }
@@ -258,7 +261,7 @@ p{
     @apply bg-[#405d65] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#2e4448] transition;
   }
   .BgImageLeft {
-    @apply w-full  bg-[url('/images/pattern-10r.png')] bg-contain  bg-no-repeat bg-[position:-180px_0px] lg:bg-[position:-18%_0px];
+    @apply w-full  bg-[url('/images/pattern-10r.png')] bg-contain  bg-no-repeat bg-[position:-180px_0px] lg:bg-[position:-10%_0px];
   }
   .BgImageRight {
     @apply w-full bg-[url('/images/pattern-10r.png')] bg-contain bg-no-repeat bg-[position:220px_0px] lg:bg-[position:110%_0px];
