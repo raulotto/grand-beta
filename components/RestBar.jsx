@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const RestBar = () => {
   return (
-    <section className="SectionDiv BgImageLeft">
+    <section id="restaurantes" className="SectionDiv BgImageLeft">
       
       {/* Cabecera principal con imagen de fondo a pantalla completa */}
      

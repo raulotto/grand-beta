@@ -1,83 +1,49 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import meetingData from "../data/meetingData.json";
 
 const Meeting = () => {
   return (
-    <section className="SectionDiv BgImageRight" style={{ backgroundPosition: 'calc(100% + 18%) 0px' }}>
+    <section
+      className="SectionDiv BgImageLeft"
+      
+    >
       <div className="ContainerFlex col-span-6 items-stretch">
+        <div className="w-full sm:grid sm:grid-cols-2 lg:grid-cols-3 pb-4 pl-4 gap-6 flex overflow-x-auto sm:overflow-visible snap-x snap-mandatory scroll-smooth">
+          {meetingData.map((item, index) => (
+            <div
+              key={index}
+              className="w-[120px] min-w-[270px] sm:w-auto sm:min-w-0 snap-start flex-shrink-0 bg-white rounded-lg shadow-md"
+            >
+              {/* Imagen horizontal en mobile, alta en desktop */}
+              <div className="relative w-full aspect-[16/9] md:aspect-auto md:h-80">
+                <Image
+                  src={item.image}
+                  alt={item.alt}
+                  fill
+                  className="object-cover rounded-t-lg"
+                />
+                <h4 className="absolute rounded-t-lg inset-0 flex items-center justify-center text-white font-serif text-title-section bg-black/30">
+                  {item.title}
+                </h4>
+              </div>
 
-        {/* CARD 1 */}
-        <div className="flex-1 bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
-          <div className="relative w-full h-80"> {/* más altura */}
-            <Image
-              src="../images/wg-paquete-featured.jpg"
-              alt="Paquetes"
-              fill
-              className="object-cover"
-            />
-            <h4 className="absolute inset-0 flex items-center justify-center text-white font-serif text-title-section bg-black/30">
-              Paquetes
-            </h4>
-          </div>
-          <div className="p-6 text-center text-black-grand"> {/* más padding */}
-            <p className="text-parrafos text-sm mb-6">
-              Nuestros <strong>exclusivos paquetes</strong> combinan descanso,
-              gastronomía y servicios diseñados para una estancia sin
-              preocupaciones.
-            </p>
-            
-            <Link href="#" className="PrimaryColor ButtonRounded">Ver más</Link>
-            
-          </div>
-        </div>
-
-        {/* CARD 2 */}
-        <div className="flex-1 bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
-          <div className="relative w-full h-80">
-            <Image
-              src="../images/wg-eventos-featured.jpg"
-              alt="Eventos"
-              fill
-              className="object-cover"
-            />
-            <h4 className="absolute inset-0 flex items-center justify-center text-white font-serif text-title-section bg-black/30">
-              Eventos
-            </h4>
-          </div>
-          <div className="p-6 text-center text-black-grand">
-            <p className="text-parrafos text-sm mb-6">
-              Espacios ejecutivos equipados para reuniones privadas y eventos
-              de clase mundial, dentro de la ciudad aeropuerto.
-            </p>
-            
-              <Link href="#" className="PrimaryColor ButtonRounded">Ver más</Link>
-            
-          </div>
-        </div>
-
-        {/* CARD 3 */}
-        <div className="flex-1 bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
-          <div className="relative w-full h-80">
-            <Image
-              src="../images/wg-restaurantes-featured.jpg"
-              alt="Restaurantes"
-              fill
-              className="object-cover"
-            />
-            <h4 className="absolute inset-0 flex items-center justify-center text-white font-serif text-title-section bg-black/30">
-            Restaurantes
-            </h4>
-          </div>
-          <div className="p-6 text-center text-black-grand">
-            <p className="text-parrafos text-sm mb-6">
-              Déjese llevar y logre el balance perfecto entre mente, cuerpo y
-              espíritu.
-            </p>
-            
-            <Link href="#" className="PrimaryColor ButtonRounded">Ver más</Link>
-            
-          </div>
+              {/* Contenido */}
+              <div className="flex flex-col p-6 text-left lg:text-center text-black-grand h-[200px] justify-between">
+                <p className="text-parrafos text-sm mb-0">{item.description}</p>
+                <div className="ButtonInfoStatic">
+                  <Link
+                    className="PrimaryColor ButtonRounded"
+                    href={item.link}
+                    aria-label={`Ver más sobre ${item.title.toLowerCase()}`}
+                  >
+                    Ver más
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>

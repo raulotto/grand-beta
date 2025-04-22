@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const Intro = () => {
   return (
-    <section className="pt-0 SectionDiv">
+    <section className="pt-0 SectionDiv BgImageLeft">
       
       <div className="ContainerFlex ">
         {/* Contenedor de imágenes */}

@@ -36,7 +36,7 @@ export default function PhotoGalleryModal({ galleryData }) {
   };
 
   return (
-    <section className="SectionDiv">
+    <section className="SectionDiv BgImageRight">
       {/* Vista previa estilo Airbnb */}
       <div className="ContainerFlex relative flex flex-cols-2 gap-2 max-h-[570px] overflow-hidden rounded-lg">
   {/* Imagen grande a la izquierda */}
@@ -56,28 +56,39 @@ export default function PhotoGalleryModal({ galleryData }) {
   )}
 
   {/* Cuadrícula derecha (2x2) */}
-  <div className="grid grid-cols-2 grid-rows-2 gap-2 max-h-[620px]">
+  <div className="hidden md:grid grid-cols-2 grid-rows-2 gap-2 max-h-[620px]">
     {allImages.slice(1, 5).map((img, idx) => (
-      <div
-        key={idx}
-        onClick={openModal}
-        className="cursor-pointer"
-      >
+      
         <Image
+        onClick={openModal}
           src={img.src}
           alt={img.alt}
           width={300}
           height={300}
-          className="w-full h-[300px] object-cover "
+          className="w-full lg:h-[300px] object-cover cursor-pointer "
         />
-      </div>
+    ))}
+  </div>
+
+  {/* Cuadrícula derecha (2x2) */}
+  <div className="md:hidden grid grid-cols-2 grid-rows-2 gap-2 max-h-[620px]">
+    {allImages.slice(1, 3).map((img, idx) => (
+      
+        <Image
+        onClick={openModal}
+          src={img.src}
+          alt={img.alt}
+          width={300}
+          height={300}
+          className="w-full lg:h-[300px] object-cover "
+        />
     ))}
   </div>
 
   {/* Botón superpuesto */}
   <button
     onClick={openModal}
-    className="absolute bottom-2 right-2 z-10 bg-white bg-opacity-80 text-sm text-black font-medium px-4 py-2 rounded-full hover:bg-opacity-100 transition"
+    className="shadow-xs absolute bottom-5 lg:bottom-4 right-2 z-1 bg-white bg-opacity-80 text-sm text-black font-medium px-4 py-2 rounded-full hover:bg-opacity-100 transition"
   >
     Mostrar todas las fotos
   </button>
@@ -87,7 +98,7 @@ export default function PhotoGalleryModal({ galleryData }) {
       {isOpen && (
         <div className="fixed inset-0 bg-white z-50 flex flex-col overflow-y-auto">
           {/* Header navegación */}
-          <div className="ContainerFlex flex-col px-6 pb-0 pt-6 flex-start">
+          <div className="ContainerFlex flex-col px-6 lg:px-0 pb-0 pt-6 flex-start">
             <div className='w-full flex items-center justify-between'>
             <h2 className="text-xl font-semibold ">Recorrido fotográfico</h2>
             <button
@@ -120,7 +131,7 @@ export default function PhotoGalleryModal({ galleryData }) {
           </div>
 
           {/* Galería escalonada */}
-          <div className="ContainerFlex flex-col px-6 pb-10 pt-6">
+          <div className="ContainerFlex flex-col px-6 lg:px-0 pb-10 pt-6">
             {Object.entries(galleryData).map(([section, images]) => (
               <div
                 key={section}

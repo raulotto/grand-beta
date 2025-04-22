@@ -258,10 +258,10 @@ p{
     @apply bg-[#405d65] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#2e4448] transition;
   }
   .BgImageLeft {
-    @apply w-full  bg-[url('/images/pattern-10r.png')] bg-contain  bg-no-repeat bg-[position:-18%_0px];
+    @apply w-full  bg-[url('/images/pattern-10r.png')] bg-contain  bg-no-repeat bg-[position:-180px_0px] lg:bg-[position:-18%_0px];
   }
   .BgImageRight {
-    @apply w-full bg-[url('/images/pattern-10r.png')] bg-contain bg-no-repeat;
+    @apply w-full bg-[url('/images/pattern-10r.png')] bg-contain bg-no-repeat bg-[position:220px_0px] lg:bg-[position:110%_0px];
   }
   .InnerDropdownMenu {
     @apply flex  items-start w-full h-screen relative mx-auto px-4 lg:px-0 py-[25%] lg:py-[10%] text-white;

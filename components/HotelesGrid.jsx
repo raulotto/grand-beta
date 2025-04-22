@@ -23,7 +23,7 @@ const HotelesGrid = () => {
           }}
           speed={1600}
           grabCursor={true}
-          className=" w-[300px]"
+          className=" w-[350px]"
         
           
           breakpoints={{

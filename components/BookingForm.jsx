@@ -380,7 +380,7 @@ export default function BookingForm({ embedMenu }) {
         <div className="flex flex-col col-span-4 lg:col-span-3">
           <button
             type="submit"
-            className="h-full w-full bg-[#40666a] text-white text-lg font-serif px-4 py-2"
+            className="h-full w-full bg-[#40666a] text-white text-lg font-serif px-4 py-1 rounded-md hover:bg-[#40666a] transition duration-300 flex items-center justify-center"
           >
             Reservar
           </button>

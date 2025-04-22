@@ -1,0 +1,24 @@
+[
+    {
+      "title": "Paquetes",
+      "image": "/images/wg-paquete-featured.jpg",
+      "alt": "Paquetes",
+      "description": "Nuestros exclusivos paquetes combinan descanso, gastronomía y servicios diseñados para una estancia sin preocupaciones.",
+      "link": "/grand/paquetes"
+    },
+    {
+      "title": "Eventos",
+      "image": "/images/wg-eventos-featured.jpg",
+      "alt": "Eventos",
+      "description": "Espacios ejecutivos equipados para reuniones privadas y eventos de clase mundial, dentro de la ciudad aeropuerto.",
+      "link": "/grand/eventos"
+    },
+    {
+      "title": "Restaurantes",
+      "image": "/images/wg-restaurantes-featured.jpg",
+      "alt": "Restaurantes",
+      "description": "Déjese llevar y logre el balance perfecto entre mente, cuerpo y espíritu.",
+      "link": "/grand/restaurantes"
+    }
+  ]
+  

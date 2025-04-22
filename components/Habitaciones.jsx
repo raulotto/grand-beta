@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Habitaciones = () => {
   return (
-    <section className="SectionDiv BgImageLeft">
+    <section id="habitaciones" className="SectionDiv BgImageLeft">
         
   
     <div className="ContainerFlex">
