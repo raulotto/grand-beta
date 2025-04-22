@@ -1,0 +1,38 @@
+[
+    {
+      "titulo": "Directorio",
+      "descripcion": "Configuración con una mesa rectangular o en herradura rodeada de sillas, ideal para reuniones ejecutivas, juntas directivas y sesiones estratégicas. Favorece la comunicación directa entre los asistentes y permite el uso de documentos, laptops o material de apoyo. Se adapta mejor a espacios cerrados donde se busca un ambiente formal y privado.",
+      "imagen": "/images/CDS_eventos_layout_Directorio-2025-min.jpg"
+    },
+    {
+      "titulo": "Auditorio",
+      "descripcion": "Disposición de sillas alineadas en filas sin mesas, todas orientadas hacia un escenario, tarima o presentador. Se utiliza en conferencias, charlas y seminarios donde la audiencia tiene un rol pasivo. Su diseño optimiza el espacio y permite una mejor visibilidad del expositor, siendo ideal para eventos donde no se requiere escritura o interacción entre los asistentes.",
+      "imagen": "/images/CDS_eventos_layout_Auditorio-2025-min.jpg"
+    },
+    {
+      "titulo": "U",
+      "descripcion": "Mesas largas dispuestas en filas con sillas alineadas detrás, pensadas para capacitaciones, talleres y conferencias educativas. Facilita la toma de notas y el uso de dispositivos electrónicos, ofreciendo comodidad para actividades que requieren concentración. Su distribución considera la movilidad dentro de la sala y la accesibilidad al material de apoyo.",
+      "imagen": "/images/CDS_eventos_layout_U-2025-min.jpg"
+    },
+    {
+      "titulo": "Banquete",
+      "descripcion": "Organización con mesas redondas que favorecen la interacción entre los asistentes, ideal para eventos sociales, cenas y reuniones formales. Este formato permite una distribución uniforme del servicio de alimentos y bebidas, además de ofrecer un ambiente más acogedor y propicio para la conversación.",
+      "imagen": "/images/CDS_eventos_layout_Banquete-2025-min.jpg"
+    },
+    {
+      "titulo": "Teatro",
+      "descripcion": "Similar al auditorio, con sillas organizadas en filas pero con mayor flexibilidad en la distribución, permitiendo mejorar la visibilidad desde distintos ángulos. Se emplea en presentaciones, espectáculos y conferencias donde se busca una atención total al escenario o ponente.",
+      "imagen": "/images/CDS_eventos_layout_Escuela-2025-min.jpg"
+    },
+    {
+      "titulo": "Coctel",
+      "descripcion": "Espacio libre o con mesas altas sin sillas, diseñado para eventos dinámicos como recepciones, networking y lanzamientos de productos. Fomenta la movilidad y la interacción entre los asistentes en un ambiente más relajado e informal.",
+      "imagen": "/images/CDS_eventos_layout_Coctel-2025-min.jpg"
+    },
+    {
+      "titulo": "Espiga",
+      "descripcion": "Disposición de mesas en filas diagonales, creando un patrón que optimiza la visibilidad del frente sin obstrucciones. Es una variante del estilo escuela utilizada en capacitaciones y congresos donde se busca mejorar la comodidad y el ángulo de visión de los participantes.",
+      "imagen": "/images/CDS_eventos_layout_Escuela-2025-min.jpg"
+    }
+  ]
+  

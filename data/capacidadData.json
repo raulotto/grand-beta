@@ -1,0 +1,52 @@
+[
+    {
+      "salon": "Directorio 1",
+      "area": 18,
+      "altura": 3,
+      "tipo": "Directorio",
+      "capacidad": "Hasta 8"
+    },
+    {
+      "salon": "Directorio 2",
+      "area": 18,
+      "altura": 3,
+      "tipo": "Directorio",
+      "capacidad": "Hasta 8"
+    },
+    {
+      "salon": "Sala 1",
+      "area": 66,
+      "altura": 3,
+      "tipo": "Salón",
+      "capacidad": "Hasta 70"
+    },
+    {
+      "salon": "Sala 2",
+      "area": 66,
+      "altura": 3,
+      "tipo": "Salón",
+      "capacidad": "Hasta 70"
+    },
+    {
+      "salon": "Sala 3",
+      "area": 66,
+      "altura": 3,
+      "tipo": "Salón",
+      "capacidad": "Hasta 70"
+    },
+    {
+      "salon": "Sala 1+2",
+      "area": 132,
+      "altura": 3,
+      "tipo": "Salón",
+      "capacidad": "Hasta 140"
+    },
+    {
+      "salon": "Sala 1+2+3",
+      "area": 202,
+      "altura": 3,
+      "tipo": "Salón",
+      "capacidad": "Hasta 135"
+    }
+  ]
+  

@@ -61,12 +61,17 @@ export default function EventosCard({ evento }) {
           </div>
         </div>
 
+        
+        <div className="ButtonInfoStatic">
         <Link
-          href={evento.urlInterna}
-          className="inline-block mt-2 bg-[#3A6C74] text-white py-2 px-4 rounded hover:bg-[#2c5057] transition"
-        >
-          Ver Sala
-        </Link>
+  className="PrimaryColor ButtonRounded"
+  href={evento.urlInterna}
+  aria-label="Descubre nuestras habitaciones"
+>
+Ver Sala
+</Link>
+
+  </div>
       </div>
     </div>
   )

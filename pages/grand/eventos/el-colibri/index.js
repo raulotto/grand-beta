@@ -32,7 +32,7 @@ export default function ElLoroSala() {
               navigation
               pagination={{ clickable: true }}
               loop
-              className="w-full h-[350px] rounded overflow-hidden"
+              className="relative w-full h-[350px] rounded overflow-hidden"
             >
               {sala.imagenes.map((src, index) => (
                 <SwiperSlide key={index}>
