@@ -1,12 +1,21 @@
 import React from 'react'
 import Link from "next/link";
 import Image from "next/image";
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, EffectFade } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/effect-fade'
+import 'swiper/css/autoplay'
 
+const imagenes = [
+  "/images/WG-Habitacion-Doble-1.jpg",
+  "/images/WG-Habitacion-Doble-2.jpg",
+  "/images/WG-Habitacion-Doble-3.jpg"]
 
 
 const Habitaciones = () => {
   return (
-    <section id="habitaciones" className="SectionDiv BgImageLeft">
+    <section id="habitaciones" className="SectionDiv py-0 BgImageLeft">
         
   
     <div className="ContainerFlex">
@@ -40,14 +49,29 @@ const Habitaciones = () => {
   
       {/* Contenido del hotel */}
       <div className="w-full md:max-w-lg hidden lg:block">
-        <div className="relative w-full h-[200px] md:h-[400px] rounded-lg overflow-hidden">
-          <Image
-            src="/images/WG-Habitacion-Suite-Presidencial-1.jpg"
-            alt="Piscina"
-            fill
-            className="object-cover"
-          />
-        </div>
+      <Swiper
+            modules={[Autoplay, EffectFade]}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            loop={true}
+            effect="fade"
+            className="relative w-full h-[200px] md:h-[400px] rounded-lg overflow-hidden"
+          >
+            {imagenes.map((src, index) => (
+              <SwiperSlide key={index}>
+                <div className="relative w-full h-[200px] md:h-[400px]">
+                  <Image
+                    src={src}
+                    alt={`Restaurante slide ${index + 1}`}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
       </div>
     </div>
   </section>

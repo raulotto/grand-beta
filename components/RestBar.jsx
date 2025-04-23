@@ -1,26 +1,29 @@
-import React from 'react';
-import Link from "next/link";
+'use client'
+import React from 'react'
+import Link from "next/link"
+import Image from "next/image"
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay, EffectFade } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/effect-fade'
+import 'swiper/css/autoplay'
 
-import Image from "next/image";
-
+const imagenes = [
+  "/images/wg-paprika.jpg",
+  "/images/Costa-del-sol-Desayuno-buffet-mobile.jpg",
+  "https://www.costadelsolperu.com/wp-content/uploads/2022/10/Hotel_Costa_del_Sol_wyndham_Lima_galeria-2022-10.jpg"
+]
 
 const RestBar = () => {
   return (
-    <section id="restaurantes" className="SectionDiv BgImageLeft">
-      
-      {/* Cabecera principal con imagen de fondo a pantalla completa */}
-     
-
-      {/* Contenedor de contenido */}
+    <section id="restaurantes" className="SectionDiv py-0 BgImageLeft">
       <div className="ContainerFlex">
-        
+
         {/* Contenedor de texto */}
         <div className="flex-1 max-w-md lg:max-w-lg">
-          <div> 
-          <h6 className="suptitle">Servicios de primera clase</h6>
-            <h4 className="TitleSection">
-            Comer & Beber
-            </h4>
+          <div>
+            <h6 className="suptitle">Servicios de primera clase</h6>
+            <h4 className="TitleSection">Comer & Beber</h4>
             <div className="divider-line"></div>
           </div>
           <div className="mx-auto">
@@ -33,33 +36,43 @@ const RestBar = () => {
               peruana, perfecto para viajeros en movimiento. Y para la máxima comodidad, nuestro room service 24/7 te 
               lleva lo mejor de la gastronomía peruana directamente a tu habitación.
             </p>
-            <div className="ButtonInfoStatic">
-        <Link
-  className="PrimaryColor ButtonRounded"
-  href="/grand/restaurantes"
-  aria-label="Descubre nuestras habitaciones"
->
-  Descubre
-</Link>
-
-  </div>
+            <div className="ButtonInfoStatic mt-4">
+              <Link className="ColorButton1 ButtonRounded" href="/grand/restaurantes" aria-label="Descubre nuestras habitaciones">
+                Ver restaurantes y bares
+              </Link>
+            </div>
           </div>
         </div>
 
-        {/* Imagen del hotel */}
+        {/* Imagen deslizable con Swiper */}
         <div className="w-full md:max-w-lg hidden lg:block">
-          <div className="relative w-full h-[200px] md:h-[400px] rounded-lg overflow-hidden">
-            <Image
-              src="/images/wg-paprika.jpg"
-              alt="Piscina"
-              fill
-              className="object-cover"
-            />
-          </div>
+          <Swiper
+            modules={[Autoplay, EffectFade]}
+            autoplay={{
+              delay: 3000,
+              disableOnInteraction: false,
+            }}
+            loop={true}
+            effect="fade"
+            className="relative w-full h-[200px] md:h-[400px] rounded-lg overflow-hidden"
+          >
+            {imagenes.map((src, index) => (
+              <SwiperSlide key={index}>
+                <div className="relative w-full h-[200px] md:h-[400px]">
+                  <Image
+                    src={src}
+                    alt={`Restaurante slide ${index + 1}`}
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </SwiperSlide>
+            ))}
+          </Swiper>
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default RestBar;
+export default RestBar

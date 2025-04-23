@@ -6,7 +6,7 @@ import meetingData from "../data/meetingData.json";
 const Meeting = () => {
   return (
     <section
-      className="SectionDiv BgImageLeft"
+      className="SectionDiv py-0 BgImageLeft"
       
     >
       <div className="ContainerFlex col-span-6 items-stretch">

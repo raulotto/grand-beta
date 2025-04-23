@@ -64,13 +64,7 @@ const HabitacionTemplate = ({ habitacion }) => {
         {/* Galería izquierda */}
         <div className="flex-1 w-full max-w-xl  relative">
           <div className="relative z-0 w-full h-[210px] lg:h-[420px] rounded-lg overflow-hidden shadow-md cursor-pointer">
-            {/* Flechas */}
-            <button className="thumbs-prev absolute z-2 top-1/2 left-3 transform -translate-y-1/2 bg-white/90 p-2 rounded-full shadow border text-primary-oceanic hover:bg-white hover:text-[#2d545b] transition">
-              <FaChevronLeft size={18} />
-            </button>
-            <button className="thumbs-next absolute z-2 top-1/2 right-3 transform -translate-y-1/2 bg-white/90 p-2 rounded-full shadow border text-primary-oceanic hover:bg-white hover:text-[#2d545b] transition">
-              <FaChevronRight size={18} />
-            </button>
+            
 
             <Swiper
               modules={[Navigation, EffectFade]}
@@ -123,7 +117,7 @@ const HabitacionTemplate = ({ habitacion }) => {
 
           {/* Miniaturas */}
           <div className="relative mt-5 flex items-center gap-2">
-            <button className="thumbs-prev z-1 p-2 rounded-full bg-white shadow border text-primary-oceanic hover:text-[#2d545b]">
+            <button className="thumbs-prev z-1 p-2  text-primary-oceanic">
               <FaChevronLeft size={18} />
             </button>
 
@@ -162,7 +156,7 @@ const HabitacionTemplate = ({ habitacion }) => {
               ))}
             </Swiper>
 
-            <button className="thumbs-next z-1 p-2 rounded-full bg-white shadow border text-primary-oceanic hover:text-[#2d545b]">
+            <button className="thumbs-next z-1 p-2 text-primary-oceanic">
               <FaChevronRight size={18} />
             </button>
           </div>

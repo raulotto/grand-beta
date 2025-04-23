@@ -51,7 +51,7 @@ export default function HeroSlider({ page = "home" }) {
                     <h3 className="text-2xl md:text-4xl font-bold">{slide.titulo}</h3>
                   )}
                   {slide.subtitulo && (
-                    <p className="mt-2 text-lg md:text-xl text-center">{slide.subtitulo}</p>
+                    <p className="mt-2 text-lg md:text-xl ">{slide.subtitulo}</p>
                   )}
                   {slide.arte && (
                     <Image 

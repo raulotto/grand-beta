@@ -25,7 +25,7 @@ const iconMap = {
 
 const Beneficios = () => {
   return (
-    <section id="beneficios" className="SectionDiv BgImageRight">
+    <section id="beneficios" className="SectionDiv py-0 BgImageRight">
       <h3 className="suptitle">Disfruta de todos</h3>
       <h4 className="TitleSection">Nuestros Beneficios</h4>
 
