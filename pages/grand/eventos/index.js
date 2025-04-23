@@ -120,7 +120,7 @@ export default function Eventos() {
                       </div>
                     </div>
                     <div className="w-[80%]">
-                      <h4 className="TitleSection">{item.titulo}</h4>
+                      <h4 className="TitleSectionMd">{item.titulo}</h4>
                       <p className="text-gray-700 leading-relaxed text-parrafos">
                         {item.descripcion}
                       </p>
@@ -272,7 +272,7 @@ export default function Eventos() {
             onClick={() => toggle(index)}
           >
             <div className="flex justify-between items-center cursor-pointer">
-              <h4 className="text-sm font-medium text-black-grand">
+              <h4 className="text-lg font-medium text-black-grand">
                 {item.title}
               </h4>
               <span className="text-lg text-gray-500">
@@ -282,7 +282,7 @@ export default function Eventos() {
             </div>
             <div
       className={`transition-all duration-500 ease-in-out overflow-hidden ${
-        openIndex === index ? "max-h-[500px] mt-2" : "max-h-0"
+        openIndex === index ? "max-auto mt-2" : "max-h-0"
       }`}
     >
       <div className="text-sm text-gray-600 px-1">{item.content}</div>
@@ -303,9 +303,9 @@ export default function Eventos() {
       <div className="flex-1 max-w-md lg:max-w-lg">
         <div> 
             {/* Título principal */}
-            <h4 className="TitleSection">
+            <h5 className="TitleSection">
               Catering
-            </h4>
+            </h5>
             <div className="divider-line"></div>
         </div>
         <div className="mx-auto">
@@ -347,7 +347,7 @@ const GridCard = ({ card }) => {
         <h3 className="text-lg font-semibold mb-2">{card.title}</h3>
         <p className="text-sm mb-4">{card.text}</p>
         <div className="ButtonInfoStatic">
-        <Link href={card.link} className="PrimaryColor ButtonRounded">
+        <Link href={card.link} className="ColorButton1 ButtonRounded">
           {card.buttonText}
         </Link>
         </div>

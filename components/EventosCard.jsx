@@ -64,7 +64,7 @@ export default function EventosCard({ evento }) {
         
         <div className="ButtonInfoStatic">
         <Link
-  className="PrimaryColor ButtonRounded"
+  className="ColorButton1 ButtonRounded"
   href={evento.urlInterna}
   aria-label="Descubre nuestras habitaciones"
 >

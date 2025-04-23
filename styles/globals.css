@@ -59,7 +59,7 @@
 @font-face {
   font-family: 'Gotham';
   src: url('/fonts/Gotham-Book.otf') format('opentype');
-  font-weight: 500;
+  font-weight: 200;
   font-style: normal;
 }
 html {
@@ -76,6 +76,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p{
   font-family: 'Gotham-book', sans-serif;
+  font-size: var(--text-parrafos);
 }
 
 .font-gotham-book {
@@ -359,7 +360,9 @@ p{
 .ButtonInfoStatic{
   @apply flex text-primary-oceanic mt-4 justify-end lg:justify-start;
 }
-
+.ColorButton1{
+  @apply bg-primary-oceanic hover:bg-support-iron  text-white;
+}
 }
 @layer utilities {
   .swiper-pagination-bullet {

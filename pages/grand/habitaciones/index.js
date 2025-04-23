@@ -7,10 +7,10 @@ import BookingForm from "@/components/BookingForm";
 import Footer from "@/components/Footer";
 import { motion, AnimatePresence } from "framer-motion";
 
-const tabs = ["Todas", "Superior", "Suite"];
+const tabs = ["Superior", "Suite"];
 
 export default function HabitacionesPage() {
-  const [categoriaActiva, setCategoriaActiva] = useState("Todas");
+  const [categoriaActiva, setCategoriaActiva] = useState("Superior");
 
   const habitacionesFiltradas = categoriaActiva === "Todas"
     ? habitaciones
@@ -23,8 +23,21 @@ export default function HabitacionesPage() {
 
 <BookingForm />
 <section className="SectionDiv">
+ <div className="ContainerFlex flex-col text-center pb-0">
+ <div>
+                
+      
+                <h4 className="TitleSection">
+                  Opciones de Suites
+                </h4>
+                </div>
+<p className="w-full lg:w-[70%]">Relájese en una de nuestras 249 modernas y tecnológicas habitaciones, diseñadas para ofrecer el máximo confort y eficiencia, donde
+puede solicitar servicio a la habitación las 24 horas o lavandería con solo tocar un botón. Disfrute de nuestra piscina climatizada,
+relájese en el spa o mantenga su rutina de ejercicios en nuestro gimnasio completamente equipado. Organice eventos con estilo en
+nuestras seis modernas salas, con impresionantes vistas y lo mejor de la gastronomía peruana.</p>
+ </div>
         {/* DIV CONTENEDOR */}
-        <div className="ContainerFlex flex-col">
+        <div className="ContainerFlex flex-col pb-0">
 
           {/* Tabs */}
           <div className="flex gap-6 border-b border-gray-200">

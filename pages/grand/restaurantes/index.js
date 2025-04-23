@@ -6,6 +6,7 @@ import Footer from '@/components/Footer'
 import HeroSlider from '@/components/HeroSlider';
 import Header from '@/components/Header';
 import BookingForm from '@/components/BookingForm';
+import RestaurantesGallery from '@/components/RestaurantesGallery'
 
 
 
@@ -15,7 +16,6 @@ export default function Restaurantes() {
     <main className="mx-auto">
         <HeroSlider />
         <Header />
-        <BookingForm    />
       {/* SECCIÓN: Déjate envolver por ... */}
       <section className="SectionDiv">
         <div className="ContainerFlex flex-col text-center">
@@ -45,10 +45,9 @@ export default function Restaurantes() {
                   className="w-full h-56 object-cover"
                 />
                 <div className="p-5 flex-1 flex flex-col justify-between">
-                  <h3 className="text-lg font-serif text-gray-800 mb-2 text-center">
+                  <h3 className="TitleSectionMd">
                     {card.title}
                   </h3>
-                  <div className="w-12 h-[2px] bg-green-900 mb-4"></div>
                   <div className=" text-parrafos">
                     <div
                       dangerouslySetInnerHTML={{
@@ -110,74 +109,86 @@ export default function Restaurantes() {
       </section>
 
         {/* DESAYUNO BUFFET */}
-        <section className="SectionDiv">
-  <div className="ContainerFlex flex-col lg:flex-row items-center gap-10 text-left">
-    
-    {/* Imagen */}
-    <div className="w-full lg:w-1/2 h-[300px] lg:h-[400px] relative">
-      <Image
-        src="https://www.costadelsolperu.com/wp-content/uploads/2022/10/Hotel_Costa_del_Sol_wyndham_Lima_galeria-2022-6-1536x1072.jpg"
-        alt="Desayuno buffet"
-        fill
-        className="object-cover rounded-md shadow-md"
-      />
-    </div>
-
-    {/* Bloque derecho */}
-    <div className="w-full lg:w-1/2 flex flex-col justify-center">
-      <h6 className="suptitle">Desayuno Buffet</h6>
-      <h2 className="TitleSection mb-4">Empieza el día con desayuno buffet desde las 04:00</h2>
-
-      <div className="text-white text-sm p-4 rounded shadow-inner leading-relaxed whitespace-pre-line">
-        <p className="text-parrafos">
-          Si tu vuelo es temprano, quieres organizar tu equipaje con calma o simplemente disfrutar de un buen desayuno, <strong>Wyndham Grand Costa del Sol Lima Airport</strong> te espera con un variado buffet desde las 04:00 hasta las 10:00.
-          <br /><br />
-          Disfruta de una selección de jugos, cereales, huevos a la orden y una variedad de opciones frías y calientes para comenzar el día con energía.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+       <section className="pt-0 SectionDiv BgImageLeft">
+             
+             <div className="ContainerFlex ">
+               {/* Contenedor de imágenes */}
+               <div className="w-full md:max-w-lg hidden lg:block">
+         <div className="relative w-full h-[200px] md:h-[400px] rounded-lg overflow-hidden">
+           <Image
+             src="/images/Costa-del-sol-Desayuno-buffet-mobile.jpg"
+             alt="Piscina"
+             fill
+             className="object-cover"
+           />
+         </div>
+       </div>
+       
+       
+               {/* Contenido del hotel */}
+               <div className="flex-1 max-w-lg">
+                 <div>
+                 
+       
+                 <h4 className="TitleSectionMd mb-4">
+                 Empieza el día con desayuno buffet desde las 04:00
+                 </h4>
+                   
+                 </div>
+                 
+                 <p className="text-gray-700 leading-relaxed text-parrafos">
+                   Ubicado dentro de la Ciudad aeropuerto (Jorge Chávez - LIM), Wyndham
+                   Grand Costa del Sol Lima Airport te evita la caminata de ida y vuelta
+                   por tiempo, al estar en una ciudad estratégica, con acceso directo a la
+                   terminal aérea a través de un cómodo pasillo. A tan solo 30 minutos, la
+                   sede se encuentra financiera y un megaplex ideal para los 1,200 m² con
+                   25 renovadas habitaciones con diseño de lujo y totalmente premium en un
+                   entorno sin igual. Además, en la región se pueden encontrar sitios con
+                   la importancia de Lima, como la Plaza de Armas o el Museo Submarino
+                   Abtao, la Catedral de Lima, la iglesia de San Francisco y el icónico
+                   Parque del Amor en Miraflores.
+                 </p>
+               </div>
+             </div>
+           </section>
 
 
  {/* PAPRIKA */}
  
- <section className="SectionDiv">
-  <div className="ContainerFlex flex-col lg:flex-row items-center gap-10 text-left">
-    
-    {/* Imagen a la izquierda */}
-    <div className="w-full lg:w-1/2 h-[300px] lg:h-[400px] relative">
-      <Image
-        src="https://www.costadelsolperu.com/wp-content/uploads/2022/10/Hotel_Costa_del_Sol_wyndham_Lima_galeria-2022-16.jpg"
-        alt="Paprika Restaurante"
-        fill
-        className="object-cover rounded-md shadow-md"
-      />
-    </div>
-
-    {/* Contenido a la derecha */}
-    <div className="w-full lg:w-1/2 flex flex-col justify-center">
-      <h4 className="TitleSection mb-4">
-        Páprika Restaurantes
-      </h4>
-
-      <p className="text-parrafos mb-4">
-        A chic bistro concept, with the signature of Olivier da Costa. The restaurant takes over with a menu that exposes the connection between respect for traditions, with the irreverence of restaurateur Olivier, where highlights are the Monkfish Picanha or Lobster steak.
-      </p>
-
-      <p className="text-parrafos mb-4">
-        <strong>Opening times:</strong> 6:30 pm to 11:30 pm (service)<br />
-        <strong>6:30 pm to 10:30 pm</strong> (kitchen)<br />
-        Last booking until 10 pm
-      </p>
-
-      <div className="flex gap-4 mt-4">
-        <button className="ButtonSolid ButtonRounded">BOOK NOW</button>
-        <button className="ButtonSolid ButtonRounded">MENU</button>
-      </div>
-    </div>
-  </div>
-</section>
+ <section className="pt-0 SectionDiv BgImageLeft">
+             
+             <div className="ContainerFlex ">
+               {/* Contenedor de imágenes */}
+               <div className="w-full md:max-w-lg hidden lg:block">
+         <div className="relative w-full h-[200px] md:h-[400px] rounded-lg overflow-hidden">
+           <Image
+             src="/images/wg-paprika.jpg"
+             alt="Piscina"
+             fill
+             className="object-cover"
+           />
+         </div>
+       </div>
+       
+       
+               {/* Contenido del hotel */}
+               <div className="flex-1 max-w-lg">
+                 <div>
+                 
+       
+                 <h4 className="TitleSectionMd mb-4">
+                 Páprika Restaurantes
+                 </h4>
+                   
+                 </div>
+                 
+                 <p className="text-gray-700 leading-relaxed text-parrafos">
+                 A chic bistro concept, with the signature of Olivier da Costa. The restaurant takes over with a menu that exposes the connection between respect for traditions, with the irreverence of restaurateur Olivier, where highlights are the Monkfish Picanha or Lobster steak.
+                 </p>
+               </div>
+             </div>
+           </section>
+           <RestaurantesGallery />
 
  {/* SARIA */}
 
