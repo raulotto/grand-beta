@@ -17,7 +17,7 @@ const imagenes = [
 const RestBar = () => {
   return (
     <section id="restaurantes" className="SectionDiv py-0 BgImageLeft">
-      <div className="ContainerFlex">
+      <div className="ContainerFlex flex-col-reverse lg:flex-row">
 
         {/* Contenedor de texto */}
         <div className="flex-1 max-w-md lg:max-w-lg">
@@ -45,7 +45,7 @@ const RestBar = () => {
         </div>
 
         {/* Imagen deslizable con Swiper */}
-        <div className="w-full md:max-w-lg hidden lg:block">
+        <div className="w-full md:max-w-lg">
           <Swiper
             modules={[Autoplay, EffectFade]}
             autoplay={{

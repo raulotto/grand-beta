@@ -7,7 +7,7 @@ const Intro = () => {
       
       <div className="ContainerFlex ">
         {/* Contenedor de imágenes */}
-        <div className="w-full md:max-w-lg hidden lg:block">
+        <div className="w-full md:max-w-lg">
   <div className="relative w-full h-[200px] md:h-[400px] rounded-lg overflow-hidden">
     <Image
       src="/images/wg-lobby.jpg"

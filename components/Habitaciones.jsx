@@ -18,7 +18,7 @@ const Habitaciones = () => {
     <section id="habitaciones" className="SectionDiv py-0 BgImageLeft">
         
   
-    <div className="ContainerFlex">
+    <div className="ContainerFlex flex-col-reverse lg:flex-row">
       
       {/* Contenedor de imágenes */}
       <div className="flex-1 max-w-md lg:max-w-lg">
@@ -48,7 +48,7 @@ const Habitaciones = () => {
       </div>
   
       {/* Contenido del hotel */}
-      <div className="w-full md:max-w-lg hidden lg:block">
+      <div className="w-full md:max-w-lg">
       <Swiper
             modules={[Autoplay, EffectFade]}
             autoplay={{
