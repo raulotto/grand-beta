@@ -1,0 +1,18 @@
+[
+    {
+      "title": "Alta cocina peruana",
+      "description": "Descubre la esencia de la costa, sierra y selva en cada plato. En **Paprika**, la tradición peruana se fusiona con técnicas innovadoras para ofrecerte una experiencia que respeta el producto y sorprende con texturas sofisticadas. Déjate llevar por sabores auténticos reinventados con creatividad.",
+      "image": "https://picsum.photos/id/1011/800/600"
+    },
+    {
+      "title": "La mejor experiencia gastronómica en Lima",
+      "description": "Más que un restaurante, **Paprika** es un destino gastronómico único donde la tradición y la modernidad se fusionan en un espacio al aire libre lleno de energía. Disfruta lo mejor de la comida callejera peruana con bocados irresistibles y bebidas refrescantes.",
+      "image": "https://picsum.photos/id/1015/800/600"
+    },
+    {
+      "title": "Coctelería peruana",
+      "description": "**Saria** es **el bar cosmopolita del aeropuerto, donde Perú y el mundo se encuentran**. Disfruta cócteles de autor inspirados en la tradición peruana, cervezas artesanales y piqueos perfectos para compartir.",
+      "image": "https://picsum.photos/id/1025/800/600"
+    }
+  ]
+  

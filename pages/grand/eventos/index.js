@@ -15,6 +15,10 @@ import eventos from '@/data/eventos.json'
 import capacidadData from '@/data/capacidadData.json';
 import { FaPlus, FaMinus } from 'react-icons/fa';
 import disposiciones from '@/data/disposiciones.json';
+import GridCardsSection from '@/components/GridCardsSection'
+import eventosCards from '@/data/eventosCards.json'
+
+
 
 
 export default function Eventos() {
@@ -170,37 +174,9 @@ export default function Eventos() {
 
       {/* SECCIÓN: TARJETAS EN GRILLA / CARRUSEL */}
       <section className="SectionDiv BgImageRight">
-        <div className="ContainerFlex p-0">
+      <GridCardsSection cards={eventosCards} />
 
-          {/* VERSIÓN ESCRITORIO: GRILLA DE 4 TARJETAS */}
-          <div className="hidden lg:grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
-            {data.map((card, index) => (
-              <GridCard key={index} card={card} />
-            ))}
-          </div>
 
-          {/* MOBILE: CARRUSEL SLIDE POR SLIDE CON AUTOPLAY */}
-          <div className="block lg:hidden w-full">
-            <Swiper
-              modules={[Autoplay]}
-              spaceBetween={20}
-              slidesPerView={1}
-              loop={true}
-              autoplay={{
-                delay: 2000,
-                disableOnInteraction: false,
-              }}
-              className="w-full"
-            >
-              {data.map((card, index) => (
-                <SwiperSlide key={index}>
-                  <GridCard card={card} />
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-
-        </div>
       </section>
 
       {/* CONTADOR EVENTOS */}
@@ -356,35 +332,6 @@ const GridCard = ({ card }) => {
   )
 }
 
-const data = [
-  {
-    title: 'Reuniones y conferencias',
-    text: 'Encuentra soluciones innovadoras y versátiles que te acompañan.',
-    buttonText: 'Más Información',
-    link: '/reuniones',
-    image: '/images/celebraciones-avatar-image.jpg',
-  },
-  {
-    title: 'Bodas',
-    text: 'Haz que el gran día sea tan perfecto como siempre soñaste.',
-    buttonText: 'Comenzar a planificar',
-    link: '/bodas',
-    image: '/images/bodas-avatar-image.jpg',
-  },
-  {
-    title: 'Celebraciones',
-    text: 'Eventos familiares y de empresa con opciones para grupos pequeños.',
-    buttonText: 'Explorar ahora',
-    link: '/celebraciones',
-    image: '/images/celebraciones-avatar-image.jpg',
-  },
-  {
-    title: 'Viaje en grupo',
-    text: 'Para equipos, estudiantes o familias a vivir aventuras memorables.',
-    buttonText: 'Comienza',
-    link: '/viaje-grupo',
-    image: '/images/eventos-avatar-image.jpg',
-  },
-]
+
 
 import EventosCard from '@/components/EventosCard'

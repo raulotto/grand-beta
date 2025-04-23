@@ -6,11 +6,17 @@
           "src": "/images/WG-Habitacion-Doble-1.jpg",
           "titulo": "Bienvenidos",
           "subtitulo": "Ubicado en la puerta de entrada más importante para los turistas en Perú.",
-          "ctaTexto": "",
-          "ctaLink": "/reserva"
+          "ctaTexto": "reserva",
+          "ctaLink": "/reserva",
+          "alineacion": "izquierda",
+      "claseExtra": "OverlaySlide"          
+
         },
         {
-          "src": "/images/WG-Habitacion-Doble-1.jpg"
+          "src": "https://www.costadelsolperu.com/wp-content/uploads/2025/04/hora-imbatible-back.jpg",
+          "ctaTexto": "Reserva ahora",
+          "ctaLink": "/reserva",
+          "arte": "https://www.costadelsolperu.com/wp-content/uploads/2025/04/hora-imbatible-art.png"
         }
       ]
     },
@@ -34,6 +40,16 @@
           }
         ]
       },
+      {
+          "page": "restaurantes",
+          "slides": [
+            {
+              "src": "/images/Costa-del-sol-Desayuno-buffet-mobile.jpg",
+              "titulo": "Restaurantes",
+              "subtitulo": ""
+            }
+          ]
+        },
       {
         "page": "eventos",
         "slides": [

@@ -1,0 +1,30 @@
+[
+    {
+      "title": "Reuniones y conferencias",
+      "text": "Encuentra soluciones innovadoras y versátiles que te acompañan.",
+      "buttonText": "Más Información",
+      "link": "/reuniones",
+      "image": "/images/celebraciones-avatar-image.jpg"
+    },
+    {
+      "title": "Bodas",
+      "text": "Haz que el gran día sea tan perfecto como siempre soñaste.",
+      "buttonText": "Comenzar a planificar",
+      "link": "/bodas",
+      "image": "/images/bodas-avatar-image.jpg"
+    },
+    {
+      "title": "Celebraciones",
+      "text": "Eventos familiares y de empresa con opciones para grupos pequeños.",
+      "buttonText": "Explorar ahora",
+      "link": "/celebraciones",
+      "image": "/images/celebraciones-avatar-image.jpg"
+    },
+    {
+      "title": "Viaje en grupo",
+      "text": "Para equipos, estudiantes o familias a vivir aventuras memorables.",
+      "buttonText": "Comienza",
+      "link": "/viaje-grupo",
+      "image": "/images/eventos-avatar-image.jpg"
+    }
+]

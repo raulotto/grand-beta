@@ -14,11 +14,10 @@ export default function HeroSlider({ page = "home" }) {
   const slides = slideSet?.slides || [];
 
   return (
-    <div className="w-full h-[60vh] relative">
+    <div className="w-full h-[80vh] relative">
       <Swiper
         modules={[Autoplay, Pagination, EffectFade, Navigation]}
         pagination={{ clickable: true }}
-        autoplay={{ delay: 4000, disableOnInteraction: false }}
         navigation
         loop={true}
         effect="fade"
@@ -27,7 +26,7 @@ export default function HeroSlider({ page = "home" }) {
       >
         {slides.map((slide, i) => (
           <SwiperSlide key={i}>
-            <div className="relative w-full h-[60vh]">
+            <div className="relative w-full h-[80vh]">
               <Image
                 src={slide.src}
                 alt={`Slide ${i + 1}`}
@@ -36,19 +35,37 @@ export default function HeroSlider({ page = "home" }) {
                 priority
               />
 
-              {(slide.titulo || slide.subtitulo || slide.ctaTexto) && (
-                <div className="HeroSliderData">
-                  <div className="ContainerFlexSlider LeftData LightSlider text-shadow">
+                  {(slide.titulo || slide.subtitulo || slide.ctaTexto) && (
+                    <div className={`HeroSliderData ${slide.claseExtra || ''}`}>
+                      <div
+                        className={`ContainerFlexSlider LightSlider text-shadow ${
+                          slide.alineacion === 'izquierda'
+                            ? 'items-start text-left'
+                            : slide.alineacion === 'derecha'
+                            ? 'items-end text-right'
+                            : 'items-center text-center'
+                        }`}
+                      >
+                  
                   {slide.titulo && (
                     <h3 className="text-2xl md:text-4xl font-bold">{slide.titulo}</h3>
                   )}
                   {slide.subtitulo && (
-                    <p className="mt-2 text-lg md:text-xl">{slide.subtitulo}</p>
+                    <p className="mt-2 text-lg md:text-xl text-center">{slide.subtitulo}</p>
                   )}
+                  {slide.arte && (
+                    <Image 
+                    src={slide.arte}
+                    width={600}
+                    height={300}
+                   
+                
+                    />
+                  )} 
                   {slide.ctaTexto && slide.ctaLink && (
                     <a
                       href={slide.ctaLink}
-                      className="mt-4 px-6 py-2 bg-[#3A6C74] rounded text-white hover:bg-[#2c5057]"
+                      className="mt-4 px-6 py-2 bg-secondary-terracota rounded text-white hover:bg-[#2c5057]"
                     >
                       {slide.ctaTexto}
                     </a>
