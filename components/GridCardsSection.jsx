@@ -44,7 +44,7 @@ export default function GridCardsSection({ cards }) {
   return (
       <div className="ContainerFlex flex-col w-full">
         {/* Desktop grid */}
-        <div className="hidden lg:grid gap-6 w-full" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
+        <div className="hidden lg:grid gap-8 w-full" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
         {cards.map((card, index) => (
             <Card key={index} card={card} />
           ))}

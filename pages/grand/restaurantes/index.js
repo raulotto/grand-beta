@@ -23,7 +23,7 @@ export default function Restaurantes() {
               <HeroSlider page="restaurantes" />
         <BookingForm />
       {/* SECCIÓN: Déjate envolver por ... */}
-      <section className="SectionDiv">
+      <section className="SectionDiv pb-0">
         <div className="ContainerFlex flex-col text-center">
           <h2 className="TitleSection">Déjate envolver por los sabores de Lima</h2>
           <p className="max-w-3xl text-base text-gray-600 leading-relaxed mt-4">
@@ -36,7 +36,7 @@ export default function Restaurantes() {
 
       {/* SECCIÓN: TARJETAS EN GRILLA Y CARRUSEL */}
 
-      <section className="SectionDiv">
+      <section className="SectionDiv py-0">
 
       <GridCardsSection cards={restaurantesCards} />
 </section>
@@ -46,7 +46,7 @@ export default function Restaurantes() {
              
              <div className="ContainerFlex ">
                {/* Contenedor de imágenes */}
-               <div className="w-[60%]">
+               <div className="w-full lg:w-[60%]">
          <div className="relative w-full h-[200px] md:h-[300px] overflow-hidden">
            <Image
              src="/images/Costa-del-sol-Desayuno-buffet-mobile.jpg"
@@ -59,7 +59,7 @@ export default function Restaurantes() {
        
        
                {/* Contenido del hotel */}
-               <div className="w-[40%]">
+               <div className="w-full lg:w-[40%]">
                  <div>
                  
        
@@ -93,7 +93,7 @@ export default function Restaurantes() {
              
              <div className="ContainerFlex ">
                {/* Contenedor de imágenes */}
-               <div className="w-[60%]">
+               <div className="w-full lg:w-[60%]">
          <div className="relative w-full h-[200px] md:h-[300px] overflow-hidden">
            <Image
              src="/images/cds/cds-amigas-paprika.jpg"
@@ -106,7 +106,7 @@ export default function Restaurantes() {
        
        
                {/* Contenido del hotel */}
-               <div className="w-[40%]">
+               <div className="w-full lg:w-[40%]">
                  <div>
                  
        
@@ -149,7 +149,7 @@ export default function Restaurantes() {
           <div className="ContainerFlex flex-col-reverse lg:flex-row">
           
           {/* Contenedor de imágenes */}
-          <div className="flex-1 max-w-md lg:max-w-lg">
+          <div className="w-full lg:w-[40%]">
           <div>
                  
        
@@ -181,7 +181,7 @@ Opening times: 5 pm to midnight (service)
           </div>
       
           {/* Contenido del hotel */}
-          <div className="w-full md:max-w-lg lg:block">
+          <div className="w-full lg:w-[60%]">
             <div className="relative w-full h-[200px] md:h-[300px] overflow-hidden">
               <Image
                 src="/images/cds/cds-barman.jpg"
@@ -198,7 +198,7 @@ Opening times: 5 pm to midnight (service)
              
              <div className="ContainerFlex ">
                {/* Contenedor de imágenes */}
-               <div className="w-full md:max-w-lg lg:block">
+               <div className="w-full lg:w-[60%]">
          <div className="relative w-full h-[200px] md:h-[300px] overflow-hidden">
            <Image
              src="/images/wg-paprika.jpg"
@@ -211,7 +211,7 @@ Opening times: 5 pm to midnight (service)
        
        
                {/* Contenido del hotel */}
-               <div className="flex-1 max-w-lg">
+               <div className="w-full lg:w-[40%]">
                  <div>
                  
        
