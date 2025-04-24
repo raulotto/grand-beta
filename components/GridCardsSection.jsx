@@ -19,7 +19,7 @@ export default function GridCardsSection({ cards }) {
           className="object-cover"
         />
       </div>
-      <div className="p-5 flex-1 flex flex-col justify-between">
+      <div className="p-5 flex-1 flex flex-col">
         <h3 className="TitleSectionMd">{card.title}</h3>
         {card.description && (
           <div
