@@ -57,7 +57,7 @@ const Habitaciones = () => {
             }}
             loop={true}
             effect="fade"
-            className="relative w-full h-[200px] md:h-[400px] rounded-lg overflow-hidden"
+            className="relative w-full h-[200px] md:h-[400px]  overflow-hidden"
           >
             {imagenes.map((src, index) => (
               <SwiperSlide key={index}>

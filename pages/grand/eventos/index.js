@@ -53,7 +53,7 @@ export default function Eventos() {
           content: (
             <div className="mt-6">
             {/* Toggle unidades */}
-            <div className="mb-4 inline-flex bg-gray-100 rounded-full overflow-hidden">
+            <div className="mb-4 inline-flex bg-gray-100 overflow-hidden">
               <button
                 className={`px-4 py-2 text-sm ${
                   unidad === 'pies' ? '' : 'bg-blue-600 text-white'
@@ -187,7 +187,7 @@ export default function Eventos() {
             <div className="ContainerFlex ">
               {/* Contenedor de imágenes */}
               <div className="w-full md:max-w-lg hidden lg:block">
-        <div className="relative w-full h-[200px] md:h-[400px] rounded-lg overflow-hidden">
+        <div className="relative w-full h-[200px] md:h-[300px] overflow-hidden">
           <Image
             src="/images/wg-lobby.jpg"
             alt="Piscina"
@@ -294,7 +294,7 @@ export default function Eventos() {
   
       {/* Contenido del hotel */}
       <div className="w-full md:max-w-lg hidden lg:block">
-        <div className="relative w-full h-[200px] md:h-[400px] rounded-lg overflow-hidden">
+        <div className="relative w-full h-[200px] md:h-[300px] overflow-hidden">
           <Image
             src="/images/WG-Habitacion-Suite-Presidencial-1.jpg"
             alt="Piscina"

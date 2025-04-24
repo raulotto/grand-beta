@@ -38,7 +38,7 @@ export default function PhotoGalleryModal({ galleryData }) {
   return (
     <section className="SectionDiv BgImageRight">
       {/* Vista previa estilo Airbnb */}
-      <div className="ContainerFlex relative flex flex-cols-2 gap-2 max-h-[570px] overflow-hidden rounded-lg">
+      <div className="ContainerFlex relative flex flex-cols-2 gap-2 max-h-[570px] overflow-hidden">
   {/* Imagen grande a la izquierda */}
   {allImages[0] && (
     <div
@@ -50,7 +50,7 @@ export default function PhotoGalleryModal({ galleryData }) {
         alt={allImages[0].alt}
         width={800}
         height={600}
-        className="w-full h-full object-cover rounded-lg"
+        className="w-full h-full object-cover "
       />
     </div>
   )}
@@ -88,7 +88,7 @@ export default function PhotoGalleryModal({ galleryData }) {
   {/* Botón superpuesto */}
   <button
     onClick={openModal}
-    className="shadow-xs absolute bottom-5 lg:bottom-4 right-2 z-1 bg-white bg-opacity-80 text-sm text-black font-medium px-4 py-2 rounded-full hover:bg-opacity-100 transition"
+    className="shadow-xs absolute bottom-5 lg:bottom-4 right-2 z-1 bg-white bg-opacity-80 text-sm text-black font-medium px-4 py-2  hover:bg-opacity-100 transition"
   >
     Mostrar todas las fotos
   </button>
@@ -120,7 +120,7 @@ export default function PhotoGalleryModal({ galleryData }) {
                     alt={images[0].alt}
                     width={120}
                     height={80}
-                    className="rounded w-[120px] h-[80px] object-cover"
+                    className=" w-[120px] h-[80px] object-cover"
                   />
                   <p className="text-xs text-center mt-1">{section}</p>
                 </div>
@@ -162,7 +162,7 @@ export default function PhotoGalleryModal({ galleryData }) {
                               alt={images[i].alt}
                               width={600}
                               height={400}
-                              className="rounded w-full object-cover aspect-[16/9]"
+                              className=" w-full object-cover aspect-[16/9]"
                             />
                           </div>
                         );
@@ -190,7 +190,7 @@ export default function PhotoGalleryModal({ galleryData }) {
                                     alt={img.alt}
                                     width={600}
                                     height={400}
-                                    className="rounded w-full object-cover aspect-[16/9]"
+                                    className=" w-full object-cover aspect-[16/9]"
                                   />
                                 </div>
                               );

@@ -14,7 +14,7 @@ const Meeting = () => {
           {meetingData.map((item, index) => (
             <div
               key={index}
-              className="w-[120px] min-w-[270px] sm:w-auto sm:min-w-0 snap-start flex-shrink-0 bg-white rounded-lg shadow-md"
+              className="w-[120px] min-w-[270px] sm:w-auto sm:min-w-0 snap-start flex-shrink-0 bg-white shadow-md"
             >
               {/* Imagen horizontal en mobile, alta en desktop */}
               <div className="relative w-full aspect-[16/9] md:aspect-auto md:h-80">
@@ -22,9 +22,9 @@ const Meeting = () => {
                   src={item.image}
                   alt={item.alt}
                   fill
-                  className="object-cover rounded-t-lg"
+                  className="object-cover"
                 />
-                <h4 className="absolute rounded-t-lg inset-0 flex items-center justify-center text-white font-serif text-title-section bg-black/30">
+                <h4 className="absolute inset-0 flex items-center justify-center text-white font-serif text-title-section bg-black/30">
                   {item.title}
                 </h4>
               </div>

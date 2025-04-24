@@ -35,7 +35,7 @@ export default function RestaurantesGallery() {
   return (
     <section className="SectionDiv py-0">
       <div className="ContainerFlex p-0 flex-col items-center">
-        <div className="relative w-full max-w-6xl mx-auto rounded-lg overflow-hidden">
+        <div className="relative w-full max-w-6xl mx-auto overflow-hidden">
           <Swiper
             modules={[Navigation, Autoplay, EffectFade]}
             effect="fade"
@@ -51,7 +51,7 @@ export default function RestaurantesGallery() {
               prevEl: '.custom-prev',
             }}
             onSlideChange={(swiper) => setIndex(swiper.realIndex)}
-            className="rounded-lg"
+            className=""
           >
             {images.map((img, i) => (
               <SwiperSlide key={i}>
@@ -71,7 +71,7 @@ export default function RestaurantesGallery() {
           </Swiper>
 
           {/* Contador y flechas */}
-          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#1f3c2e] text-white px-4 py-1 rounded-full flex items-center gap-4 text-sm font-semibold z-1">
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 bg-[#1f3c2e] text-white px-4 py-1 flex items-center gap-4 text-sm font-semibold z-1">
             <button className="custom-prev px-1 text-lg">{'‹'}</button>
             <span>{index + 1} / {images.length}</span>
             <button className="custom-next px-1 text-lg">{'›'}</button>

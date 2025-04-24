@@ -103,7 +103,7 @@ export default function BookingForm({ embedMenu }) {
       type="button"
       onClick={onClick}
       ref={ref}
-      className="flex items-center gap-2 border border-gray-300 px-4 py-2 rounded-md text-left w-full text-sm"
+      className="flex items-center gap-2 border border-gray-300 px-4 py-2 text-left w-full text-sm"
     >
       <RxCalendar />
       {startDate && endDate ? (
@@ -185,7 +185,7 @@ export default function BookingForm({ embedMenu }) {
       className={`FormTC 
       ${showForm ? "transition-all duration-600 ease-in-out lg:transition-none opacity-100 fixed" : 
       "-translate-y-full  z-[2]  transition-all duration-600 ease-in-out lg:transition-none"}
-      ${formIsSticky ? "fixed max-w-full right-0 top- lg:top-34 left-50% w-full z-50  shadow-sm rounded-none StickyFormCar" : ""}`}
+      ${formIsSticky ? "fixed max-w-full right-0 top- lg:top-34 left-50% w-full z-50  shadow-sm  StickyFormCar" : ""}`}
     >
       <div className="HeadHiddenForm">
         <Link
@@ -246,7 +246,7 @@ export default function BookingForm({ embedMenu }) {
               }}
               
               placeholder="Seleccionar Hotel"
-              className="border border-gray-300 rounded-md px-4 py-2 text-sm w-full pr-8"
+              className="border border-gray-300 px-4 py-2 text-sm w-full pr-8"
             />
             {selectedHotel && (
               <button
@@ -261,7 +261,7 @@ export default function BookingForm({ embedMenu }) {
               </button>
             )}
             {showDropdown && (
-              <div className="absolute z-10 bg-white border border-gray-200 w-full mt-1 rounded-md shadow-md max-h-64 overflow-y-auto">
+              <div className="absolute z-10 bg-white border border-gray-200 w-full mt-1  shadow-md max-h-64 overflow-y-auto">
                 {renderGroupedHotels()}
               </div>
             )}
@@ -321,11 +321,11 @@ export default function BookingForm({ embedMenu }) {
               }
               onClick={() => setShowPromoBox(!showPromoBox)}
               placeholder="Código"
-              className="border border-gray-300 rounded-md px-4 py-2 text-sm"
+              className="border border-gray-300 px-4 py-2 text-sm"
             />
 
             {showPromoBox && (
-              <div className="absolute z-10 bg-white border border-gray-200 w-[230px] mt-9 rounded-md shadow-md p-4 space-y-4">
+              <div className="absolute z-10 bg-white border border-gray-200 w-[230px] mt-9 shadow-md p-4 space-y-4">
                 <p className="text-sm font-semibold mb-1">Seleccionar tipo de tarifa</p>
 
                 <div>
@@ -380,7 +380,7 @@ export default function BookingForm({ embedMenu }) {
         <div className="flex flex-col col-span-4 lg:col-span-3">
           <button
             type="submit"
-            className="ColorButton1 h-full w-full  px-4 py-1.5 rounded-md transition duration-300 flex items-center justify-center cursor-pointer"
+            className="ColorButton1 h-full w-full  px-4 py-1.5 transition duration-300 flex items-center justify-center cursor-pointer"
           >
             Reservar
           </button>

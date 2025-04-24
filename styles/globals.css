@@ -232,7 +232,7 @@ p{
     @apply flex p-10 lg:hidden justify-end;
   }
   .FormTC {
-    @apply   lg:rounded-sm lg:block absolute left-1/2 z-[6] top-0 lg:top-[83%] w-[1140px] h-screen lg:h-auto lg:h-[85px] bg-white translate-x-[-50%] m-0 rounded-none  w-full max-w-6xl mx-auto bg-white shadow-md flex flex-col justify-start lg:items-center;
+    @apply    lg:block absolute left-1/2 z-[6] top-0 lg:top-[83%] w-[1140px] h-screen lg:h-auto lg:h-[85px] bg-white translate-x-[-50%] m-0   w-full max-w-6xl mx-auto bg-white shadow-md flex flex-col justify-start lg:items-center;
   }
   .OverlayHeader {
     @apply w-full z-[99] absolute top-0 left-0 bg-gradient-to-b from-[rgba(0,0,0,0.4)] to-transparent h-full pointer-events-none;
@@ -262,7 +262,7 @@ p{
     @apply w-full grid grid-cols-1  gap-4 items-center px-6 py-4;
   }
   .ButtonSolid  {
-    @apply bg-[#405d65] text-white px-4 py-2 rounded-md font-semibold hover:bg-[#2e4448] transition;
+    @apply bg-[#405d65] text-white px-4 py-2  font-semibold hover:bg-[#2e4448] transition;
   }
   .BgImageLeft {
     @apply w-full  bg-[url('/images/pattern-10r.png')] bg-contain  bg-no-repeat bg-[position:-180px_0px] lg:bg-[position:-10%_0px];
@@ -304,7 +304,7 @@ p{
     @apply top-[90%] lg:hidden text-white;
   }
   .CardHotel{
-    @apply  [display:inherit] lg:inline h-auto rounded-xl overflow-hidden border border-grey-grand shadow-sm bg-white hover:shadow-md transition;
+    @apply  [display:inherit] lg:inline h-auto overflow-hidden border border-grey-grand shadow-sm bg-white hover:shadow-md transition;
   }
   .CardHotelImage{
     @apply relative w-full h-[180px];
@@ -325,7 +325,7 @@ p{
   @apply bg-primary-oceanic text-white ;    
 }
 .ButtonRounded{
-  @apply px-6 py-3 text-[14px] rounded-md;  
+  @apply px-6 py-3 text-[14px] ;  
 }
 .HeroSliderData{
   @apply absolute z-10 inset-0 flex flex-col justify-center px-4;  

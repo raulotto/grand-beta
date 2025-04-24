@@ -65,7 +65,7 @@ export default function HeroSlider({ page = "home" }) {
                   {slide.ctaTexto && slide.ctaLink && (
                     <a
                       href={slide.ctaLink}
-                      className="mt-4 px-6 py-2 bg-secondary-terracota rounded text-white hover:bg-[#2c5057]"
+                      className="mt-4 px-6 py-2 bg-secondary-terracota text-white hover:bg-[#2c5057]"
                     >
                       {slide.ctaTexto}
                     </a>

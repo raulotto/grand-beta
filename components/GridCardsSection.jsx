@@ -10,7 +10,7 @@ export default function GridCardsSection({ cards }) {
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 1024
 
   const Card = ({ card }) => (
-    <div className="bg-white rounded-xl shadow-md overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
+    <div className="bg-white shadow-md overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
       <div className="relative w-full h-[240px]">
         <Image
           src={card.image}

@@ -17,7 +17,7 @@ const HabitacionCard = ({ habitacion }) => {
       : habitacion.descripcion;
 
   return (
-    <div className="rounded-lg overflow-hidden shadow-md bg-white flex flex-col">
+    <div className="overflow-hidden shadow-md bg-white flex flex-col">
       {/* Swiper Gallery */}
       <div className="relative w-full h-56">
       <Swiper
@@ -92,7 +92,7 @@ const HabitacionCard = ({ habitacion }) => {
 {habitacion.urlReserva && (
   <Link
     href={habitacion.urlReserva}
-    className="mt-2 inline-block text-center bg-primary-oceanic text-white py-2 px-4 rounded text-sm hover:bg-dark-oceanic"
+    className="mt-2 inline-block text-center bg-primary-oceanic text-white py-2 px-4 text-sm hover:bg-dark-oceanic"
   >
     Reservar
   </Link>

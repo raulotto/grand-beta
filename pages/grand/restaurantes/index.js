@@ -46,8 +46,8 @@ export default function Restaurantes() {
              
              <div className="ContainerFlex ">
                {/* Contenedor de imágenes */}
-               <div className="w-full md:max-w-lg lg:block">
-         <div className="relative w-full h-[200px] md:h-[300px] rounded-lg overflow-hidden">
+               <div className="w-[60%]">
+         <div className="relative w-full h-[200px] md:h-[300px] overflow-hidden">
            <Image
              src="/images/Costa-del-sol-Desayuno-buffet-mobile.jpg"
              alt="Piscina"
@@ -59,7 +59,7 @@ export default function Restaurantes() {
        
        
                {/* Contenido del hotel */}
-               <div className="flex-1 max-w-lg">
+               <div className="w-[40%]">
                  <div>
                  
        
@@ -93,8 +93,8 @@ export default function Restaurantes() {
              
              <div className="ContainerFlex ">
                {/* Contenedor de imágenes */}
-               <div className="w-full md:max-w-lg lg:block">
-         <div className="relative w-full h-[200px] md:h-[300px] rounded-lg overflow-hidden">
+               <div className="w-[60%]">
+         <div className="relative w-full h-[200px] md:h-[300px] overflow-hidden">
            <Image
              src="/images/cds/cds-amigas-paprika.jpg"
              alt="Piscina"
@@ -106,7 +106,7 @@ export default function Restaurantes() {
        
        
                {/* Contenido del hotel */}
-               <div className="flex-1 max-w-lg">
+               <div className="w-[40%]">
                  <div>
                  
        
@@ -182,7 +182,7 @@ Opening times: 5 pm to midnight (service)
       
           {/* Contenido del hotel */}
           <div className="w-full md:max-w-lg lg:block">
-            <div className="relative w-full h-[200px] md:h-[300px] rounded-lg overflow-hidden">
+            <div className="relative w-full h-[200px] md:h-[300px] overflow-hidden">
               <Image
                 src="/images/cds/cds-barman.jpg"
                 alt="Piscina"
@@ -199,7 +199,7 @@ Opening times: 5 pm to midnight (service)
              <div className="ContainerFlex ">
                {/* Contenedor de imágenes */}
                <div className="w-full md:max-w-lg lg:block">
-         <div className="relative w-full h-[200px] md:h-[300px] rounded-lg overflow-hidden">
+         <div className="relative w-full h-[200px] md:h-[300px] overflow-hidden">
            <Image
              src="/images/wg-paprika.jpg"
              alt="Piscina"
