@@ -64,8 +64,8 @@ const MenuInterno = ({ embedMenu }) => {
         isStickyMobile ? 'fixed top-[81px] z-2 w-full bg-white shadow-md' : ''
       }`}
     >
-      <div className={`ContainerFlexOSize ${embedMenu ? '' : 'px-10 py-4'} ${isStickyMobile ? 'bg-[#f5f5f5]' : ''}`}>
-        <ul className="flex overflow-x-auto no-scrollbar gap-6 p-0 w-full lg:items-center lg:justify-center">
+      <div className={`ContainerFlexOSize asds ${embedMenu ? 'bg-[#f0f0f0]' : 'px-10 py-4'} ${isStickyMobile ? '' : ''}`}>
+        <ul className="flex overflow-x-auto no-scrollbar gap-6 p-0 w-full lg:items-center lg:justify-center ">
           {menuData.map((item) => {
             const Icon = iconMap[item.icon] || FaIcons.FaQuestionCircle;
             return (

@@ -69,7 +69,10 @@ html {
 .PrataFont {
   font-family: 'Prata', serif;
 }
-
+.ColorButton1 {font-family: Prata;}
+input{
+  background-color: #ffffff;
+}
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Prata', sans-serif;
 }
@@ -84,7 +87,7 @@ p{
   font-weight: 500;
 }
 .FormTC{
-  font-family: 'gothamgotham-book', sans-serif;
+  font-family: 'gotham-book', sans-serif;
 }
 .CardHotel{
   font-family: 'Gotham', sans-serif;
@@ -232,7 +235,7 @@ p{
     @apply flex p-10 lg:hidden justify-end;
   }
   .FormTC {
-    @apply    lg:block absolute left-1/2 z-[6] top-0 lg:top-[83%] w-[1140px] h-screen lg:h-auto lg:h-[85px] bg-white translate-x-[-50%] m-0   w-full max-w-6xl mx-auto bg-white shadow-md flex flex-col justify-start lg:items-center;
+    @apply    lg:block absolute left-1/2 z-[6] top-0 lg:top-[83%]  h-screen lg:h-auto lg:h-[85px] bg-[#f0f0f0] translate-x-[-50%] m-0   w-full mx-auto shadow-md flex flex-col justify-start lg:items-center;
   }
   .OverlayHeader {
     @apply w-full z-[99] absolute top-0 left-0 bg-gradient-to-b from-[rgba(0,0,0,0.4)] to-transparent h-full pointer-events-none;
@@ -259,7 +262,7 @@ p{
     @apply flex flex-col gap-2 pl-4 py-1 text-sm font-bold text-secondary-terracota;
   }
   .ResForm {
-    @apply w-full grid grid-cols-1  gap-4 items-center px-6 py-4;
+    @apply w-full grid grid-cols-1  gap-4 items-center px-6 lg:px-0 py-4;
   }
   .ButtonSolid  {
     @apply bg-[#405d65] text-white px-4 py-2  font-semibold hover:bg-[#2e4448] transition;
@@ -369,7 +372,7 @@ p{
   @apply flex text-primary-oceanic mt-4 justify-end lg:justify-start;
 }
 .ColorButton1{
-  @apply bg-primary-oceanic hover:bg-support-iron  text-white;
+  @apply bg-primary-oceanic hover:bg-support-iron  text-white border border-primary-oceanic;
 }
 }
 @layer utilities {
