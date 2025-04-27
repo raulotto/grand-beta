@@ -38,6 +38,19 @@ useEffect(() => {
 
   console.log("BookingContext", booking)
   const [showMenu, setShowMenu] = useState(false);
+
+  useEffect(() => {
+    if (showMenu) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [showMenu]);
+
+  
   const toggleMenu = () => {
     const menu = document.querySelector(".dropdown_menu");
     menu.classList.toggle("show-menu");
@@ -76,6 +89,7 @@ useEffect(() => {
     isOpen={activeGroupId === group.id}
     onToggle={toggleGroup}
     items={group.items}
+    subgroups={group.subgroups || []}
   />
 ))}
 

@@ -274,7 +274,7 @@ p{
     @apply w-full bg-[url('/images/pattern-10r.png')] bg-contain bg-no-repeat bg-[position:220px_0px] lg:bg-[position:110%_0px];
   }
   .InnerDropdownMenu {
-    @apply flex  items-start w-full h-screen relative mx-auto px-4 lg:px-0 py-[25%] lg:py-[10%] text-white;
+    @apply flex lg:flex-col items-start w-full h-screen relative mx-auto px-4 lg:px-0 py-[25%] lg:py-[10%] text-white;
   }
   .InnerDropdownMenu .ContainerFlex{
     @apply lg:hidden flex;
@@ -286,7 +286,7 @@ p{
     @apply m-0 ;
   }
   .MegaMenu {
-    @apply lg:w-auto overflow-scroll lg:overflow-hidden justify-start lg:justify-between;
+    @apply lg:w-auto overflow-scroll lg:overflow-hidden justify-start ;
   }
   .MegaGroup {
     @apply w-full lg:w-auto;

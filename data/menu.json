@@ -1,64 +1,82 @@
 [
-    {
-      "id": "hoteles",
-      "title": "Hoteles",
-      "titleHref": "/hoteles",
-      "items": [
-        { "label": "Costa Del Sol Wyndham Tumbes", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Piura", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Chiclayo", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Trujillo Golf", "href": "#" },
-        { "label": "Costa Del Sol Trujillo Centro", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Cajamarca", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Lima City", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Lima Airport", "href": "#" },
-        { "label": "Wyndham Grand Lima Airport", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Cusco", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Arequipa", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Pucallpa", "href": "#" }
-      ]
-    },
-    {
-      "id": "promociones",
-      "title": "Promociones",
-      "titleHref": "/promociones",
-      "items": [
-        { "label": "Interbank Cuenta Sueldo 20%", "href": "#" },
-        { "label": "Interbank 20% Saria Sky Bar", "href": "#" },
-        { "label": "Interbank 20% Paprika Restaurante", "href": "#" },
-        { "label": "Scotiabank 25% Saria Sky Bar", "href": "#" },
-        { "label": "Scotiabank 20% Walak Cafe Bar", "href": "#" },
-        { "label": "Scotiabank 25% Paprika Restaurante", "href": "#" },
-        { "label": "BBVA 20% Paprika Restaurante", "href": "#" },
-        { "label": "Banco Falabella 20% Restaurantes & Bares", "href": "#" },
-        { "label": "Club El Comercio 20% Saria Sky Bar", "href": "#" },
-        { "label": "Qualitas 20% Paprika Restaurante", "href": "#" }
-      ]
-    },
-    {
-      "id": "paquetes",
-      "title": "Paquetes",
-      "titleHref": "/paquetes",
-      "items": [
-        { "label": "Paquete Romántico", "href": "#" },
-        { "label": "Paquete Familiar", "href": "#" },
-        { "label": "Paquete Noche de Bodas", "href": "#" },
-        { "label": "Full Day", "href": "#" },
-        { "label": "Cyber CDS", "href": "#" },
-        { "label": "Destino del Mes", "href": "#" }
-      ]
-    },
-    {
-      "id": "nosotros",
-      "title": "Nosotros",
-      "titleHref": "",
-      "items": [
-        { "label": "Eventos", "href": "#" },
-        { "label": "Blog", "href": "#" },
-        { "label": "Dog Friendly", "href": "#" },
-        { "label": "Reclamos", "href": "#" },
-        { "label": "Contáctenos", "href": "#" }
-      ]
-    }
-  ]
-  
+  {
+    "id": "hoteles",
+    "title": "Hoteles",
+    "titleHref": "/hoteles",
+    "items": [
+      { "label": "Costa Del Sol Wyndham Tumbes", "href": "#" },
+      { "label": "Costa Del Sol Wyndham Piura", "href": "#" },
+      { "label": "Costa Del Sol Wyndham Chiclayo", "href": "#" },
+      { "label": "Costa Del Sol Wyndham Trujillo Golf", "href": "#" },
+      { "label": "Costa Del Sol Trujillo Centro", "href": "#" },
+      { "label": "Costa Del Sol Wyndham Cajamarca", "href": "#" },
+      { "label": "Costa Del Sol Wyndham Lima City", "href": "#" },
+      { "label": "Costa Del Sol Wyndham Lima Airport", "href": "#" },
+      { "label": "Wyndham Grand Lima Airport", "href": "#" },
+      { "label": "Costa Del Sol Wyndham Cusco", "href": "#" },
+      { "label": "Costa Del Sol Wyndham Arequipa", "href": "#" },
+      { "label": "Costa Del Sol Wyndham Pucallpa", "href": "#" }
+    ]
+  },
+  {
+    "id": "promociones",
+    "title": "Promociones",
+    "titleHref": "/promociones",
+    "subgroups": [
+      {
+        "title": "Bancos",
+        "href": "/promociones/bancos",
+        "items": [
+          { "label": "Interbank Cuenta Sueldo 20%", "href": "#" },
+          { "label": "Interbank 20% Saria Sky Bar", "href": "#" },
+          { "label": "Interbank 20% Paprika Restaurante", "href": "#" },
+          { "label": "Scotiabank 25% Saria Sky Bar", "href": "#" },
+          { "label": "Scotiabank 20% Walak Cafe Bar", "href": "#" },
+          { "label": "Scotiabank 25% Paprika Restaurante", "href": "#" },
+          { "label": "BBVA 20% Paprika Restaurante", "href": "#" },
+          { "label": "Banco Falabella 20% Restaurantes & Bares", "href": "#" }
+        ]
+      },
+      {
+        "title": "Restaurantes",
+        "href": "/promociones/bancos",
+        "items": [
+          { "label": "Club El Comercio 20% Saria Sky Bar", "href": "#" },
+          { "label": "Qualitas 20% Paprika Restaurante", "href": "#" }
+        ]
+      },
+      {
+        "title": "Aliados",
+        "href": "/promociones/bancos",
+        "items": [
+          { "label": "Club El Comercio 50%", "href": "#" }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "paquetes",
+    "title": "Paquetes",
+    "titleHref": "/paquetes",
+    "items": [
+      { "label": "Paquete Romántico", "href": "#" },
+      { "label": "Paquete Familiar", "href": "#" },
+      { "label": "Paquete Noche de Bodas", "href": "#" },
+      { "label": "Full Day", "href": "#" },
+      { "label": "Cyber CDS", "href": "#" },
+      { "label": "Destino del Mes", "href": "#" }
+    ]
+  },
+  {
+    "id": "nosotros",
+    "title": "Nosotros",
+    "titleHref": "/nosotros",
+    "items": [
+      { "label": "Eventos", "href": "#" },
+      { "label": "Blog", "href": "#" },
+      { "label": "Dog Friendly", "href": "#" },
+      { "label": "Reclamos", "href": "#" },
+      { "label": "Contáctenos", "href": "#" }
+    ]
+  }
+]
