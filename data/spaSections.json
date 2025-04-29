@@ -1,0 +1,33 @@
+[
+    {
+      "id": "how-to-spa",
+      "titulo": "How To Spa",
+      "imagen": "https://picsum.photos/id/1011/800/160",
+      "contenido": "<p><strong>Booking</strong><br/>Appointments and reservations are required and subject to availability...</p><p><strong>Cancellation and Move Policy</strong><br/>24-hour cancellation applies for single services. 48-hour cancellation applies for multiple services...</p><p><strong>Health Concerns</strong><br/>Please notify the front desk of any ongoing health concerns...</p>"
+    },
+    {
+      "id": "membership",
+      "titulo": "Pallavi Spa Membership",
+      "imagen": "https://picsum.photos/id/1021/800/160",
+      "contenido": "<p>Enjoy exclusive benefits including discounted services, early booking access and complimentary amenities with our membership program.</p>"
+    },
+    {
+      "id": "packages",
+      "titulo": "Packages",
+      "imagen": "https://picsum.photos/id/1031/800/160",
+      "contenido": "<p>Our thoughtfully curated packages combine massage, body, and skincare services for a luxurious, all-in-one experience.</p>"
+    },
+    {
+      "id": "massages",
+      "titulo": "Signature Massages",
+      "imagen": "https://picsum.photos/id/1041/800/160",
+      "contenido": "<p>From deep tissue to hot stone therapy, our signature massages provide the relaxation your body needs.</p>"
+    },
+    {
+      "id": "body-treatments",
+      "titulo": "Signature Body Treatments",
+      "imagen": "https://picsum.photos/id/1051/800/160",
+      "contenido": "<p>Exfoliate, hydrate, and renew with our range of body scrubs, wraps, and therapeutic treatments.</p>"
+    }
+  ]
+  

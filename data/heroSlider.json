@@ -31,6 +31,17 @@
       ]
     },
     {
+      "page": "spa",
+      "slides": [
+        {
+          "src": "/images/cds-spa.jpg",
+          "titulo": "Spa",
+          "subtitulo": "Harmony Spa",
+          "claseExtra": "OverlaySlide"  
+        }
+      ]
+    },
+    {
       "page": "rewards",
       "slides": [
         {

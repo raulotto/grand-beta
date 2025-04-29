@@ -77,7 +77,7 @@ useEffect(() => {
      
     >
       */}
-      <div className="dropdown_menu">
+      <div className="dropdown_menu bg-primary-oceanic">
 
         <div className="InnerDropdownMenu ContainerFlex MegaMenu">
         {menuGroups.map((group) => (

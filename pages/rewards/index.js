@@ -61,10 +61,11 @@ export default function Home({ hotel }) {
     <main className="mx-auto ManropeFont">
       {/* Encabezado */}
       <HeaderClassic modoClaro />
+      <BookingForm />
       <HeroSlider page="rewards" />
 
       {/* Sección: ¿Cómo funciona Wyndham Rewards? */}
-      <section className="pt-0 SectionDiv BgImageLeft">
+      <section className=" SectionDiv BgImageLeft">
         <div className="ContainerFlex">
           <div className="w-full md:max-w-lg flex justify-center items-center">
             <h4 className="TitleSection ManropeFont">

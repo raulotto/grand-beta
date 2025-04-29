@@ -11,7 +11,7 @@ export default function GridCardsSection({ cards }) {
 
   const Card = ({ card }) => (
     <div className="bg-white shadow-md overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
-      <div className="relative w-full h-[380px]">
+      <div className="relative w-full h-[400px]">
         <Image
           src={card.image}
           alt={card.title}
@@ -44,7 +44,7 @@ export default function GridCardsSection({ cards }) {
   return (
       <div className="ContainerFlex flex-col w-full">
         {/* Desktop grid */}
-        <div className="hidden lg:grid gap-8 w-full" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
+        <div className="hidden lg:grid gap-12 w-full" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))' }}>
         {cards.map((card, index) => (
             <Card key={index} card={card} />
           ))}

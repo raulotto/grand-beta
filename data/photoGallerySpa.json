@@ -1,0 +1,14 @@
+{
+  "Spa y bienestar": [
+    { "src": "https://picsum.photos/id/1011/800/1200", "alt": "Cabina de relajación en el spa" },
+    { "src": "https://picsum.photos/id/1015/800/600", "alt": "Masaje en pareja" },
+    { "src": "https://picsum.photos/id/1025/800/600", "alt": "Terapias de agua revitalizantes" },
+    { "src": "https://picsum.photos/id/1035/800/600", "alt": "Circuito termal de relajación" },
+    { "src": "https://picsum.photos/id/1045/800/600", "alt": "Sesión de aromaterapia" },
+    { "src": "https://picsum.photos/id/1055/800/600", "alt": "Tratamiento facial de lujo" },
+    { "src": "https://picsum.photos/id/1065/800/600", "alt": "Piscina climatizada interior" },
+    { "src": "https://picsum.photos/id/1075/800/600", "alt": "Zona de meditación rodeada de naturaleza" },
+    { "src": "https://picsum.photos/id/1085/800/600", "alt": "Masaje con piedras calientes" },
+    { "src": "https://picsum.photos/id/1095/800/600", "alt": "Sala de descanso con vista al jardín" }
+  ]
+}
