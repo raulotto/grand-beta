@@ -1,0 +1,46 @@
+[
+    {
+      "categoria": "reservas",
+      "preguntas": [
+        {
+          "pregunta": "¿Debo dar mi número de tarjeta de crédito para hacer una reserva en línea? ¿Es seguro?",
+          "respuesta": "Sí, es necesaria una tarjeta de crédito para todas las reservas realizadas a través de Internet. Para protegerte contra el uso no autorizado de tu tarjeta de crédito, el proceso de reservas se maneja en un servidor seguro que cifra la información de la tarjeta de crédito."
+        },
+        {
+          "pregunta": "¿Se realizará un cobro en mi tarjeta de crédito si no cancelo y no me presento?",
+          "respuesta": "Sí, automáticamente se realiza un cobro de garantía en la tarjeta de crédito luego de una reserva. Se te cobrará solo la estadía de la primera noche."
+        },
+        {
+          "pregunta": "¿Cómo puedo ver o cancelar una reserva que realicé en línea?",
+          "respuesta": "Ve a Recuperar una reserva para ver o cancelar tu reserva."
+        },
+        {
+          "pregunta": "¿Cuál es la política de cancelaciones?",
+          "respuesta": "Las reservas deben cancelarse de conformidad con la política de cancelaciones del hotel para la tarifa y las fechas reservadas."
+        },
+        {
+          "pregunta": "¿Qué pasa si quiero reservar un grupo de habitaciones?",
+          "respuesta": "Si necesitas más de dos habitaciones, puedes hacer varias reservas. Para reservas de 10 o más, llena nuestro Formulario de viaje para descuentos grupales."
+        }
+      ]
+    },
+    {
+      "categoria": "llegada",
+      "preguntas": [
+        {
+          "pregunta": "¿Cómo puedo notificar al hotel que llegaré después de la hora de check in?",
+          "respuesta": "Todas las reservas garantizadas con tarjeta se mantienen. Si sabes que llegarás tarde, indícalo en 'solicitudes especiales' o contacta directamente al hotel."
+        }
+      ]
+    },
+    {
+      "categoria": "niños",
+      "preguntas": [
+        {
+          "pregunta": "Viajo con un niño. ¿Afectará mi reserva?",
+          "respuesta": "Sí, puede afectar el alojamiento. Indica número de niños y edades durante la reserva, o contacta al hotel para confirmar detalles."
+        }
+      ]
+    }
+  ]
+  

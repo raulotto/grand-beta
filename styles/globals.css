@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 @import "tailwindcss";
 
 
@@ -9,6 +10,9 @@
   --color-secondary-terracota: rgb(158,74,51);
   --color-support-ash: rgb(40,40,41);
   --color-support-iron: rgb(85,86,90);
+
+  --color-primary-orange: #f08900;
+  --color-primary-blue: #0066ba;
 
   --color-support-custom-gray: rgb(103,103,103);
 
@@ -65,9 +69,15 @@
 html {
   scroll-behavior: smooth;
 }
-
+ol {
+  list-style: numbers;
+  padding-left: 16px;
+}
 .PrataFont {
   font-family: 'Prata', serif;
+}
+.ManropeFont {
+  font-family: 'Manrope', sans-serif;
 }
 .ColorButton1 {font-family: Prata;}
 input{
@@ -211,7 +221,7 @@ p{
   }
   
   .ContainerFlex {
-    @apply flex flex-col  lg:flex-row justify-between items-center gap-[25px] lg:gap-10 mx-auto py-[30px] lg:py-[60px] w-full max-w-[1140px];
+    @apply flex flex-col  lg:flex-row justify-between items-center gap-[25px] lg:gap-10 mx-auto py-[30px] lg:py-[40px] w-full max-w-[1140px];
   }
   .ContainerFlexOSize {
     @apply flex flex-col  lg:flex-row justify-between items-center  lg:gap-10 mx-auto w-full max-w-[1140px] text-light-oceanic;

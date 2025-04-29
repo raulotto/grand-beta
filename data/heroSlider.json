@@ -31,6 +31,17 @@
       ]
     },
     {
+      "page": "rewards",
+      "slides": [
+        {
+          "src": "/images/pareja-rewards.avif",
+          "titulo": "Hospédate dos noches y gana una noche gratis o una tarjeta de regalo",
+          "subtitulo": "Se aplican términos y condiciones",
+          "alineacion": "izquierda"
+        }
+      ]
+    },
+    {
         "page": "matrimonial-superior",
         "slides": [
           {

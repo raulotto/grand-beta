@@ -11,7 +11,7 @@ export default function GridCardsSection({ cards }) {
 
   const Card = ({ card }) => (
     <div className="bg-white shadow-md overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
-      <div className="relative w-full h-[240px]">
+      <div className="relative w-full h-[380px]">
         <Image
           src={card.image}
           alt={card.title}
