@@ -65,7 +65,7 @@ const HeaderTrad = ({ modoClaro = false }) => {
       </div>
 
       {/* Top header con logo, menú hamburguesa y opciones */}
-      <div className="ContainerFlex flex-row px-10 lg:py-[20px] justify-between items-center">
+      <div className="ContainerFlex flex-row px-6 lg:py-[20px] justify-between items-center">
         {/* Logo */}
         <div className="LogoInner">
           <div className="block">
@@ -126,7 +126,7 @@ const HeaderTrad = ({ modoClaro = false }) => {
         </div>
 
         {/* Botón reservar */}
-        <div className="ButtonBooking ActivateForm  mr-5">
+        <div className="ButtonBooking ActivateForm">
           <Link
             className="ButtonSolid"
             href="#"
@@ -143,7 +143,7 @@ const HeaderTrad = ({ modoClaro = false }) => {
          <div className="flex items-center justify-center gap-5">
           {/* Idioma */}
          <Link
-          className={`SwitchLang hidden lg:flex  items-center MenuLight transition-colors duration-300 ${
+          className={`SwitchLang  flex  items-center MenuLight transition-colors duration-300 ${
             isActive ? "text-primary-oceanic" : "text-white"
           }`}
           href="/en/hotel-wyndham-grand-costa-del-sol-lima-airport"
