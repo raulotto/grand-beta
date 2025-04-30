@@ -185,7 +185,7 @@ export default function Home({ hotel }) {
       <section className="SectionDiv">
       <div className="ContainerFlex flex flex-col items-stretch">
       <h2 className="ManropeFont TitleSectionMd font-bold">Preguntas frecuentes sobre reservas</h2>
-      <PreguntasFrecuentes categoria="reservas" />
+      <PreguntasFrecuentes categoria="general" />
       </div>
     </section>
       {/* Pie de página */}
