@@ -38,7 +38,7 @@ export default function Home({ hotel }) {
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      const triggerPoint = window.innerHeight * 0.51;
+      const triggerPoint = window.innerHeight * 0.71;
       const margin = 20; // margen de seguridad para evitar parpadeo
   
       if (window.innerWidth >= 1024) {
@@ -62,7 +62,11 @@ export default function Home({ hotel }) {
       <HeaderTrad />
       <HeroSlider page="home" />
       <BookingForm embedMenu={embedMenu} />
-      {!embedMenu && <MenuInterno />}
+   
+      <MenuInterno
+  embedMenu={false}
+  className={`${embedMenu ? 'invisible absolute h-0 overflow-hidden' : 'block'}`}
+/>
 
       <Intro />
       <Beneficios id="beneficios" />

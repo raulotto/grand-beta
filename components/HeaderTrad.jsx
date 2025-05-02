@@ -6,6 +6,7 @@ import menuGroups from "@/data/menu.json";
 import { useBooking } from "@/context/BookingContext";
 import Image from "next/image";
 import { FaPhoneSquareAlt, FaCalendarAlt } from "react-icons/fa";
+import LogoHeader from '@/components/LogoHeader'
 
 const HeaderTrad = ({ modoClaro = false }) => {
   const booking = useBooking();
@@ -48,6 +49,9 @@ const HeaderTrad = ({ modoClaro = false }) => {
     >
       {/* Dropdown megamenú */}
       <div className="dropdown_menu bg-primary-oceanic">
+        <div className="ContainerFlex px-6 lg:px-0 items-start">
+        <LogoHeader isActive={isActive} />
+        </div>
         <div className="InnerDropdownMenu ContainerFlex MegaMenu">
           {menuGroups.map((group) => (
             <MegaGroup
@@ -67,22 +71,7 @@ const HeaderTrad = ({ modoClaro = false }) => {
       {/* Top header con logo, menú hamburguesa y opciones */}
       <div className="ContainerFlex flex-row px-6 lg:px-[0px] lg:py-[20px] justify-between items-center">
         {/* Logo */}
-        <div className="LogoInner">
-          <div className="block">
-            <Link href="/grand">
-              <Image
-                src={
-                  isActive
-                    ? "/images/new-grand-costa-aeropuerto-logo-oceanic.svg"
-                    : "/images/new-grand-costa-aeropuerto-logo-blanco.svg"
-                }
-                alt="Logo"
-                width={200}
-                height={isActive ? 120 : 130}
-              />
-            </Link>
-          </div>
-        </div>
+        <LogoHeader isActive={isActive} />
 
         {/* Centro - Teléfono */}
         <div className="ItemsMenuCenter">

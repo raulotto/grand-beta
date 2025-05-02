@@ -185,7 +185,7 @@ export default function BookingForm({ embedMenu }) {
       className={`FormTC 
       ${showForm ? "transition-all duration-600 ease-in-out lg:transition-none opacity-100 fixed" : 
       "-translate-y-full  z-[2]  transition-all duration-600 ease-in-out lg:transition-none"}
-      ${formIsSticky ? "fixed max-w-full right-0 top- lg:top-34 left-50% w-full z-50   StickyFormCar" : ""}`}
+      ${formIsSticky ? "fixed max-w-full right-0 top- lg:top-34 left-50% w-full z-50   StickyFormCar transition-all duration-600 ease-in-out " : ""}`}
     >
       <div className="HeadHiddenForm">
         <Link
@@ -200,12 +200,14 @@ export default function BookingForm({ embedMenu }) {
       </div>
 
       <div className="ContainerFlexOSize">
-  {embedMenu && (
-    <div className="lg:block ">
-      <MenuInterno embedMenu={embedMenu} />
-
-    </div>
-  )}
+      {embedMenu && (
+  <div className="transition-all duration-500 ease-in-out">
+    <MenuInterno
+  embedMenu={true}
+  className={`${embedMenu ? 'block' : 'hidden'}`}
+/>
+  </div>
+)}
 
 <form
   name="resform"
@@ -380,7 +382,7 @@ export default function BookingForm({ embedMenu }) {
         <div className="flex flex-col col-span-4 lg:col-span-3">
           <button
             type="submit"
-            className="ColorButton1 h-[36px] w-full px-4 py-1 transition duration-300 flex items-center justify-center cursor-pointer text-[.7em] font-[600] "
+            className="ColorButton1 h-[36px] w-full px-4 py-1 transition duration-300 flex items-center justify-center cursor-pointer text-[.7em] font-[800] "
           >
             Reservar Ahora
           </button>
