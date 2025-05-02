@@ -54,24 +54,24 @@ export default function EventosCard({ evento }) {
           <div className="flex items-center gap-2">
           <IoResizeSharp />
 
-            Tamaño: {evento.tamaño}
+            <span className="text-xs">Tamaño: {evento.tamaño}</span>
           </div>
           <div className="flex items-center gap-2">
           <AiOutlineColumnHeight />
 
-            Altura: {evento.altura}
+            <span className="text-xs">Altura: {evento.altura}</span>
           </div>
           <div className="flex items-center gap-2">
           <LuUsersRound />
 
-            Capacidad Max: {evento.capacidadMax}
+            <span className="text-xs">Capacidad Max: {evento.capacidadMax}</span>
           </div>
         </div>
 
         
         <div className="ButtonInfoStatic">
         <Link
-  className="ButtonOutline text-[12px] font-semibold"
+  className="ButtonOutline text-[10px] font-semibold"
   href={evento.urlInterna}
   aria-label="Descubre nuestras habitaciones"
 >

@@ -17,7 +17,7 @@ const HeaderTrad = ({ modoClaro = false }) => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScroll = window.scrollY;
-      setIsVisible(currentScroll > 100);
+      setIsVisible(currentScroll > 300);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -50,7 +50,7 @@ const HeaderTrad = ({ modoClaro = false }) => {
       {/* Dropdown megamenú */}
       <div className="dropdown_menu bg-primary-oceanic">
         <div className="ContainerFlex px-6 lg:px-0 items-start">
-        <LogoHeader isActive={isActive} />
+        <LogoHeader isActive={false}  />
         </div>
         <div className="InnerDropdownMenu ContainerFlex MegaMenu">
           {menuGroups.map((group) => (

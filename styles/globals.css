@@ -282,10 +282,10 @@ p{
     @apply w-full z-[99] absolute top-0 left-0 bg-gradient-to-b from-[rgba(0,0,0,0.4)] to-transparent h-full pointer-events-none;
   }
   .TitleSection {
-    @apply text-[1.5em] font-normal text-support-ash;
+    @apply text-[1.5em] font-normal text-primary-oceanic;
   }
   .TitleSectionMd {
-    @apply text-xl text-support-ash;
+    @apply text-xl text-primary-oceanic;
   }
   .TitleSectionSm {
     @apply text-sm text-light-oceanic font-semibold;
