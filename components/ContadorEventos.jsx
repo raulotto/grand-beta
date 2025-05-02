@@ -21,30 +21,30 @@ export default function ContadorEventos() {
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 w-full text-center">
           <div>
-            <p className="text-3xl font-bold text-support-ash PrataFont">
+            <h3 className=" font-bold  PrataFont">
               {inView && <CountUp end={300} duration={2} />}m²
-            </p>
+            </h3>
             <p className="text-sm mt-1">Espacio total para eventos</p>
           </div>
 
           <div>
-            <p className="text-3xl font-bold text-support-ash PrataFont">
+            <h3 className="text-3xl font-bold text-support-ash PrataFont">
               {inView && <CountUp end={250} duration={2} />}m²
-            </p>
+            </h3>
             <p className="text-sm mt-1">Área de la sala más amplia</p>
           </div>
 
           <div>
-            <p className="text-3xl font-bold text-support-ash PrataFont">
+            <h3 className="text-3xl font-bold text-support-ash PrataFont">
               {inView && <CountUp end={200} duration={2} />}
-            </p>
+            </h3>
             <p className="text-sm mt-1">Salas de eventos</p>
           </div>
 
           <div>
-            <p className="text-3xl font-bold text-support-ash PrataFont">
+            <h3 className="text-3xl font-bold text-support-ash PrataFont">
               {inView && <CountUp end={150} duration={2} />}
-            </p>
+            </h3>
             <p className="text-sm mt-1">ambientes en simultáneo</p>
           </div>
         </div>

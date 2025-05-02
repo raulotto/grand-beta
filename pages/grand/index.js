@@ -19,6 +19,7 @@ import HotelesGrid from "@/components/HotelesGrid";
 import Footer from "@/components/Footer";
 import PhotoGalleryModal from '@/components/PhotoGalleryModal';
 import galleryData from '@/data/photoGallery.json';
+import BeneficiosDirectos from "@/components/BeneficiosDirectos";
 
 
 export async function getStaticProps() {
@@ -66,6 +67,7 @@ export default function Home({ hotel }) {
       <Intro />
       <Beneficios id="beneficios" />
       <Habitaciones />
+      <BeneficiosDirectos />
       <Parallax />
       <RestBar />
       <PhotoGalleryModal galleryData={galleryData} />

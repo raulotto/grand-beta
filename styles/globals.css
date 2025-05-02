@@ -14,7 +14,7 @@
   --color-primary-orange: #f08900;
   --color-primary-blue: #0066ba;
 
-  --color-support-custom-gray: rgb(103,103,103);
+  --color-support-custom-gray: rgb(113,113,113);
 
 
   --color-dark-oceanic: rgb(56,83,93);
@@ -25,7 +25,7 @@
 
 
   --color-grey-grand: #bababa;
-  --text-parrafos: 14px;
+  --text-parrafos: 13px;
   --text-title-section: 24px;
   --text-suptitle: .6em;
 }
@@ -49,26 +49,45 @@
 }
 @font-face {
   font-family: 'Gotham';
-  src: url('/fonts/Gotham-Bold.otf') format('opentype');
-  font-weight: 500;
+  src: url('/fonts/Gotham-Light.otf') format('opentype');
+  font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Gotham';
-  src: url('/fonts/Gotham-Light.otf') format('opentype');
-  font-weight: 500;
+  src: url('/fonts/Gotham-Book.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Gotham';
+  src: url('/fonts/Gotham-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'HCo Gotham SSm';
+  src: url('/fonts/gothamssm_medium.otf') format('opentype');
+  font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: 'Gotham';
-  src: url('/fonts/Gotham-Book.otf') format('opentype');
-  font-weight: 200;
+  font-family: 'HCo Gotham SSm';
+  src: url('/fonts/gothamssm_light.otf') format('opentype');
+  font-weight: 100;
   font-style: normal;
 }
 html {
   scroll-behavior: smooth;
 }
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 ol {
   list-style: numbers;
   padding-left: 16px;
@@ -79,7 +98,16 @@ ol {
 .ManropeFont {
   font-family: 'Manrope', sans-serif;
 }
-.ColorButton1 {font-family: Prata;}
+.GothamBook {
+  font-family: 'Gotham-book', sans-serif;
+}
+.Gotham {
+  font-family: 'Gotham', sans-serif;
+}
+.HCoGothamSSm{
+  font-family: 'HCo Gotham SSm', sans-serif;
+}
+.ColorButton1 {font-family: 'HCo Gotham SSm', sans-serif;}
 input{
   background-color: #ffffff;
 }
@@ -88,8 +116,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p{
-  font-family: 'Gotham-book', sans-serif;
+  font-family: 'HCo Gotham SSm', sans-serif;
   font-size: var(--text-parrafos);
+  font-weight: 300;
+  color: var(--color-support-custom-gray);
 }
 
 .font-gotham-book {
@@ -220,7 +250,7 @@ p{
   }
   
   .ContainerFlex {
-    @apply flex flex-col  lg:flex-row justify-between items-center gap-[25px] lg:gap-10 mx-auto py-[30px] lg:py-[40px] w-full max-w-[1140px];
+    @apply flex flex-col  lg:flex-row justify-between items-center gap-[20px] lg:gap-10 mx-auto py-[30px] lg:py-[40px] w-full max-w-[1140px];
   }
   .ContainerFlexOSize {
     @apply flex flex-col  lg:flex-row justify-between items-center  lg:gap-10 mx-auto w-full max-w-[1140px] text-light-oceanic;
@@ -250,7 +280,7 @@ p{
     @apply w-full z-[99] absolute top-0 left-0 bg-gradient-to-b from-[rgba(0,0,0,0.4)] to-transparent h-full pointer-events-none;
   }
   .TitleSection {
-    @apply text-3xl font-normal text-light-oceanic;
+    @apply text-[1.5em] font-normal text-light-oceanic;
   }
   .TitleSectionMd {
     @apply text-xl text-light-oceanic;
@@ -339,11 +369,17 @@ p{
 .ButtonRounded{
   @apply px-6 py-3 text-[14px] ;  
 }
+.ButtonOutline{
+  @apply outline-1  outline-solid text-primary-oceanic px-4 py-2  hover:bg-primary-oceanic hover:text-white transition-all duration-300 ease-in-out;  
+}
 .HeroSliderData{
   @apply absolute z-10 inset-0 flex flex-col justify-center px-4;  
 }
 .OverlaySlide{
   @apply  bg-support-iron/50;  
+}
+.OverlayDiv{
+  @apply  w-full h-full absolute bg-gray-950/30 top-0 right-0;   
 }
 
 
@@ -381,7 +417,10 @@ p{
   @apply flex text-primary-oceanic mt-4 justify-end lg:justify-start;
 }
 .ColorButton1{
-  @apply bg-primary-oceanic hover:bg-support-iron  text-white border border-primary-oceanic;
+  @apply bg-primary-oceanic hover:bg-support-iron  text-white border border-primary-oceanic uppercase;
+}
+.ListItemLugares  {
+  @apply flex justify-between w-full items-center
 }
 }
 @layer utilities {

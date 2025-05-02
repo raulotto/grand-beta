@@ -23,7 +23,7 @@ const MegaGroup = ({ id, title, titleHref, items = [], subgroups = [], isOpen, o
     <div className="MegaGroup">
       {/* Título principal siempre visible */}
       <div className="MegaGroupHeader flex justify-between items-center">
-        <Link href={titleHref} className="MegaGroupTitle text-white font-semibold uppercase">
+        <Link href={titleHref} className="MegaGroupTitle text-white uppercase HCoGothamSSm">
           {title}
         </Link>
 

@@ -11,28 +11,27 @@ const ItemsRightMenu = ({ isVisible, modoClaro = false }) => {
     <div className="ItemsMenuLeft">
   {/* Logo para desktop (lg y más) */}
  {/* Logo en mobile – cambia según scroll */}
- <div className="lg:block">
-  <Link href="/grand">
-    {!isVisible ? (
-      <Image
-        src={
-          isVisible
-            ? "/images/new-grand-costa-aeropuerto-logo-oceanic.svg"
-            : "/images/new-grand-costa-aeropuerto-logo-blanco.svg"
-        }
-        alt="Logo"
-        width={200}
-        height={isVisible ? 110 : 130}
-      />
-    ) : (
-      <Image
-        src="/images/new-grand-costa-aeropuerto-logo-oceanic.svg"
-        alt="Logo color"
-        width={200}
-        height={110}
-      />
-    )}
-  </Link>
+<div className="lg:block">
+  {!isVisible ? (
+    <Image
+    src={
+      isVisible
+        ? "/images/new-grand-costa-aeropuerto-logo-oceanic.svg"
+        : "/images/new-grand-costa-aeropuerto-logo-blanco.svg"
+    }
+    alt="Logo"
+    width={isVisible ? 200 : 200}
+    height={isVisible ? 110 : 130}
+  />
+  
+  ) : (
+    <Image
+      src="/images/new-grand-costa-aeropuerto-logo-oceanic.svg"
+      alt="Logo color"
+      width={200}
+      height={110}
+    />
+  )}
 </div>
 
 </div>

@@ -65,7 +65,7 @@ const HeaderTrad = ({ modoClaro = false }) => {
       </div>
 
       {/* Top header con logo, menú hamburguesa y opciones */}
-      <div className="ContainerFlex flex-row px-6 lg:py-[20px] justify-between items-center">
+      <div className="ContainerFlex flex-row px-6 lg:px-[0px] lg:py-[20px] justify-between items-center">
         {/* Logo */}
         <div className="LogoInner">
           <div className="block">

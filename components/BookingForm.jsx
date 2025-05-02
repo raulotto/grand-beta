@@ -380,9 +380,9 @@ export default function BookingForm({ embedMenu }) {
         <div className="flex flex-col col-span-4 lg:col-span-3">
           <button
             type="submit"
-            className="ColorButton1 h-[36px] w-full px-4 py-1 transition duration-300 flex items-center justify-center cursor-pointer"
+            className="ColorButton1 h-[36px] w-full px-4 py-1 transition duration-300 flex items-center justify-center cursor-pointer text-[.7em] font-[600] "
           >
-            Reservar
+            Reservar Ahora
           </button>
         </div>
       </form>

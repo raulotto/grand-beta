@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Paquetes",
+    "description": "Nuestros exclusivos paquetes combinan descanso, gastronomía y servicios diseñados para una estancia sin preocupaciones.",
+    "image": "/images/wg-paquete-featured.jpg",
+    "buttonText": "Ver más",
+      "link": "/bodas"
+  },
+  {
+    "title": "Eventos",
+    "description": "Espacios ejecutivos equipados para reuniones privadas y eventos de clase mundial, dentro de la ciudad aeropuerto.",
+    "image": "/images/wg-eventos-featured.jpg",
+    "buttonText": "Ver más",
+      "link": "/bodas"
+  },
+  {
+    "title": "Restaurantes",
+    "description": "Déjese llevar y logre el balance perfecto entre mente, cuerpo y espíritu.",
+    "image": "/images/wg-restaurantes-featured.jpg",
+    "buttonText": "Ver más",
+      "link": "/bodas"
+  }
+]
