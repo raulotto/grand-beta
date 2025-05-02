@@ -25,7 +25,7 @@ const HotelCard = ({ href, image, badge, title, city, tags = [] }) => {
             {tags.map((tag, index) => (
               <span
                 key={index}
-                className={`text-white text-xs px-2 py-0.5 rounded ${
+                className={`text-white text-xs px-2 py-0.5  ${
                   tag === "Nuevo" ? "bg-orange-500" : "bg-emerald-600"
                 }`}
               >
@@ -38,7 +38,7 @@ const HotelCard = ({ href, image, badge, title, city, tags = [] }) => {
 
       <div className="CardHotelContent">
         <span className="text-xs text-gray-500 block leading-none">{title}</span>
-        <span className="text-base text-black font-semibold">{city}</span>
+        <span className="text-[14px] text-primary-oceanic">{city}</span>
       </div>
     </Link>
   );

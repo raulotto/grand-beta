@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Spa y salón de belleza",
+    "description": "Disfruta de un maravilloso masaje o un tratamiento facial rejuvenecedor en el spa. También hay tratamientos como servicios de cabello, manicura y pedicura en el salón de belleza.",
+    "image": "/images/cds-spa.jpg",
+    "buttonText": "Reservar cita",
+      "link": "/bodas"
+  },
+  {
+    "title": "Gimnasio",
+    "description": "Mantén tu rutina de ejercicios en nuestro gimnasio de vanguardia o practica tus movimientos con raqueta en nuestra cancha de tenis.",
+    "image": "/images/cds-gym.jpg",
+    "buttonText": "Reservar cita",
+      "link": "/bodas"
+  }
+]

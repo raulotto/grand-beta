@@ -92,11 +92,15 @@ const HabitacionCard = ({ habitacion }) => {
 {habitacion.urlReserva && (
   <Link
     href={habitacion.urlReserva}
-    className="mt-2 inline-block text-center bg-primary-oceanic text-white py-2 px-4 text-sm hover:bg-dark-oceanic"
+    className="ButtonOutline text-[10px] font-semibold"
   >
     Reservar
   </Link>
 )}
+
+
+
+
 
         </div>
 

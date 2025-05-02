@@ -36,7 +36,7 @@ const Beneficios = () => {
             return (
               <div key={index} className="flex flex-col items-center text-center text-black-grand">
                 {IconComponent && <IconComponent className="text-3xl text-light-oceanic mb-3" />}
-                <h4 className="TitlesBenefits">{item.titulo}</h4>
+                <h4 className="Gotham text-[1em]">{item.titulo}</h4>
                 <p className="text-xs text-gray-700">{item.descripcion}</p>
               </div>
             );

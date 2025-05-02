@@ -4,11 +4,11 @@
       "slides": [
         {
           "src": "/images/WG-new-hotel-render.jpg",
-          "titulo": "Bienvenidos",
+          "titulo": "Wyndham Grand Costa del Sol Lima City",
           "subtitulo": "Ubicado en la puerta de entrada más importante para los turistas en Perú.",
-          "ctaTexto": "reserva",
+          "ctaTexto": "Reserva Ahora",
           "ctaLink": "/reserva",
-          "alineacion": "centro",
+          "alineacion": "izquierda",
       "claseExtra": "OverlaySlide"          
 
         },

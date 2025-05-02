@@ -47,7 +47,7 @@ import TextoExpandible from '@/components/TextoExpandible';
 const Intro = () => {
   return (
     <>
-    <section className="SectionDiv ">
+    <section className="SectionDiv pb-0">
       
       <div className="ContainerFlex items-start">
         {/* Contenedor de imágenes */}
@@ -61,7 +61,7 @@ const Intro = () => {
           <h4 className="TitleSection">
             Wyndham Grand Costa del Sol Lima City
           </h4>
-            <p className="text-sm Pratafont">Estancia premium y servicio de clase mundial</p>
+            <div className="text-[16px] text-gray-500 PrataFont font-[100] mb-2">Estancia premium y servicio de clase mundial</div>
           </div>
           <div className="flex items-center gap-2 my-4 hidden">
             <span className="text-lg font-bold text-primary-oceanic">★★★★★</span>

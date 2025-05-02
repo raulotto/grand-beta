@@ -8,7 +8,7 @@ import "swiper/css";
 const HotelesGrid = () => {
   return (
     <section className="SectionDiv py-0">
-      <h2 className="text-2xl font-semibold mb-6">Encuentra un destino especial</h2>
+      <h2 className="TitleSection">Encuentra un destino especial</h2>
     <div className="ContainerFlex">
       {/* Mobile Carousel */}
       <div className="lg:hidden">
