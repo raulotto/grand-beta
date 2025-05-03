@@ -16,6 +16,8 @@ import Habitaciones from "@/components/Habitaciones";
 import Footer from "@/components/Footer";
 import GridCardsSection from "@/components/GridCardsSection";
 import PreguntasFrecuentes from "@/components/PreguntasFrecuentes";
+import TermsToggle from "@/components/TermsToggle";
+
 
 
 // Importación de datos
@@ -182,11 +184,12 @@ export default function Home({ hotel }) {
           </div>
         </div>
       </section>
-      <section className="SectionDiv">
+      
+    <section className="SectionDiv">
       <div className="ContainerFlex flex flex-col items-stretch">
       <h2 className="ManropeFont TitleSectionMd font-bold">Preguntas frecuentes sobre reservas</h2>
-      <PreguntasFrecuentes categoria="general" />
-      </div>
+    <TermsToggle />
+    </div>
     </section>
       {/* Pie de página */}
       <Footer />
