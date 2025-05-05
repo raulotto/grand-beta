@@ -7,6 +7,7 @@ import { useBooking } from "@/context/BookingContext";
 import Image from "next/image";
 import { FaPhoneSquareAlt, FaCalendarAlt } from "react-icons/fa";
 import LogoHeader from '@/components/LogoHeader'
+import LanguageSelector from "@/components/LanguageSelector";
 
 const HeaderTrad = ({ modoClaro = false }) => {
   const booking = useBooking();
@@ -131,14 +132,7 @@ const HeaderTrad = ({ modoClaro = false }) => {
         </div>
          <div className="flex items-center justify-center gap-5">
           {/* Idioma */}
-         <Link
-          className={`SwitchLang  flex  items-center MenuLight transition-colors duration-300 ${
-            isActive ? "text-primary-oceanic" : "text-white"
-          }`}
-          href="/en/hotel-wyndham-grand-costa-del-sol-lima-airport"
-        >
-          <FaGlobe /> EN
-        </Link>
+          <LanguageSelector />
         {/* Botón hamburguesa */}
         <div className="MobileMenuAccomadation">
           <div

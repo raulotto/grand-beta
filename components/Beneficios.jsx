@@ -1,6 +1,7 @@
 'use client';
-import React from "react";
-import beneficiosData from '../data/beneficios.json'; // ruta relativa correcta
+import { usePathname } from 'next/navigation';
+import beneficiosData from '@/data/beneficios.json';
+
 import {
   FaHotel,
   FaConciergeBell,
@@ -10,28 +11,36 @@ import {
   FaSpa,
   FaUsers,
   FaCheckCircle
-} from "react-icons/fa";
+} from 'react-icons/fa';
 
 const iconMap = {
-  FaHotel: FaHotel,
-  FaConciergeBell: FaConciergeBell,
-  FaUtensils: FaUtensils,
-  FaMapMarkerAlt: FaMapMarkerAlt,
-  FaMobileAlt: FaMobileAlt,
-  FaSpa: FaSpa,
-  FaUsers: FaUsers,
-  FaCheckCircle: FaCheckCircle
+  FaHotel,
+  FaConciergeBell,
+  FaUtensils,
+  FaMapMarkerAlt,
+  FaMobileAlt,
+  FaSpa,
+  FaUsers,
+  FaCheckCircle
 };
 
 const Beneficios = () => {
+  const pathname = usePathname();
+  const lang = pathname.startsWith('/en') ? 'en' : 'es';
+  const beneficios = beneficiosData[lang];
+
   return (
     <section id="beneficios" className="SectionDiv BgImageRight">
-      <h3 className="suptitle">Disfruta de todos</h3>
-      <h4 className="TitleSection">Nuestros Beneficios</h4>
+      <h3 className="suptitle">
+        {lang === 'en' ? 'Enjoy all our' : 'Disfruta de todos'}
+      </h3>
+      <h4 className="TitleSection">
+        {lang === 'en' ? 'Our Benefits' : 'Nuestros Beneficios'}
+      </h4>
 
       <div className="ContainerFlex">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-10">
-          {beneficiosData.map((item, index) => {
+          {beneficios.map((item, index) => {
             const IconComponent = iconMap[item.icon];
             return (
               <div key={index} className="flex flex-col items-center text-center text-black-grand">

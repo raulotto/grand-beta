@@ -1,0 +1,16 @@
+{
+  "es": {
+    "suptitle": "Conoce nuestras",
+    "title": "Habitaciones",
+    "descripcion": "Alojamiento de lujo en la \"Ciudad de los Reyes. Recarga energías entre vuelos en Wyndham Grand Costa del Sol Lima Airport y disfruta de una de nuestras 249 habitaciones de última tecnología. Con express self check-in y opciones libres de humo, cada habitación y suite está diseñada para ofrecerte el máximo confort y una estancia sin complicaciones. Gracias a la tecnología inteligente, puedes solicitar servicio de lavandería o room service 24/7 con solo tocar un botón, mientras que las ventanas insonorizadas te brindan vistas espectaculares de la capital peruana y el ambiente perfecto para un descanso reparador.",
+    "boton": "Descubre",
+    "link": "/grand/habitaciones"
+  },
+  "en": {
+    "suptitle": "Discover our",
+    "title": "Rooms",
+    "descripcion": "Luxury accommodation in the \"City of Kings. Recharge between flights at Wyndham Grand Costa del Sol Lima Airport and enjoy one of our 249 state-of-the-art rooms. With express self check-in and smoke-free options, each room and suite is designed to offer you maximum comfort and a hassle-free stay. Thanks to smart technology, you can request laundry service or room service 24/7 with just the push of a button, while soundproof windows provide spectacular views of the Peruvian capital and the perfect setting for a restful sleep.",
+    "boton": "Discover",
+    "link": "/en/grand/habitaciones"
+  }
+}

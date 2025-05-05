@@ -1,4 +1,5 @@
-[
+{
+  "es": [
     {
       "icon": "FaHotel",
       "titulo": "249 habitaciones",
@@ -39,5 +40,47 @@
       "titulo": "Eventos",
       "descripcion": "Cinco salas para eventos de clase mundial."
     }
+  ],
+  "en": [
+    {
+      "icon": "FaHotel",
+      "titulo": "249 rooms",
+      "descripcion": "Superior, Suite and Premium Suite with world-class service."
+    },
+    {
+      "icon": "FaConciergeBell",
+      "titulo": "24h room service",
+      "descripcion": "Available to you at any time of day."
+    },
+    {
+      "icon": "FaUtensils",
+      "titulo": "Restaurants and bars",
+      "descripcion": "Enjoy the best cuisine at Páprika, Saria Bar and Paraka Gourmet."
+    },
+    {
+      "icon": "FaMapMarkerAlt",
+      "titulo": "Strategic location",
+      "descripcion": "Relax with stunning views of the airport runway."
+    },
+    {
+      "icon": "FaSpa",
+      "titulo": "Wellness",
+      "descripcion": "Recharge your energy in our spa, pool and sauna."
+    },
+    {
+      "icon": "FaMobileAlt",
+      "titulo": "Self check-in",
+      "descripcion": "Fast registration with no queues, no waiting."
+    },
+    {
+      "icon": "FaCheckCircle",
+      "titulo": "Smart room",
+      "descripcion": "Automate lighting, air conditioning and other services."
+    },
+    {
+      "icon": "FaUsers",
+      "titulo": "Events",
+      "descripcion": "Five rooms for world-class events."
+    }
   ]
-  
+}

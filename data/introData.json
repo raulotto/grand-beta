@@ -1,0 +1,54 @@
+{
+  "es": {
+    "suptitle": "Experimenta la exclusividad dentro de la ciudad aeropuerto",
+    "title": "Wyndham Grand Costa del Sol Lima City",
+    "subtitle": "Estancia premium y servicio de clase mundial",
+    "paragraphs": [
+      "Ubicado dentro de la Ciudad aeropuerto (Jorge Chávez - LIM), Wyndham Grand Costa del Sol Lima Airport te evita la caminata de ida y vuelta por tiempo, al estar en una ciudad estratégica, con acceso directo a la terminal aérea a través de un cómodo pasillo. A tan solo 30 minutos, la sede se encuentra financiera y un megaplex ideal para los 1,200 m² con 25 renovadas habitaciones con diseño de lujo y totalmente premium en un entorno sin igual. ",
+      "Además, en la región se pueden encontrar sitios con la importancia de Lima, como la Plaza de Armas o el Museo Submarino Abtao, la Catedral de Lima, la iglesia de San Francisco y el icónico Parque del Amor en Miraflores."
+    ],
+    "masInfo": "Más Información",
+    "menosInfo": "Menos Información",
+    "checkIn": "Check-in",
+    "checkInHora": "12:00",
+    "checkOut": "Check-out",
+    "checkOutHora": "14:00",
+    "viewPolicies": "Ver todas las políticas del hotel",
+    "nearbyTitle": "¿Qué encontrar cerca?",
+    "lugares": [
+      { "nombre": "Malecón de la Costa Verde", "tiempo": "A 4 min en auto o 12 min a pie." },
+      { "nombre": "Pirámide Huaca Huallamarca", "tiempo": "A 8 min en auto." },
+      { "nombre": "Ruinas de Huaca Pucllana", "tiempo": "A 15 min en auto." },
+      { "nombre": "Museo Larco", "tiempo": "A 15 min en auto." },
+      { "nombre": "Larco Mar", "tiempo": "A 20 min en auto." },
+      { "nombre": "Centro Histórico de Lima", "tiempo": "A 30 min en auto." },
+      { "nombre": "Aeropuerto Internacional Jorge Chávez", "tiempo": "A 40 min en auto." }
+    ]
+  },
+  "en": {
+    "suptitle": "Experience exclusivity within the airport city",
+    "title": "Wyndham Grand Costa del Sol Lima City",
+    "subtitle": "Premium stay and world-class service",
+    "paragraphs": [
+      "Located inside the airport city (Jorge Chávez - LIM), Wyndham Grand Costa del Sol Lima Airport saves you the roundtrip walk by being in a strategic city, with direct access to the terminal via a comfortable hallway...",
+      "Also, in the region, you can find iconic Lima sites such as Plaza de Armas, the Abtao Submarine Museum, Lima’s Cathedral, San Francisco Church, and the famous Parque del Amor in Miraflores."
+    ],
+    "masInfo": "More Information",
+    "menosInfo": "Close Information",
+    "checkIn": "Check-in",
+    "checkInHora": "12:00",
+    "checkOut": "Check-out",
+    "checkOutHora": "14:00",
+    "viewPolicies": "See all hotel policies",
+    "nearbyTitle": "What’s nearby?",
+    "lugares": [
+      { "nombre": "Costa Verde Seafront", "tiempo": "4 min by car or 12 min on foot" },
+      { "nombre": "Huaca Huallamarca Pyramid", "tiempo": "8 min by car" },
+      { "nombre": "Huaca Pucllana Ruins", "tiempo": "15 min by car" },
+      { "nombre": "Larco Museum", "tiempo": "15 min by car" },
+      { "nombre": "Larco Mar", "tiempo": "20 min by car" },
+      { "nombre": "Historic Center of Lima", "tiempo": "30 min by car" },
+      { "nombre": "Jorge Chávez International Airport", "tiempo": "40 min by car" }
+    ]
+  }
+}

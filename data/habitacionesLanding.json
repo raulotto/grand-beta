@@ -1,0 +1,31 @@
+{
+    "es": {
+      "tituloPrincipal": "Opciones de Suites",
+      "parrafoPrincipal": "Relájese en una de nuestras 249 modernas y tecnológicas habitaciones...",
+      "tabs": ["Superior", "Suite"],
+      "recorrido360": {
+        "titulo": "Recorrido virtual 360°",
+        "descripcion": "Explora cada rincón de la habitación y sumérgete en sus detalles.\nDescubre la armonía de sus texturas, la cuidada distribución del espacio\ny el diseño exclusivo que define cada ambiente.",
+        "cta": "Ver Ahora"
+      },
+      "mascotas": {
+        "titulo": "Las mascotas son Bienvenidas",
+        "descripcion": "Aquí va una descripción o contenido. Puedes poner cualquier texto que necesites para destacar el mensaje principal de tu sección."
+      }
+    },
+    "en": {
+      "tituloPrincipal": "Suite Options",
+      "parrafoPrincipal": "Relax in one of our 249 modern and high-tech rooms...",
+      "tabs": ["Superior", "Suite"],
+      "recorrido360": {
+        "titulo": "Virtual Tour 360°",
+        "descripcion": "Explore every corner of the room and immerse yourself in its details.\nDiscover the harmony of its textures, the careful layout of the space,\nand the exclusive design that defines each environment.",
+        "cta": "View Now"
+      },
+      "mascotas": {
+        "titulo": "Pets are Welcome",
+        "descripcion": "Here goes a description or content. You can add any text you need to highlight the main message of your section."
+      }
+    }
+  }
+  

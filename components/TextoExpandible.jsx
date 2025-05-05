@@ -3,7 +3,7 @@ import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaChevronDown } from 'react-icons/fa';
 
-const TextoExpandible = ({ parrafos }) => {
+const TextoExpandible = ({ parrafos, masInfo, menosInfo }) => {
   const [expandido, setExpandido] = useState(false);
   const ref = useRef(null);
 
@@ -35,7 +35,7 @@ const TextoExpandible = ({ parrafos }) => {
         onClick={() => setExpandido(!expandido)}
         className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-[#2e737a] hover:underline transition"
       >
-        {expandido ? 'MENOS INFORMACIÓN' : 'MÁS INFORMACIÓN'}
+        {expandido ? menosInfo : masInfo}
         <motion.span
           animate={{ rotate: expandido ? 180 : 0 }}
           transition={{ duration: 0.3 }}
@@ -47,5 +47,4 @@ const TextoExpandible = ({ parrafos }) => {
     </div>
   );
 };
-
 export default TextoExpandible;

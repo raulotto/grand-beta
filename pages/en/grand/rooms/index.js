@@ -16,8 +16,8 @@ import habitacionesLandingData from "@/data/habitacionesLanding.json";
 
 export default function HabitacionesPage() {
   const { locale } = useRouter();
-  const textos = habitacionesLandingData[locale] || habitacionesLandingData["es"];
-const habitacionesPorIdioma = habitaciones[locale] || habitaciones["es"];
+  const textos = habitacionesLandingData[locale] || habitacionesLandingData["en"];
+const habitacionesPorIdioma = habitaciones[locale] || habitaciones["en"];
   const [categoriaActiva, setCategoriaActiva] = useState(textos.tabs[0]);
 
   const habitacionesFiltradas = categoriaActiva === "Todas"
