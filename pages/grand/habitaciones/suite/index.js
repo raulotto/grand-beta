@@ -20,7 +20,7 @@ import {
   FaDoorOpen
 } from 'react-icons/fa';
 
-const habitacion = data.find((h) => h.id === "suite");
+const habitacion = data.es.find((h) => h.id === "suite");
 
 export default function MatriSupPage() {
   return (
