@@ -28,7 +28,7 @@ const habitacionesPorIdioma = habitaciones[locale] || habitaciones["en"];
   return (
     <main className="mx-auto">
       <HeaderTrad />
-      <HeroSlider page="habitaciones" />
+      <HeroSlider page="rooms" />
 
       <BookingForm />
       <section className="SectionDiv">

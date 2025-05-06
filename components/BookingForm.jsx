@@ -2,6 +2,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -10,21 +11,26 @@ import { RxCalendar } from "react-icons/rx";
 import es from "date-fns/locale/es";
 import { useBooking } from "@/context/BookingContext";
 import MenuInterno from "./MenuInterno";
+import lang from "@/data/lang";
 
 registerLocale("es", es);
-
 
 export default function BookingForm({ embedMenu }) {
   const { showForm, setShowForm, formIsSticky } = useBooking();
   const locationRef = useRef(null);
   const dropdownRef = useRef(null);
-
   const [shouldRender, setShouldRender] = useState(showForm);
   const [showDropdown, setShowDropdown] = useState(false);
   const [selectedRateType, setSelectedRateType] = useState("discount");
   const [discountCode, setDiscountCode] = useState("");
   const [corporateCode, setCorporateCode] = useState("");
   const [showPromoBox, setShowPromoBox] = useState(false);
+
+
+  const pathname = usePathname();
+  const currentLang = pathname.startsWith("/en") ? "en" : "es";
+  
+  const t = lang[currentLang];
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -43,15 +49,12 @@ export default function BookingForm({ embedMenu }) {
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   useEffect(() => {
-    if (showForm) {
-      setShouldRender(true);
-    } else {
+    if (showForm) setShouldRender(true);
+    else {
       const timeout = setTimeout(() => setShouldRender(false), 700);
       return () => clearTimeout(timeout);
     }
@@ -60,17 +63,16 @@ export default function BookingForm({ embedMenu }) {
   const today = new Date();
   const tomorrow = new Date();
   tomorrow.setDate(today.getDate() + 1);
-  
+
   const defaultHotel = {
     name: "Wyndham Grand Costa del Sol Lima Airport",
-    id: "9878731"
+    id: "9878731",
   };
-  
+
   const [dateRange, setDateRange] = useState([today, tomorrow]);
   const [startDate, endDate] = dateRange;
   const [selectedHotel, setSelectedHotel] = useState(defaultHotel);
   const [query, setQuery] = useState(defaultHotel.name);
-  
 
   const hotelsGrouped = {
     Arequipa: [{ name: "Costa del Sol Wyndham Arequipa", id: "109836" }],
@@ -97,8 +99,7 @@ export default function BookingForm({ embedMenu }) {
       day: "numeric",
       month: "short",
     });
-
-  const CustomDateInput = React.forwardRef(({ value, onClick }, ref) => (
+ const CustomDateInput = React.forwardRef(({ value, onClick }, ref) => (
     <button
       type="button"
       onClick={onClick}
@@ -115,17 +116,16 @@ export default function BookingForm({ embedMenu }) {
       )}
     </button>
   ));
-
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!selectedHotel) {
-      alert("Selecciona un hotel");
+      alert(t.selectHotelAlert);
       return;
     }
 
-    const baseUrl = `https://reservations.travelclick.com/${selectedHotel.id}?LanguageID=2`;
-
+    const baseUrl = `https://reservations.travelclick.com/${selectedHotel.id}?LanguageID=${currentLang === "en" ? "1" : "2"}`;
     const params = new URLSearchParams();
+
     if (selectedRateType === "discount" && discountCode) {
       params.append("discount", discountCode);
     } else if (selectedRateType === "identifier" && corporateCode) {
@@ -155,23 +155,17 @@ export default function BookingForm({ embedMenu }) {
   const renderGroupedHotels = () => {
     const lowerQuery = query.toLowerCase();
     return Object.entries(hotelsGrouped).map(([region, hotels]) => {
-      const matched = hotels.filter((h) =>
-        h.name.toLowerCase().includes(lowerQuery)
-      );
+      const matched = hotels.filter((h) => h.name.toLowerCase().includes(lowerQuery));
       if (matched.length === 0) return null;
       return (
         <div key={region} className="py-1">
           <div className="RegionLocation">{region}</div>
           {matched.map((hotel) => (
-            <div
-              key={hotel.id}
-              className="px-4 py-2 text-light-oceanic hover:bg-gray-100 cursor-pointer"
-              onClick={() => {
-                setSelectedHotel(hotel);
-                setQuery(hotel.name);
-                setShowDropdown(false);
-              }}
-            >
+            <div key={hotel.id} className="px-4 py-2 text-light-oceanic hover:bg-gray-100 cursor-pointer" onClick={() => {
+              setSelectedHotel(hotel);
+              setQuery(hotel.name);
+              setShowDropdown(false);
+            }}>
               <div className="text-sm">{hotel.name}</div>
             </div>
           ))}
@@ -179,6 +173,8 @@ export default function BookingForm({ embedMenu }) {
       );
     });
   };
+
+
 
   return (
     <div
@@ -231,59 +227,59 @@ export default function BookingForm({ embedMenu }) {
           <label className="text-xs text-gray-500 uppercase tracking-wide">
           </label>
           <div className="relative" ref={locationRef}>
-            <input
-              type="text"
-              value={query}
-              onChange={(e) => {
-                setQuery(e.target.value);
-                setShowDropdown(true);
-                setSelectedHotel(null);
-              }}
-              onFocus={() => {
-                if (query !== "") {
-                  setQuery("");
-                  setSelectedHotel(null);
-                }
-                setShowDropdown(true);
-              }}
-              
-              placeholder="Seleccionar Hotel"
-              className="border border-gray-300 px-4 py-2 text-sm w-full pr-8"
+                        <input
+                          type="text"
+                          value={query}
+                          onChange={(e) => {
+                            setQuery(e.target.value);
+                            setShowDropdown(true);
+                            setSelectedHotel(null);
+                          }}
+                          onFocus={() => {
+                            if (query !== "") {
+                              setQuery("");
+                              setSelectedHotel(null);
+                            }
+                            setShowDropdown(true);
+                          }}
+                          
+                          placeholder={t.selectHotel}
+                          className="border border-gray-300 px-4 py-2 text-sm w-full pr-8"
+                        />
+                        {selectedHotel && (
+                          <button
+                            type="button"
+                            onClick={() => {
+                              setSelectedHotel(null);
+                              setQuery("");
+                            }}
+                            className="absolute right-2 top-2 text-secondary-terracota font-bold hover:text-red-600 text-sm"
+                          >
+                            ✕
+                          </button>
+                        )}
+                        {showDropdown && (
+                          <div className="absolute z-10 bg-white border border-gray-200 w-full mt-1  max-h-64 overflow-y-auto">
+                            {renderGroupedHotels()}
+                          </div>
+                        )}
+                      </div>
+                    </div>
+            
+                    <div className="flex flex-col col-span-4 lg:col-span-3">
+                      <span className="text-xs text-gray-500 uppercase tracking-wide">
+                      </span>
+                      <DatePicker
+                                  selectsRange={true}
+                                  startDate={startDate}
+                                  endDate={endDate}
+                                  onChange={(update) => setDateRange(update)}
+                                  monthsShown={2}
+                                  minDate={today}
+                                  locale="es"
+                                  customInput={<CustomDateInput />}
+                                  dateFormat="MM/dd/yyyy"
             />
-            {selectedHotel && (
-              <button
-                type="button"
-                onClick={() => {
-                  setSelectedHotel(null);
-                  setQuery("");
-                }}
-                className="absolute right-2 top-2 text-secondary-terracota font-bold hover:text-red-600 text-sm"
-              >
-                ✕
-              </button>
-            )}
-            {showDropdown && (
-              <div className="absolute z-10 bg-white border border-gray-200 w-full mt-1  max-h-64 overflow-y-auto">
-                {renderGroupedHotels()}
-              </div>
-            )}
-          </div>
-        </div>
-
-        <div className="flex flex-col col-span-4 lg:col-span-3">
-          <span className="text-xs text-gray-500 uppercase tracking-wide">
-          </span>
-          <DatePicker
-            selectsRange={true}
-            startDate={startDate}
-            endDate={endDate}
-            onChange={(update) => setDateRange(update)}
-            monthsShown={2}
-            minDate={today}
-            locale="es"
-            customInput={<CustomDateInput />}
-            dateFormat="MM/dd/yyyy"
-          />
           {startDate && endDate && (
             <>
               <input
@@ -308,8 +304,9 @@ export default function BookingForm({ embedMenu }) {
               />
             </>
           )}
-        </div>
-        <div
+          </div>
+
+          <div
         ref={dropdownRef}
           className={`flex flex-col col-span-4 lg:col-span-2 relative  ${
             embedMenu ? "hidden" : ""
@@ -322,39 +319,39 @@ export default function BookingForm({ embedMenu }) {
                 selectedRateType === "discount" ? discountCode : corporateCode
               }
               onClick={() => setShowPromoBox(!showPromoBox)}
-              placeholder="Código"
+              placeholder={t.code}
               className="border border-gray-300 px-4 py-2 text-sm"
             />
 
             {showPromoBox && (
               <div className="absolute z-10 bg-white border border-gray-200 w-[230px] mt-9  p-4 space-y-4">
-                <p className="text-sm font-semibold ">Seleccionar tipo de tarifa</p>
+              <p className="text-sm font-semibold">{t.rateType}</p>
 
-                <div>
-                  <label className="flex items-center gap-2">
-                    <input
-                      type="radio"
-                      name="rateType"
-                      value="discount"
-                      checked={selectedRateType === "discount"}
-                      onChange={() => setSelectedRateType("discount")}
-                    />
-                    Código Promocional
-                  </label>
-                  {selectedRateType === "discount" && (
-  <input
-    type="text"
-    className="border border-gray-300 mt-1 px-2 py-1 w-full text-sm"
-    placeholder="Ingresar código"
-    value={discountCode}
-    onChange={(e) => setDiscountCode(e.target.value)}
-  />
+              <div>
+                <label className="flex items-center gap-2">
+                  <input
+                    type="radio"
+                    name="rateType"
+                    value="discount"
+                    checked={selectedRateType === "discount"}
+                    onChange={() => setSelectedRateType("discount")}
+                  />
+                  {t.promoCode}
+                </label>
+                {selectedRateType === "discount" && (
+<input
+  type="text"
+  className="border border-gray-300 mt-1 px-2 py-1 w-full text-sm"
+  placeholder="Ingresar código"
+  value={discountCode}
+  onChange={(e) => setDiscountCode(e.target.value)}
+/>
 )}
 
-                </div>
+              </div>
 
-                <div>
-                  <label className="flex items-center gap-2">
+              <div>
+                   <label className="flex items-center gap-2">
                     <input
                       type="radio"
                       name="rateType"
@@ -362,32 +359,32 @@ export default function BookingForm({ embedMenu }) {
                       checked={selectedRateType === "identifier"}
                       onChange={() => setSelectedRateType("identifier")}
                     />
-                    Código Corporativo
-                  </label>
-                  {selectedRateType === "identifier" && (
+                                      {t.corpCode}
+                </label>
+                {selectedRateType === "identifier" && (
   <input
-    type="text"
-    className="border border-gray-300 mt-1 px-2 py-1 w-full text-sm"
-    placeholder="Ingresar código"
-    value={corporateCode}
-    onChange={(e) => setCorporateCode(e.target.value)}
-  />
+  type="text"
+  className="border border-gray-300 mt-1 px-2 py-1 w-full text-sm"
+  placeholder="Ingresar código"
+  value={corporateCode}
+  onChange={(e) => setCorporateCode(e.target.value)}
+/>
 )}
 
-                </div>
+</div>
               </div>
             )}
           </div>
 
-        <div className="flex flex-col col-span-4 lg:col-span-3">
+          <div className="flex flex-col col-span-4 lg:col-span-3">
           <button
             type="submit"
             className="ColorButton1 h-[36px] w-full px-4 py-1 transition duration-300 flex items-center justify-center cursor-pointer text-[.7em] font-[800] "
           >
-            Reservar Ahora
+            {t.bookNow}
           </button>
         </div>
-      </form>
+        </form>
       </div>
     </div>
   );

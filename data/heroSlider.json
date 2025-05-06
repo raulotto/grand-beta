@@ -1,4 +1,5 @@
-[
+{
+  "es": [
     {
       "page": "home",
       "slides": [
@@ -9,8 +10,7 @@
           "ctaTexto": "Reserva Ahora",
           "ctaLink": "/reserva",
           "alineacion": "izquierda",
-      "claseExtra": "OverlaySlide"          
-
+          "claseExtra": "OverlaySlide"
         },
         {
           "src": "https://www.costadelsolperu.com/wp-content/uploads/2025/04/hora-imbatible-back.jpg",
@@ -86,5 +86,91 @@
           }
         ]
       }
+  ],
+  "en": [
+    {
+      "page": "home",
+      "slides": [
+        {
+          "src": "/images/WG-new-hotel-render.jpg",
+          "titulo": "Wyndham Grand Costa del Sol Lima City",
+          "subtitulo": "Located at the main gateway for tourists in Peru.",
+          "ctaTexto": "Book Now",
+          "ctaLink": "/reserva",
+          "alineacion": "left",
+          "claseExtra": "OverlaySlide"
+        },
+        {
+          "src": "https://www.costadelsolperu.com/wp-content/uploads/2025/04/hora-imbatible-back.jpg",
+          "ctaTexto": "Book now",
+          "ctaLink": "/reserva",
+          "arte": "https://www.costadelsolperu.com/wp-content/uploads/2025/04/hora-imbatible-art.png"
+        }
+      ]
+    },{
+      "page": "rooms",
+      "slides": [
+        {
+          "src": "/images/WG-Habitacion-Doble-1.jpg",
+          "titulo": "Our Rooms",
+          "subtitulo": "Choose the comfort you deserve"
+        }
+      ]
+    },
+    {
+      "page": "spa",
+      "slides": [
+        {
+          "src": "/images/cds-spa.jpg",
+          "titulo": "Spa",
+          "subtitulo": "Harmony Spa",
+          "claseExtra": "OverlaySlide"
+        }
+      ]
+    },
+    {
+      "page": "rewards",
+      "slides": [
+        {
+          "src": "/images/pareja-rewards.avif",
+          "titulo": "Stay two nights and get a free night or a gift card",
+          "subtitulo": "Terms and conditions apply",
+          "alineacion": "izquierda"
+        }
+      ]
+    },
+    {
+      "page": "matrimonial-superior",
+      "slides": [
+        {
+          "src": "/images/WG-Habitacion-King-1.jpg",
+          "titulo": "Superior King Room",
+          "subtitulo": ""
+        }
+      ]
+    },
+    {
+      "page": "restaurantes",
+      "slides": [
+        {
+          "src": "/images/Costa-del-sol-Desayuno-buffet-mobile.jpg",
+          "titulo": "Restaurants",
+          "subtitulo": "",
+          "claseExtra": "OverlaySlide"
+        }
+      ]
+    },
+    {
+      "page": "eventos",
+      "slides": [
+        {
+          "src": "/images/WG-Habitacion-Doble-1.jpg",
+          "titulo": "Events & Meetings",
+          "subtitulo": "",
+          "ctaTexto": "",
+          "ctaLink": "/reserva"
+        }
+      ]
+    }
   ]
-  
+}

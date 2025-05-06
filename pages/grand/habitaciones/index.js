@@ -118,7 +118,7 @@ const habitacionesPorIdioma = habitaciones[locale] || habitaciones["es"];
             </div>
             <div className="w-full md:w-1/2 h-[300px]">
               <img
-                src="/images/eventos-avatar-image.jpg"
+                src="/images/WG-Habitacion-King-1-perro.jpg"
                 alt="Mascotas"
                 className="w-full h-full object-cover"
               />

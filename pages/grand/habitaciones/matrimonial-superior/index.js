@@ -130,10 +130,10 @@ export default function MatriSupPage() {
               </div>
             </div>
           </div>
-
-          {/* SEGUNDO BLOQUE: THING'S YOU WILL LOVE */}
-          <div className="w-full mt-30 max-w-[900px] mx-auto">
-            <h4 className="TitleSection mb-8 text-center">Things You Will Love</h4>
+          <div className="ContainerFlex">
+            {/* SEGUNDO BLOQUE: THING'S YOU WILL LOVE */}
+          <div className="w-full ">
+            <h4 className="TitleSection mb-8 text-center">Cosas que te encantarán</h4>
             <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-10 text-center">
               {/* 10 beneficios con íconos */}
               <div className="flex flex-col items-center text-black-grand">
@@ -188,6 +188,8 @@ export default function MatriSupPage() {
               </div>
             </div>
           </div>
+            </div> 
+          
 
         </div>
       </section>
