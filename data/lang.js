@@ -16,7 +16,9 @@ const lang = {
       next: "Siguiente",
       confirm: "Confirmar",
       loading: "Cargando...",
-      selectRoom: "Seleccionar habitación"
+      selectRoom: "Seleccionar habitación",
+      restaurantsTitle: "Restaurantes & Bares"
+      
     },
     en: {
       close: "X Close",
@@ -35,7 +37,8 @@ const lang = {
       next: "Next",
       confirm: "Confirm",
       loading: "Loading...",
-      selectRoom: "Select Room"
+      selectRoom: "Select Room",
+      restaurantsTitle: "Restaurants & Bars"
     }
   };
   

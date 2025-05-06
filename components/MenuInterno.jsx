@@ -7,8 +7,6 @@ import * as CiIcons from 'react-icons/ci';
 import * as io5Icons from 'react-icons/io5';
 import * as GrIcons from 'react-icons/gr';
 
-
-
 const iconMap = {
   ...FaIcons,
   ...CiIcons,
@@ -20,11 +18,12 @@ const MenuInterno = ({ embedMenu }) => {
   const pathname = usePathname();
   const router = useRouter();
   const isEnglish = pathname.startsWith('/en');
+  const lang = isEnglish ? 'en' : 'es';
   const menuRef = useRef(null);
   const [isStickyMobile, setIsStickyMobile] = useState(false);
 
   const handleClick = (item) => {
-    if (isEnglish && item.href) {
+    if (item.href) {
       router.push(item.href);
     } else {
       const el = document.getElementById(item.id);
@@ -46,11 +45,7 @@ const MenuInterno = ({ embedMenu }) => {
       if (window.innerWidth >= 1024) return;
       const scrollY = window.scrollY;
 
-      if (scrollY >= initialOffsetTop) {
-        setIsStickyMobile(true);
-      } else {
-        setIsStickyMobile(false);
-      }
+      setIsStickyMobile(scrollY >= initialOffsetTop);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -64,14 +59,14 @@ const MenuInterno = ({ embedMenu }) => {
         isStickyMobile ? 'fixed top-[81px] z-2 w-full bg-white shadow-md' : ''
       }`}
     >
-      <div className={`ContainerFlexOSize asds ${embedMenu ? 'bg-[#f0f0f0]' : 'px-10 py-4'} ${isStickyMobile ? '' : ''}`}>
-        <ul className="flex overflow-x-auto no-scrollbar gap-6 p-0 w-full lg:items-center lg:justify-center ">
-          {menuData.map((item) => {
+      <div className={`ContainerFlexOSize ${embedMenu ? 'bg-[#f0f0f0]' : 'px-10 py-4'}`}>
+        <ul className="flex overflow-x-auto no-scrollbar gap-6 p-0 w-full lg:items-center lg:justify-center">
+          {menuData[lang].map((item) => {
             const Icon = iconMap[item.icon] || FaIcons.FaQuestionCircle;
             return (
               <li
                 key={item.id}
-                className="flex-shrink-0 flex flex-col-2 gap-2 items-center text-sm items-center cursor-pointer hover:text-primary-oceanic transition"
+                className="flex-shrink-0 flex flex-col-2 gap-2 items-center text-sm cursor-pointer hover:text-primary-oceanic transition"
                 onClick={() => handleClick(item)}
               >
                 <Icon className="w-6 h-6 lg:hidden" />

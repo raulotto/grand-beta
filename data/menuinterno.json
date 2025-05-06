@@ -1,9 +1,18 @@
-[
+{
+  "es": [
     { "id": "beneficios", "label": "Beneficios", "href": "/grand/#benefits", "icon": "CiGift" },
-    { "id": "habitaciones", "label": "Habitaciones", "href": "/grand/#rooms","icon": "IoBedOutline" },
-    { "id": "restaurantes", "label": "Restaurantes", "href": "/grand/#restaurants","icon": "CiForkAndKnife" },
-    { "id": "promociones", "label": "Promociones", "href": "/grand/#offers","icon": "IoMegaphoneOutline" },
-    { "id": "eventos", "label": "Eventos", "href": "/grand/#events","icon": "CiCalendar" },
-    { "id": "wellness", "label": "Wellness", "href": "/grand/#wellness","icon": "GrSpa" }
+    { "id": "habitaciones", "label": "Habitaciones", "href": "/grand/#rooms", "icon": "IoBedOutline" },
+    { "id": "restaurantes", "label": "Restaurantes", "href": "/grand/#restaurants", "icon": "CiForkAndKnife" },
+    { "id": "promociones", "label": "Promociones", "href": "/grand/#offers", "icon": "IoMegaphoneOutline" },
+    { "id": "eventos", "label": "Eventos", "href": "/grand/#events", "icon": "CiCalendar" },
+    { "id": "wellness", "label": "Wellness", "href": "/grand/#wellness", "icon": "GrSpa" }
+  ],
+  "en": [
+    { "id": "beneficios", "label": "Benefits", "href": "/en/grand/#benefits", "icon": "CiGift" },
+    { "id": "habitaciones", "label": "Rooms", "href": "/en/grand/#rooms", "icon": "IoBedOutline" },
+    { "id": "restaurantes", "label": "Restaurants", "href": "/en/grand/#restaurants", "icon": "CiForkAndKnife" },
+    { "id": "promociones", "label": "Offers", "href": "/en/grand/#offers", "icon": "IoMegaphoneOutline" },
+    { "id": "eventos", "label": "Events", "href": "/en/grand/#events", "icon": "CiCalendar" },
+    { "id": "wellness", "label": "Wellness", "href": "/en/grand/#wellness", "icon": "GrSpa" }
   ]
-  
+}
