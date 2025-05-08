@@ -87,7 +87,7 @@ const TermsToggle = () => {
       <div className="flex-1">
         {data.secciones.map((sec, i) => (
           <div key={i} className={`${openSection === i ? "block" : "hidden"}`}>
-            <h2 className="text-xl font-semibold mb-4">{sec.titulo}</h2>
+            <spa className="text-xl font-semibold mb-4">{sec.titulo}</spa>
             <ul className="space-y-3">
               {sec.items.map((item, j) => (
                 <li key={j} className="border-b pb-2">

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { FaGlobe } from "react-icons/fa";
 import MegaGroup from "./MegaGroup";
-import menuGroups from "@/data/menu.json";
+import fullMenuGroups from "@/data/menu.json";
+import { usePathname } from "next/navigation";
 import { useBooking } from "@/context/BookingContext";
 import Image from "next/image";
 import { FaPhoneSquareAlt, FaCalendarAlt } from "react-icons/fa";
@@ -41,7 +42,9 @@ const HeaderTrad = ({ modoClaro = false }) => {
   };
 
   const isActive = isVisible || modoClaro;
-
+  const pathname = usePathname();
+  const lang = pathname.startsWith("/en") ? "en" : "es";
+  const menuGroups = fullMenuGroups[lang];
   return (
     <header
       className={`transition-all duration-500 ease-in-out z-[4] font-gotham-book w-full ${
@@ -49,23 +52,26 @@ const HeaderTrad = ({ modoClaro = false }) => {
       }`}
     >
       {/* Dropdown megamenú */}
-      <div className="dropdown_menu bg-primary-oceanic">
+      <div className="dropdown_menu">
         <div className="ContainerFlex px-6 lg:px-0 items-start">
         <LogoHeader isActive={false}  />
         </div>
         <div className="InnerDropdownMenu ContainerFlex MegaMenu">
-          {menuGroups.map((group) => (
-            <MegaGroup
-              key={group.id}
-              id={group.id}
-              title={group.title}
-              titleHref={group.titleHref}
-              isOpen={activeGroupId === group.id}
-              onToggle={toggleGroup}
-              items={group.items}
-              subgroups={group.subgroups || []}
-            />
-          ))}
+        
+
+        {menuGroups.map((group) => (
+  <MegaGroup
+    key={group.id}
+    id={group.id}
+    title={group.title}
+    titleHref={group.titleHref}
+    isOpen={activeGroupId === group.id}
+    onToggle={toggleGroup}
+    items={group.items}
+    subgroups={group.subgroups || []}
+  />
+))}
+
         </div>
       </div>
 

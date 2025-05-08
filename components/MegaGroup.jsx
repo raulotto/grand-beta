@@ -23,7 +23,7 @@ const MegaGroup = ({ id, title, titleHref, items = [], subgroups = [], isOpen, o
     <div className="MegaGroup">
       {/* Título principal siempre visible */}
       <div className="MegaGroupHeader flex justify-between items-center">
-        <Link href={titleHref} className="MegaGroupTitle text-white uppercase HCoGothamSSm">
+        <Link href={titleHref} className="MegaGroupTitle uppercase HCoGothamSSm">
           {title}
         </Link>
 
@@ -46,7 +46,7 @@ const MegaGroup = ({ id, title, titleHref, items = [], subgroups = [], isOpen, o
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="overflow-hidden mt-2 space-y-2 text-white text-sm"
+            className="MegaGroupHeaderContent overflow-hidden mt-2 space-y-2 text-white"
           >
             {subgroups.length > 0 ? (
               subgroups.map((subgroup, idx) => (

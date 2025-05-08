@@ -1,16 +1,34 @@
-[
-  {
-    "title": "Spa y salón de belleza",
-    "description": "Disfruta de un maravilloso masaje o un tratamiento facial rejuvenecedor en el spa. También hay tratamientos como servicios de cabello, manicura y pedicura en el salón de belleza.",
-    "image": "/images/cds-spa.jpg",
-    "buttonText": "Reservar cita",
+{
+  "es": [
+    {
+      "title": "Spa y salón de belleza",
+      "description": "Disfruta de un maravilloso masaje o un tratamiento facial rejuvenecedor en el spa. También hay tratamientos como servicios de cabello, manicura y pedicura en el salón de belleza.",
+      "image": "/images/cds-spa.jpg",
+      "buttonText": "Reservar cita",
       "link": "/bodas"
-  },
-  {
-    "title": "Gimnasio",
-    "description": "Mantén tu rutina de ejercicios en nuestro gimnasio de vanguardia o practica tus movimientos con raqueta en nuestra cancha de tenis.",
-    "image": "/images/cds-gym.jpg",
-    "buttonText": "Reservar cita",
+    },
+    {
+      "title": "Gimnasio",
+      "description": "Mantén tu rutina de ejercicios en nuestro gimnasio de vanguardia o practica tus movimientos con raqueta en nuestra cancha de tenis.",
+      "image": "/images/cds-gym.jpg",
+      "buttonText": "Reservar cita",
       "link": "/bodas"
-  }
-]
+    }
+  ],
+  "en": [
+    {
+      "title": "Spa & Beauty Salon",
+      "description": "Enjoy a wonderful massage or a rejuvenating facial at the spa. Hair, manicure and pedicure services are also available in the beauty salon.",
+      "image": "/images/cds-spa.jpg",
+      "buttonText": "Book appointment",
+      "link": "/weddings"
+    },
+    {
+      "title": "Gym",
+      "description": "Keep your workout routine at our cutting-edge gym or practice your moves on our tennis court.",
+      "image": "/images/cds-gym.jpg",
+      "buttonText": "Book appointment",
+      "link": "/weddings"
+    }
+  ]
+}

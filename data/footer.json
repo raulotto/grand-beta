@@ -1,0 +1,35 @@
+{
+    "es": {
+      "nav": ["Inicio", "Hotel", "Servicios", "Restaurantes y bares", "Wellness", "Eventos y grupos"],
+      "customer": {
+        "title": "Atención al cliente",
+        "links": ["Preguntas frecuentes", "Facturación electrónica", "Modificar reserva"]
+      },
+      "social": "Redes Sociales",
+      "legal": [
+        "Términos y condiciones",
+        "Política web de privacidad",
+        "Política de uso de datos personales",
+        "Política de uso aceptable",
+        "Dog Friendly"
+      ],
+      "copyright": "Wyndham Grand New Lima Airport © Copyright 2025"
+    },
+    "en": {
+      "nav": ["Home", "Hotel", "Services", "Restaurants & Bars", "Wellness", "Events & Groups"],
+      "customer": {
+        "title": "Customer Support",
+        "links": ["FAQ", "Electronic Invoicing", "Modify Reservation"]
+      },
+      "social": "Social Media",
+      "legal": [
+        "Terms & Conditions",
+        "Privacy Policy",
+        "Personal Data Use Policy",
+        "Acceptable Use Policy",
+        "Dog Friendly"
+      ],
+      "copyright": "Wyndham Grand New Lima Airport © Copyright 2025"
+    }
+  }
+  

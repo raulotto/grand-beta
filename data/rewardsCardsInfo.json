@@ -1,0 +1,30 @@
+{
+  "es": [
+    {
+      "description":"Redime tus puntos por estadías en más de 30,000 propiedades Wyndham Rewards.",
+      "image": "/images/wg-restaurantes-featured.jpg"
+    },
+    {
+      "description": "Los miembros tienen beneficios: accede a Early Check In, Upgrades y más.",
+      "image": "/images/wg-terraza_foodcourt.jpg"
+    },
+    {
+      "description": "Gana y redime puntos en compras, excursiones y actividades.",
+      "image": "/images/cds-luxury-food.jpg"
+    }
+  ],
+  "en": [
+    {
+      "description": "Redeem your points for stays at over 30,000 Wyndham Rewards properties.",
+      "image": "/images/wg-restaurantes-featured.jpg"
+    },
+    {
+      "description": "Members enjoy benefits: access Early Check-In, Upgrades and more.",
+      "image": "/images/wg-terraza_foodcourt.jpg"
+    },
+    {
+      "description": "Earn and redeem points on shopping, tours, and activities.",
+      "image": "/images/cds-luxury-food.jpg"
+    }
+  ]
+}

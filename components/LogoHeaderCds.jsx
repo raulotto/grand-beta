@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 const LogoHeader = ({ isActive }) => {
   const pathname = usePathname();
   const isEnglish = pathname.startsWith('/en');
-  const homeHref = isEnglish ? '/en/grand' : '/grand';
+  const homeHref = isEnglish ? '/en/rewards' : '/rewards/';
 
   return (
     <div className="LogoInner">
@@ -15,11 +15,11 @@ const LogoHeader = ({ isActive }) => {
           <Image
             src={
               isActive
-                ? '/images/new-grand-costa-aeropuerto-logo-oceanic.svg'
-                : '/images/new-grand-costa-aeropuerto-logo-blanco.svg'
+                ? '/images/logo-costa-30-aniv.svg'
+                : '/images/logo-costa-30-aniv.svg'
             }
             alt="Logo"
-            width={200}
+            width={340}
             height={isActive ? 120 : 130}
           />
         </Link>

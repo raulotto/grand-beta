@@ -1,0 +1,35 @@
+{
+    "es": [
+      {
+        "title": "Los miembros de Wyndham Rewards ahorran",
+        "description": "Disfruta de ahorros en nuestra Mejor Tarifa Disponible en miles de hoteles Wyndham Rewards alrededor del mundo con la Tarifa de Recompensa.",
+        "image": "/images/cds-spa.jpg",
+        "buttonText": "Reservar cita",
+        "link": "/bodas"
+      },
+      {
+        "title": "Gana y canjea puntos para obtener noches gratis ",
+        "description": "Cuando te alojas en hoteles de Wyndham puedes ganar puntos para obtener noches gratis y canjearlos en más de 9,000 hoteles de Wyndham Rewards en el mundo.",
+        "image": "/images/cds-gym.jpg",
+        "buttonText": "Reservar cita",
+        "link": "/bodas"
+      }
+    ],
+    "en": [
+      {
+        "title": "Spa & Beauty Salon",
+        "description": "Enjoy a wonderful massage or a rejuvenating facial at the spa. Hair, manicure and pedicure services are also available in the beauty salon.",
+        "image": "/images/cds-spa.jpg",
+        "buttonText": "Book appointment",
+        "link": "/weddings"
+      },
+      {
+        "title": "Gym",
+        "description": "Keep your workout routine at our cutting-edge gym or practice your moves on our tennis court.",
+        "image": "/images/cds-gym.jpg",
+        "buttonText": "Book appointment",
+        "link": "/weddings"
+      }
+    ]
+  }
+  

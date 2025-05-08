@@ -1,0 +1,38 @@
+{
+    "es": 
+    {
+      "hotel-wyndham-grand-costa-del-sol-lima-airport": {
+        "title": "Bienveniido | Costa del Sol",
+        "description": "Descubre nuestras habitaciones diseñadas para tu descanso y confort en cada ciudad.",
+        "image": "https://www.costadelsolperu.com/images/og-habitaciones.jpg",
+        "canonical": "https://www.costadelsolperu.com/habitaciones"
+      },
+      "habitaciones": {
+        "title": "Habitaciones cómodas en todo el Perú | Costa del Sol",
+        "description": "Descubre nuestras habitaciones diseñadas para tu descanso y confort en cada ciudad.",
+        "image": "https://www.costadelsolperu.com/images/og-habitaciones.jpg",
+        "canonical": "https://www.costadelsolperu.com/habitaciones"
+      },
+      "rewards": {
+        "title": "Rewards | Costa del Sol",
+        "description": "Descubre nuestras habitaciones diseñadas para tu descanso y confort en cada ciudad.",
+        "image": "https://www.costadelsolperu.com/images/og-habitaciones.jpg",
+        "canonical": "https://www.costadelsolperu.com/habitaciones"
+      }
+    },
+    "en": {
+      "rooms": {
+        "title": "",
+        "description": "",
+        "image": "",
+        "canonical": ""
+      },
+      "hotel-wyndham-grand-costa-del-sol-lima-airport": {
+        "title": "Welcome | Costa del Sol",
+        "description": "Descubre nuestras habitaciones diseñadas para tu descanso y confort en cada ciudad.",
+        "image": "https://www.costadelsolperu.com/images/og-habitaciones.jpg",
+        "canonical": "https://www.costadelsolperu.com/habitaciones"
+      }
+    }
+  }
+  

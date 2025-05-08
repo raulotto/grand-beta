@@ -1,12 +1,16 @@
 // utils/localizedRoutes.js
 const localizedRoutes = {
-    '/grand/habitaciones': {
-      en: '/en/grand/rooms',
-      es: '/grand/habitaciones',
+    '/hotel-wyndham-grand-costa-del-sol-lima-airport/habitaciones': {
+      en: '/en/hotel-wyndham-grand-costa-del-sol-lima-airport/rooms',
+      es: '/hotel-wyndham-grand-costa-del-sol-lima-airport/habitaciones',
     },
-    '/en/grand/rooms': {
-      es: '/grand/habitaciones',
-      en: '/en/grand/rooms',
+    '/en/hotel-wyndham-grand-costa-del-sol-lima-airport/rooms': {
+      es: '/hotel-wyndham-grand-costa-del-sol-lima-airport/habitaciones',
+      en: '/hotel-wyndham-grand-costa-del-sol-lima-airport/grand/rooms',
+    },
+    '/rewards': {
+      es: '/rewards',
+      en: '/en/rewards',
     },
     // Agrega aquí más rutas si las necesitas
   };

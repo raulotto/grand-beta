@@ -40,7 +40,7 @@ export default function LanguageSelector() {
     <div className="relative">
       <button
         onClick={() => setMenuOpen(!menuOpen)}
-        className="flex items-center space-x-1"
+        className="FlagButton flex items-center space-x-1"
       >
         <Image
           src={LANGUAGES.find(l => l.code === currentLang).flag}

@@ -28,7 +28,7 @@ const MenuInterno = ({ embedMenu }) => {
     } else {
       const el = document.getElementById(item.id);
       if (el) {
-        const yOffset = -130;
+        const yOffset = -430;
         const y = el.getBoundingClientRect().top + window.pageYOffset + yOffset;
         window.scrollTo({ top: y, behavior: 'smooth' });
       }

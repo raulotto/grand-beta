@@ -14,6 +14,8 @@
   --color-primary-orange: #f08900;
   --color-primary-blue: #0066ba;
 
+  --color-support-white-light-1: #fafafa;
+
   --color-support-custom-gray: rgb(113,113,113);
 
 
@@ -92,6 +94,9 @@ ol {
   list-style: numbers;
   padding-left: 16px;
 }
+ol li {
+  padding-left: 5px;
+}
 .PrataFont {
   font-family: 'Prata', serif;
 }
@@ -111,7 +116,12 @@ ol {
 input{
   background-color: #ffffff;
 }
-h1, h2, h3, h4, h5, h6 {
+.grand-parent h1,
+.grand-parent h2,
+.grand-parent h3,
+.grand-parent h4,
+.grand-parent h5,
+.grand-parent h6 {
   font-family: 'Prata', sans-serif;
 }
 
@@ -144,7 +154,15 @@ p{
   cursor: pointer;
   z-index: 10;
 }
-
+.rewards-parent .MegaGroupTitle {
+  color:var(--color-primary-blue);
+}
+.grand-parent .RegionLocation {
+  color:var(--color-secondary-terracota);
+}
+.rewards-parent .RegionLocation {
+  color:var(--color-primary-blue);
+}
 .bar {
   height: 3px;
   transition: 0.4s;
@@ -200,6 +218,68 @@ p{
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+
+
+.grand-parent .dropdown_menu{
+  background: var(--color-primary-oceanic);
+}
+.grand-parent .TitleSectionMd, .grand-parent .TitleSection{
+  color: var(--color-primary-oceanic);
+}
+.rewards-parent .dropdown_menu{
+  background: var(--color-support-white-light-1)
+}
+.rewards-parent .MegaGroupHeader {
+  border-color: var(--color-primary-blue);
+}
+.rewards-parent .MegaGroupHeader button, .rewards-parent .MegaGroupHeaderContent button {
+  color: var(--color-primary-blue);
+}
+.rewards-parent .MegaGroupHeaderContent{
+  color: var(--color-primary-blue);
+  font-family: 'Manrope', sans-serif;
+}  
+.rewards-parent .FlagButton span{
+  color: var(--color-primary-blue);
+}
+.rewards-parent .ButtonGridSection span {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.grand-parent .ColorButton1{
+  background-color: var(--color-primary-oceanic) ;
+  border-color: var(--color-primary-oceanic);
+}
+.grand-parent .ColorButton1:hover{
+  background-color: var(--color-support-iron) ;
+  border-color: var(--color-support-iron);
+}
+
+.rewards-parent .ColorButton1{
+  background-color: var(--color-primary-blue) ;
+  border-color: var(--color-primary-blue);
+}
+
+.rewards-parent .ColorButton1:hover{
+  background-color: var(--color-support-iron) ;
+  border-color: var(--color-support-iron);
+}
+.rewards-parent .GridArea .ColorButton1{
+  background-color: transparent;
+  border-color: var(--color-primary-blue) ;
+  color: var(--color-primary-blue) ;
+}
+.rewards-parent .GridArea .ColorButton1:hover{
+  background-color: var(--color-primary-blue);
+  border-color: var(--color-primary-blue) ;
+  color: #ffffff ;
+}
+
+
 
 @layer base {
   h1 {
@@ -281,10 +361,10 @@ p{
     @apply w-full z-[99] absolute top-0 left-0 bg-gradient-to-b from-[rgba(0,0,0,0.4)] to-transparent h-full pointer-events-none;
   }
   .TitleSection {
-    @apply text-[1.5em] font-normal text-primary-oceanic;
+    @apply text-[1.5em] font-normal ;
   }
   .TitleSectionMd {
-    @apply text-xl text-primary-oceanic;
+    @apply text-xl;
   }
   .TitleSectionSm {
     @apply text-sm text-light-oceanic font-semibold;
@@ -299,7 +379,7 @@ p{
     @apply flex justify-evenly items-center relative;
   }
   .RegionLocation {
-    @apply flex flex-col gap-2 pl-4 py-1 text-sm font-bold text-secondary-terracota;
+    @apply flex flex-col gap-2 pl-4 py-1 text-sm font-bold;
   }
   .ResForm {
     @apply w-full grid grid-cols-1  gap-4 items-center px-6 lg:px-0 py-4;
@@ -341,7 +421,7 @@ p{
     @apply mb-2;
   }
   .MegaGroupHeader{
-    @apply border-b-[1px] border-white pb-2 lg:border-none flex items-center justify-between;
+    @apply border-b-[1px] pb-2 lg:border-none flex items-center justify-between;
   }
   .ButtonBooking{
     @apply top-[90%] lg:hidden text-white;
@@ -382,7 +462,9 @@ p{
 .OverlayDiv{
   @apply  w-full h-full absolute bg-gray-950/30 top-0 right-0;   
 }
-
+.ColorButton1{
+  @apply text-white border-2 uppercase;
+}
 
 .CenterData{
   @apply items-center  ;  
@@ -417,13 +499,18 @@ p{
 .ButtonInfoStatic{
   @apply flex text-primary-oceanic mt-4 justify-end lg:justify-start;
 }
-.ColorButton1{
-  @apply bg-primary-oceanic hover:bg-support-iron  text-white border border-primary-oceanic uppercase;
-}
+
 .ListItemLugares  {
   @apply flex justify-between w-full items-center;
 }
+
+
+
 }
+
+
+
+
 @layer utilities {
   .swiper-pagination-bullet {
     background-color: #c4c4c4 !important;

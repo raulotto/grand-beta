@@ -1,15 +1,48 @@
-[
+{
+  "es": [
     {
-      "description": "Descubre la esencia de la costa, sierra y selva en cada plato. En **Paprika**, la tradición peruana se fusiona con técnicas innovadoras para ofrecerte una experiencia que respeta el producto y sorprende con texturas sofisticadas. Déjate llevar por sabores auténticos reinventados con creatividad.",
-      "image": "/images/wg-restaurantes-featured.jpg"
+      "title": "Redime puntos por estadías",
+      "description": "Reserva noches gratis y con descuento en más de 50,000 hoteles, resorts y alquileres vacacionales.",
+      "image": "/images/wg-restaurantes-featured.jpg",
+      "buttonText": "Conoce más",
+      "link": "/rewards/"
     },
     {
-      "description": "Más que un restaurante, **Paraka Barrio Gourmet** es un destino gastronómico único donde la tradición y la modernidad se fusionan en un espacio al aire libre lleno de energía. Disfruta lo mejor de la comida callejera peruana con bocados irresistibles y bebidas refrescantes.",
-      "image": "/images/wg-terraza_foodcourt.jpg"
+      "title": "Beneficios para miembros",
+      "description": "Consigue noches gratuitas, el precio más bajo al reservar con nosotros, WiFi gratis y la oportunidad de obtener beneficios aún más emocionantes.",
+      "image": "/images/wg-terraza_foodcourt.jpg",
+      "buttonText": "Conoce más",
+      "link": "/rewards/puntos"
     },
     {
-      "description": "**Saria** es **el bar cosmopolita del aeropuerto, donde Perú y el mundo se encuentran**. Disfruta cócteles de autor inspirados en la tradición peruana, cervezas artesanales y piqueos perfectos para compartir.",
-      "image": "/images/cds-luxury-food.jpg"
+      "title": "Mayor nivel, más beneficios",
+      "description": "Mientras más noches te hospedes, más cerca estarás de alcanzar nuevos niveles de miembro: Blue, Gold, Platinum y Diamond.",
+      "image": "/images/cds-luxury-food.jpg",
+      "buttonText": "Conoce más",
+      "link": "/rewards/miembros"
+    }
+  ],
+  "en": [
+    {
+      "title": "Redeem points for stays",
+      "description": "Book free nights and discounted stays at over 50,000 hotels, resorts, and vacation rentals.",
+      "image": "/images/wg-restaurantes-featured.jpg",
+      "buttonText": "Learn more",
+      "link": "/rewards/"
+    },
+    {
+      "title": "Member benefits",
+      "description": "Enjoy free nights, the lowest price when booking with us, free WiFi, and the chance to earn even more exciting perks.",
+      "image": "/images/wg-terraza_foodcourt.jpg",
+      "buttonText": "Learn more",
+      "link": "/rewards/puntos"
+    },
+    {
+      "title": "Higher level, more benefits",
+      "description": "The more nights you stay, the closer you get to reaching new membership tiers: Blue, Gold, Platinum, and Diamond.",
+      "image": "/images/cds-luxury-food.jpg",
+      "buttonText": "Learn more",
+      "link": "/rewards/miembros"
     }
   ]
-  
+}

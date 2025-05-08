@@ -1,31 +1,58 @@
-import { useState } from "react";
-import HabitacionesCard from "@/components/HabitacionesCard";
-import habitaciones from "@/data/habitaciones.json";
-import HeaderTrad from "@/components/HeaderTrad";
-import HeroSlider from "@/components/HeroSlider";
-import BookingForm from "@/components/BookingForm";
-import Footer from "@/components/Footer";
-import { motion, AnimatePresence } from "framer-motion";
-import ServiciosHotel from "@/components/ServiciosHotel";
-import habitacionesCardsOffers from "@/data/habitacionesCardsOffers.json";
-import GridCardsSection from "@/components/GridCardsSection";
-import { TbView360Number } from "react-icons/tb";
-import Link from "next/link";
-import { useRouter } from "next/router";
-import habitacionesLandingData from "@/data/habitacionesLanding.json";
+import { useState, useEffect } from "react"
+import HabitacionesCard from "@/components/HabitacionesCard"
+import HeaderTrad from "@/components/HeaderTrad"
+import HeroSlider from "@/components/HeroSlider"
+import BookingForm from "@/components/BookingForm"
+import Footer from "@/components/Footer"
+import { motion, AnimatePresence } from "framer-motion"
+import ServiciosHotel from "@/components/ServiciosHotel"
+import habitacionesCardsOffers from "@/data/habitacionesCardsOffers.json"
+import GridCardsSection from "@/components/GridCardsSection"
+import { TbView360Number } from "react-icons/tb"
+import Link from "next/link"
+import SeoHead from "@/components/SeoHead"
+import useIdioma from "@/hooks/useIdioma"
+import habitacionesLandingData from "@/data/habitacionesLanding.json"
+import habitaciones from "@/data/habitaciones.json"
 
 export default function HabitacionesPage() {
-  const { locale } = useRouter();
-  const textos = habitacionesLandingData[locale] || habitacionesLandingData["en"];
-const habitacionesPorIdioma = habitaciones[locale] || habitaciones["en"];
-  const [categoriaActiva, setCategoriaActiva] = useState(textos.tabs[0]);
+  const idioma = useIdioma("rooms", {
+    textos: habitacionesLandingData,
+    habitaciones: habitaciones
+  })
 
-  const habitacionesFiltradas = categoriaActiva === "Todas"
-  ? habitacionesPorIdioma
-  : habitacionesPorIdioma.filter((hab) => hab.categoria === categoriaActiva);
+  const [categoriaActiva, setCategoriaActiva] = useState(null)
 
+  useEffect(() => {
+    if (idioma?.textos?.tabs?.length > 0) {
+      setCategoriaActiva(idioma.textos.tabs[0])
+    }
+  }, [idioma?.textos?.tabs])
+
+  if (!idioma || !categoriaActiva) return null
+
+  const {
+    lang,
+    textos,
+    seoData,
+    habitaciones: habitacionesPorIdioma
+  } = idioma
+
+  const habitacionesFiltradas =
+    categoriaActiva === "Todas"
+      ? habitacionesPorIdioma
+      : habitacionesPorIdioma.filter((hab) => hab.categoria === categoriaActiva)
+
+  const cardsOffers = habitacionesCardsOffers[lang] || []
 
   return (
+    <>
+    <SeoHead {...seoData}
+    title={seoData.title}
+    description={seoData.description}
+    image={seoData.image}
+    canonical={seoData.canonical}
+  />
     <main className="mx-auto">
       <HeaderTrad />
       <HeroSlider page="rooms" />
@@ -80,7 +107,7 @@ const habitacionesPorIdioma = habitaciones[locale] || habitaciones["en"];
 
       <ServiciosHotel />
       <section className="pt-0 SectionDiv">
-        <GridCardsSection cards={habitacionesCardsOffers} variant="overlay" />
+        <GridCardsSection cards={cardsOffers} variant="overlay" />
       </section>
 
       <section className="SectionDiv relative w-full h-[500px]">
@@ -128,5 +155,6 @@ const habitacionesPorIdioma = habitaciones[locale] || habitaciones["en"];
       </section>
       <Footer />
     </main>
+    </>
   );
 }

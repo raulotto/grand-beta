@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
@@ -10,30 +10,21 @@ import {
   FaLinkedinIn,
   FaTiktok,
 } from 'react-icons/fa';
-import lang from '@/data/footer.json';
+import lang from '@/data/footerCds.json';
 
 const Footer = () => {
   const pathname = usePathname();
-  const [currentLang, setCurrentLang] = useState('es');
-
-  useEffect(() => {
-    if (pathname.startsWith('/en')) {
-      setCurrentLang('en');
-    } else {
-      setCurrentLang('es');
-    }
-  }, [pathname]);
-
+  const currentLang = pathname.startsWith('/en') ? 'en' : 'es';
   const t = lang[currentLang];
 
   return (
-    <footer className="bg-[#40666a] SectionDiv">
+    <footer className="bg-support-iron/70 SectionDiv">
       <div className="ContainerFlex flex-col">
         <div className="mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 w-full">
           {/* Logo */}
           <div className="flex flex-col items-start gap-4">
             <Image
-              src="/images/new-grand-costa-aeropuerto-logo-blanco.svg"
+              src="/images/logo-vertical-mail.png"
               alt="Logo"
               width={200}
               height={130}
