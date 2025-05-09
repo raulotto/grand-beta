@@ -1,4 +1,12 @@
 const localizedRoutes = {
+  '/hotel-wyndham-grand-costa-del-sol-lima-airport/': {
+    en: '/en/hotel-wyndham-grand-costa-del-sol-lima-airport/',
+    es: '/hotel-wyndham-grand-costa-del-sol-lima-airport/',
+  },
+  '/en/hotel-wyndham-grand-costa-del-sol-lima-airport/': {
+    es: '/hotel-wyndham-grand-costa-del-sol-lima-airport/',
+    en: '/en/hotel-wyndham-grand-costa-del-sol-lima-airport/',
+  },
   '/hotel-wyndham-grand-costa-del-sol-lima-airport/habitaciones': {
     en: '/en/hotel-wyndham-grand-costa-del-sol-lima-airport/rooms',
     es: '/hotel-wyndham-grand-costa-del-sol-lima-airport/habitaciones',

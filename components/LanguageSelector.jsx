@@ -15,14 +15,31 @@ export default function LanguageSelector() {
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const [currentLang, setCurrentLang] = useState('es');
+  const [isTranslatable, setIsTranslatable] = useState(false);
 
   useEffect(() => {
+    const cleanPath = pathname.replace(/\/$/, '').toLowerCase();
+
+    const routesMap = Object.keys(localizedRoutes).reduce((acc, key) => {
+      acc[key.toLowerCase().replace(/\/$/, '')] = localizedRoutes[key];
+      return acc;
+    }, {});
+
     setCurrentLang(pathname.startsWith('/en') ? 'en' : 'es');
+    setIsTranslatable(!!routesMap[cleanPath]);
   }, [pathname]);
 
+  if (!isTranslatable) return null;
+
   const handleLanguageChange = (langCode) => {
-    const cleanPath = pathname.replace(/\/$/, ''); // elimina / final si hay
-    const targetPath = localizedRoutes[cleanPath]?.[langCode];
+    const cleanPath = pathname.replace(/\/$/, '').toLowerCase();
+
+    const routesMap = Object.keys(localizedRoutes).reduce((acc, key) => {
+      acc[key.toLowerCase().replace(/\/$/, '')] = localizedRoutes[key];
+      return acc;
+    }, {});
+
+    const targetPath = routesMap[cleanPath]?.[langCode];
 
     if (targetPath) {
       router.push(targetPath);
