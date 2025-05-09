@@ -25,9 +25,9 @@ export default function PhotoGalleryModal({ galleryData }) {
   };
 
   return (
-    <section className="SectionDiv BgImageRight">
+    <section className="SectionDiv BgImageRight p-0">
       {/* Vista previa estilo Airbnb */}
-      <div className="ContainerFlex relative flex gap-2 max-h-[570px] overflow-hidden">
+      <div className=" relative flex gap-2 max-h-[570px] overflow-hidden">
         {/* Imagen grande a la izquierda */}
         {allImages[0] && (
           <div

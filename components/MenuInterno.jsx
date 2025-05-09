@@ -60,7 +60,7 @@ const MenuInterno = ({ embedMenu }) => {
     <section
       ref={menuRef}
       className={`SectionDivInnerMenu ${embedMenu ? 'pt-0' : ''} ${
-        isStickyMobile ? 'fixed top-[81px] z-2 w-full bg-white shadow-md' : ''
+        isStickyMobile ? 'fixed top-[81px] z-2 w-full bg-white shadow-md' : 'bg-white'
       }`}
     >
       <div className={`ContainerFlexOSize relative ${embedMenu ? 'bg-[#f0f0f0]' : 'px-10 py-4'}`}>

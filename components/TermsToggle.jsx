@@ -29,7 +29,9 @@ const TermsToggle = () => {
   if (!idioma) return null;
   const { terms } = idioma;
   return (
-    <div className="md:flex space-y-6 md:space-y-0 md:space-x-8">
+    <section id="faqs" className="SectionDiv">
+      <div className="ContainerFlex p-0">
+    <div className="md:flex space-y-6 md:space-y-0 md:space-x-8 w-full">
       {/* Menú lateral */}
       <div className="md:min-w-[200px] space-y-2">
         {/* Vista mobile */}
@@ -134,6 +136,8 @@ const TermsToggle = () => {
         ))}
       </div>
     </div>
+    </div>
+</section>
   );
 };
 

@@ -22,6 +22,8 @@ import introMultiData from "@/data/introData.json";
 import ServiciosHotel from "@/components/ServiciosHotel";
 import seo from "@/data/seo.json";
 import SeoHead from "@/components/SeoHead";
+import PreguntasFrecuentes from "@/components/PreguntasFrecuentes";
+import TermsToggle from "@/components/TermsToggle";
 
 
 export async function getStaticProps() {
@@ -91,6 +93,7 @@ export default function Home({ hotel }) {
       <RestBar />
       <PhotoGalleryModal galleryData={galleryData} />
       <Meeting />
+      <TermsToggle />
       <Footer />
 
       <Script

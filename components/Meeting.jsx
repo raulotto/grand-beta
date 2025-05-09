@@ -6,7 +6,7 @@ import promosHomeCards from '@/data/promosHomeCards.json'
 
 const Meeting = () => {
   return (
-    <section className="SectionDiv BgImageRight">
+    <section id="promo" className="SectionDiv BgImageRight">
           <GridCardsSection cards={promosHomeCards} />
     
     

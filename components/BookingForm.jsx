@@ -199,7 +199,7 @@ export default function BookingForm({ embedMenu }) {
 
       <div className="ContainerFlexOSize">
       {embedMenu && (
-  <div className="transition-all duration-500 ease-in-out w-[40%]">
+  <div className="transition-all duration-500 ease-in-out w-[52%]">
     <MenuInterno
   embedMenu={true}
   className={`${embedMenu ? 'block' : 'hidden'}`}
