@@ -90,12 +90,15 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-ol {
+.rewards-parrent ol {
   list-style: numbers;
   padding-left: 16px;
 }
-ol li {
+.rewards-parrent ol li {
   padding-left: 5px;
+}
+b, strong{
+  font-weight: 500;
 }
 .PrataFont {
   font-family: 'Prata', serif;
@@ -219,6 +222,31 @@ p{
   scrollbar-width: none;
 }
 
+.rewards-parrent ol {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.rewards-parrent ul {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  margin-top: 0.5rem;
+  color: #444;
+  font-size: 0.95rem;
+}
+.rewards-parrent li {
+  margin-bottom: 0.5rem;
+  color: #444;
+  font-size: 0.95rem;
+}
+.rewards-parent p a {
+  color: var(--color-primary-blue);
+  transition: color 0.3s ease;
+}
+a:hover {
+  
+}
 
 
 .grand-parent .dropdown_menu{
@@ -249,6 +277,9 @@ p{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.rewards-parent p{
+  font-family: 'Manrope', sans-serif;
 }
 .grand-parent .ColorButton1{
   background-color: var(--color-primary-oceanic) ;
@@ -382,7 +413,7 @@ p{
     @apply flex flex-col gap-2 pl-4 py-1 text-sm font-bold;
   }
   .ResForm {
-    @apply w-full grid grid-cols-1  gap-4 items-center px-6 lg:px-0 py-4;
+    @apply w-full grid grid-cols-1  gap-4 items-center px-6 lg:px-0 py-5;
   }
   .ButtonSolid  {
     @apply bg-[#405d65] text-white px-4 py-2  font-semibold hover:bg-[#2e4448] transition;
@@ -503,8 +534,12 @@ p{
 .ListItemLugares  {
   @apply flex justify-between w-full items-center;
 }
-
-
+.LinkGrupos{
+  @apply w-full text-primary-oceanic hover:text-secondary-terracota text-[11px] absolute bottom-[-19] flex items-center justify-end gap-1;
+}
+.FormTC .ContainerFlexOSize{
+  @apply grid-cols-6;
+}
 
 }
 

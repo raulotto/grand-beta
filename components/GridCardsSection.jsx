@@ -24,16 +24,18 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
     if (variant === 'side-image') {
       return (
         <Wrapper>
-          <div className="flex flex-col lg:flex-row-reverse bg-[#f5f5f5] border border-gray-300 shadow-sm h-full w-full">
+          <div className="GridSide flex flex-col lg:flex-row-reverse bg-[#f5f5f5] border border-gray-300 shadow-sm h-full w-full">
             {/* Imagen */}
             <div className="w-full lg:w-1/2">
               <div className="relative w-full h-[200px] lg:h-full">
+              {card.image && (
                 <Image
                   src={card.image}
                   alt={card.title}
                   fill
                   className="object-cover"
                 />
+              )}
               </div>
             </div>
 
@@ -69,33 +71,30 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
     if (variant === 'clean') {
       return (
         <Wrapper>
-          <div className="flex flex-col lg:flex-row-reverse bg-[#f5f5f5] border border-gray-300 shadow-sm h-full w-full">
-            {/* Imagen */}
-            <div className="w-full lg:w-1/2">
-              <div className="relative w-full h-[200px] lg:h-full">
-                <Image
-                  src={card.image}
-                  alt={card.title}
-                  fill
-                  className="object-cover"
-                />
-              </div>
+          <div className="GridClean bg-white overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
+          {card.image && (
+            <div className="relative w-full h-[220px]">
+              <Image
+                src={card.image}
+                alt={card.title}
+                fill
+                className="object-cover"
+              />
             </div>
+          )}
 
-            {/* Texto */}
-            <div className="flex flex-col justify-between p-6 lg:w-1/2 h-full">
-              <div>
-                <h3 className="text-xl font-bold text-[#333] mb-4 uppercase">{card.title}</h3>
-                {card.description && (
-                  <div
-                    className="text-parrafos"
-                    dangerouslySetInnerHTML={{
-                      __html: card.description.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'),
-                    }}
-                  />
-                )}
-              </div>
-              {card.link && (
+          <div className="p-5 flex-1 flex flex-col justify-center items-center text-center">
+            <h3 className="TitleSectionMd">{card.title}</h3>
+            {card.description && (
+              <div
+                className="text-parrafos mt-2"
+                dangerouslySetInnerHTML={{
+                  __html: card.description.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'),
+                }}
+              />
+            )}
+            {card.text && <p className="text-parrafos mt-2">{card.text}</p>}
+            {card.link && (
                 <div className="mt-6">
                   <Link
                     href={card.link}
@@ -105,8 +104,8 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
                   </Link>
                 </div>
               )}
-            </div>
           </div>
+        </div>
         </Wrapper>
       )
     }
@@ -114,7 +113,7 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
     if (variant === 'overlay') {
       return (
         <Wrapper>
-          <div className="relative group h-[340px] overflow-hidden shadow-md">
+          <div className="GridOverlay relative group h-[340px] overflow-hidden shadow-md">
             <Image
               src={card.image}
               alt={card.title}
@@ -140,12 +139,14 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
       <Wrapper>
         <div className="bg-white shadow-md overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
           <div className="relative w-full h-[380px]">
-            <Image
-              src={card.image}
-              alt={card.title}
-              fill
-              className="object-cover"
-            />
+              {card.image && (
+                <Image
+                  src={card.image}
+                  alt={card.title}
+                  fill
+                  className="object-cover"
+                />
+              )}
           </div>
           <div className="p-5 flex-1 flex flex-col">
             <h3 className="TitleSectionMd">{card.title}</h3>

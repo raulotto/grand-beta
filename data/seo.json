@@ -18,6 +18,18 @@
         "description": "Descubre nuestras habitaciones diseñadas para tu descanso y confort en cada ciudad.",
         "image": "https://www.costadelsolperu.com/images/og-habitaciones.jpg",
         "canonical": "https://www.costadelsolperu.com/habitaciones"
+      },
+      "puntos": {
+        "title": "Rewards | Costa del Sol",
+        "description": "Descubre nuestras habitaciones diseñadas para tu descanso y confort en cada ciudad.",
+        "image": "https://www.costadelsolperu.com/images/og-habitaciones.jpg",
+        "canonical": "https://www.costadelsolperu.com/habitaciones"
+      },
+      "niveles": {
+        "title": "Rewards | Costa del Sol",
+        "description": "Descubre nuestras habitaciones diseñadas para tu descanso y confort en cada ciudad.",
+        "image": "https://www.costadelsolperu.com/images/og-habitaciones.jpg",
+        "canonical": "https://www.costadelsolperu.com/habitaciones"
       }
     },
     "en": {
@@ -27,8 +39,26 @@
         "image": "",
         "canonical": ""
       },
+      "rewards": {
+        "title": "Rewards EN | Costa del Sol",
+        "description": "Descubre nuestras habitaciones diseñadas para tu descanso y confort en cada ciudad.",
+        "image": "https://www.costadelsolperu.com/images/og-habitaciones.jpg",
+        "canonical": "https://www.costadelsolperu.com/habitaciones"
+      },
       "hotel-wyndham-grand-costa-del-sol-lima-airport": {
         "title": "Welcome | Costa del Sol",
+        "description": "Descubre nuestras habitaciones diseñadas para tu descanso y confort en cada ciudad.",
+        "image": "https://www.costadelsolperu.com/images/og-habitaciones.jpg",
+        "canonical": "https://www.costadelsolperu.com/habitaciones"
+      },
+      "points": {
+        "title": "Rewards | Costa del Sol",
+        "description": "Descubre nuestras habitaciones diseñadas para tu descanso y confort en cada ciudad.",
+        "image": "https://www.costadelsolperu.com/images/og-habitaciones.jpg",
+        "canonical": "https://www.costadelsolperu.com/habitaciones"
+      },
+      "levels": {
+        "title": "Rewards | Costa del Sol",
         "description": "Descubre nuestras habitaciones diseñadas para tu descanso y confort en cada ciudad.",
         "image": "https://www.costadelsolperu.com/images/og-habitaciones.jpg",
         "canonical": "https://www.costadelsolperu.com/habitaciones"

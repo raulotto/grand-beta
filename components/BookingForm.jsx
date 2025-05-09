@@ -12,6 +12,8 @@ import es from "date-fns/locale/es";
 import { useBooking } from "@/context/BookingContext";
 import MenuInterno from "./MenuInterno";
 import lang from "@/data/lang";
+import { PiUsersThreeFill } from "react-icons/pi";
+
 
 registerLocale("es", es);
 
@@ -181,7 +183,7 @@ export default function BookingForm({ embedMenu }) {
       className={`FormTC 
       ${showForm ? "transition-all duration-600 ease-in-out lg:transition-none opacity-100 fixed" : 
       "-translate-y-full  z-[2]  transition-all duration-600 ease-in-out lg:transition-none"}
-      ${formIsSticky ? "fixed max-w-full right-0 top- lg:top-34 left-50% w-full z-50   StickyFormCar transition-all duration-600 ease-in-out " : ""}`}
+      ${formIsSticky ? "fixed max-w-full right-0 top- lg:top-37 left-50% w-full z-50   StickyFormCar transition-all duration-600 ease-in-out " : ""}`}
     >
       <div className="HeadHiddenForm">
         <Link
@@ -197,7 +199,7 @@ export default function BookingForm({ embedMenu }) {
 
       <div className="ContainerFlexOSize">
       {embedMenu && (
-  <div className="transition-all duration-500 ease-in-out">
+  <div className="transition-all duration-500 ease-in-out w-[40%]">
     <MenuInterno
   embedMenu={true}
   className={`${embedMenu ? 'block' : 'hidden'}`}
@@ -374,15 +376,20 @@ export default function BookingForm({ embedMenu }) {
 </div>
               </div>
             )}
-          </div>
 
-          <div className="flex flex-col col-span-4 lg:col-span-3">
+
+              </div>
+
+          <div className="flex flex-col col-span-4 lg:col-span-3 relative">
           <button
             type="submit"
             className="ColorButton1 h-[36px] w-full px-4 py-1 transition duration-300 flex items-center justify-center cursor-pointer text-[.7em] font-[800] "
           >
             {t.bookNow}
           </button>
+          <Link href="/grupos" className="LinkGrupos">
+  <PiUsersThreeFill className="text-[15px]"/> Grupos +10 personas
+</Link>
         </div>
         </form>
       </div>

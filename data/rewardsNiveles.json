@@ -1,0 +1,117 @@
+{
+    "es": {
+      "niveles": [
+        {
+          "nombre": "BLUE",
+          "etiqueta": "Al Inscribirte",
+          "color": "#005BAC"
+        },
+        {
+          "nombre": "GOLD",
+          "etiqueta": "Después 5 noches.",
+          "color": "#B58500"
+        },
+        {
+          "nombre": "PLATINUM",
+          "etiqueta": "Después 15 noches.",
+          "color": "#4A4A4A"
+        },
+        {
+          "nombre": "DIAMOND",
+          "etiqueta": "Después 40 noches.",
+          "color": "#B2B2B2"
+        }
+      ],
+      "beneficios": [
+        {
+          "titulo": "Ahorros para miembros",
+          "niveles": ["BLUE", "GOLD", "PLATINUM", "DIAMOND"],
+          "contenido": "Siempre obtendrás el precio más bajo cuando reserves de forma directa en miles de hoteles alrededor del mundo.",
+          "link": {
+            "texto": "Más información sobre reservas directas",
+            "url": "#"
+          },
+          "cta": {
+            "texto": "CONOCE MÁS",
+            "url": "#"
+          }
+        },
+        {
+          "titulo": "Gana al menos 1,000 puntos por cada estadía calificada",
+          "niveles": ["BLUE", "GOLD", "PLATINUM", "DIAMOND"],
+          "contenido": "Por cada estadía calificada, ganarás 10 puntos por dólar o 1,000 puntos, lo que sea mayor.",
+          "link": {
+            "texto": "Términos y condiciones",
+            "url": "#"
+          }
+        },
+        {
+          "titulo": "Las noches transferibles no expiran",
+          "niveles": ["BLUE", "GOLD", "PLATINUM", "DIAMOND"],
+          "contenido": "Tus noches calificadas son transferibles para el próximo año calendario.",
+          "link": {
+            "texto": "Ver detalles",
+            "url": "#"
+          }
+        }
+      ]
+    },
+    "en": {
+      "niveles": [
+        {
+          "nombre": "BLUE",
+          "etiqueta": "Upon Enrollment",
+          "color": "#005BAC"
+        },
+        {
+          "nombre": "GOLD",
+          "etiqueta": "After 5 nights",
+          "color": "#B58500"
+        },
+        {
+          "nombre": "PLATINUM",
+          "etiqueta": "After 15 nights",
+          "color": "#4A4A4A"
+        },
+        {
+          "nombre": "DIAMOND",
+          "etiqueta": "After 40 nights",
+          "color": "#B2B2B2"
+        }
+      ],
+      "beneficios": [
+        {
+          "titulo": "Member savings",
+          "niveles": ["BLUE", "GOLD", "PLATINUM", "DIAMOND"],
+          "contenido": "Always get the lowest price when you book directly at thousands of hotels worldwide.",
+          "link": {
+            "texto": "More about direct bookings",
+            "url": "#"
+          },
+          "cta": {
+            "texto": "LEARN MORE",
+            "url": "#"
+          }
+        },
+        {
+          "titulo": "Earn at least 1,000 points per qualified stay",
+          "niveles": ["BLUE", "GOLD", "PLATINUM", "DIAMOND"],
+          "contenido": "Earn 10 points per dollar or 1,000 points, whichever is more, per qualified stay.",
+          "link": {
+            "texto": "Terms and conditions",
+            "url": "#"
+          }
+        },
+        {
+          "titulo": "Rollover nights never expire",
+          "niveles": ["BLUE", "GOLD", "PLATINUM", "DIAMOND"],
+          "contenido": "Your qualified nights roll over to the next calendar year.",
+          "link": {
+            "texto": "See details",
+            "url": "#"
+          }
+        }
+      ]
+    }
+  }
+  

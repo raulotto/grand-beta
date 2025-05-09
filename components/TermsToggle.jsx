@@ -3,9 +3,12 @@
 import { useState } from "react";
 import { FaPlus, FaMinus, FaChevronDown } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
-import data from "@/data/termsData.json";
+import useIdioma from "@/hooks/useIdioma";
+import termsData from "@/data/termsData.json";
 
 const TermsToggle = () => {
+  
+
   const [openSection, setOpenSection] = useState(0);
   const [openItems, setOpenItems] = useState({});
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
@@ -22,7 +25,9 @@ const TermsToggle = () => {
       [sectionIndex]: prev[sectionIndex] === itemIndex ? null : itemIndex,
     }));
   };
-
+  const idioma = useIdioma("terms", { terms: termsData });
+  if (!idioma) return null;
+  const { terms } = idioma;
   return (
     <div className="md:flex space-y-6 md:space-y-0 md:space-x-8">
       {/* Menú lateral */}
@@ -33,7 +38,7 @@ const TermsToggle = () => {
             onClick={() => setMobileNavOpen((prev) => !prev)}
             className="flex justify-between w-full text-blue-800 font-bold"
           >
-            {data.secciones[openSection].titulo}
+            {terms.secciones[openSection].titulo}
             <FaChevronDown
               className={`transition-transform duration-300 ${
                 mobileNavOpen ? "rotate-180" : ""
@@ -41,34 +46,33 @@ const TermsToggle = () => {
             />
           </button>
           <AnimatePresence>
-  {mobileNavOpen && (
-    <motion.ul
-      initial={{ height: 0, opacity: 0 }}
-      animate={{ height: "auto", opacity: 1 }}
-      exit={{ height: 0, opacity: 0 }}
-      className="overflow-hidden mt-2 text-sm font-semibold space-y-2"
-    >
-      {data.secciones.map((sec, i) => (
-        <li key={i}>
-          <button
-            onClick={() => toggleSection(i)}
-            className={`w-full text-left ${
-              openSection === i ? "text-black" : "text-blue-800"
-            }`}
-          >
-            {sec.titulo}
-          </button>
-        </li>
-      ))}
-    </motion.ul>
-  )}
-</AnimatePresence>
-
+            {mobileNavOpen && (
+              <motion.ul
+                initial={{ height: 0, opacity: 0 }}
+                animate={{ height: "auto", opacity: 1 }}
+                exit={{ height: 0, opacity: 0 }}
+                className="overflow-hidden mt-2 text-sm font-semibold space-y-2"
+              >
+                {terms.secciones.map((sec, i) => (
+                  <li key={i}>
+                    <button
+                      onClick={() => toggleSection(i)}
+                      className={`w-full text-left ${
+                        openSection === i ? "text-black" : "text-blue-800"
+                      }`}
+                    >
+                      {sec.titulo}
+                    </button>
+                  </li>
+                ))}
+              </motion.ul>
+            )}
+          </AnimatePresence>
         </div>
 
         {/* Vista desktop */}
         <ul className="hidden md:block text-sm font-bold text-blue-800 space-y-3">
-          {data.secciones.map((sec, i) => (
+          {terms.secciones.map((sec, i) => (
             <li key={i}>
               <button
                 className={`hover:underline ${
@@ -85,9 +89,9 @@ const TermsToggle = () => {
 
       {/* Contenido de sección */}
       <div className="flex-1">
-        {data.secciones.map((sec, i) => (
+        {terms.secciones.map((sec, i) => (
           <div key={i} className={`${openSection === i ? "block" : "hidden"}`}>
-            <spa className="text-xl font-semibold mb-4">{sec.titulo}</spa>
+            <span className="text-xl font-semibold mb-4 block">{sec.titulo}</span>
             <ul className="space-y-3">
               {sec.items.map((item, j) => (
                 <li key={j} className="border-b pb-2">
@@ -104,26 +108,25 @@ const TermsToggle = () => {
                   </button>
                   <AnimatePresence initial={false}>
                     {openItems[i] === j && (
-                        <motion.div
+                      <motion.div
                         key="content"
                         initial="collapsed"
                         animate="open"
                         exit="collapsed"
                         variants={{
-                            open: { height: "auto", opacity: 1 },
-                            collapsed: { height: 0, opacity: 0 },
+                          open: { height: "auto", opacity: 1 },
+                          collapsed: { height: 0, opacity: 0 },
                         }}
                         transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
                         className="overflow-hidden mt-2 text-sm text-gray-700 bg-gray-50 rounded"
-                        >
+                      >
                         <div
-  className="p-3"
-  dangerouslySetInnerHTML={{ __html: item.respuesta }}
-></div>
-                        </motion.div>
+                          className="p-3"
+                          dangerouslySetInnerHTML={{ __html: item.respuesta }}
+                        ></div>
+                      </motion.div>
                     )}
-                    </AnimatePresence>
-
+                  </AnimatePresence>
                 </li>
               ))}
             </ul>

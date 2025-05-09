@@ -100,7 +100,7 @@ export default function Home() {
 
       {/* Sección: Tarjetas de Rewards */}
       <section className="pt-0 SectionDiv">
-        <GridCardsSection cards={info} />
+        <GridCardsSection cards={info} variant="clean"/>
       </section>
 
       {/* Sección: ¿Por qué unirte? */}

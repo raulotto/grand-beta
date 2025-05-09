@@ -53,6 +53,17 @@
       ]
     },
     {
+      "page": "puntos",
+      "slides": [
+        {
+          "src": "/images/pareja-rewards.avif",
+          "titulo": "Como redimir puntos",
+          "subtitulo": "Se aplican términos y condiciones",
+          "alineacion": "centro"
+        }
+      ]
+    },
+    {
         "page": "matrimonial-superior",
         "slides": [
           {
