@@ -9,6 +9,8 @@ import Image from "next/image";
 import { FaPhoneSquareAlt, FaCalendarAlt } from "react-icons/fa";
 import LogoHeader from '@/components/LogoHeader'
 import LanguageSelector from "@/components/LanguageSelector";
+import SocialIcons from "./SocialIcons";
+import TopBar from "@/components/TopBar";
 
 const HeaderTrad = ({ modoClaro = false }) => {
   const booking = useBooking();
@@ -45,17 +47,19 @@ const HeaderTrad = ({ modoClaro = false }) => {
   const pathname = usePathname();
   const lang = pathname.startsWith("/en") ? "en" : "es";
   const menuGroups = fullMenuGroups[lang];
-  return (
+  return (<>
+    <TopBar />
     <header
       className={`transition-all duration-500 ease-in-out z-[4] font-gotham-book w-full ${
         isActive ? "fixed top-0 bg-white shadow-md" : "absolute"
       }`}
     >
       {/* Dropdown megamenú */}
-      <div className="dropdown_menu">
+      <div className="dropdown_menu BgImageIso">
         <div className="ContainerFlex px-6 lg:px-0 items-start">
         <LogoHeader isActive={false}  />
         </div>
+        
         <div className="InnerDropdownMenu ContainerFlex MegaMenu">
         
 
@@ -73,6 +77,8 @@ const HeaderTrad = ({ modoClaro = false }) => {
 ))}
 
         </div>
+        <SocialIcons /> 
+
       </div>
 
       {/* Top header con logo, menú hamburguesa y opciones */}
@@ -176,7 +182,7 @@ const HeaderTrad = ({ modoClaro = false }) => {
         </div>
          </div>
       </div>
-    </header>
+    </header></>
   );
 };
 

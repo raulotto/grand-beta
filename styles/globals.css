@@ -184,7 +184,10 @@ p{
 .bar3 {
   transform: rotate(45deg) translate(-5px, -6px);
 }
-
+.TopBar{
+  font-family: 'Gotham', sans-serif;
+  
+}
 .ButtonOutline{
   font-family: 'HCo Gotham SSm', sans-serif;
 }
@@ -247,8 +250,21 @@ p{
 a:hover {
   
 }
-
-
+.BgImageIso::before {
+  background: url("/images/WG-iso.png") no-repeat;
+  opacity: 0.1;
+  content: "";
+  height: 580px;
+  background-size: cover !important;
+  top: 190px;
+  z-index: -1;
+  width: 580px;
+  position: absolute;
+  right: 0;
+}
+.FooterColumns {
+  font-family: 'Gotham', sans-serif;
+}
 .grand-parent .dropdown_menu{
   background: var(--color-primary-oceanic);
 }
@@ -386,7 +402,7 @@ a:hover {
     @apply flex p-10 lg:hidden justify-end;
   }
   .FormTC {
-    @apply    lg:block absolute left-1/2 z-[6] top-0 lg:top-[83%]  h-screen lg:h-auto lg:h-[85px] bg-[#f0f0f0] translate-x-[-50%] m-0   w-full mx-auto shadow-md flex flex-col justify-start lg:items-center;
+    @apply    lg:block absolute lg:relative left-1/2 z-[6] top-0 lg:top-[83%]  h-screen lg:h-auto lg:h-[85px] bg-[#f0f0f0] translate-x-[-50%] m-0   w-full mx-auto shadow-md flex flex-col justify-start lg:items-center;
   }
   .OverlayHeader {
     @apply w-full z-[99] absolute top-0 left-0 bg-gradient-to-b from-[rgba(0,0,0,0.4)] to-transparent h-full pointer-events-none;
@@ -418,14 +434,15 @@ a:hover {
   .ButtonSolid  {
     @apply bg-[#405d65] text-white px-4 py-2  font-semibold hover:bg-[#2e4448] transition;
   }
+ 
   .BgImageLeft {
-    @apply w-full  bg-[url('/images/pattern-10r.png')] bg-contain  bg-no-repeat bg-[position:-180px_0px] lg:bg-[position:-10%_0px];
+    @apply w-full  bg-[url('/images/pattern-10r.png')] bg-contain  bg-no-repeat bg-[position:180px_0px] lg:bg-[position:-10%_0px];
   }
   .BgImageRight {
     @apply w-full bg-[url('/images/pattern-10r.png')] bg-contain bg-no-repeat bg-[position:220px_0px] lg:bg-[position:110%_0px];
   }
   .InnerDropdownMenu {
-    @apply flex lg:flex-col items-start w-full h-screen relative mx-auto px-4 lg:px-0  text-white;
+    @apply flex lg:flex-col items-start w-full relative mx-auto px-4 lg:px-0  text-white;
   }
   .InnerDropdownMenu .ContainerFlex{
     @apply lg:hidden flex;
@@ -540,7 +557,9 @@ a:hover {
 .FormTC .ContainerFlexOSize{
   @apply grid-cols-6;
 }
-
+.FooterColumns a{
+  @apply text-[12px];
+}
 }
 
 

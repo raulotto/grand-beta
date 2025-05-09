@@ -6,10 +6,11 @@ import { Autoplay, EffectFade } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/effect-fade'
 import 'swiper/css/autoplay'
-import { FaMapMarkerAlt, FaPlane } from 'react-icons/fa';
 import { IoEnterOutline } from "react-icons/io5";
 import { IoExitOutline } from "react-icons/io5";
 import TextoExpandible from '@/components/TextoExpandible';
+import { IoIosStar, IoIosStarHalf, IoIosStarOutline } from "react-icons/io";
+import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
 
 
 
@@ -21,6 +22,19 @@ import TextoExpandible from '@/components/TextoExpandible';
         <section className="SectionDiv pb-0">
           <div className="ContainerFlex items-start">
             <div className="flex-1 max-w-lg">
+              <div className="flex gap-2 mb-4">
+              <Image
+                src="/images/best-of-wyndham-grand-logo.jpg"
+                alt="Tripadvisor Travelers' Choice Awards 2025"
+      width={80}
+      height={80}/>
+      <Image
+                src="/images/WG-nivel-2.png"
+                alt="Tripadvisor Travelers' Choice Awards 2025"
+      width={80}
+      height={80}/>
+                </div>
+              
               <h3 className="suptitle">{data.suptitle}</h3>
               <h4 className="TitleSection">{data.title}</h4>
               <div className="text-[16px] text-gray-500 PrataFont font-[100] mb-2">{data.subtitle}</div>
@@ -34,21 +48,75 @@ import TextoExpandible from '@/components/TextoExpandible';
             </div>
   
             <div className="w-full md:max-w-lg">
-              <div className="bg-primary-dune/60 p-6 text-center mx-auto">
+              <div className="bg-primary-dune/60 p-6 text-center mx-auto w-full lg:w-[90%]">
+              <div className="mb-4">
+  {/* Logo + rating */}
+  <div className="flex items-center gap-4 mb-2">
+    <Image
+      src="/images/tc_2024_botb_badge_green.png" // asegúrate que esta ruta exista
+      alt="Tripadvisor Travelers' Choice Awards 2025"
+      width={60}
+      height={60}
+    />
+    <div>
+      <div className="flex items-center gap-1">
+        <span className="text-lg font-bold text-gray-800">{data.estrellas}</span>
+        {[1, 2, 3, 4, 5].map((i) => {
+          const rating = parseFloat(data.estrellas);
+          return (
+            <span key={i} className="text-[#355764] text-[1.2em]">
+              {rating >= i ? (
+                <IoIosStar />
+              ) : rating >= i - 0.5 ? (
+                <IoIosStarHalf />
+              ) : (
+                <IoIosStarOutline />
+              )}
+            </span>
+          );
+        })}
+      </div>
+      <p className="text-sm text-gray-500">({data.totalComentarios} comentarios)</p>
+    </div>
+  </div>
+
+  {/* Información de contacto */}
+  <div className="text-left text-sm space-y-2 text-gray-700">
+    <p className="flex items-center gap-2">
+      <FaMapMarkerAlt className="text-[#40666a]" />
+      {data.direccion}
+    </p>
+    <p className="flex items-center gap-2">
+      <FaEnvelope className="text-[#40666a]" />
+      {data.email}
+    </p>
+    <p className="flex items-center gap-2">
+      <FaPhone className="text-[#40666a]" />
+      {data.telefono}
+    </p>
+  </div>
+</div>
+
                 <div className="flex justify-between items-start mb-4">
-                  <div className="flex flex-col items-center">
-                    <IoExitOutline className="text-[2em] text-primary-oceanic" />
-                    <span className="text-xs font-semibold tracking-wider text-gray-600 uppercase">
+                  <div className="flex items-center gap-1 items-start">
+                    <div className="flex flex-col items-center">
+                    <span className="text-2xl font-semibold text-gray-900">{data.checkInHora}</span>
+                    <span className="text-[10px] font-semibold tracking-wider text-gray-600 uppercase">
                       {data.checkIn}
                     </span>
-                    <span className="text-2xl font-semibold text-gray-900 mt-1">{data.checkInHora}</span>
+                    </div>
+                    <IoExitOutline className="text-[2em] text-primary-oceanic" />
+
                   </div>
-                  <div className="flex flex-col items-center">
-                    <IoEnterOutline className="text-[2em] text-primary-oceanic" />
-                    <span className="text-xs font-semibold tracking-wider text-gray-600 uppercase">
+                  <div className="flex items-center gap-1 items-start">
+                    <div className="flex flex-col items-center ">
+                    <span className="text-2xl font-semibold text-gray-900 ">{data.checkOutHora}</span>
+                    <span className="text-[10px] font-semibold tracking-wider text-gray-600 uppercase">
                       {data.checkOut}
                     </span>
-                    <span className="text-2xl font-semibold text-gray-900 mt-1">{data.checkOutHora}</span>
+                    </div>
+                    <IoEnterOutline className="text-[2em] text-primary-oceanic" />
+
                   </div>
                 </div>
                 <hr className="border-t border-gray-300 my-4" />

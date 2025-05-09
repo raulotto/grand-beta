@@ -1,0 +1,15 @@
+{
+    "es": {
+      "titulo": "TRaveller’s Choice 2025",
+      "descripcion": "Vota por Wyndham Grand Costa del Sol Lima Airport hasta el 30 de junio",
+      "botonTexto": "VOTA AHORA",
+      "link": "https://ejemplo.com/votar"
+    },
+    "en": {
+      "titulo": "TRaveller’s Choice 2025",
+      "descripcion": "Vote for Wyndham Grand Ccosta del Sol Lima Airport now through June 30",
+      "botonTexto": "VOTE NOW",
+      "link": "https://example.com/vote"
+    }
+  }
+  

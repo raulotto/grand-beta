@@ -5,8 +5,8 @@ import { usePathname } from 'next/navigation';
 
 const LogoHeader = ({ isActive }) => {
   const pathname = usePathname();
-  const isEnglish = pathname.startsWith('/en');
-  const homeHref = isEnglish ? '/en/grand' : '/grand';
+  const isEnglish = pathname.startsWith('/en/hotel-wyndham-grand-costa-del-sol-lima-airport');
+  const homeHref = isEnglish ? '/en/hotel-wyndham-grand-costa-del-sol-lima-airport' : '/hotel-wyndham-grand-costa-del-sol-lima-airport';
 
   return (
     <div className="LogoInner">

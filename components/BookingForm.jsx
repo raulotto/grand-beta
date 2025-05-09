@@ -182,8 +182,8 @@ export default function BookingForm({ embedMenu }) {
     <div
       className={`FormTC 
       ${showForm ? "transition-all duration-600 ease-in-out lg:transition-none opacity-100 fixed" : 
-      "-translate-y-full  z-[2]  transition-all duration-600 ease-in-out lg:transition-none"}
-      ${formIsSticky ? "fixed max-w-full right-0 top- lg:top-37 left-50% w-full z-50   StickyFormCar transition-all duration-600 ease-in-out " : ""}`}
+      "-translate-y-full lg:translate-y-0  z-[2]  transition-all duration-600 ease-in-out lg:transition-none"}
+      ${formIsSticky ? "fixed max-w-full right-0 top- lg:top-17 left-50% w-full z-50   StickyFormCar transition-all duration-600 ease-in-out " : ""}`}
     >
       <div className="HeadHiddenForm">
         <Link

@@ -1,35 +1,102 @@
 {
-    "es": {
-      "nav": ["Inicio", "Hotel", "Servicios", "Restaurantes y bares", "Wellness", "Eventos y grupos"],
-      "customer": {
-        "title": "Atención al cliente",
-        "links": ["Preguntas frecuentes", "Facturación electrónica", "Modificar reserva"]
-      },
-      "social": "Redes Sociales",
-      "legal": [
-        "Términos y condiciones",
-        "Política web de privacidad",
-        "Política de uso de datos personales",
-        "Política de uso aceptable",
-        "Dog Friendly"
-      ],
-      "copyright": "Wyndham Grand New Lima Airport © Copyright 2025"
+  "es": {
+    "hoteles": {
+      "title": "Nuestros Hoteles",
+      "links": [
+        { "label": "Tumbes", "href": "#" },
+        { "label": "Piura", "href": "#" },
+        { "label": "Chiclayo", "href": "#" },
+        { "label": "Trujillo Golf", "href": "#" },
+        { "label": "Trujillo Centro", "href": "#" },
+        { "label": "Cajamarca", "href": "#" },
+        { "label": "Lima Ciudad", "href": "#" },
+        { "label": "Lima Aeropuerto", "href": "#" },
+        { "label": "Wyndham Grand", "href": "#" },
+        { "label": "Arequipa", "href": "#" },
+        { "label": "Cusco", "href": "#" },
+        { "label": "Pucallpa", "href": "#" }
+      ]
     },
-    "en": {
-      "nav": ["Home", "Hotel", "Services", "Restaurants & Bars", "Wellness", "Events & Groups"],
-      "customer": {
-        "title": "Customer Support",
-        "links": ["FAQ", "Electronic Invoicing", "Modify Reservation"]
-      },
-      "social": "Social Media",
-      "legal": [
-        "Terms & Conditions",
-        "Privacy Policy",
-        "Personal Data Use Policy",
-        "Acceptable Use Policy",
-        "Dog Friendly"
-      ],
-      "copyright": "Wyndham Grand New Lima Airport © Copyright 2025"
-    }
+    "about": {
+      "title": "Sobre Nosotros",
+      "links": [
+        { "label": "Lee nuestro Blog", "href": "#" },
+        { "label": "Somos Dog Friendly", "href": "#" },
+        { "label": "Reservas Grupos", "href": "#" },
+        { "label": "Alcance y Políticas del Sistema Integrado de Gestión", "href": "#" }
+      ]
+    },
+    "revolt": {
+      "title": "Sobre Nosotros",
+      "links": [
+        { "label": "Lee nuestro Blog", "href": "#" },
+        { "label": "Somos Dog Friendly", "href": "#" },
+        { "label": "Reservas Grupos", "href": "#" },
+        { "label": "Alcance y Políticas del Sistema Integrado de Gestión", "href": "#" }
+      ]
+    },
+    "customer": {
+      "title": "Atención al cliente",
+      "links": ["Preguntas frecuentes", "Facturación electrónica", "Modificar reserva"]
+    },
+    "social": "Redes Sociales",
+    "legal": [
+      "Términos y condiciones",
+      "Política web de privacidad",
+      "Política de uso de datos personales",
+      "Política de uso aceptable",
+      "Dog Friendly"
+    ],
+    "copyright": "Wyndham Grand New Lima Airport © Copyright 2025"
+  },
+  "en": {
+    "hoteles": {
+      "title": "Our Hotels",
+      "links": [
+        { "label": "Tumbes", "href": "#" },
+        { "label": "Piura", "href": "#" },
+        { "label": "Chiclayo", "href": "#" },
+        { "label": "Trujillo Golf", "href": "#" },
+        { "label": "Trujillo Center", "href": "#" },
+        { "label": "Cajamarca", "href": "#" },
+        { "label": "Lima City", "href": "#" },
+        { "label": "Lima Airport", "href": "#" },
+        { "label": "Wyndham Grand", "href": "#" },
+        { "label": "Arequipa", "href": "#" },
+        { "label": "Cusco", "href": "#" },
+        { "label": "Pucallpa", "href": "#" }
+      ]
+    },
+    "about": {
+      "title": "About Us",
+      "links": [
+        { "label": "Read our Blog", "href": "#" },
+        { "label": "We are Dog Friendly", "href": "#" },
+        { "label": "Group Reservations", "href": "#" },
+        { "label": "Scope and Policies of the Integrated Management System", "href": "#" }
+      ]
+    },
+    "revolt": {
+      "title": "Sobre Nosotros",
+      "links": [
+        { "label": "Lee nuestro Blog", "href": "#" },
+        { "label": "Somos Dog Friendly", "href": "#" },
+        { "label": "Reservas Grupos", "href": "#" },
+        { "label": "Alcance y Políticas del Sistema Integrado de Gestión", "href": "#" }
+      ]
+    },
+    "customer": {
+      "title": "Customer Support",
+      "links": ["FAQ", "Electronic Invoicing", "Modify Reservation"]
+    },
+    "social": "Social Media",
+    "legal": [
+      "Terms & Conditions",
+      "Privacy Policy",
+      "Personal Data Use Policy",
+      "Acceptable Use Policy",
+      "Dog Friendly"
+    ],
+    "copyright": "Wyndham Grand New Lima Airport © Copyright 2025"
   }
-  
+}

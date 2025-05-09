@@ -10,7 +10,10 @@ import {
   FaMobileAlt,
   FaSpa,
   FaUsers,
-  FaCheckCircle
+  FaCheckCircle,
+  FaCoffee,
+  FaSwimmer,
+  FaDumbbell
 } from 'react-icons/fa';
 
 const iconMap = {
@@ -21,8 +24,12 @@ const iconMap = {
   FaMobileAlt,
   FaSpa,
   FaUsers,
-  FaCheckCircle
+  FaCheckCircle,
+  FaCoffee,
+  FaSwimmer,
+  FaDumbbell
 };
+
 
 const Beneficios = () => {
   const pathname = usePathname();
@@ -46,7 +53,12 @@ const Beneficios = () => {
               <div key={index} className="flex flex-col items-center text-center text-black-grand">
                 {IconComponent && <IconComponent className="text-3xl text-light-oceanic mb-3" />}
                 <h4 className="Gotham text-[1em]">{item.titulo}</h4>
-                <p className="text-xs text-gray-700">{item.descripcion}</p>
+                {item.descripcion && (
+                <p className="text-xs text-gray-700 text-[11px]!">{item.descripcion}</p>
+              )}
+                {item.horario && (
+  <p className="text-[11px]! font-bold!">{item.horario}</p>
+)}
               </div>
             );
           })}

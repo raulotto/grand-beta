@@ -11,16 +11,12 @@ import Beneficios from "@/components/Beneficios";
 import Habitaciones from "@/components/Habitaciones";
 import Parallax from "@/components/Parallax";
 import RestBar from "@/components/RestBar";
-import Gallery from "@/components/Gallery";
 import Meeting from "@/components/Meeting";
-import Ofertas from "@/components/Ofertas";
-import HotelesGrid from "@/components/HotelesGrid";
 import Footer from "@/components/Footer";
 import PhotoGalleryModal from '@/components/PhotoGalleryModal';
 import galleryData from '@/data/photoGallery.json';
 import BeneficiosDirectos from "@/components/BeneficiosDirectos";
 import Intro from "@/components/Intro";
-import data from "@/data/introData.json";
 import { useRouter } from "next/router";
 import introMultiData from "@/data/introData.json";
 import ServiciosHotel from "@/components/ServiciosHotel";
@@ -95,7 +91,6 @@ export default function Home({ hotel }) {
       <RestBar />
       <PhotoGalleryModal galleryData={galleryData} />
       <Meeting />
-      <HotelesGrid />
       <Footer />
 
       <Script
