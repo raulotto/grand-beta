@@ -34,8 +34,8 @@
       "page": "spa",
       "slides": [
         {
-          "src": "/images/cds-spa.jpg",
-          "titulo": "Spa",
+          "src": "/images/women-oceanic.jpg",
+          "arte": "/images/oceanic-logo.png",
           "subtitulo": "Harmony Spa",
           "claseExtra": "OverlaySlide"  
         }
