@@ -105,7 +105,7 @@ export default function Spa() {
       <section className="SectionDiv bg-[#f4ebdf] py-12 px-6">
       <div className="ContainerFlex flex-col w-full">
         <div className="mb-8 md:flex md:items-end md:justify-between gap-8">
-          <h2 className="TitleSection text-[#405d65] font-serif text-4xl font-semibold leading-tight">
+          <h2 className="TitleSection">
             Hacer ejercicio<br />siempre es una buena idea
           </h2>
           <p className="mt-4 md:mt-0 md:max-w-md text-gray-700">

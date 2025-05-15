@@ -68,7 +68,7 @@ export default function TripReviews() {
                     </div> 
                     <div className='w-full lg:w-2/3 border-t-1 lg:border-l-1 lg:border-t-0 lg:pl-8 lg:pr-12'>
                     <p className="mt-2">{item.comment}</p>
-                  <div className="mt-4 flex items-center justify-between">
+                  <div className="TaUsuario mt-4 flex items-center justify-between">
                     <span className="font-medium">- {item.author}</span>
                     <div className="flex">
                       {[...Array(5)].map((_, i) =>

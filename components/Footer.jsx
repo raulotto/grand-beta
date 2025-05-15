@@ -35,7 +35,7 @@ const Footer = () => {
   const t = lang[currentLang];
 
   const FooterSection = ({ title, links, id }) => (
-    <div className="FooterColumn border-b border-white/20 pb-4">
+    <div className="FooterColumn border-b lg:border-0 border-white/20 pb-4">
       <button
         onClick={() => toggleSection(id)}
         className="uppercase w-full text-left flex justify-between items-center text-white"
@@ -95,6 +95,7 @@ const Footer = () => {
             alt="30 años Costa del Sol"
             width={200}
             height={80}
+            className='w-[70%] lg:w-[200]'
           />
           <Image
             src="/images/tc_2024_botb_badge_green.png"

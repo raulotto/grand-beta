@@ -37,7 +37,7 @@ const TermsToggle = ({ data }) => {
       {/* Menú lateral */}
       <div className="md:min-w-[200px] space-y-2">
         {/* Vista mobile */}
-        <div className="md:hidden border-b pb-2">
+        <div className="AcordionTitle md:hidden border-b pb-2">
           <button
             onClick={() => setMobileNavOpen((prev) => !prev)}
             className="flex justify-between w-full text-blue-800 font-bold"
@@ -75,7 +75,7 @@ const TermsToggle = ({ data }) => {
         </div>
 
         {/* Vista desktop */}
-        <ul className="hidden md:block text-sm font-bold text-blue-800 space-y-3">
+        <ul className="AcordionCategory hidden md:block text-sm  text-blue-800 space-y-3">
           {terms.secciones.map((sec, i) => (
             <li key={i}>
               <button
@@ -98,10 +98,10 @@ const TermsToggle = ({ data }) => {
             <h4 className="TitleSection mb-4">{sec.titulo}</h4>
             <ul className="space-y-3">
               {sec.items.map((item, j) => (
-                <li key={j} className="border-b pb-2">
+                <li key={j} className="AcordionTitle border-b pb-2 text-sm">
                   <button
                     onClick={() => toggleItem(i, j)}
-                    className="w-full flex justify-between text-left font-medium text-gray-800"
+                    className="w-full flex justify-between text-left  text-gray-800"
                   >
                     <span>{item.titulo}</span>
                     {openItems[i] === j ? (
@@ -125,7 +125,7 @@ const TermsToggle = ({ data }) => {
                         className="overflow-hidden mt-2 text-sm text-gray-700 bg-gray-50 rounded"
                       >
                         <div
-                          className="p-3"
+                          className="p-3 text-sm"
                           dangerouslySetInnerHTML={{ __html: item.respuesta }}
                         ></div>
                       </motion.div>

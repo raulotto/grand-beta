@@ -86,7 +86,13 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
     if (variant === 'person-card') {
       return (
         <Wrapper>
-          <div className="relative h-[500px] w-full overflow-hidden rounded-md shadow-md group">
+          <div
+            className="relative h-[500px] w-full overflow-hidden rounded-md shadow-md group"
+            onClick={(e) => {
+              const el = e.currentTarget;
+              el.classList.toggle('show-hover');
+            }}
+          >
             <Image
               src={card.image}
               alt={card.title}
@@ -94,14 +100,14 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
               className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent transition-opacity duration-500" />
-            <div className="absolute bottom-0 left-0 right-0 px-5 py-4 text-white z-10 transition-opacity duration-300 group-hover:opacity-0">
+            <div className="absolute bottom-0 left-0 right-0 px-5 py-4 text-white z-10 transition-opacity duration-300 group-hover:opacity-0 group-[.show-hover]:opacity-0">
               <h3 className="TitleSection text-white!">{card.title}</h3>
               {card.description && (
                 <p className="text-sm opacity-90 text-white!">{card.description}</p>
               )}
             </div>
             {card.hoverText && (
-              <div className="absolute inset-0 bg-black/80 text-white flex flex-col justify-center items-center text-center px-5 py-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ">
+              <div className="absolute inset-0 bg-black/80 text-white flex flex-col justify-center items-center text-center px-5 py-6 opacity-0 group-hover:opacity-100 group-[.show-hover]:opacity-100 transition-opacity duration-500">
                 <h3 className="TitleSectionMd text-white!">{card.title}</h3>
                 <p className="text-sm opacity-90 text-white!">{card.hoverText}</p>
                 {card.link && (
@@ -198,7 +204,7 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
               )}
           </div>
           <div className="p-5 flex-1 flex flex-col text-center">
-            <h3 className="TitleSectionMd">{card.title}</h3>
+            <h3 className="TitleGridCards">{card.title}</h3>
             {card.description && (
               <div
                 className="text-parrafos mt-2"
@@ -283,7 +289,7 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
           spaceBetween={16}
           slidesPerView={1}
           loop={true}
-          autoplay={{ delay: 2500, disableOnInteraction: true }}
+          autoplay={{ delay: 3000, disableOnInteraction: true }}
           navigation={{
             prevEl: prevRef.current,
             nextEl: nextRef.current

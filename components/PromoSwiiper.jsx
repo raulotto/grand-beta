@@ -16,7 +16,7 @@ export default function PromoSwiper() {
       <Swiper
         modules={[Autoplay]}
         spaceBetween={30}
-        slidesPerView={1}
+        slidesPerView={2}
         loop={true}
         autoplay={{ delay: 2500, disableOnInteraction: false }}
         breakpoints={{

@@ -181,6 +181,14 @@ p{
 .rewards-parent .RegionLocation {
   color:var(--color-primary-blue);
 }
+.grand-parent .AcordionTitle, .grand-parent .AcordionCategory, .TaUsuario{
+  font-family: 'Gotham', sans-serif;
+}
+.grand-parent .text-parrafos {
+  font-family: Gotham, sans-serif;
+  font-weight: 200;
+  font-size: 12px;
+}
 .bar {
   height: 3px;
   transition: 0.4s;
@@ -342,9 +350,6 @@ a:hover {
   color: #ffffff ;
 }
 
-#slider-spa img.artImage {
-  width: 30%;
-}
 
 @layer base {
   h1 {
@@ -427,6 +432,9 @@ a:hover {
   }
   .TitleSection {
     @apply text-[1.5em] font-normal ;
+  }
+  .TitleGridCards{
+    @apply text-[14px]! font-normal;
   }
   .TitleSectionMd {
     @apply text-xl font-[500];
@@ -583,6 +591,9 @@ a:hover {
 }
 .slider-spa {
   @apply bg-red-500; /* test visual temporal */
+}
+.artImage{
+  @apply w-[80%] lg:w-[30%];
 }
 }
 

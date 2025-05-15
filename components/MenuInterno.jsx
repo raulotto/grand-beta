@@ -71,7 +71,7 @@ const MenuInterno = ({ embedMenu }) => {
               return (
                 <SwiperSlide key={item.id} className="!w-auto">
                   <li
-                    className="MenuInternoItems flex items-center gap-2 text-sm cursor-pointer hover:text-secondary-terracota transition whitespace-nowrap"
+                    className="MenuInternoItems flex items-center gap-2 text-[12px] cursor-pointer hover:text-secondary-terracota transition whitespace-nowrap"
                     onClick={() => handleClick(item)}
                   >
                     {item.label}

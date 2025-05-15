@@ -39,14 +39,14 @@ export default function PhotoGalleryModal({ galleryData }) {
               alt={allImages[0].alt || 'Imagen'}
               width={800}
               height={600}
-              className="w-full h-full object-cover object-center"
+              className="w-full h-50 lg:h-full object-cover object-center"
               priority={true}
             />
           </div>
         )}
 
         {/* Cuadrícula derecha en desktop */}
-        <div className="hidden md:grid grid-cols-2 grid-rows-2  max-h-[620px] ">
+        <div className="hidden md:grid grid-cols-2 grid-rows-2  max-h-[620px]">
           {allImages.slice(1, 5).map((img, idx) => (
             <div key={idx} onClick={() => openLightboxAtIndex(idx + 1)} className="cursor-pointer ">
               <Image
@@ -54,7 +54,7 @@ export default function PhotoGalleryModal({ galleryData }) {
                 alt={img.alt || 'Imagen'}
                 width={300}
                 height={300}
-                className="w-full h-[300px] object-cover object-center hover:bg-red-500"
+                className="w-full h-[120px] lg:h-[300px] object-cover object-center"
               />
             </div>
           ))}
@@ -62,14 +62,14 @@ export default function PhotoGalleryModal({ galleryData }) {
 
         {/* Cuadrícula derecha en mobile */}
         <div className="md:hidden grid grid-cols-2 grid-rows-2  max-h-[620px] ">
-          {allImages.slice(1, 3).map((img, idx) => (
+          {allImages.slice(1, 5).map((img, idx) => (
             <div key={idx} onClick={() => openLightboxAtIndex(idx + 1)} className="cursor-pointer">
               <Image
                 src={img.src}
                 alt={img.alt || 'Imagen'}
                 width={300}
                 height={300}
-                className="w-full h-[300px] object-cover object-center"
+                className="w-full h-[100px] lg:h-[300px] object-cover object-center"
               />
             </div>
           ))}

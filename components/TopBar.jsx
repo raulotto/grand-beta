@@ -14,7 +14,7 @@ export default function TopBar() {
   const { topbar } = idioma
 
   return (
-    <section className="SectionDiv w-full bg-[#e7e0d5] py-1 px-3 text-sm flex items-center justify-between gap-2 relative TopBar">
+    <section className="SectionDiv w-full bg-[#e7e0d5] py-1 px-4 text-sm flex items-center justify-between gap-2 relative TopBar">
         <div className='ContainerFlex p-0'>
       <div className="flex  w-full flex-wrap justify-center items-center p-2 gap-2 lg:gap-4">
         <strong className="text-[#2b6d7e] uppercase">
@@ -23,7 +23,7 @@ export default function TopBar() {
         <span className="text-[11px] text-gray-800">{topbar.descripcion}</span>
         {topbar.link && (
           <Link href={topbar.link} target="_blank" rel="noopener noreferrer">
-            <span className="bg-[#456a6f] text-white px-3 py-[2px] text-xs rounded hover:opacity-90 transition">
+            <span className="ColorButton1 ButtonRounded py-2!">
               {topbar.botonTexto}
             </span>
           </Link>
