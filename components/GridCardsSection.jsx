@@ -1,15 +1,34 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Navigation } from 'swiper/modules'
-import 'swiper/css'
-import 'swiper/css/navigation'
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Autoplay, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+import { useEffect, useRef, useState } from "react";
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 
 export default function GridCardsSection({ cards, variant = 'default' }) {
-  const isCarouselDesktop = cards.length >= 4
+  const isCarouselDesktop = cards.length >= 4;
+  const [swiperInstance, setSwiperInstance] = useState(null);
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+  const paginationRef = useRef(null);
 
+  useEffect(() => {
+    if (swiperInstance && swiperInstance.params) {
+      swiperInstance.params.navigation.prevEl = prevRef.current;
+      swiperInstance.params.navigation.nextEl = nextRef.current;
+      swiperInstance.params.pagination.el = paginationRef.current;
+      swiperInstance.navigation.init();
+      swiperInstance.navigation.update();
+      swiperInstance.pagination.init();
+      swiperInstance.pagination.render();
+      swiperInstance.pagination.update();
+    }
+  }, [swiperInstance]);
+  
   const Card = ({ card }) => {
     const Wrapper = ({ children }) =>
       card.link ? (
@@ -20,12 +39,10 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
         <div className="h-full">{children}</div>
       )
 
-    // === VARIANT: SIDE IMAGE ===
     if (variant === 'side-image') {
       return (
         <Wrapper>
           <div className="GridSide flex flex-col lg:flex-row-reverse bg-[#f5f5f5] border border-gray-300 shadow-sm h-full w-full">
-            {/* Imagen */}
             <div className="w-full lg:w-1/2">
               <div className="relative w-full h-[200px] lg:h-full">
               {card.image && (
@@ -38,8 +55,6 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
               )}
               </div>
             </div>
-
-            {/* Texto */}
             <div className="flex flex-col justify-between p-6 lg:w-1/2 h-full">
               <div>
                 <h3 className="text-xl font-bold text-[#333] mb-4 uppercase">{card.title}</h3>
@@ -67,7 +82,7 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
         </Wrapper>
       )
     }
-    // === VARIANT: PERSON CARD ===
+
     if (variant === 'person-card') {
       return (
         <Wrapper>
@@ -78,19 +93,13 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
-
-            {/* Fondo base con degradado */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent transition-opacity duration-500" />
-
-            {/* Contenido principal siempre visible */}
             <div className="absolute bottom-0 left-0 right-0 px-5 py-4 text-white z-10 transition-opacity duration-300 group-hover:opacity-0">
               <h3 className="TitleSection text-white!">{card.title}</h3>
               {card.description && (
                 <p className="text-sm opacity-90 text-white!">{card.description}</p>
               )}
             </div>
-
-            {/* Contenido al hacer hover */}
             {card.hoverText && (
               <div className="absolute inset-0 bg-black/80 text-white flex flex-col justify-center items-center text-center px-5 py-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ">
                 <h3 className="TitleSectionMd text-white!">{card.title}</h3>
@@ -110,7 +119,6 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
       );
     }
 
-    // === VARIANT: SIDE IMAGE ===
     if (variant === 'clean') {
       return (
         <Wrapper>
@@ -125,7 +133,6 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
               />
             </div>
           )}
-
           <div className="p-5 flex-1 flex flex-col justify-center items-center text-center">
             <h3 className="TitleSectionMd">{card.title}</h3>
             {card.description && (
@@ -138,21 +145,21 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
             )}
             {card.text && <p className="text-parrafos mt-2">{card.text}</p>}
             {card.link && (
-                <div className="mt-6">
-                  <Link
-                    href={card.link}
-                    className="text-[#0071c2] font-semibold hover:underline"
-                  >
-                    {card.buttonText || 'CONOCE MÁS'}
-                  </Link>
-                </div>
-              )}
+              <div className="mt-6">
+                <Link
+                  href={card.link}
+                  className="text-[#0071c2] font-semibold hover:underline"
+                >
+                  {card.buttonText || 'CONOCE MÁS'}
+                </Link>
+              </div>
+            )}
           </div>
         </div>
         </Wrapper>
       )
     }
-    // === VARIANT: OVERLAY ===
+
     if (variant === 'overlay') {
       return (
         <Wrapper>
@@ -177,7 +184,6 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
       )
     }
 
-    // === VARIANT: DEFAULT ===
     return (
       <Wrapper>
         <div className="bg-white shadow-md overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow duration-300">
@@ -217,7 +223,6 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
 
   return (
     <div className="ContainerFlex flex-col w-full">
-      {/* Desktop */}
       <div className="hidden lg:block w-full relative">
         {isCarouselDesktop ? (
           <>
@@ -244,10 +249,10 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
               ))}
             </Swiper>
             <div>
-              <button className="custom-prev absolute -left-14 top-1/2 -translate-y-1/2 z-10 text-[#405d65] hover:text-black">
+              <button ref={prevRef} className="custom-prev absolute -left-14 top-1/2 -translate-y-1/2 z-10 text-[#405d65] hover:text-black">
                 <FiChevronLeft size={48} />
               </button>
-              <button className="custom-next absolute -right-14 top-1/2 -translate-y-1/2 z-10 text-[#405d65] hover:text-black">
+              <button ref={nextRef} className="custom-next absolute -right-14 top-1/2 -translate-y-1/2 z-10 text-[#405d65] hover:text-black">
                 <FiChevronRight size={48} />
               </button>
             </div>
@@ -260,38 +265,65 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
             }}
           >
             {cards.map((card, index) => (
-  <div
-    key={index}
-    className={`h-full ${['side-image', 'default'].includes(variant) ? 'flex' : ''}`}
-  >
-    <Card card={card} />
-  </div>
-))}
-
+              <div
+                key={index}
+                className={`h-full ${['side-image', 'default'].includes(variant) ? 'flex' : ''}`}
+              >
+                <Card card={card} />
+              </div>
+            ))}
           </div>
         )}
       </div>
 
       {/* Mobile */}
-      <div className="block lg:hidden w-full">
+      <div className="block lg:hidden w-full relative">
         <Swiper
-          modules={[Navigation]}
+          modules={[Navigation, Autoplay, Pagination]}
           spaceBetween={16}
           slidesPerView={1}
           loop={true}
+          autoplay={{ delay: 2500, disableOnInteraction: true }}
+          navigation={{
+            prevEl: prevRef.current,
+            nextEl: nextRef.current
+          }}
+          pagination={{
+            el: paginationRef.current,
+            clickable: true
+          }}
+          onSwiper={setSwiperInstance}
         >
           {cards.map((card, index) => (
             <SwiperSlide
-            key={index}
-            className={['side-image', 'default'].includes(variant) ? '!h-auto' : ''}
-          >
-            <div className={`${['side-image', 'default'].includes(variant) ? 'h-full flex' : ''}`}>
-              <Card card={card} />
-            </div>
-          </SwiperSlide>
-          
+              key={index}
+              className={["side-image", "default"].includes(variant) ? "!h-auto" : ""}
+            >
+              <div
+                className={
+                  ["side-image", "default"].includes(variant)
+                    ? "h-full flex"
+                    : ""
+                }
+              >
+                <Card card={card} />
+              </div>
+            </SwiperSlide>
           ))}
         </Swiper>
+
+        {/* Flechas controladas */}
+        <div className="absolute top-1/2 -translate-y-1/2 w-full flex justify-between px-4 z-10">
+          <button ref={prevRef} className="mobile-prev text-white/80 hover:text-white">
+            <FiChevronLeft size={36} />
+          </button>
+          <button ref={nextRef} className="mobile-next text-white/80 hover:text-white">
+            <FiChevronRight size={36} />
+          </button>
+        </div>
+
+        {/* Dots controlados */}
+        <div ref={paginationRef} className="mobile-pagination mt-4 flex justify-center gap-2" />
       </div>
     </div>
   )

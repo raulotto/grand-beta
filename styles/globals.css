@@ -278,8 +278,8 @@ a:hover {
   position: absolute;
   right: 0;
 }
-.FooterColumns {
-  font-family: 'Gotham', sans-serif;
+.FooterColumn,.FooterColumns {
+  font-family: 'HCo Gotham SSm', sans-serif;
 }
 .grand-parent .dropdown_menu{
   background: var(--color-primary-oceanic);
@@ -575,8 +575,11 @@ a:hover {
 .FormTC .ContainerFlexOSize{
   @apply grid-cols-6;
 }
-.FooterColumns a{
-  @apply text-[12px];
+.FooterColumn {
+  @apply lg:text-[12px];
+}
+.FooterColumns {
+  @apply lg:text-[12px];
 }
 .slider-spa {
   @apply bg-red-500; /* test visual temporal */

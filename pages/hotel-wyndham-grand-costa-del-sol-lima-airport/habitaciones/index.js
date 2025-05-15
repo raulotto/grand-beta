@@ -112,7 +112,11 @@ export default function HabitacionesPage() {
 
 </div>
         </section>
-        <GridCardsSection cards={landingOffers}  />
+        <section className="SectionDiv">
+          <div className="ContainerFlex">
+        <GridCardsSection cards={landingOffers} />
+        </div>
+        </section>
 
         <section className="SectionDiv relative w-full h-[500px]">
           <div className="absolute inset-0 z-0">

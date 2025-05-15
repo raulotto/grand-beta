@@ -11,7 +11,7 @@ const socialLinks = [
 
 export default function SocialIcons() {
   return (
-    <div className="ContainerFlex justify-start items-center p-0 gap-4 mt-4">
+    <div className="ContainerFlex justify-start px-6 flex-row items-center gap-4 mt-4">
       {socialLinks.map((item, idx) => (
         <a
           key={idx}

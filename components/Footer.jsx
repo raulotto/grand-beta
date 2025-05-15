@@ -3,67 +3,92 @@ import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaYoutube,
-  FaLinkedinIn,
-  FaTiktok,
-} from 'react-icons/fa';
+import { AnimatePresence, motion } from 'framer-motion';
 import lang from '@/data/footer.json';
 import SocialIcons from '@/components/SocialIcons';
+import { FaChevronDown } from 'react-icons/fa';
 
 const Footer = () => {
   const pathname = usePathname();
   const [currentLang, setCurrentLang] = useState('es');
+  const [isMobile, setIsMobile] = useState(false);
+  const [openSections, setOpenSections] = useState({});
 
   useEffect(() => {
     setCurrentLang(pathname.startsWith('/en') ? 'en' : 'es');
   }, [pathname]);
 
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    handleResize();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const toggleSection = (key) => {
+    setOpenSections((prev) => ({
+      ...prev,
+      [key]: !prev[key],
+    }));
+  };
+
   const t = lang[currentLang];
+
+  const FooterSection = ({ title, links, id }) => (
+    <div className="FooterColumn border-b border-white/20 pb-4">
+      <button
+        onClick={() => toggleSection(id)}
+        className="uppercase w-full text-left flex justify-between items-center text-white"
+      >
+        {title}
+        {isMobile && (
+          <FaChevronDown
+          className={`ml-2 transition-transform duration-300 ${openSections[id] ? 'rotate-180' : ''}`}
+        />
+        
+        )}
+      </button>
+
+      <AnimatePresence initial={false}>
+        {(!isMobile || openSections[id]) && (
+          <motion.div
+            key={id}
+            initial={{ maxHeight: 0, opacity: 0 }}
+            animate={{ maxHeight: 500, opacity: 1 }}
+            exit={{ maxHeight: 0, opacity: 0 }}
+            transition={{
+              duration: 0.4,
+              ease: [0.4, 0, 0.2, 1]
+            }}
+            className="overflow-hidden mt-2 flex flex-col gap-2"
+          >
+            {links.map((item, i) => (
+              <Link className='FooterColumns' key={i} href={item.href || '#'}>
+                {item.label || item}
+              </Link>
+            ))}
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
 
   return (
     <footer className="bg-[#40666a] SectionDiv">
       <div className="ContainerFlex flex-col">
         <div className="mx-auto grid grid-cols-1 md:grid-cols-5 gap-8 w-full">
-          {/* Nuestros Hoteles */}
-          <div className="flex flex-col gap-2 FooterColumns">
-            <span className="font-semibold">{t.hoteles.title}</span>
-            {t.hoteles.links.map((item, i) => (
-              <Link key={i} href={item.href || '#'}>{item.label}</Link>
-            ))}
-          </div>
+          <FooterSection title={t.hoteles.title} links={t.hoteles.links} id="hoteles" />
+          <FooterSection title={t.about.title} links={t.about.links} id="about" />
+          <FooterSection title={t.customer.title} links={t.customer.links} id="customer" />
+          <FooterSection title={t.revolt.title} links={t.revolt.links || t.customer.links} id="revolt" />
 
-          {/* Sobre nosotros */}
-          <div className="flex flex-col gap-2 FooterColumns">
-            <span className="font-semibold">{t.about.title}</span>
-            {t.about.links.map((item, i) => (
-              <Link key={i} href={item.href || '#'}>{item.label}</Link>
-            ))}
-          </div>
-
-          {/* Atención al cliente */}
-          <div className="flex flex-col gap-2 FooterColumns">
-            <span className="font-semibold">{t.customer.title}</span>
-            {t.customer.links.map((item, i) => (
-              <Link key={i} href="#">{item}</Link>
-            ))}
-          </div>
-            {/* Atención al cliente */}
-          <div className="flex flex-col gap-2 FooterColumns">
-            <span className="font-semibold">{t.revolt.title}</span>
-            {t.customer.links.map((item, i) => (
-              <Link key={i} href="#">{item}</Link>
-            ))}
-          </div>
-          {/* Redes sociales */}
           <div className="flex flex-col gap-2 FooterColumns">
             <span className="uppercase tracking-widest text-sm mb-1">{t.social}</span>
             <SocialIcons />
           </div>
         </div>
-            {/* Logos centrales */}
+
+        {/* Logos centrales */}
         <div className="flex justify-center items-center flex-wrap gap-8 border-y border-white/30 py-8 w-full">
           <Image
             src="/images/logo-vertical-mail.png"
