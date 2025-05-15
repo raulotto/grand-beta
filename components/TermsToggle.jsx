@@ -3,10 +3,11 @@
 import { useState } from "react";
 import { FaPlus, FaMinus, FaChevronDown } from "react-icons/fa";
 import { motion, AnimatePresence } from "framer-motion";
-import useIdioma from "@/hooks/useIdioma";
-import termsData from "@/data/termsData.json";
+import useIdioma from "@/hooks/useIdioma"; // lo seguimos usando
 
-const TermsToggle = () => {
+
+const TermsToggle = ({ data }) => {
+
   
 
   const [openSection, setOpenSection] = useState(0);
@@ -25,12 +26,13 @@ const TermsToggle = () => {
       [sectionIndex]: prev[sectionIndex] === itemIndex ? null : itemIndex,
     }));
   };
-  const idioma = useIdioma("terms", { terms: termsData });
+  const idioma = useIdioma("terms", { terms: data });
   if (!idioma) return null;
   const { terms } = idioma;
+
   return (
     <section id="faqs" className="SectionDiv">
-      <div className="ContainerFlex p-0">
+      <div className="FaqsSec ContainerFlex p-0">
     <div className="md:flex space-y-6 md:space-y-0 md:space-x-8 w-full">
       {/* Menú lateral */}
       <div className="md:min-w-[200px] space-y-2">
@@ -78,7 +80,7 @@ const TermsToggle = () => {
             <li key={i}>
               <button
                 className={`hover:underline ${
-                  openSection === i ? "text-black" : ""
+                  openSection === i ? "text-primary-oceanic" : "text-support-custom-gray"
                 }`}
                 onClick={() => toggleSection(i)}
               >
@@ -93,7 +95,7 @@ const TermsToggle = () => {
       <div className="flex-1">
         {terms.secciones.map((sec, i) => (
           <div key={i} className={`${openSection === i ? "block" : "hidden"}`}>
-            <span className="text-xl font-semibold mb-4 block">{sec.titulo}</span>
+            <h4 className="TitleSection mb-4">{sec.titulo}</h4>
             <ul className="space-y-3">
               {sec.items.map((item, j) => (
                 <li key={j} className="border-b pb-2">

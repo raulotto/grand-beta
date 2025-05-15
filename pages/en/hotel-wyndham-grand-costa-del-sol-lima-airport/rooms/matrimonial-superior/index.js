@@ -5,8 +5,6 @@ import BookingForm from "@/components/BookingForm";
 import Footer from "@/components/Footer";
 import useIdioma from "@/hooks/useIdioma";
 import data from "@/data/habitaciones.json";
-import SeoHead from "@/components/SeoHead"
-import TripReviews from "@/components/TripReviews";
 
 import {
   FaBed,
@@ -29,18 +27,14 @@ export default function MatriSupPage() {
 
   if (!idioma) return null;
 
-  const { habitaciones, seoData } = idioma;
+  const { lang, habitaciones } = idioma;
 
   const habitacion = habitaciones.find((h) => h.id === "matrimonial-superior");
 
   if (!habitacion) return null;
 
-
-  
   return (
     <>
-      <SeoHead {...seoData} />
-      <main className="mx-auto">
       <HeaderTrad />
       <HeroSlider page="matrimonial-superior" />
       <BookingForm />
@@ -209,9 +203,7 @@ export default function MatriSupPage() {
 
         </div>
       </section>
-      <TripReviews />   
       <Footer />
-      </main>
     </>
   );
 }

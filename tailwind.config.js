@@ -14,5 +14,11 @@ module.exports = {
     },
   },
   plugins: [require('@tailwindcss/aspect-ratio')],
-
+  safelist: [
+    'slider-home',
+    'slider-spa',
+    'slider-eventos',
+    'slider-habitaciones'
+  ],
+  
 }

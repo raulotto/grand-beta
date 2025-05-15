@@ -1,23 +1,48 @@
-[
-  {
-    "title": "Paquetes",
-    "description": "Nuestros exclusivos paquetes combinan descanso, gastronomía y servicios diseñados para una estancia sin preocupaciones.",
-    "image": "/images/wg-paquete-featured.jpg",
-    "buttonText": "Ver más",
+{
+  "es": [
+    {
+      "title": "Paquetes",
+      "description": "Nuestros exclusivos paquetes combinan descanso, gastronomía y servicios diseñados para una estancia sin preocupaciones. Disfruta de cada detalle sin interrupciones.",
+      "image": "/images/wg-paquete-featured.jpg",
+      "buttonText": "Ver más",
       "link": "/bodas"
-  },
-  {
-    "title": "Eventos",
-    "description": "Espacios ejecutivos equipados para reuniones privadas y eventos de clase mundial, dentro de la ciudad aeropuerto.",
-    "image": "/images/wg-eventos-featured.jpg",
-    "buttonText": "Ver más",
-      "link": "/bodas"
-  },
-  {
-    "title": "Restaurantes",
-    "description": "Sabores auténticos en espacios elegantes donde cada comida se convierte en una experiencia inolvidable dentro del hotel.",
-    "image": "/images/wg-restaurantes-featured.jpg",
-    "buttonText": "Ver más",
-      "link": "/bodas"
-  }
-]
+    },
+    {
+      "title": "Eventos",
+      "description": "Nuestro hotel ofrece incomparables espacios para eventos privados y espacios versátiles adaptados a diversas ocasiones. Con un equipo de expertos en planificación de eventos, cuidaremos cada detalle meticulosamente. Tanto si se trata de una boda, un compromiso, un cumpleaños o un aniversario.",
+      "image": "/images/wg-eventos-featured.jpg",
+      "buttonText": "Ver más",
+      "link": "/eventos"
+    },
+    {
+      "title": "Wellness",
+      "description": "Déjese llevar y logre el balance perfecto entre mente, cuerpo y espíritu.",
+      "image": "/images/couple-oceanic.jpg",
+      "buttonText": "Ver más",
+      "link": "/spa"
+    }
+  ],
+  "en": [
+    {
+      "title": "Packages",
+      "description": "Exclusive packages that combine rest, gastronomy, and services designed for a worry-free stay. Enjoy every detail without interruptions.",
+      "image": "/images/wg-paquete-featured.jpg",
+      "buttonText": "See more",
+      "link": "/weddings"
+    },
+    {
+      "title": "Events",
+      "description": "Our hotel offers unmatched venues for private events and versatile spaces for all kinds of occasions. With a team of event planning experts, we’ll take care of every detail meticulously — whether it’s a wedding, an engagement, a birthday, or an anniversary.",
+      "image": "/images/wg-eventos-featured.jpg",
+      "buttonText": "See more",
+      "link": "/events"
+    },
+    {
+      "title": "Wellness",
+      "description": "Let yourself go and achieve the perfect balance between mind, body, and spirit.",
+      "image": "/images/couple-oceanic.jpg",
+      "buttonText": "See more",
+      "link": "/spa"
+    }
+  ]
+}

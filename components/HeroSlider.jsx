@@ -6,7 +6,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import "swiper/css/effect-fade";
-
 import Image from "next/image";
 import sliderData from "@/data/heroSlider.json";
 
@@ -17,19 +16,22 @@ export default function HeroSlider({ page = "home" }) {
   const slideSet = sliderData[lang].find((entry) => entry.page === page);
   const slides = slideSet?.slides || [];
 
+  const sliderId = slideSet?.id || "";
+
+
   return (
-    <div className="w-full h-[80vh] relative">
-      <Swiper
-        modules={[Autoplay, Pagination, EffectFade, Navigation]}
-        pagination={{ clickable: true }}
-        navigation
-        loop={true}
-        effect="fade"
-        fadeEffect={{ crossFade: true }}
-        className="h-full"
-      >
+    <div className="w-full h-[80vh] relative" id={sliderId}>
+  <Swiper
+    modules={[Autoplay, Pagination, EffectFade, Navigation]}
+    pagination={{ clickable: true }}
+    navigation
+    loop={true}
+    effect="fade"
+    fadeEffect={{ crossFade: true }}
+    className="h-full"
+  >
         {slides.map((slide, i) => (
-          <SwiperSlide key={i}>
+          <SwiperSlide key={i} className={`swiper-slide-${i}`}> {/* <--- Slide con clase dinámica */}
             <div className="relative w-full h-[80vh]">
               <Image
                 src={slide.src}
@@ -39,7 +41,7 @@ export default function HeroSlider({ page = "home" }) {
                 priority
               />
 
-              {(slide.titulo || slide.subtitulo || slide.ctaTexto) && (
+              {(slide.titulo || slide.subtitulo || slide.ctaTexto || slide.arte) && (
                 <div className={`HeroSliderData ${slide.claseExtra || ""}`}>
                   <div
                     className={`ContainerFlexSlider LightSlider text-shadow ${
@@ -66,6 +68,7 @@ export default function HeroSlider({ page = "home" }) {
                         width={600}
                         height={300}
                         alt="Arte del slide"
+                        className="artImage"
                       />
                     )}
                     {slide.ctaTexto && slide.ctaLink && (

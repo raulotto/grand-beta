@@ -9,12 +9,31 @@ import { IoBedOutline, IoPeopleOutline  } from "react-icons/io5";
 
 import "swiper/css";
 import "swiper/css/pagination";
+import useIdioma from "@/hooks/useIdioma";
 
 const HabitacionCard = ({ habitacion }) => {
+  const idioma = useIdioma("habitaciones");
+if (!idioma) return null;
+
+const { lang } = idioma;
+
+
+      const textos = {
+        es: {
+          verMas: "Ver más",
+          reservar: "Reservar"
+        },
+        en: {
+          verMas: "View more",
+          reservar: "Book now"
+        }
+      };
+
   const descripcionCorta =
     habitacion.descripcion.length > 150
       ? habitacion.descripcion.substring(0, 150) + "..."
       : habitacion.descripcion;
+      
 
   return (
     <div className="overflow-hidden shadow-md bg-white flex flex-col">
@@ -80,29 +99,26 @@ const HabitacionCard = ({ habitacion }) => {
                     </>
                   )}
 
-        <div className="CardButtons">
-        {habitacion.urlInterna && (
-  <Link
-    href={habitacion.urlInterna}
-    className="mt-2 inline-block text-center text-oceanic-primary underline text-sm "
-  >
-    Ver más
-  </Link>
-)}
-{habitacion.urlReserva && (
-  <Link
-    href={habitacion.urlReserva}
-    className="ButtonOutline text-[10px] font-semibold"
-  >
-    Reservar
-  </Link>
-)}
-
-
-
-
-
-        </div>
+<div className="CardButtons">
+      {habitacion.urlInterna && (
+        <Link
+          href={habitacion.urlInterna}
+          className="mt-2 inline-block text-center text-oceanic-primary underline text-sm"
+        >
+          {textos[lang].verMas}
+        </Link>
+      )}
+      {habitacion.urlReserva && (
+        <Link
+          href={habitacion.urlReserva}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ButtonOutline text-[10px] font-semibold"
+        >
+          {textos[lang].reservar}
+        </Link>
+      )}
+    </div>
 
       </div>
     </div>

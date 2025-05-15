@@ -67,6 +67,49 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
         </Wrapper>
       )
     }
+    // === VARIANT: PERSON CARD ===
+    if (variant === 'person-card') {
+      return (
+        <Wrapper>
+          <div className="relative h-[500px] w-full overflow-hidden rounded-md shadow-md group">
+            <Image
+              src={card.image}
+              alt={card.title}
+              fill
+              className="object-cover transition-transform duration-500 group-hover:scale-105"
+            />
+
+            {/* Fondo base con degradado */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent transition-opacity duration-500" />
+
+            {/* Contenido principal siempre visible */}
+            <div className="absolute bottom-0 left-0 right-0 px-5 py-4 text-white z-10 transition-opacity duration-300 group-hover:opacity-0">
+              <h3 className="TitleSection text-white!">{card.title}</h3>
+              {card.description && (
+                <p className="text-sm opacity-90 text-white!">{card.description}</p>
+              )}
+            </div>
+
+            {/* Contenido al hacer hover */}
+            {card.hoverText && (
+              <div className="absolute inset-0 bg-black/80 text-white flex flex-col justify-center items-center text-center px-5 py-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ">
+                <h3 className="TitleSectionMd text-white!">{card.title}</h3>
+                <p className="text-sm opacity-90 text-white!">{card.hoverText}</p>
+                {card.link && (
+                  <Link
+                    href={card.link}
+                    className="mt-4 border border-white px-4 py-2 text-sm font-semibold hover:bg-white hover:text-black transition"
+                  >
+                    {card.buttonText || 'VIEW MORE'}
+                  </Link>
+                )}
+              </div>
+            )}
+          </div>
+        </Wrapper>
+      );
+    }
+
     // === VARIANT: SIDE IMAGE ===
     if (variant === 'clean') {
       return (
@@ -148,7 +191,7 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
                 />
               )}
           </div>
-          <div className="p-5 flex-1 flex flex-col">
+          <div className="p-5 flex-1 flex flex-col text-center">
             <h3 className="TitleSectionMd">{card.title}</h3>
             {card.description && (
               <div
@@ -187,7 +230,7 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
                 prevEl: '.custom-prev',
               }}
               loop={false}
-              className="relative"
+              className="relative pb-10"
             >
               {cards.map((card, index) => (
                 <SwiperSlide
@@ -211,7 +254,7 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
           </>
         ) : (
           <div
-            className="GridArea grid gap-12 items-stretch"
+            className="GridArea grid gap-18 items-stretch"
             style={{
               gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
             }}

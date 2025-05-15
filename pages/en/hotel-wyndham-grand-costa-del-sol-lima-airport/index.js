@@ -20,7 +20,10 @@ import Intro from "@/components/Intro";
 import { useRouter } from "next/router";
 import introMultiData from "@/data/introData.json";
 import ServiciosHotel from "@/components/ServiciosHotel";
-
+import seo from "@/data/seo.json";
+import SeoHead from "@/components/SeoHead";
+import termsData from '@/data/termsData.json';
+import TermsToggle from '@/components/TermsToggle';
 
 export async function getStaticProps() {
   const filePath = path.join(process.cwd(), "data", "hotel_es.json");
@@ -58,8 +61,17 @@ export default function Home({ hotel }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [embedMenu]);
   
+    const pageKey = "hotel-wyndham-grand-costa-del-sol-lima-airport";
+    const seoData = seo[lang]?.[pageKey] || seo["es"][pageKey];
 
   return (
+    <>
+    <SeoHead
+    title={seoData.title}
+    description={seoData.description}
+    image={seoData.image}
+    canonical={seoData.canonical}
+  />
     <main className="mx-auto">
       <HeaderTrad />
       <HeroSlider page="home" />
@@ -80,6 +92,8 @@ export default function Home({ hotel }) {
       <RestBar />
       <PhotoGalleryModal galleryData={galleryData} />
       <Meeting />
+      <TermsToggle data={termsData} />
+
       <Footer />
 
       <Script
@@ -87,5 +101,6 @@ export default function Home({ hotel }) {
         strategy="lazyOnload"
       />
     </main>
+    </>
   );
 }

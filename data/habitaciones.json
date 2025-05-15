@@ -160,11 +160,11 @@
 "en":[
   {
     "id": "matrimonial-superior",
-    "titulo": "Matrimonial Superior",
-    "descripcion": "Esta habitación combina confort, funcionalidad y estilo. Decorada con tonos tierra y suaves texturas, ofrece un ambiente cálido y acogedor para descansar. La cama King, con ropa de cama de alta calidad, garantiza un sueño reparador. El chaise lounge junto a la ventana es ideal para relajarse o, si se necesita, puede convertirse en una cama auxiliar. El baño privado, con duchas amplias y amenidades premium, complementa la experiencia de lujo. Con luz natural y acabados de diseño, esta habitación es perfecta para quienes buscan relajarse o disfrutar de una estancia funcional.",
+    "titulo": "Superior Matrimonial",
+    "descripcion": "This room combines comfort, functionality, and style. Decorated in earthy tones and soft textures, it offers a warm and cozy atmosphere for rest. The King bed, with high-quality bedding, ensures a restful sleep. The chaise lounge by the window is perfect for relaxing or, if needed, can be converted into an extra bed. The private bathroom, with spacious showers and premium amenities, completes the luxury experience. With natural light and designer finishes, this room is perfect for those seeking relaxation or a functional stay.",
     "tamano": "32 m²",
     "ocupacion": "2 adults",
-    "cama": "1 cama king o 2 dobles",
+    "cama": "1 king bed or 2 doubles",
     "imagenPrincipal": "/images/WG-Habitacion-King-1.jpg",
     "imagenes": [
       "/images/WG-Habitacion-King-1.jpg",
@@ -173,21 +173,22 @@
       "/images/WG-Habitacion-King-4.jpg",
       "/images/WG-Habitacion-King-5.jpg"
     ],
-    "urlInterna": "/hotel-wyndham-grand-costa-del-sol-lima-airport/habitaciones/matrimonial-superior",
-    "urlReserva": "https://externo.com/reserva-matrisup",
+    "urlInterna": "/en/hotel-wyndham-grand-costa-del-sol-lima-airport/rooms/matrimonial-superior",
+    "urlReserva": "https://externo.com/en/reserva-matrisup",
     "categoria": "Superior",
     "servicios": [
-      "Smart TV LED 65”",
-      "Cama King",
-      "Caja fuerte",
+      "65” Smart LED TV",
+      "King bed",
+      "Safe box",
       "Minibar",
-      "Cafetera",
-      "Plancha y planchador",
-      "Secadora",
-      "Bata y pantuflas",
-      "Calefacción y aire acondicionado"
+      "Coffee maker",
+      "Iron and ironing board",
+      "Hair dryer",
+      "Bathrobe and slippers",
+      "Heating and air conditioning"
     ]
   },
+  
   
   {
     "id": "doble-superior",

@@ -63,8 +63,33 @@ const Footer = () => {
             <SocialIcons />
           </div>
         </div>
-
-        <div className="border-t border-white/30 mx-auto max-w-7xl mt-6" />
+            {/* Logos centrales */}
+        <div className="flex justify-center items-center flex-wrap gap-8 border-y border-white/30 py-8 w-full">
+          <Image
+            src="/images/logo-vertical-mail.png"
+            alt="30 años Costa del Sol"
+            width={200}
+            height={80}
+          />
+          <Image
+            src="/images/tc_2024_botb_badge_green.png"
+            alt="Tripadvisor Travelers' Choice"
+            width={80}
+            height={60}
+          />
+          <Image
+            src="/images/footer/world-travel-award.png"
+            alt="World Travel Awards"
+            width={85}
+            height={60}
+          />
+          <Image
+            src="/images/footer/lux-awards.svg"
+            alt="Lux Awards"
+            width={90}
+            height={50}
+          />
+        </div>
 
         <div className="text-center text-xs text-white/80 py-6 px-4 space-y-2">
           <div className="space-x-2">

@@ -2,10 +2,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import menuData from '@/data/menuinterno.json';
 import { usePathname, useRouter } from 'next/navigation';
-import * as FaIcons from 'react-icons/fa';
-import * as CiIcons from 'react-icons/ci';
-import * as IoIcons from 'react-icons/io5';
-import * as GrIcons from 'react-icons/gr';
+
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -13,12 +10,6 @@ import 'swiper/css/navigation';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
 
 
-const iconMap = {
-  ...FaIcons,
-  ...CiIcons,
-  ...IoIcons,
-  ...GrIcons,
-};
 
 const MenuInterno = ({ embedMenu }) => {
   const pathname = usePathname();
@@ -77,14 +68,12 @@ const MenuInterno = ({ embedMenu }) => {
             className="w-full"
           >
             {menuData[lang].map((item) => {
-              const Icon = iconMap[item.icon] || FaIcons.FaQuestionCircle;
               return (
                 <SwiperSlide key={item.id} className="!w-auto">
                   <li
-                    className="flex items-center gap-2 text-sm cursor-pointer hover:text-primary-oceanic transition whitespace-nowrap"
+                    className="MenuInternoItems flex items-center gap-2 text-sm cursor-pointer hover:text-secondary-terracota transition whitespace-nowrap"
                     onClick={() => handleClick(item)}
                   >
-                    <Icon className="w-5 h-5" />
                     {item.label}
                   </li>
                 </SwiperSlide>
@@ -103,14 +92,12 @@ const MenuInterno = ({ embedMenu }) => {
         ) : (
           <ul className="flex overflow-x-auto no-scrollbar gap-6 p-0 w-full lg:items-center lg:justify-center">
             {menuData[lang].map((item) => {
-              const Icon = iconMap[item.icon] || FaIcons.FaQuestionCircle;
               return (
                 <li
                   key={item.id}
-                  className="flex-shrink-0 flex items-center gap-2 text-sm cursor-pointer hover:text-primary-oceanic transition"
+                  className="MenuInternoItems flex-shrink-0 flex font-[500] items-center gap-2 text-sm cursor-pointer  hover:text-secondary-terracota transition"
                   onClick={() => handleClick(item)}
                 >
-                  <Icon className="w-6 h-6 lg:hidden" />
                   {item.label}
                 </li>
               );

@@ -36,7 +36,9 @@
   --background: #ffffff;
   --foreground: #171717;
 }
+body.grand-parent{
 
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -89,7 +91,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.BgConections {
+  background-image: url("https://www.wyndhamgrandorlando.com/assets/images/backgrounds-lines-left.png");
+  background-size: cover;
+  background-size: 20%;
+  background-position: 0;
+  background-repeat: no-repeat;
+}
 .rewards-parrent ol {
   list-style: numbers;
   padding-left: 16px;
@@ -127,13 +135,18 @@ input{
 .grand-parent h6 {
   font-family: 'Prata', sans-serif;
 }
-
+.grand-parent p{
+  font-size: 12px;
+}
 p{
   font-family: 'HCo Gotham SSm', sans-serif;
   font-size: var(--text-parrafos);
   font-weight: 300;
 }
+.infohotelbox{
+  font-family: 'HCo Gotham SSm', sans-serif;
 
+}
 .font-gotham-book {
   font-family: 'gotham-book', sans-serif;
   font-weight: 500;
@@ -147,7 +160,9 @@ p{
 .react-datepicker__current-month {
   font-family: 'gothamgotham-book', sans-serif !important; /* o cualquier fuente que estés usando */
 }
-
+.MenuInternoItems{
+  font-family: 'HCo Gotham SSm', sans-serif;
+}
 .HamburgerIcon {
   display: flex;
   flex-direction: column;
@@ -184,6 +199,7 @@ p{
 .bar3 {
   transform: rotate(45deg) translate(-5px, -6px);
 }
+
 .TopBar{
   font-family: 'Gotham', sans-serif;
   
@@ -326,7 +342,9 @@ a:hover {
   color: #ffffff ;
 }
 
-
+#slider-spa img.artImage {
+  width: 30%;
+}
 
 @layer base {
   h1 {
@@ -411,7 +429,7 @@ a:hover {
     @apply text-[1.5em] font-normal ;
   }
   .TitleSectionMd {
-    @apply text-xl;
+    @apply text-xl font-[500];
   }
   .TitleSectionSm {
     @apply text-sm text-light-oceanic font-semibold;
@@ -429,7 +447,7 @@ a:hover {
     @apply flex flex-col gap-2 pl-4 py-1 text-sm font-bold;
   }
   .ResForm {
-    @apply w-full grid grid-cols-1  gap-4 items-center px-6 lg:px-0 py-5;
+    @apply w-full grid grid-cols-1  gap-4 items-center px-6 lg:px-0 py-7;
   }
   .ButtonSolid  {
     @apply bg-[#405d65] text-white px-4 py-2  font-semibold hover:bg-[#2e4448] transition;
@@ -552,13 +570,16 @@ a:hover {
   @apply flex justify-between w-full items-center;
 }
 .LinkGrupos{
-  @apply w-full text-primary-oceanic hover:text-secondary-terracota text-[11px] absolute bottom-[-19] flex items-center justify-end gap-1;
+  @apply w-full text-primary-oceanic hover:text-secondary-terracota text-[11px] absolute bottom-[-22] flex items-center  gap-1;
 }
 .FormTC .ContainerFlexOSize{
   @apply grid-cols-6;
 }
 .FooterColumns a{
   @apply text-[12px];
+}
+.slider-spa {
+  @apply bg-red-500; /* test visual temporal */
 }
 }
 

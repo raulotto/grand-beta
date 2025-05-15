@@ -1,0 +1,89 @@
+{
+  "es": [
+    {
+      "title": "Vistas Impresionantes",
+      "description": "Nuestras suites ofrecen impresionantes vistas, permitiéndote disfrutar de la belleza del paisaje circundante. Las grandes ventanas invitan a la luz natural, creando un ambiente sereno perfecto para la relajación o la inspiración.",
+      "image": "https://picsum.photos/id/1015/600/400",
+      "buttonText": "",
+      "link": ""
+    },
+    {
+      "title": "Ubicación en el Aeropuerto",
+      "description": "Uno de nuestros hoteles conectado directamente con la Terminal Internacional Jorge Chávez de Lima, disfrutarás de una comodidad inigualable. Sal de tu habitación e ingresa directamente en la terminal, asegurando un acceso rápido y fácil a tus vuelos, ya sea para reuniones de negocios o unas vacaciones.",
+      "image":  "https://picsum.photos/id/1025/600/400",
+      "buttonText": "",
+      "link": ""
+    },
+    {
+      "title": "Diseño pensado para ti",
+      "description": "Cada habitación cuenta con un espacio de trabajo, con acceso a internet inalámbrico, lo que te permite ser productivo durante tu estadía. La sala de estar separada proporciona un espacio cómodo, lo que la hace perfecta tanto para el trabajo como para el descanso.",
+      "image":  "https://picsum.photos/id/1035/600/400",
+      "buttonText": "",
+      "link": ""
+    },
+    {
+      "title": "Sabores locales reconocidos",
+      "description": "Disfruta de la reconocida gastronomía peruana en Wyndham Grand Costa del Sol Lima Airport. Comienza el día con un desayuno buffet, relájate con cócteles y licores en nuestro bar o prueba auténticos sabores locales en el snack bar. Para mayor comodidad, room service disponible en todo momento.",
+      "image":  "https://picsum.photos/id/1045/600/400",
+      "buttonText": "",
+      "link": ""
+    },
+    {
+      "title": "Mantente activo y renovado",
+      "description": "Experimenta lo mejor de ambos mundos con nuestras completas instalaciones de fitness. Desde un gimnasio bien equipado hasta una piscina cubierta climatizada de 1,800 pies cuadrados, nuestras instalaciones en la propiedad te aseguran mantener tu rutina de bienestar mientras disfrutas de tu estadía.",
+      "image": "https://picsum.photos/id/1055/600/400",
+      "buttonText": "",
+      "link": ""
+    },
+    {
+      "title": "Estacionamiento con Valet",
+      "description": "La forma más conveniente de estacionar en el Aeropuerto Jorge Chávez, es a través del servicio de Valet Parking en el Wyndham Grand Costa del Sol. El servicio de valet en el lugar está disponible por una tarifa de $45 diarios. El estacionamiento se reduce a $25 diarios a partir del quinto día. La carga de autos eléctricos está disponible por un cargo adicional de $30.",      "image":  "https://picsum.photos/id/1065/600/400",
+      "buttonText": "",
+      "link": ""
+    }
+  ],
+  "en": [
+    {
+      "title": "Stunning Views",
+      "description": "Our suites offer stunning views, allowing you to enjoy the beauty of the surrounding landscape. Large windows invite in natural light, creating a serene environment perfect for relaxation or inspiration.",
+      "image": "/images/img1.webp",
+      "buttonText": "",
+      "link": ""
+    },
+    {
+      "title": "Located in DIA",
+      "description": "One of our hotels connected directly to Lima’s Jorge Chavez International Terminal, you will enjoy unmatched convenience. Step out of your room and directly into the terminal, ensuring fast and easy access to your flights, whether for business or vacation.",
+      "image": "/images/img2.webp",
+      "buttonText": "",
+      "link": ""
+    },
+    {
+      "title": "Thoughtfully Designed",
+      "description": "Each room includes a workspace, with wireless internet access, allowing you to stay productive during your stay. The separate living room provides a comfortable space, making it perfect for both work and rest.",
+      "image": "/images/img3.webp",
+      "buttonText": "",
+      "link": ""
+    },
+    {
+      "title": "Savor Local Flavors On-Site",
+      "description": "Enjoy renowned Peruvian cuisine at Wyndham Grand Costa del Sol Lima Airport. Start your day with a buffet breakfast, unwind with cocktails and spirits at our bar, or try authentic local flavors at the snack bar. For added convenience, room service is available at any time.",
+      "image": "/images/img4.webp",
+      "buttonText": "",
+      "link": ""
+    },
+    {
+      "title": "Stay Active, Stay Refreshed",
+      "description": "Experience the best of both worlds with our complete fitness facilities. From a well-equipped gym to a 1,800-square-foot indoor heated pool, our on-property facilities ensure you maintain your wellness routine while enjoying your stay.",
+      "image": "/images/img5.webp",
+      "buttonText": "",
+      "link": ""
+    },
+    {
+      "title": "Valet Parking",
+      "description": "The most convenient way to park at Jorge Chavez Airport is through the Valet Parking service at Wyndham Grand Costa del Sol. On-site valet is available at a rate of $45 per day. Parking is reduced to $25 per day starting on the fifth day. Electric vehicle charging is available for an additional $30 fee.",
+      "image": "/images/img6.webp",
+      "buttonText": "",
+      "link": ""
+    }
+  ]
+}

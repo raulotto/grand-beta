@@ -27,7 +27,7 @@ export default function PhotoGalleryModal({ galleryData }) {
   return (
     <section className="SectionDiv BgImageRight p-0">
       {/* Vista previa estilo Airbnb */}
-      <div className=" relative flex gap-2 max-h-[570px] overflow-hidden">
+      <div className=" relative flex max-h-[570px] overflow-hidden">
         {/* Imagen grande a la izquierda */}
         {allImages[0] && (
           <div
@@ -46,22 +46,22 @@ export default function PhotoGalleryModal({ galleryData }) {
         )}
 
         {/* Cuadrícula derecha en desktop */}
-        <div className="hidden md:grid grid-cols-2 grid-rows-2 gap-2 max-h-[620px]">
+        <div className="hidden md:grid grid-cols-2 grid-rows-2  max-h-[620px] ">
           {allImages.slice(1, 5).map((img, idx) => (
-            <div key={idx} onClick={() => openLightboxAtIndex(idx + 1)} className="cursor-pointer">
+            <div key={idx} onClick={() => openLightboxAtIndex(idx + 1)} className="cursor-pointer ">
               <Image
                 src={img.src}
                 alt={img.alt || 'Imagen'}
                 width={300}
                 height={300}
-                className="w-full h-[300px] object-cover object-center"
+                className="w-full h-[300px] object-cover object-center hover:bg-red-500"
               />
             </div>
           ))}
         </div>
 
         {/* Cuadrícula derecha en mobile */}
-        <div className="md:hidden grid grid-cols-2 grid-rows-2 gap-2 max-h-[620px]">
+        <div className="md:hidden grid grid-cols-2 grid-rows-2  max-h-[620px] ">
           {allImages.slice(1, 3).map((img, idx) => (
             <div key={idx} onClick={() => openLightboxAtIndex(idx + 1)} className="cursor-pointer">
               <Image

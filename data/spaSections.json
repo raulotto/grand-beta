@@ -6,12 +6,6 @@
       "contenido": "<p><strong>Booking</strong><br/>Appointments and reservations are required and subject to availability...</p><p><strong>Cancellation and Move Policy</strong><br/>24-hour cancellation applies for single services. 48-hour cancellation applies for multiple services...</p><p><strong>Health Concerns</strong><br/>Please notify the front desk of any ongoing health concerns...</p>"
     },
     {
-      "id": "membership",
-      "titulo": "Pallavi Spa Membership",
-      "imagen": "https://picsum.photos/id/1021/800/160",
-      "contenido": "<p>Enjoy exclusive benefits including discounted services, early booking access and complimentary amenities with our membership program.</p>"
-    },
-    {
       "id": "packages",
       "titulo": "Packages",
       "imagen": "https://picsum.photos/id/1031/800/160",

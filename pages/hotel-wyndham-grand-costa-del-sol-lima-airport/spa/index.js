@@ -88,12 +88,64 @@ export default function Spa() {
 
            <PhotoGallery galleryData={galleryData} />
      
+    <section className="SectionDiv">
+      <div className="ContainerFlex flex-col w-full">
+      <h2 className="TitleSection">Nuestros Servicios</h2>
 
            <SpaAcordeon />
+           </div>
+    </section>
 
 <section className="pt-0 SectionDiv">
+<div className="ContainerFlex flex-col w-full">
+<h2 className="TitleSection">Nuestras Sugerencias</h2>
         <GridCardsSection cards={spaCardsDos} />
+        </div>
       </section>
+      <section className="SectionDiv bg-[#f4ebdf] py-12 px-6">
+      <div className="ContainerFlex flex-col w-full">
+        <div className="mb-8 md:flex md:items-end md:justify-between gap-8">
+          <h2 className="TitleSection text-[#405d65] font-serif text-4xl font-semibold leading-tight">
+            Hacer ejercicio<br />siempre es una buena idea
+          </h2>
+          <p className="mt-4 md:mt-0 md:max-w-md text-gray-700">
+            Pasea por la playa, pedalea por Quinta do Lago o visita el gimnasio. Encuentra tu mejor forma de mantenerte activo.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div className="relative w-full h-auto">
+            <Image
+              src="https://picsum.photos/id/1035/800/600"
+              alt="Gimnasio moderno"
+              width={300}
+              height={300}
+              className="object-cover rounded"
+            />
+          </div>
+
+          <div className="relative w-full h-64">
+            <Image
+              src="https://picsum.photos/id/1011/800/600"
+              alt="Mujer entrenando en la playa"
+              width={300}
+              height={300}
+              className="object-cover rounded"
+            />
+          </div>
+
+          <div className="relative w-full h-64">
+            <Image
+              src="https://picsum.photos/id/1012/800/600"
+              alt="Sesión de spa"
+              width={300}
+              height={300}
+              className="object-cover rounded"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
 
 <Footer />
     </main>

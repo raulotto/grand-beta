@@ -10,7 +10,10 @@ import Link from 'next/link';
 import HeaderTrad from '@/components/HeaderTrad';
 import GridCardsSection from '@/components/GridCardsSection'
 import restaurantesCards from '@/data/restaurantesCards.json'
+import chefCards from '@/data/chefsCards.json'
 
+import { FaClock } from "react-icons/fa";
+import PromoSwiper from '@/components/PromoSwiiper';
 
 
 
@@ -242,6 +245,86 @@ Seasonally open
                </div>
              </div>
            </section>
+           <section className="SectionDiv py-12 px-6 bg-support-ash/5">
+      <div className="ContainerFlex flex-col md:flex-row items-center gap-8">
+        {/* Imagen */}
+        <div className="relative w-full md:w-1/2 h-64 md:h-96">
+          <Image
+            src="https://picsum.photos/id/1050/800/600" // Puedes reemplazar con una imagen real
+            alt="Grand Eats en celular"
+            fill
+            className="object-cover rounded"
+          />
+        </div>
+
+        {/* Contenido */}
+        <div className="w-full md:w-1/2 text-center md:text-left">
+          <h2 className="TitleSection mb-2">
+            GRAND EATS DELIVERY
+          </h2>
+          <p className="text-gray-600 mb2 max-w-md mx-auto md:mx-0">
+            Elige entre una variedad de opciones de menú para que te las lleven y disfrutes en la comodidad de tu habitación.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-1 lg:gap-4 justify-center md:justify-start mb-4">
+          <div className="ButtonInfoStatic mt-4">
+              <Link
+      href="#"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="ButtonOutline text-[10px] font-semibold w-full"
+    >
+     Haz tu pedido Online
+    </Link>
+            </div>
+      <div className="ButtonInfoStatic mt-4">
+              <Link
+      href="#"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="ButtonOutline text-[10px] font-semibold w-full"
+    >
+     Ver menú de bebidas
+    </Link>
+            </div>
+            <div className="ButtonInfoStatic mt-4">
+              <Link
+      href="#"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="ButtonOutline text-[10px] font-semibold w-full"
+    >
+     Ver menú de comidas
+    </Link>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 text-gray-800 font-semibold mb-1">
+            <FaClock className="text-sm" />
+            <span>HORARIO DE ATENCIÓN</span>
+          </div>
+          <p className="text-gray-600 text-sm text-left
+">
+            Domingo a Jueves 4:00 PM - 10:00 PM<br />
+            Viernes y Sábado 4:00 PM – 11:00 PM | Solo pedidos online
+          </p>
+        </div>
+      </div>
+    </section>
+    <section className="SectionDiv">
+      <div className="ContainerFlex flex-col">
+      <h2 className="TitleSection">
+            Descubre las mejores ofertas y disfruta al máxiimo de tu experiencia con nosotros
+          </h2>
+    <PromoSwiper/>
+    </div>
+    </section>
+    <div className="SectionDiv">
+    <h2 className="TitleSection">
+            Nuestros Chefs
+          </h2>
+    <GridCardsSection cards={chefCards} variant='person-card' />
+    </div>
       <Footer/>
     </main>
   );

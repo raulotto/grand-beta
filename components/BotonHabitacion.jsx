@@ -1,24 +1,29 @@
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-const BotonHabitacion = ({ habitacion, isDetalle = false }) => {
-  if (!habitacion) return null;
+const BotonHabitacion = ({ habitacion }) => {
+  if (!habitacion?.urlReserva) return null;
 
-  return isDetalle ? (
-    <Link
+  const pathname = usePathname();
+  const lang = pathname.startsWith("/en") ? "en" : "es";
+
+  const textos = {
+    es: "Reservar",
+    en: "Book now"
+  };
+
+  return (
+    
+    <div className="ButtonInfoStatic mt-4">
+              <Link
       href={habitacion.urlReserva}
       target="_blank"
       rel="noopener noreferrer"
-      className="ColorButton1 px-6 py-2 rounded-lg text-sm  transition"
+      className="ColorButton1 ButtonRounded"
     >
-      Reservar
+      {textos[lang]}
     </Link>
-  ) : (
-    <Link
-      href={habitacion.urlInterna}
-      className="ColorButton1 px-6 py-2 rounded-lg text-sm  transition"
-    >
-      Ver habitación
-    </Link>
+            </div>
   );
 };
 

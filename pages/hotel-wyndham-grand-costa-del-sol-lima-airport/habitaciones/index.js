@@ -14,6 +14,7 @@ import SeoHead from "@/components/SeoHead"
 import useIdioma from "@/hooks/useIdioma"
 import habitacionesLandingData from "@/data/habitacionesLanding.json"
 import habitaciones from "@/data/habitaciones.json"
+import habitacionesLandingOffers from "@/data/habitacionesLandingOffers.json";
 
 export default function HabitacionesPage() {
   const idioma = useIdioma("habitaciones", {
@@ -44,6 +45,7 @@ export default function HabitacionesPage() {
       : habitacionesPorIdioma.filter((hab) => hab.categoria === categoriaActiva)
 
   const cardsOffers = habitacionesCardsOffers[lang] || []
+  const landingOffers = habitacionesLandingOffers[lang] || [];
 
   return (
     <>
@@ -99,12 +101,18 @@ export default function HabitacionesPage() {
             </AnimatePresence>
           </div>
         </section>
-
+        
         <ServiciosHotel />
+        <section className="SectionDiv">
+<div className="ContainerFlex flex-col text-center pb-0 gap-3">
+<h4 className="TitleSection">Ofertas Especiales</h4>
+<h6 className="suptitle mb-2 w-[60%]">Explora nuestra selección de ofertas extraordinarias y empieza a planificar tu próxima gran escapada al Algarve.</h6>
 
-        <section className="pt-0 SectionDiv">
           <GridCardsSection cards={cardsOffers} variant="overlay" />
+
+</div>
         </section>
+        <GridCardsSection cards={landingOffers}  />
 
         <section className="SectionDiv relative w-full h-[500px]">
           <div className="absolute inset-0 z-0">

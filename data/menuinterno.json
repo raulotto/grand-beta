@@ -1,21 +1,21 @@
 {
   "es": [
-    { "id": "descripcion", "label": "Descripción General", "href": "#descripcion", "icon": "CiRead" },
-    { "id": "servicios", "label": "Servicios", "href": "#servicios", "icon": "CiSettings" },
-    { "id": "habitaciones", "label": "Habitaciones", "href": "#habitaciones", "icon": "IoBedOutline" },
-    { "id": "photogallery", "label": "Fotos", "href": "#photogallery", "icon": "CiImageOn" },
-    { "id": "promo", "label": "Promociones", "href": "#promo", "icon": "IoMegaphoneOutline" },
-    { "id": "beneficios", "label": "Beneficios", "href": "#beneficios", "icon": "CiGift" },
-    { "id": "eventos", "label": "Eventos", "href": "/hotel-wyndham-grand-costa-del-sol-lima-airport/#events", "icon": "CiCalendar" },
-    { "id": "comentarios", "label": "Wellness", "href": "/hotel-wyndham-grand-costa-del-sol-lima-airport/#wellness", "icon": "GrSpa" },
-    { "id": "faqs", "label": "Preguntas Frecuentes", "href": "#faqs", "icon": "CiCircleQuestion" }
+    { "id": "descripcion", "label": "Descripción General", "href": "#descripcion" },
+    { "id": "servicios", "label": "Servicios", "href": "#servicios" },
+    { "id": "habitaciones", "label": "Habitaciones", "href": "#habitaciones" },
+    { "id": "photogallery", "label": "Fotos", "href": "#photogallery" },
+    { "id": "promo", "label": "Promociones", "href": "#promo" },
+    { "id": "beneficios", "label": "Beneficios", "href": "#beneficios" },
+    { "id": "eventos", "label": "Eventos", "href": "/hotel-wyndham-grand-costa-del-sol-lima-airport/#events" },
+    { "id": "comentarios", "label": "Wellness", "href": "/hotel-wyndham-grand-costa-del-sol-lima-airport/#wellness" },
+    { "id": "faqs", "label": "Preguntas Frecuentes", "href": "#faqs" }
   ],
   "en": [
-    { "id": "beneficios", "label": "Benefits", "href": "/en/hotel-wyndham-grand-costa-del-sol-lima-airport/#benefits", "icon": "CiGift" },
-    { "id": "habitaciones", "label": "Rooms", "href": "/en/hotel-wyndham-grand-costa-del-sol-lima-airport/#rooms", "icon": "IoBedOutline" },
-    { "id": "restaurantes", "label": "Restaurants", "href": "/en/hotel-wyndham-grand-costa-del-sol-lima-airport/#restaurants", "icon": "CiForkAndKnife" },
-    { "id": "promociones", "label": "Offers", "href": "/en/hotel-wyndham-grand-costa-del-sol-lima-airport/#offers", "icon": "IoMegaphoneOutline" },
-    { "id": "eventos", "label": "Events", "href": "/en/hotel-wyndham-grand-costa-del-sol-lima-airport/#events", "icon": "CiCalendar" },
-    { "id": "wellness", "label": "Wellness", "href": "/en/hotel-wyndham-grand-costa-del-sol-lima-airport/#wellness", "icon": "GrSpa" }
+    { "id": "beneficios", "label": "Benefits", "href": "/en/hotel-wyndham-grand-costa-del-sol-lima-airport/#benefits" },
+    { "id": "habitaciones", "label": "Rooms", "href": "/en/hotel-wyndham-grand-costa-del-sol-lima-airport/#rooms" },
+    { "id": "restaurantes", "label": "Restaurants", "href": "/en/hotel-wyndham-grand-costa-del-sol-lima-airport/#restaurants" },
+    { "id": "promociones", "label": "Offers", "href": "/en/hotel-wyndham-grand-costa-del-sol-lima-airport/#offers" },
+    { "id": "eventos", "label": "Events", "href": "/en/hotel-wyndham-grand-costa-del-sol-lima-airport/#events" },
+    { "id": "wellness", "label": "Wellness", "href": "/en/hotel-wyndham-grand-costa-del-sol-lima-airport/#wellness" }
   ]
 }

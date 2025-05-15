@@ -387,7 +387,7 @@ export default function BookingForm({ embedMenu }) {
           >
             {t.bookNow}
           </button>
-          <Link href="/grupos" className="LinkGrupos">
+          <Link href="https://www.costadelsolperu.com/landing-grupos/" target="_blank" className="LinkGrupos">
   <PiUsersThreeFill className="text-[15px]"/> Grupos +10 personas
 </Link>
         </div>

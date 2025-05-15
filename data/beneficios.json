@@ -3,20 +3,17 @@
     {
       "icon": "FaCoffee",
       "titulo": "Desayuno Buffet",
-      "descripcion": "Empieza tu día con una deliciosa y variada selección matutina.",
-      "horario": "L-V de 04:00 a 10:00 hrs / S-D y feriados de 04:00 a 10:30 hrs"
+      "descripcion": "Empieza tu día con una deliciosa y variada selección matutina, L-V de 04:00 a 10:00 hrs / S-D y feriados de 04:00 a 10:30 hrs."
     },
     {
       "icon": "FaSwimmer",
       "titulo": "Piscina",
-      "descripcion": "Disfruta de un momento de relajación o ejercicio en nuestra piscina.",
-      "horario": "Atención las 24 horas"
+      "descripcion": "Disfruta de un momento de relajación o ejercicio en nuestra piscina. Atención las 24 horas"
     },
     {
       "icon": "FaDumbbell",
       "titulo": "Gimnasio",
-      "descripcion": "Entrena con equipos modernos en un espacio cómodo y accesible.",
-      "horario": "Atención las 24 horas"
+      "descripcion": "Entrena con equipos modernos en un espacio cómodo y accesible. Atención las 24 horas" 
     },
     {
       "icon": "FaHotel",
@@ -41,8 +38,7 @@
     {
       "icon": "FaSpa",
       "titulo": "Wellness",
-      "descripcion": "Renueva tu energía en nuestro spa, piscina y sauna.",
-      "horario": "Atención las 24 horas"
+      "descripcion": "Renueva tu energía en nuestro spa, piscina y sauna. Atención las 24 horas."
     },
     {
       "icon": "FaMobileAlt",

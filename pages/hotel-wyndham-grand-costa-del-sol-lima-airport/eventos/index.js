@@ -162,15 +162,7 @@ export default function Eventos() {
         </div>
       </section>
 
-      {/* SECCIÓN: PLANIFICA TUS EVENTOS */}
-      <section className="SectionDiv">
-        <div className="ContainerFlex p-0 flex-col text-center">
-          <h2 className="TitleSectionMd">Empieza a planificar tus reuniones o eventos aquí</h2>
-          <p >
-          ¡Bienvenido al Hotel Costa Del Sol Wyndham Lima, ubíquese en un lugar privilegiado de la ciudad para que pueda conocer los atractivos turísticos que esta hermosa región del país tiene para ofrecerte! Con más de 60 metros cuadrados de espacio para eventos y 1 sala de eventos para elegir, Costa del Sol Wyndham Cusco es el lugar ideal para celebrar tu próxima conferencia, reunión de negocios o evento social.
-          </p>
-        </div>
-      </section>
+
 
       {/* SECCIÓN: TARJETAS EN GRILLA / CARRUSEL */}
       <section className="SectionDiv BgImageRight">
@@ -288,7 +280,13 @@ export default function Eventos() {
         <p className="text-parrafos">
         Alojamiento de lujo en la Ciudad de los Reyes. Recarga energías entre vuelos en Wyndham Grand Costa del Sol Lima Airport y disfruta de una de nuestras 249 habitaciones de última tecnología. Con express self check-in y opciones libres de humo, cada habitación y suite está diseñada para ofrecerte el máximo confort y una estancia sin complicaciones. Gracias a la tecnología inteligente, puedes solicitar servicio de lavandería o room service 24/7 con solo tocar un botón, mientras que las ventanas insonorizadas te brindan vistas espectaculares de la capital peruana y el ambiente perfecto para un descanso reparador
         </p>
-       
+       <div className="ButtonInfoStatic mt-4">
+              <Link
+                className="ColorButton1 ButtonRounded"
+                href="http://localhost:3000/"
+              >Ver Carta
+              </Link>
+            </div>
         </div>
       </div>
   

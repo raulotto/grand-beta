@@ -21,7 +21,7 @@ import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
       <>
         <section className="SectionDiv pb-0">
           <div className="ContainerFlex items-start">
-            <div className="flex-1 max-w-lg">
+            <div className="flex-1 lg:max-w-lg">
               <div className="flex gap-2 mb-4">
               <Image
                 src="/images/best-of-wyndham-grand-logo.jpg"
@@ -33,6 +33,12 @@ import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
                 alt="Tripadvisor Travelers' Choice Awards 2025"
       width={80}
       height={80}/>
+          <Image
+      src="/images/tc_2024_botb_badge_green.png" 
+      alt="Tripadvisor Travelers' Choice Awards 2025"
+      width={84}
+      height={80}
+    />
                 </div>
               
               <h3 className="suptitle">{data.suptitle}</h3>
@@ -47,24 +53,19 @@ import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
 
             </div>
   
-            <div className="w-full md:max-w-lg">
+            <div className="w-full lg:max-w-lg infohotelbox">
               <div className="bg-primary-dune/60 p-6 text-center mx-auto w-full lg:w-[90%]">
               <div className="mb-4">
   {/* Logo + rating */}
   <div className="flex items-center gap-4 mb-2">
-    <Image
-      src="/images/tc_2024_botb_badge_green.png" // asegúrate que esta ruta exista
-      alt="Tripadvisor Travelers' Choice Awards 2025"
-      width={60}
-      height={60}
-    />
-    <div>
+
+    <div className='flex items-center justify-start w-full items-center gap-2'>
       <div className="flex items-center gap-1">
         <span className="text-lg font-bold text-gray-800">{data.estrellas}</span>
         {[1, 2, 3, 4, 5].map((i) => {
           const rating = parseFloat(data.estrellas);
           return (
-            <span key={i} className="text-[#355764] text-[1.2em]">
+            <span key={i} className="text-[#355764] text-[1em]">
               {rating >= i ? (
                 <IoIosStar />
               ) : rating >= i - 0.5 ? (
@@ -97,8 +98,8 @@ import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
   </div>
 </div>
 
-                <div className="flex justify-between items-start mb-4">
-                  <div className="flex items-center gap-1 items-start">
+                <div className="flex items-start mb-4 divide-x divide-gray-400 ">
+                <div class="px-4 flex  items-center gap-2">
                     <div className="flex flex-col items-center">
                     <span className="text-2xl font-semibold text-gray-900">{data.checkInHora}</span>
                     <span className="text-[10px] font-semibold tracking-wider text-gray-600 uppercase">
@@ -108,7 +109,7 @@ import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
                     <IoExitOutline className="text-[2em] text-primary-oceanic" />
 
                   </div>
-                  <div className="flex items-center gap-1 items-start">
+                  <div class="px-4 flex  items-center gap-2">
                     <div className="flex flex-col items-center ">
                     <span className="text-2xl font-semibold text-gray-900 ">{data.checkOutHora}</span>
                     <span className="text-[10px] font-semibold tracking-wider text-gray-600 uppercase">
@@ -119,11 +120,19 @@ import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
 
                   </div>
                 </div>
-                <hr className="border-t border-gray-300 my-4" />
-                <a href="#" className="text-sm text-[#2e737a] hover:underline">
+                <hr className="border-t border-gray-300 my-4 hidden" />
+                <a href="#" className="text-sm text-[#2e737a] hover:underline hidden">
                   {data.viewPolicies}
                 </a>
               </div>
+              {data.taxiLink && data.taxi && (
+  <div className='p-6 text-center mx-auto w-full'>
+    <Link href={data.taxiLink} className="ColorButton1 ButtonRounded block w-full">
+      {data.taxi}
+    </Link>
+  </div>
+)}
+
             </div>
           </div>
         </section>
@@ -145,7 +154,7 @@ import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
               </ul>
             </div>
   
-            <div className="w-full md:max-w-lg">
+            <div className="w-full lg:max-w-lg">
             <iframe
   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5771.998648251757!2d-77.11881088793656!3d-12.030004988156259!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105cd9c6f771a1f%3A0xfb26782c8a84c82e!2sWyndham%20Grand%20Costa%20Del%20Sol%20Lima%20Airport!5e1!3m2!1ses!2spe!4v1746125580060!5m2!1ses!2spe"
   width="100%"

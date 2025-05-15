@@ -16,6 +16,15 @@ const localizedRoutes = {
     en: '/en/hotel-wyndham-grand-costa-del-sol-lima-airport/rooms',
   },
 
+  '/hotel-wyndham-grand-costa-del-sol-lima-airport/habitaciones/matrimonial-superior': {
+    en: '/en/hotel-wyndham-grand-costa-del-sol-lima-airport/rooms/matrimonial-superior',
+    es: '/hotel-wyndham-grand-costa-del-sol-lima-airport/habitaciones/matrimonial-superior',
+  },
+  '/en/hotel-wyndham-grand-costa-del-sol-lima-airport/rooms/matrimonial-superior': {
+    es: '/hotel-wyndham-grand-costa-del-sol-lima-airport/habitaciones/matrimonial-superior',
+    en: '/en/hotel-wyndham-grand-costa-del-sol-lima-airport/rooms/matrimonial-superior',
+  },
+
   '/rewards': {
     en: '/en/rewards',
     es: '/rewards',
