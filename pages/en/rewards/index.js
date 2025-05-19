@@ -73,8 +73,9 @@ export default function Home() {
     <main className="mx-auto ManropeFont">
       {/* Encabezado */}
       <HeaderClassic modoClaro />
-      <BookingForm />
       <HeroSlider page="rewards" />
+
+      <BookingForm />
 
       {/* Sección: ¿Cómo funciona Wyndham Rewards? */}
       <section className=" SectionDiv ">
@@ -166,7 +167,6 @@ export default function Home() {
     <section className="SectionDiv">
       <div className="ContainerFlex flex flex-col items-stretch">
       <h2 className="ManropeFont TitleSectionMd font-bold">Preguntas frecuentes sobre reservas</h2>
-    <TermsToggle />
     </div>
     </section>
       {/* Pie de página */}

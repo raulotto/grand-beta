@@ -1,4 +1,6 @@
 'use client'
+import React from 'react';
+
 import Image from 'next/image'
 import Link from 'next/link'
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -8,6 +10,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { useEffect, useRef, useState } from "react";
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi'
+
 
 export default function GridCardsSection({ cards, variant = 'default' }) {
   const isCarouselDesktop = cards.length >= 4;
@@ -189,7 +192,26 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
         </Wrapper>
       )
     }
+    if (variant === 'icon-title-desc') {
+      return (
+        <Wrapper>
+          <div className="flex flex-col items-center text-center p-6 bg-white shadow-sm rounded-lg h-full hover:shadow-md transition-shadow duration-300">
+          {card.icon && (
+  <div className="mb-4 text-[#405d65] text-5xl">
+    {card.icon}
+  </div>
+)}
 
+
+            <h3 className="text-lg font-bold text-[#333] mb-2">{card.title}</h3>
+            {card.description && (
+              <p className="text-sm text-gray-600">{card.description}</p>
+            )}
+          </div>
+        </Wrapper>
+      )
+    }
+    
     return (
       <Wrapper>
         <div className="bg-white shadow-md overflow-hidden flex flex-col h-full hover:shadow-lg transition-shadow duration-300">

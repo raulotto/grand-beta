@@ -25,6 +25,8 @@ import SeoHead from "@/components/SeoHead";
 import termsData from '@/data/termsData.json';
 import TermsToggle from '@/components/TermsToggle';
 import TripReviews from "@/components/TripReviews";
+import TabsContent from "@/components/TabsContent";
+import tabsData from "@/data/tabsContent.json";
 
 
 export async function getStaticProps() {
@@ -41,7 +43,8 @@ export default function Home({ hotel }) {
   const [embedMenu, setEmbedMenu] = useState(false);
   const router = useRouter();
   const lang = router.pathname.startsWith('/en') ? 'en' : 'es';
-  
+  const tabsContent = tabsData[lang] || tabsData["es"];
+
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -87,6 +90,14 @@ export default function Home({ hotel }) {
 <Intro data={introMultiData[lang]} />
 <ServiciosHotel />
 
+      <section className="SectionDiv">
+        <div className="ContainerFlex flex-col">
+          <h2 className="TitleSection">
+          Nuestros destacados esenciales 
+          </h2>
+        <TabsContent data={tabsContent} />
+        </div>
+      </section>
       <Beneficios id="beneficios" />
       <Habitaciones />
       <BeneficiosDirectos />

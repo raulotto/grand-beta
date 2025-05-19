@@ -1,4 +1,5 @@
 
+import React from 'react'
 import { useState, useEffect } from "react";
 import Script from "next/script";
 import Image from "next/image";
@@ -20,15 +21,30 @@ import { FaHotel, FaGlobeAmericas, FaTags, FaGift, FaSuitcaseRolling } from "rea
 import rewardsCards from "@/data/rewardsCards.json";
 import rewardsCardsOffers from "@/data/rewardsCardsOffers.json";
 import rewardsCardsInfo from "@/data/rewardsCardsInfo.json";
+import rewardsCardsIcon from "@/data/rewardsCardsIcon.json"
 import seo from "@/data/seo.json";
 import SeoHead from "@/components/SeoHead"
 import useIdioma from "@/hooks/useIdioma"
+import { LuBadgeAlert } from 'react-icons/lu';
+import { FaConciergeBell } from 'react-icons/fa';
+import { FaRegSmileWink } from "react-icons/fa";
+import { LuCalendarPlus } from "react-icons/lu";
+import { LiaHotelSolid } from "react-icons/lia";
+
+
 
 
 export default function Home() {
   const [embedMenu, setEmbedMenu] = useState(false);
 
-
+  const iconMap = {
+    LuBadgeAlert,
+    FaConciergeBell,
+    FaRegSmileWink,
+    LuCalendarPlus,
+    LiaHotelSolid,
+    // otros que uses
+  };
 
   // Efecto para manejar el scroll y mostrar/ocultar el menú
   useEffect(() => {
@@ -57,11 +73,20 @@ export default function Home() {
     cards: rewardsCards,
     offers: rewardsCardsOffers,
     info: rewardsCardsInfo,
+    iconinfo: rewardsCardsIcon,
   })
   
   if (!idioma) return null
   
-  const { info, cards, offers, seoData } = idioma
+  const { info, iconinfo,  cards, offers, seoData } = idioma
+
+  const iconinfoWithIcons = iconinfo.map(card => {
+    const IconComponent = card.icon && iconMap[card.icon];
+    const icon = IconComponent ? React.createElement(IconComponent) : null;
+    return { ...card, icon };
+  });
+  
+  
   return (
     <>
     <SeoHead
@@ -73,21 +98,34 @@ export default function Home() {
     <main className="mx-auto ManropeFont">
       {/* Encabezado */}
       <HeaderClassic modoClaro />
-      <BookingForm />
       <HeroSlider page="rewards" />
+      <BookingForm />
 
+      <section className=" SectionDiv">
+      <div className="ContainerFlex flex-col text-center gap-3">
+      <h4 className="TitleSection CenterCenter">Ahorra con nuestra tarifa para miembros
+
+</h4>
+      <p>
+      Las recompensas nunca terminan para nuestros miembros: Disfruta de ahorros en miles de hoteles alrededor del mundo. Además, siempre obtendrás el precio más bajo cuando reserves directo en nuestro sitio web o nuestra app *.
+      </p>
+      <p>
+      ¿No eres miembro de Wyndham Rewards? Inscríbete gratis durante la reserva.
+      </p>
+        </div>
+        </section>
       {/* Sección: ¿Cómo funciona Wyndham Rewards? */}
       <section className=" SectionDiv ">
         <div className="ContainerFlex">
           <div className="w-full md:max-w-lg flex justify-center items-center">
-            <h4 className="TitleSection ManropeFont ">
+            <h4 className="TitleBig ManropeFont ">
               ¿Cómo funciona <br /> Wyndham Rewards?
             </h4>
           </div>
           <div className="flex-1 max-w-lg">
             <div>
               <h4 className="ManropeFont mb-4">Fácil de unirse, simple de disfrutar</h4>
-              <ol>
+              <ol className="text-sm">
                 <li>Regístrate gratis – Solo toma un par de clics.</li>
                 <li>Reserva directo – Hospédate en cualquier hotel Costa del Sol o Wyndham.</li>
                 <li>Acumula puntos – Por cada estadía calificada.</li>
@@ -100,6 +138,8 @@ export default function Home() {
 
       {/* Sección: Tarjetas de Rewards */}
       <section className="pt-0 SectionDiv">
+
+
       <GridCardsSection cards={info} variant="clean"/>
 
       </section>
@@ -107,12 +147,13 @@ export default function Home() {
       {/* Sección: ¿Por qué unirte? */}
       <section className="pt-0 SectionDiv ">
         <div className="ContainerFlex">
-          <div className="w-full md:max-w-lg flex justify-center items-center">
-            <h4 className="TitleSection ManropeFont">¿Por qué unirte?</h4>
+        <div className="w-full md:max-w-lg flex justify-center items-center">
+
+            <h4 className="TitleBig ManropeFont">¿Por qué unirte?</h4>
           </div>
           <div className="flex-1 max-w-lg">
             <div>
-            <ul className="space-y-2">
+            <ul className="text-sm space-y-2">
             <li className="flex items-start gap-2">
               <FaHotel className="text-xl mt-1" />
               <div>
@@ -147,6 +188,15 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </section>
+{/* Sección: Tarjetas de Rewards */}
+<section className="pt-0 SectionDiv">
+<div className="ContainerFlex flex-col">
+
+<h4 className="TitleSection CenterCenter">Como miembro de Wyndham Rewards usted puede elegir</h4>
+<GridCardsSection cards={iconinfoWithIcons} variant="icon-title-desc" />
+
+</div>
       </section>
 
       {/* Sección: Recompensas */}

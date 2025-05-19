@@ -91,6 +91,36 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+ul,
+ol {
+  
+  padding-left: 1.5rem;
+}
+
+ul {
+  
+}
+
+ol {
+  
+}
+
+li {
+  
+  line-height: 1.5;
+}
+
+
+.rewards-parent .SectionDiv ol{
+    margin: 1rem 0;
+    list-style-type: decimal;
+}
+.rewards-parent .SectionDiv li{
+  margin-bottom: 0.5rem;
+}
+.rewards-parent .SectionDiv ul{
+  list-style-type: disc;
+}
 .BgConections {
   background-image: url("https://www.wyndhamgrandorlando.com/assets/images/backgrounds-lines-left.png");
   background-size: cover;
@@ -594,6 +624,12 @@ a:hover {
 }
 .artImage{
   @apply w-[80%] lg:w-[30%];
+}
+.TitleBig{
+  @apply text-5xl font-extrabold text-center;
+}
+.CenterCenter{
+  @apply w-full flex justify-center items-center ;
 }
 }
 

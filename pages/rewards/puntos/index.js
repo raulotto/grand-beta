@@ -76,8 +76,9 @@ export default function Home() {
     <main className="mx-auto ManropeFont">
       {/* Encabezado */}
       <HeaderClassic modoClaro />
-      <BookingForm />
       <HeroSlider page="puntos" />
+
+      <BookingForm />
 
       {/* Sección: Tarjetas de Rewards */}
       <section className=" SectionDiv pb-0">
@@ -132,7 +133,6 @@ export default function Home() {
     <section className="SectionDiv">
       <div className="ContainerFlex flex flex-col items-stretch">
       <h2 className="ManropeFont TitleSectionMd font-bold">Preguntas frecuentes sobre reservas</h2>
-    <TermsToggle />
     </div>
     </section>
       {/* Pie de página */}
