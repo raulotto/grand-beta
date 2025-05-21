@@ -75,7 +75,8 @@ export default function Home({ hotel }) {
     <main className="mx-auto">
       <HeaderTrad />
       <HeroSlider page="home" />
-      <BookingForm embedMenu={embedMenu} />
+            <BookingForm embedMenu={embedMenu} initialHotel={{ code: "wga" }}/>
+      
    
       <MenuInterno
   embedMenu={false}
@@ -92,7 +93,13 @@ export default function Home({ hotel }) {
       <RestBar />
       <PhotoGalleryModal galleryData={galleryData} />
       <Meeting />
-      <TermsToggle data={termsData} />
+      <section id="faqs" className="SectionDiv">
+      <div className="FaqsSec ContainerFlex flex-col p-0">
+      <h2 className="ManropeFont TitleSection ">Booking FAQ's</h2>
+    <TermsToggle data={termsData} />
+
+    </div>
+    </section>
 
       <Footer />
 

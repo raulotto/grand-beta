@@ -23,6 +23,8 @@ import rewardsCardsInfo from "@/data/rewardsCardsInfo.json";
 import seo from "@/data/seo.json";
 import SeoHead from "@/components/SeoHead"
 import useIdioma from "@/hooks/useIdioma"
+import termsData from '@/data/termsData.json';
+
 
 
 export default function Home() {
@@ -165,8 +167,10 @@ export default function Home() {
       </section>
       
     <section className="SectionDiv">
-      <div className="ContainerFlex flex flex-col items-stretch">
+    <div className="FaqsSec ContainerFlex flex-col p-0">
       <h2 className="ManropeFont TitleSectionMd font-bold">Preguntas frecuentes sobre reservas</h2>
+    <TermsToggle data={termsData} />
+
     </div>
     </section>
       {/* Pie de página */}

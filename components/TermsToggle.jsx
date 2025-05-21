@@ -31,10 +31,10 @@ const TermsToggle = ({ data }) => {
   const { terms } = idioma;
 
   return (
-    <section id="faqs" className="SectionDiv">
-      <div className="FaqsSec ContainerFlex p-0">
+  
     <div className="md:flex space-y-6 md:space-y-0 md:space-x-8 w-full">
       {/* Menú lateral */}
+      {terms.secciones.length > 1 && (
       <div className="md:min-w-[200px] space-y-2">
         {/* Vista mobile */}
         <div className="AcordionTitle md:hidden border-b pb-2">
@@ -90,7 +90,7 @@ const TermsToggle = ({ data }) => {
           ))}
         </ul>
       </div>
-
+)}
       {/* Contenido de sección */}
       <div className="flex-1">
         {terms.secciones.map((sec, i) => (
@@ -138,8 +138,8 @@ const TermsToggle = ({ data }) => {
         ))}
       </div>
     </div>
-    </div>
-</section>
+
+
   );
 };
 

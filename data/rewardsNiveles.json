@@ -1,117 +1,220 @@
 {
-    "es": {
-      "niveles": [
-        {
-          "nombre": "BLUE",
-          "etiqueta": "Al Inscribirte",
-          "color": "#005BAC"
-        },
-        {
-          "nombre": "GOLD",
-          "etiqueta": "Después 5 noches.",
-          "color": "#B58500"
-        },
-        {
-          "nombre": "PLATINUM",
-          "etiqueta": "Después 15 noches.",
-          "color": "#4A4A4A"
-        },
-        {
-          "nombre": "DIAMOND",
-          "etiqueta": "Después 40 noches.",
-          "color": "#B2B2B2"
-        }
-      ],
-      "beneficios": [
-        {
-          "titulo": "Ahorros para miembros",
-          "niveles": ["BLUE", "GOLD", "PLATINUM", "DIAMOND"],
-          "contenido": "Siempre obtendrás el precio más bajo cuando reserves de forma directa en miles de hoteles alrededor del mundo.",
-          "link": {
-            "texto": "Más información sobre reservas directas",
-            "url": "#"
-          },
-          "cta": {
-            "texto": "CONOCE MÁS",
-            "url": "#"
-          }
-        },
-        {
-          "titulo": "Gana al menos 1,000 puntos por cada estadía calificada",
-          "niveles": ["BLUE", "GOLD", "PLATINUM", "DIAMOND"],
-          "contenido": "Por cada estadía calificada, ganarás 10 puntos por dólar o 1,000 puntos, lo que sea mayor.",
-          "link": {
-            "texto": "Términos y condiciones",
-            "url": "#"
-          }
-        },
-        {
-          "titulo": "Las noches transferibles no expiran",
-          "niveles": ["BLUE", "GOLD", "PLATINUM", "DIAMOND"],
-          "contenido": "Tus noches calificadas son transferibles para el próximo año calendario.",
-          "link": {
-            "texto": "Ver detalles",
-            "url": "#"
-          }
-        }
-      ]
+  "es": {
+    "titulo": "Beneficios del nivel de miembro",
+    "niveles": {
+      "blue": "BLUE",
+      "gold": "GOLD",
+      "platinum": "PLATINUM",
+      "diamond": "DIAMOND"
     },
-    "en": {
-      "niveles": [
-        {
-          "nombre": "BLUE",
-          "etiqueta": "Upon Enrollment",
-          "color": "#005BAC"
-        },
-        {
-          "nombre": "GOLD",
-          "etiqueta": "After 5 nights",
-          "color": "#B58500"
-        },
-        {
-          "nombre": "PLATINUM",
-          "etiqueta": "After 15 nights",
-          "color": "#4A4A4A"
-        },
-        {
-          "nombre": "DIAMOND",
-          "etiqueta": "After 40 nights",
-          "color": "#B2B2B2"
-        }
-      ],
-      "beneficios": [
-        {
-          "titulo": "Member savings",
-          "niveles": ["BLUE", "GOLD", "PLATINUM", "DIAMOND"],
-          "contenido": "Always get the lowest price when you book directly at thousands of hotels worldwide.",
-          "link": {
-            "texto": "More about direct bookings",
-            "url": "#"
-          },
-          "cta": {
-            "texto": "LEARN MORE",
-            "url": "#"
-          }
-        },
-        {
-          "titulo": "Earn at least 1,000 points per qualified stay",
-          "niveles": ["BLUE", "GOLD", "PLATINUM", "DIAMOND"],
-          "contenido": "Earn 10 points per dollar or 1,000 points, whichever is more, per qualified stay.",
-          "link": {
-            "texto": "Terms and conditions",
-            "url": "#"
-          }
-        },
-        {
-          "titulo": "Rollover nights never expire",
-          "niveles": ["BLUE", "GOLD", "PLATINUM", "DIAMOND"],
-          "contenido": "Your qualified nights roll over to the next calendar year.",
-          "link": {
-            "texto": "See details",
-            "url": "#"
-          }
-        }
-      ]
-    }
+    "items": [
+      {
+        "titulo": "Ahorros para miembros",
+        "niveles": ["blue", "gold", "platinum", "diamond"],
+        "contenido": "Siempre obtendrás el precio más bajo cuando reserves directamente en miles de hoteles alrededor del mundo.",
+        "link": "#",
+        "textlink": "Ver más"
+      },
+      {
+        "titulo": "Gana al menos 1,000 puntos por cada estadía calificada",
+        "niveles": ["blue", "gold", "platinum", "diamond"],
+        "contenido": "Acumula puntos desde tu primera estadía. Gana 10 puntos por dólar o un mínimo de 1,000 puntos por noche calificada.",
+        "link": "#",
+        "textlink": "Ver más"
+      },
+      {
+        "titulo": "Noches gratis y con descuento",
+        "niveles": ["blue", "gold", "platinum", "diamond"],
+        "contenido": "Canjea tus puntos por noches gratis o combina puntos y efectivo para descuentos especiales.",
+        "link": "#",
+        "textlink": "Ver más"
+      },
+      {
+        "titulo": "Las noches transferibles no expiran",
+        "niveles": ["blue", "gold", "platinum", "diamond"],
+        "contenido": "Tus noches transferidas estarán disponibles mientras mantengas tu membresía activa.",
+        "link": "#",
+        "textlink": "Ver más"
+      },
+      {
+        "titulo": "WiFi gratis",
+        "niveles": ["blue", "gold", "platinum", "diamond"],
+        "contenido": "Disfruta de conexión WiFi gratuita en todos los hoteles participantes.",
+        "link": "#",
+        "textlink": "Ver más"
+      },
+      {
+        "titulo": "Servicios dedicados para miembros",
+        "niveles": ["gold", "platinum", "diamond"],
+        "contenido": "Accede a líneas de atención y soporte exclusivo para miembros preferentes.",
+        "link": "#",
+        "textlink": "Ver más"
+      },
+      {
+        "titulo": "Selección de habitación preferida",
+        "niveles": ["gold", "platinum", "diamond"],
+        "contenido": "Solicita tu tipo de habitación favorita, sujeto a disponibilidad.",
+        "link": "#",
+        "textlink": "Ver más"
+      },
+      {
+        "titulo": "Late check out",
+        "niveles": ["gold", "platinum", "diamond"],
+        "contenido": "Disfruta más tiempo en tu habitación con salida extendida, según disponibilidad.",
+        "link": "#",
+        "textlink": "Ver más"
+      },
+      {
+        "titulo": "Early check in",
+        "niveles": ["platinum", "diamond"],
+        "contenido": "Accede antes a tu habitación sin costo adicional, sujeto a disponibilidad.",
+        "link": "#",
+        "textlink": "Ver más"
+      },
+      {
+        "titulo": "Iguala tu estatus de Caesars Rewards®",
+        "niveles": ["platinum", "diamond"],
+        "contenido": "Sincroniza tu estatus de Wyndham Rewards con Caesars Rewards para beneficios cruzados.",
+        "link": "#",
+        "textlink": "Ver más"
+      },
+      {
+        "titulo": "Upgrade en alquiler de autos Avis® y Budget®",
+        "niveles": ["platinum", "diamond"],
+        "contenido": "Disfruta de mejoras automáticas en tus reservas con Avis® y Budget®.",
+        "link": "#",
+        "textlink": "Ver más"
+      },
+      {
+        "titulo": "Upgrade a suite",
+        "niveles": ["diamond"],
+        "contenido": "Accede a una mejora gratuita a suite en hoteles participantes, según disponibilidad.",
+        "link": "#",
+        "textlink": "Ver más"
+      },
+      {
+        "titulo": "Amenidad de bienvenida en el check in",
+        "niveles": ["diamond"],
+        "contenido": "Recibe una atención especial de bienvenida al momento del registro.",
+        "link": "#",
+        "textlink": "Ver más"
+      },
+      {
+        "titulo": "Regala nivel GOLD",
+        "niveles": ["diamond"],
+        "contenido": "Comparte la experiencia dorada regalando el nivel GOLD a otra persona.",
+        "link": "#",
+        "textlink": "Ver más"
+      }
+    ]
+  },
+  "en": {
+    "titulo": "Member Level Benefits",
+    "niveles": {
+      "blue": "BLUE",
+      "gold": "GOLD",
+      "platinum": "PLATINUM",
+      "diamond": "DIAMOND"
+    },
+    "items": [
+      {
+        "titulo": "Member Savings",
+        "niveles": ["blue", "gold", "platinum", "diamond"],
+        "contenido": "Always get the lowest price when booking directly at thousands of hotels worldwide.",
+        "link": "#",
+        "textlink": "Learn more"
+      },
+      {
+        "titulo": "Earn at least 1,000 points per qualified stay",
+        "niveles": ["blue", "gold", "platinum", "diamond"],
+        "contenido": "Start earning points from your first stay. Earn 10 points per dollar or a minimum of 1,000 points per qualified night.",
+        "link": "#",
+        "textlink": "Learn more"
+      },
+      {
+        "titulo": "Free and discounted nights",
+        "niveles": ["blue", "gold", "platinum", "diamond"],
+        "contenido": "Redeem your points for free nights or combine points and cash for special discounts.",
+        "link": "#",
+        "textlink": "Learn more"
+      },
+      {
+        "titulo": "Transferable nights never expire",
+        "niveles": ["blue", "gold", "platinum", "diamond"],
+        "contenido": "Your transferred nights will remain available as long as your membership is active.",
+        "link": "#",
+        "textlink": "Learn more"
+      },
+      {
+        "titulo": "Free WiFi",
+        "niveles": ["blue", "gold", "platinum", "diamond"],
+        "contenido": "Enjoy complimentary WiFi at all participating hotels.",
+        "link": "#",
+        "textlink": "Learn more"
+      },
+      {
+        "titulo": "Dedicated member services",
+        "niveles": ["gold", "platinum", "diamond"],
+        "contenido": "Access exclusive support lines for preferred members.",
+        "link": "#",
+        "textlink": "Learn more"
+      },
+      {
+        "titulo": "Preferred room selection",
+        "niveles": ["gold", "platinum", "diamond"],
+        "contenido": "Request your favorite room type, subject to availability.",
+        "link": "#",
+        "textlink": "Learn more"
+      },
+      {
+        "titulo": "Late check out",
+        "niveles": ["gold", "platinum", "diamond"],
+        "contenido": "Enjoy extra time in your room with extended check-out, subject to availability.",
+        "link": "#",
+        "textlink": "Learn more"
+      },
+      {
+        "titulo": "Early check in",
+        "niveles": ["platinum", "diamond"],
+        "contenido": "Access your room earlier at no additional cost, subject to availability.",
+        "link": "#",
+        "textlink": "Learn more"
+      },
+      {
+        "titulo": "Match your Caesars Rewards® status",
+        "niveles": ["platinum", "diamond"],
+        "contenido": "Sync your Wyndham Rewards status with Caesars Rewards for cross-program benefits.",
+        "link": "#",
+        "textlink": "Learn more"
+      },
+      {
+        "titulo": "Car rental upgrade with Avis® and Budget®",
+        "niveles": ["platinum", "diamond"],
+        "contenido": "Enjoy automatic upgrades with your car reservations at Avis® and Budget®.",
+        "link": "#",
+        "textlink": "Learn more"
+      },
+      {
+        "titulo": "Suite upgrade",
+        "niveles": ["diamond"],
+        "contenido": "Get a free suite upgrade at participating hotels, subject to availability.",
+        "link": "#",
+        "textlink": "Learn more"
+      },
+      {
+        "titulo": "Welcome amenity at check-in",
+        "niveles": ["diamond"],
+        "contenido": "Receive a special welcome gift upon check-in.",
+        "link": "#",
+        "textlink": "Learn more"
+      },
+      {
+        "titulo": "Gift GOLD level",
+        "niveles": ["diamond"],
+        "contenido": "Share the golden experience by gifting the GOLD level to someone else.",
+        "link": "#",
+        "textlink": "Learn more"
+      }
+    ]
   }
-  
+}

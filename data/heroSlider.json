@@ -46,20 +46,30 @@
       "page": "rewards",
       "slides": [
         {
-          "src": "/images/pareja-rewards.avif",
+          "src": "/images/cusco-back-cds-sale.jpg",
           "titulo": "Hospédate dos noches y gana una noche gratis o una tarjeta de regalo",
           "subtitulo": "Se aplican términos y condiciones",
-          "alineacion": "izquierda"
+          "alineacion": "centro"
         }
       ]
     },
     {
-      "page": "puntos",
+      "page": "canjear-puntos",
       "slides": [
         {
           "src": "/images/pareja-rewards.avif",
           "titulo": "Como redimir puntos",
           "subtitulo": "Se aplican términos y condiciones",
+          "alineacion": "centro"
+        }
+      ]
+    },
+    {
+      "page": "niveles",
+      "slides": [
+        {
+          "src": "/images/pareja-rewards.avif",
+          "titulo": "Niveles",
           "alineacion": "centro"
         }
       ]
@@ -144,10 +154,31 @@
       "page": "rewards",
       "slides": [
         {
-          "src": "/images/pareja-rewards.avif",
+          "src": "/images/cusco-back-cds-sale.jpg",
           "titulo": "Stay two nights and get a free night or a gift card",
           "subtitulo": "Terms and conditions apply",
           "alineacion": "izquierda"
+        }
+      ]
+    },
+    {
+      "page": "redeem-points",
+      "slides": [
+        {
+          "src": "/images/pareja-rewards.avif",
+          "titulo": "Redeem Points",
+          "subtitulo": "Terms and conditions apply",
+          "alineacion": "centro"
+        }
+      ]
+    },
+    {
+      "page": "levels",
+      "slides": [
+        {
+          "src": "/images/pareja-rewards.avif",
+          "titulo": "Levels",
+          "alineacion": "centro"
         }
       ]
     },

@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 @import "tailwindcss";
 
 
@@ -84,6 +85,16 @@ body.grand-parent{
   font-weight: 400;
   font-style: normal;
 }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ul, ol {
+  margin: 0;
+  padding: 0;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -109,7 +120,10 @@ li {
   
   line-height: 1.5;
 }
-
+.rewards-parent .SectionDiv .FaqsSec ul, .grand-parent .SectionDiv .FaqsSec ul {
+  list-style-type: none;
+  padding-left: inherit;
+}
 
 .rewards-parent .SectionDiv ol{
     margin: 1rem 0;
@@ -121,6 +135,7 @@ li {
 .rewards-parent .SectionDiv ul{
   list-style-type: disc;
 }
+
 .BgConections {
   background-image: url("https://www.wyndhamgrandorlando.com/assets/images/backgrounds-lines-left.png");
   background-size: cover;
@@ -143,6 +158,9 @@ b, strong{
 }
 .ManropeFont {
   font-family: 'Manrope', sans-serif;
+}
+.QuicksandFont {
+  font-family: 'Quicksand', sans-serif;
 }
 .GothamBook {
   font-family: 'Gotham-book', sans-serif;
@@ -317,13 +335,17 @@ a:hover {
   right: 0;
 }
 .FooterColumn,.FooterColumns {
-  font-family: 'HCo Gotham SSm', sans-serif;
+  font-size: 12px;
 }
 .grand-parent .dropdown_menu{
   background: var(--color-primary-oceanic);
 }
 .grand-parent .TitleSectionMd, .grand-parent .TitleSection{
   color: var(--color-primary-oceanic);
+}
+.rewards-parent .FooterColumn a:hover{
+  color: var(--color-primary-blue);
+  text-decoration:none;
 }
 .rewards-parent .dropdown_menu{
   background: var(--color-support-white-light-1)
@@ -616,8 +638,11 @@ a:hover {
 .FooterColumn {
   @apply lg:text-[12px];
 }
-.FooterColumns {
-  @apply lg:text-[12px];
+.FooterSocials div {
+  @apply p-0!;
+}
+.CenterCenter{
+  @apply w-full flex justify-center items-center ;
 }
 .slider-spa {
   @apply bg-red-500; /* test visual temporal */
@@ -631,6 +656,8 @@ a:hover {
 .CenterCenter{
   @apply w-full flex justify-center items-center ;
 }
+
+
 }
 
 

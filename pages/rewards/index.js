@@ -30,6 +30,8 @@ import { FaConciergeBell } from 'react-icons/fa';
 import { FaRegSmileWink } from "react-icons/fa";
 import { LuCalendarPlus } from "react-icons/lu";
 import { LiaHotelSolid } from "react-icons/lia";
+import termsData from '@/data/termsData.json';
+
 
 
 
@@ -214,9 +216,11 @@ export default function Home() {
         </div>
       </section>
       
-    <section className="SectionDiv">
-      <div className="ContainerFlex flex flex-col items-stretch">
+      <section id="faqs" className="SectionDiv">
+      <div className="FaqsSec ContainerFlex flex-col p-0">
       <h2 className="ManropeFont TitleSectionMd font-bold">Preguntas frecuentes sobre reservas</h2>
+    <TermsToggle data={termsData} />
+
     </div>
     </section>
       {/* Pie de página */}

@@ -14,10 +14,9 @@ import MenuInterno from "./MenuInterno";
 import lang from "@/data/lang";
 import { PiUsersThreeFill } from "react-icons/pi";
 
-
 registerLocale("es", es);
 
-export default function BookingForm({ embedMenu }) {
+export default function BookingForm({ embedMenu, initialHotel }) {
   const { showForm, setShowForm, formIsSticky } = useBooking();
   const locationRef = useRef(null);
   const dropdownRef = useRef(null);
@@ -28,11 +27,35 @@ export default function BookingForm({ embedMenu }) {
   const [corporateCode, setCorporateCode] = useState("");
   const [showPromoBox, setShowPromoBox] = useState(false);
 
-
   const pathname = usePathname();
   const currentLang = pathname.startsWith("/en") ? "en" : "es";
-  
   const t = lang[currentLang];
+
+  const today = new Date();
+  const tomorrow = new Date();
+  tomorrow.setDate(today.getDate() + 1);
+  const [dateRange, setDateRange] = useState([today, tomorrow]);
+  const [startDate, endDate] = dateRange;
+
+  const hotelCodes = {
+    lim: { name: "Costa del Sol Wyndham Lima City", id: "104308" },
+    aer: { name: "Costa del Sol Wyndham Lima Airport", id: "105840" },
+    wga: { name: "Wyndham Grand Costa del Sol Lima Airport", id: "9878731" },
+    puc: { name: "Costa del Sol Wyndham Pucallpa", id: "104310" },
+    tum: { name: "Costa del Sol Wyndham Tumbes", id: "104326" },
+    piu: { name: "Costa del Sol Wyndham Piura", id: "104305" },
+    trg: { name: "Costa del Sol Wyndham Trujillo Golf", id: "104309" },
+    trc: { name: "Costa del Sol Trujillo Centro", id: "109838" },
+    caj: { name: "Costa del Sol Wyndham Cajamarca", id: "104307" },
+    cix: { name: "Costa del Sol Wyndham Chiclayo", id: "104314" },
+    are: { name: "Costa del Sol Wyndham Arequipa", id: "109836" },
+    cus: { name: "Costa del Sol Wyndham Cusco", id: "104313" }
+  };
+
+  const foundHotel = initialHotel?.code && hotelCodes[initialHotel.code] ? hotelCodes[initialHotel.code] : null;
+
+  const [selectedHotel, setSelectedHotel] = useState(foundHotel || null);
+  const [query, setQuery] = useState(foundHotel ? foundHotel.name : "");
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -62,20 +85,6 @@ export default function BookingForm({ embedMenu }) {
     }
   }, [showForm]);
 
-  const today = new Date();
-  const tomorrow = new Date();
-  tomorrow.setDate(today.getDate() + 1);
-
-  const defaultHotel = {
-    name: "Wyndham Grand Costa del Sol Lima Airport",
-    id: "9878731",
-  };
-
-  const [dateRange, setDateRange] = useState([today, tomorrow]);
-  const [startDate, endDate] = dateRange;
-  const [selectedHotel, setSelectedHotel] = useState(defaultHotel);
-  const [query, setQuery] = useState(defaultHotel.name);
-
   const hotelsGrouped = {
     Arequipa: [{ name: "Costa del Sol Wyndham Arequipa", id: "109836" }],
     Cajamarca: [{ name: "Costa del Sol Wyndham Cajamarca", id: "104307" }],
@@ -84,24 +93,25 @@ export default function BookingForm({ embedMenu }) {
     Lima: [
       { name: "Costa del Sol Wyndham Lima Airport", id: "105840" },
       { name: "Costa del Sol Wyndham Lima City", id: "104308" },
-      { name: "Wyndham Grand Costa del Sol Lima Airport", id: "9878731" },
+      { name: "Wyndham Grand Costa del Sol Lima Airport", id: "9878731" }
     ],
     Piura: [{ name: "Costa del Sol Wyndham Piura", id: "104305" }],
     Pucallpa: [{ name: "Costa del Sol Wyndham Pucallpa", id: "104310" }],
     Trujillo: [
       { name: "Costa del Sol Wyndham Trujillo Golf", id: "104309" },
-      { name: "Costa del Sol Trujillo Centro", id: "109838" },
+      { name: "Costa del Sol Trujillo Centro", id: "109838" }
     ],
-    Tumbes: [{ name: "Costa del Sol Wyndham Tumbes", id: "104326" }],
+    Tumbes: [{ name: "Costa del Sol Wyndham Tumbes", id: "104326" }]
   };
 
   const formatDate = (date) =>
-    date?.toLocaleDateString("es-PE", {
+    date?.toLocaleDateString(currentLang === "en" ? "en-US" : "es-PE", {
       weekday: "short",
       day: "numeric",
-      month: "short",
+      month: "short"
     });
- const CustomDateInput = React.forwardRef(({ value, onClick }, ref) => (
+
+  const CustomDateInput = React.forwardRef(({ value, onClick }, ref) => (
     <button
       type="button"
       onClick={onClick}
@@ -114,10 +124,11 @@ export default function BookingForm({ embedMenu }) {
           {formatDate(startDate)} — {formatDate(endDate)}
         </span>
       ) : (
-        <span className="text-gray-400">Seleccionar fechas</span>
+        <span className="text-gray-400">{t.selectDates}</span>
       )}
     </button>
   ));
+
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!selectedHotel) {
@@ -147,7 +158,6 @@ export default function BookingForm({ embedMenu }) {
     const finalUrl = `${baseUrl}&${params.toString()}`;
     window.open(finalUrl, "_blank");
 
-    // Reset
     setDiscountCode("");
     setCorporateCode("");
     setSelectedRateType("discount");
@@ -163,11 +173,15 @@ export default function BookingForm({ embedMenu }) {
         <div key={region} className="py-1">
           <div className="RegionLocation">{region}</div>
           {matched.map((hotel) => (
-            <div key={hotel.id} className="px-4 py-2 text-light-oceanic hover:bg-gray-100 cursor-pointer" onClick={() => {
-              setSelectedHotel(hotel);
-              setQuery(hotel.name);
-              setShowDropdown(false);
-            }}>
+            <div
+              key={hotel.id}
+              className="px-4 py-2 text-light-oceanic hover:bg-gray-100 cursor-pointer"
+              onClick={() => {
+                setSelectedHotel(hotel);
+                setQuery(hotel.name);
+                setShowDropdown(false);
+              }}
+            >
               <div className="text-sm">{hotel.name}</div>
             </div>
           ))}
@@ -175,8 +189,6 @@ export default function BookingForm({ embedMenu }) {
       );
     });
   };
-
-
 
   return (
     <div
@@ -272,16 +284,17 @@ export default function BookingForm({ embedMenu }) {
                       <span className="text-xs text-gray-500 uppercase tracking-wide">
                       </span>
                       <DatePicker
-                                  selectsRange={true}
-                                  startDate={startDate}
-                                  endDate={endDate}
-                                  onChange={(update) => setDateRange(update)}
-                                  monthsShown={2}
-                                  minDate={today}
-                                  locale="es"
-                                  customInput={<CustomDateInput />}
-                                  dateFormat="MM/dd/yyyy"
-            />
+  selectsRange={true}
+  startDate={startDate}
+  endDate={endDate}
+  onChange={(update) => setDateRange(update)}
+  monthsShown={2}
+  minDate={today}
+  locale={currentLang}
+  customInput={<CustomDateInput />}
+  dateFormat="MM/dd/yyyy"
+/>
+
           {startDate && endDate && (
             <>
               <input
@@ -388,7 +401,7 @@ export default function BookingForm({ embedMenu }) {
             {t.bookNow}
           </button>
           <Link href="https://www.costadelsolperu.com/landing-grupos/" target="_blank" className="LinkGrupos">
-  <PiUsersThreeFill className="text-[15px]"/> Grupos +10 personas
+  <PiUsersThreeFill className="text-[15px]"/> {t.textGroups}
 </Link>
         </div>
         </form>

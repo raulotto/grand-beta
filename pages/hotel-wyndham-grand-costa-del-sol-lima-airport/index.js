@@ -22,7 +22,7 @@ import introMultiData from "@/data/introData.json";
 import ServiciosHotel from "@/components/ServiciosHotel";
 import seo from "@/data/seo.json";
 import SeoHead from "@/components/SeoHead";
-import termsData from '@/data/termsData.json';
+import termsData from '@/data/termsGrand.json';
 import TermsToggle from '@/components/TermsToggle';
 import TripReviews from "@/components/TripReviews";
 import TabsContent from "@/components/TabsContent";
@@ -80,7 +80,7 @@ export default function Home({ hotel }) {
     <main className="mx-auto">
       <HeaderTrad />
       <HeroSlider page="home" />
-      <BookingForm embedMenu={embedMenu} />
+      <BookingForm embedMenu={embedMenu} initialHotel={{ code: "wga" }}/>
    
       <MenuInterno
   embedMenu={false}
@@ -105,7 +105,13 @@ export default function Home({ hotel }) {
       <RestBar />
       <PhotoGalleryModal galleryData={galleryData} />
       <Meeting />
-      <TermsToggle data={termsData} />
+      <section id="faqs" className="SectionDiv">
+      <div className="FaqsSec ContainerFlex flex-col p-0">
+      <h2 className="ManropeFont TitleSectionMd font-bold">Preguntas frecuentes sobre reservas</h2>
+    <TermsToggle data={termsData} />
+
+    </div>
+    </section>
 <TripReviews />   
       <Footer />
 

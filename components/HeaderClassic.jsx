@@ -9,6 +9,8 @@ import Image from "next/image";
 import { FaPhoneSquareAlt, FaCalendarAlt } from "react-icons/fa";
 import LogoHeaderCds from '@/components/LogoHeaderCds'
 import LanguageSelector from "@/components/LanguageSelector";
+import SocialIcons from "./SocialIcons";
+
 
 const HeaderTrad = ({ modoClaro = false }) => {
   const booking = useBooking();
@@ -53,7 +55,7 @@ const HeaderTrad = ({ modoClaro = false }) => {
     >
       {/* Dropdown megamenú */}
       <div className="dropdown_menu">
-        <div className="ContainerFlexOSize pt-4 items-start">
+      <div className="ContainerFlex px-6 lg:px-0 items-start">
         <LogoHeaderCds isActive={false} />
         </div>
         <div className="InnerDropdownMenu ContainerFlex MegaMenu">
@@ -73,6 +75,8 @@ const HeaderTrad = ({ modoClaro = false }) => {
 ))}
 
         </div>
+        <SocialIcons /> 
+
       </div>
 
       {/* Top header con logo, menú hamburguesa y opciones */}

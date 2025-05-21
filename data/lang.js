@@ -17,7 +17,8 @@ const lang = {
       confirm: "Confirmar",
       loading: "Cargando...",
       selectRoom: "Seleccionar habitación",
-      restaurantsTitle: "Restaurantes & Bares"
+      restaurantsTitle: "Restaurantes & Bares",
+      textGroups: "Grupos +10 personas"
       
     },
     en: {
@@ -38,7 +39,8 @@ const lang = {
       confirm: "Confirm",
       loading: "Loading...",
       selectRoom: "Select Room",
-      restaurantsTitle: "Restaurants & Bars"
+      restaurantsTitle: "Restaurants & Bars",
+      textGroups: "+10 People groups"
     }
   };
   

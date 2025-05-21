@@ -24,34 +24,10 @@ import rewardsCardsPuntosInfo from "@/data/rewardsCardsPuntosInfo.json";
 import seo from "@/data/seo.json";
 import SeoHead from "@/components/SeoHead"
 import useIdioma from "@/hooks/useIdioma"
+import RewardsTable from '@/components/RewardsTable'
 
-
+import rewardsNivelesData from '@/data/rewardsNiveles.json'
 export default function Home() {
-  const [embedMenu, setEmbedMenu] = useState(false);
-
-
-
-  // Efecto para manejar el scroll y mostrar/ocultar el menú
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const triggerPoint = window.innerHeight * 0.51;
-      const margin = 20; // margen de seguridad para evitar parpadeo
-
-      if (window.innerWidth >= 1024) {
-        if (!embedMenu && scrollY > triggerPoint + margin) {
-          setEmbedMenu(true);
-        } else if (embedMenu && scrollY < triggerPoint - margin) {
-          setEmbedMenu(false);
-        }
-      } else {
-        setEmbedMenu(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [embedMenu]);
 
 
   const idioma = useIdioma("levels", {
@@ -59,11 +35,12 @@ export default function Home() {
     offers: rewardsCardsOffers,
     info: rewardsCardsInfo,
     noches: rewardsCardsPuntosInfo,
+    rewardsNiveles: rewardsNivelesData,
   })
   
   if (!idioma) return null
   
-  const { info, cards, offers, seoData, noches } = idioma
+  const { info, cards, offers, seoData, noches, rewardsNiveles } = idioma
   return (
     <>
     <SeoHead
@@ -76,65 +53,21 @@ export default function Home() {
     <main className="mx-auto ManropeFont">
       {/* Encabezado */}
       <HeaderClassic modoClaro />
+      <HeroSlider page="levels" />
+
       <BookingForm />
-      <HeroSlider page="puntos" />
 
       {/* Sección: Tarjetas de Rewards */}
       <section className=" SectionDiv pb-0">
       <GridCardsSection cards={noches} variant="clean"/>
 
       </section>
-
-      {/* Sección: ¿Por qué unirte? */}
-      <section className="pt-0 SectionDiv">
-  <div className="ContainerFlex flex-col">
-    <div className="w-full flex justify-start items-center">
-      <h4 className="TitleSection ManropeFont">Why join?</h4>
-    </div>
-    <div className="w-full">
-      <p>
-        <ol>
-          <li>
-            <strong>Sign in to your account</strong><br />
-            Go to <a href="https://www.wyndhamrewards.com" target="_blank" rel="noopener noreferrer">wyndhamrewards.com</a> and sign in with your username and password.
-          </li>
-          <li>
-            <strong>Search for a hotel</strong><br />
-            Use the search tool to choose your destination, dates, and number of guests. You can filter results to view only points-eligible options.
-          </li>
-          <li>
-            <strong>Select the redemption option</strong><br />
-            When you choose your hotel, you’ll see different ways to use your points:
-            <ul>
-              <li>
-                <strong>Go Free night:</strong><br />
-                Redeem a full night starting from <strong>7,500 up to 30,000 points</strong> (depends on the hotel).
-              </li>
-              <li>
-                <strong>Go Fast night:</strong><br />
-                Combine <strong>fewer points + a cash payment</strong> to get a discounted rate.
-              </li>
-            </ul>
-          </li>
-          <li>
-            <strong>Confirm your booking</strong><br />
-            Once you choose the redemption type, follow the steps to complete the booking.<br />
-            You’ll receive confirmation by email.
-          </li>
-        </ol>
-      </p>
-    </div>
-  </div>
-</section>
-
-
-      
-    <section className="SectionDiv">
-      <div className="ContainerFlex flex flex-col items-stretch">
-      <h2 className="ManropeFont TitleSectionMd font-bold">Preguntas frecuentes sobre reservas</h2>
-    <TermsToggle />
-    </div>
+      <section className="SectionDiv pt-1">
+        <div className="ContainerFlex flex-col">
+      <RewardsTable data={rewardsNiveles} />
+      </div>
     </section>
+
       {/* Pie de página */}
       <FooterCds />
 

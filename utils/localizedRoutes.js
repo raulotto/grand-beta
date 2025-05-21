@@ -34,13 +34,13 @@ const localizedRoutes = {
     en: '/en/rewards',
   },
 
-  '/rewards/puntos': {
-    en: '/en/rewards/points',
-    es: '/rewards/puntos',
+  '/rewards/canjear-puntos': {
+    en: '/en/rewards/redeem-points',
+    es: '/rewards/canjear-puntos',
   },
-  '/en/rewards/points': {
-    es: '/rewards/puntos',
-    en: '/en/rewards/points',
+  '/en/rewards/redeem-points': {
+    es: '/rewards/canjear-puntos',
+    en: '/en/rewards/redeem-points',
   },
 
   '/rewards/niveles': {

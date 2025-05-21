@@ -3,100 +3,192 @@
     "hoteles": {
       "title": "Nuestros Hoteles",
       "links": [
-        { "label": "Tumbes", "href": "#" },
-        { "label": "Piura", "href": "#" },
-        { "label": "Chiclayo", "href": "#" },
-        { "label": "Trujillo Golf", "href": "#" },
-        { "label": "Trujillo Centro", "href": "#" },
-        { "label": "Cajamarca", "href": "#" },
-        { "label": "Lima Ciudad", "href": "#" },
-        { "label": "Lima Aeropuerto", "href": "#" },
-        { "label": "Wyndham Grand", "href": "#" },
-        { "label": "Arequipa", "href": "#" },
-        { "label": "Cusco", "href": "#" },
-        { "label": "Pucallpa", "href": "#" }
+        { "label": "Tumbes", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-tumbes/","target": "_blank" },
+        { "label": "Piura", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-piura/","target": "_blank" },
+        { "label": "Chiclayo", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-chiclayo/","target": "_blank" },
+        { "label": "Trujillo Golf", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-trujillo-golf/","target": "_blank" },
+        { "label": "Trujillo Centro", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-trujillo-centro/","target": "_blank" },
+        { "label": "Cajamarca", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-cajamarca/","target": "_blank" },
+        { "label": "Lima Ciudad", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-lima-ciudad/","target": "_blank" },
+        { "label": "Lima Aeropuerto", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-lima-aeropuerto/","target": "_blank" },
+        { "label": "Wyndham Grand", "href": "https://www.costadelsolperu.com/hoteles/hotel-wyndham-grand-costa-del-sol-lima-airport/","target": "_blank" },
+        { "label": "Arequipa", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-arequipa/","target": "_blank" },
+        { "label": "Cusco", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-cusco/","target": "_blank" },
+        { "label": "Pucallpa", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-pucallpa/","target": "_blank" }
       ]
     },
     "about": {
       "title": "Sobre Nosotros",
       "links": [
-        { "label": "Lee nuestro Blog", "href": "#" },
-        { "label": "Somos Dog Friendly", "href": "#" },
-        { "label": "Reservas Grupos", "href": "#" },
-        { "label": "Alcance y Políticas del Sistema Integrado de Gestión", "href": "#" }
-      ]
-    },
-    "revolt": {
-      "title": "Sobre Nosotros",
-      "links": [
-        { "label": "Lee nuestro Blog", "href": "#" },
-        { "label": "Somos Dog Friendly", "href": "#" },
-        { "label": "Reservas Grupos", "href": "#" },
+        { "label": "Lee nuestro Blog", "href": "https://www.costadelsolperu.com/blog/" },
+        { "label": "Somos Dog Friendly", "href": "https://www.costadelsolperu.com/terminos-y-condiciones-dog-friendly/" },
+        { "label": "Reservas Grupos", "href": "https://www.costadelsolperu.com/reservas-grupos/" },
         { "label": "Alcance y Políticas del Sistema Integrado de Gestión", "href": "#" }
       ]
     },
     "customer": {
       "title": "Atención al cliente",
-      "links": ["Preguntas frecuentes", "Facturación electrónica", "Modificar reserva"]
+      "links": [
+        { "label": "Preguntas Frecuentes", "href": "https://www.costadelsolperu.com/preguntas-frecuentes/" },
+        { "label": "Facturación Electrónica", "href": "http://fe.costadelsolperu.com/" },
+        { "label": "Facturación Electrónica Hoteles", "href": "https://factura.thefactoryhka.com.pe/consultadocumentos" },
+        { "label": "Facturación Electrónica Pucallpa", "href": "https://portal.shiol.net/Consultar/20601787394" },
+        { "label": "Modificar Reserva", "href": "#" },
+        { "label": "Términos y condiciones de reservas", "href": "https://www.costadelsolperu.com/terminos-condiciones-reservas/" },
+        { "label": "Política de uso de datos personales", "href": "https://www.costadelsolperu.com/politica-de-uso-de-datos-personales/" },
+        { "label": "Política de uso aceptable", "href": "https://www.costadelsolperu.com/politica-de-uso-aceptable/" }
+      ]
     },
+    "revolt": {
+  "title": "Contáctanos",
+  "contact": {
+    "title": "Contáctanos",
+    "items": [
+      {
+        "icon": "fa-location-dot",
+        "text": "Av. Salaverry 3060, Magdalena del Mar – Lima, Perú"
+      },
+      {
+        "icon": "fa-phone",
+        "text": "<strong>Reservas:</strong> (+51) 01 200 9200",
+        "href": "tel:+5112009200"
+      },
+      {
+        "icon": "fa-envelope",
+        "text": "reservas@costadelsolperu.com",
+        "href": "mailto:reservas@costadelsolperu.com"
+      },
+      {
+        "icon": "fa-envelope",
+        "text": "fits@costadelsolperu.com",
+        "href": "mailto:fits@costadelsolperu.com"
+      },
+      {
+        "icon": "fa-envelope",
+        "text": "eventos@costadelsolperu.com",
+        "href": "mailto:eventos@costadelsolperu.com"
+      },
+      {
+        "icon": "fa-envelope",
+        "text": "corporativo@costadelsolperu.com",
+        "href": "mailto:corporativo@costadelsolperu.com"
+      }
+    ]
+  }
+}
+,
     "social": "Redes Sociales",
     "legal": [
-      "Términos y condiciones",
-      "Política web de privacidad",
-      "Política de uso de datos personales",
-      "Política de uso aceptable",
-      "Dog Friendly"
-    ],
+      {
+        "label": "Términos y condiciones",
+        "href": "https://www.costadelsolperu.com/terminos-condiciones-reservas/"
+      },
+      {
+        "label": "Política Web de Privacidad",
+        "href": "https://www.costadelsolperu.com/politica-de-uso-de-datos-personales/"
+      },
+      {
+        "label": "Términos y condiciones Dog Friendly",
+        "href": "https://www.costadelsolperu.com/terminos-y-condiciones-dog-friendly/"
+      }
+    ]
+    ,
     "copyright": "Wyndham Grand New Lima Airport © Copyright 2025"
   },
   "en": {
     "hoteles": {
-      "title": "Our Hotels",
+      "title": "Nuestros Hoteles",
       "links": [
-        { "label": "Tumbes", "href": "#" },
-        { "label": "Piura", "href": "#" },
-        { "label": "Chiclayo", "href": "#" },
-        { "label": "Trujillo Golf", "href": "#" },
-        { "label": "Trujillo Center", "href": "#" },
-        { "label": "Cajamarca", "href": "#" },
-        { "label": "Lima City", "href": "#" },
-        { "label": "Lima Airport", "href": "#" },
-        { "label": "Wyndham Grand", "href": "#" },
-        { "label": "Arequipa", "href": "#" },
-        { "label": "Cusco", "href": "#" },
-        { "label": "Pucallpa", "href": "#" }
+        { "label": "Tumbes", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-tumbes/","target": "_blank" },
+        { "label": "Piura", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-piura/","target": "_blank" },
+        { "label": "Chiclayo", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-chiclayo/","target": "_blank" },
+        { "label": "Trujillo Golf", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-trujillo-golf/","target": "_blank" },
+        { "label": "Trujillo Centro", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-trujillo-centro/","target": "_blank" },
+        { "label": "Cajamarca", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-cajamarca/","target": "_blank" },
+        { "label": "Lima Ciudad", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-lima-ciudad/","target": "_blank" },
+        { "label": "Lima Aeropuerto", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-lima-aeropuerto/","target": "_blank" },
+        { "label": "Wyndham Grand", "href": "https://www.costadelsolperu.com/hoteles/hotel-wyndham-grand-costa-del-sol-lima-airport/","target": "_blank" },
+        { "label": "Arequipa", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-arequipa/","target": "_blank" },
+        { "label": "Cusco", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-cusco/","target": "_blank" },
+        { "label": "Pucallpa", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-pucallpa/","target": "_blank" }
       ]
     },
     "about": {
-      "title": "About Us",
-      "links": [
-        { "label": "Read our Blog", "href": "#" },
-        { "label": "We are Dog Friendly", "href": "#" },
-        { "label": "Group Reservations", "href": "#" },
-        { "label": "Scope and Policies of the Integrated Management System", "href": "#" }
-      ]
-    },
-    "revolt": {
       "title": "Sobre Nosotros",
       "links": [
-        { "label": "Lee nuestro Blog", "href": "#" },
-        { "label": "Somos Dog Friendly", "href": "#" },
-        { "label": "Reservas Grupos", "href": "#" },
+        { "label": "Lee nuestro Blog", "href": "https://www.costadelsolperu.com/blog/" },
+        { "label": "Somos Dog Friendly", "href": "https://www.costadelsolperu.com/terminos-y-condiciones-dog-friendly/" },
+        { "label": "Reservas Grupos", "href": "https://www.costadelsolperu.com/reservas-grupos/" },
         { "label": "Alcance y Políticas del Sistema Integrado de Gestión", "href": "#" }
       ]
     },
     "customer": {
-      "title": "Customer Support",
-      "links": ["FAQ", "Electronic Invoicing", "Modify Reservation"]
+      "title": "Atención al cliente",
+      "links": [
+        { "label": "Preguntas Frecuentes", "href": "https://www.costadelsolperu.com/preguntas-frecuentes/" },
+        { "label": "Facturación Electrónica", "href": "http://fe.costadelsolperu.com/" },
+        { "label": "Facturación Electrónica Hoteles", "href": "https://factura.thefactoryhka.com.pe/consultadocumentos" },
+        { "label": "Facturación Electrónica Pucallpa", "href": "https://portal.shiol.net/Consultar/20601787394" },
+        { "label": "Modificar Reserva", "href": "#" },
+        { "label": "Términos y condiciones de reservas", "href": "https://www.costadelsolperu.com/terminos-condiciones-reservas/" },
+        { "label": "Política de uso de datos personales", "href": "https://www.costadelsolperu.com/politica-de-uso-de-datos-personales/" },
+        { "label": "Política de uso aceptable", "href": "https://www.costadelsolperu.com/politica-de-uso-aceptable/" }
+      ]
     },
-    "social": "Social Media",
+    "revolt": {
+  "title": "Contáctanos",
+  "contact": {
+    "title": "Contáctanos",
+    "items": [
+      {
+        "icon": "fa-location-dot",
+        "text": "Av. Salaverry 3060, Magdalena del Mar – Lima, Perú"
+      },
+      {
+        "icon": "fa-phone",
+        "text": "<strong>Reservas:</strong> (+51) 01 200 9200",
+        "href": "tel:+5112009200"
+      },
+      {
+        "icon": "fa-envelope",
+        "text": "reservas@costadelsolperu.com",
+        "href": "mailto:reservas@costadelsolperu.com"
+      },
+      {
+        "icon": "fa-envelope",
+        "text": "fits@costadelsolperu.com",
+        "href": "mailto:fits@costadelsolperu.com"
+      },
+      {
+        "icon": "fa-envelope",
+        "text": "eventos@costadelsolperu.com",
+        "href": "mailto:eventos@costadelsolperu.com"
+      },
+      {
+        "icon": "fa-envelope",
+        "text": "corporativo@costadelsolperu.com",
+        "href": "mailto:corporativo@costadelsolperu.com"
+      }
+    ]
+  }
+}
+,
+    "social": "Redes Sociales",
     "legal": [
-      "Terms & Conditions",
-      "Privacy Policy",
-      "Personal Data Use Policy",
-      "Acceptable Use Policy",
-      "Dog Friendly"
-    ],
+      {
+        "label": "Términos y condiciones",
+        "href": "https://www.costadelsolperu.com/terminos-condiciones-reservas/"
+      },
+      {
+        "label": "Política Web de Privacidad",
+        "href": "https://www.costadelsolperu.com/politica-de-uso-de-datos-personales/"
+      },
+      {
+        "label": "Términos y condiciones Dog Friendly",
+        "href": "https://www.costadelsolperu.com/terminos-y-condiciones-dog-friendly/"
+      }
+    ]
+    ,
     "copyright": "Wyndham Grand New Lima Airport © Copyright 2025"
   }
 }
