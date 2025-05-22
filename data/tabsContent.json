@@ -12,28 +12,28 @@
         "text": "Nos encontramos justo frente al aeropuerto para brindarte máxima comodidad en tus viajes.",
         "buttonText": "Explorar ubicación",
         "link": "#",
-        "image": "/images/ubicacion.jpg"
+        "image": "/images/cds/cds-desayuno-buffet.jpg"
       },
       {
         "title": "Habitaciones inteligentes",
         "text": "Disfruta de habitaciones modernas con control de temperatura, iluminación y entretenimiento digital.",
         "buttonText": "Ver habitaciones",
         "link": "#",
-        "image": "/images/habitacion.jpg"
+        "image": "/images/cds/cds-desayuno-buffet.jpg"
       },
       {
         "title": "Somos dogfriendly",
         "text": "Viaja con tu mejor amigo. Contamos con habitaciones y servicios pensados para mascotas.",
         "buttonText": "Conoce nuestras políticas",
         "link": "#",
-        "image": "/images/dogfriendly.jpg"
+        "image": "/images/cds/cds-desayuno-buffet.jpg"
       },
       {
         "title": "Eventos",
         "text": "Salones equipados para reuniones, conferencias y celebraciones especiales.",
         "buttonText": "Ver salones",
         "link": "#",
-        "image": "/images/eventos.jpg"
+        "image": "/images/cds/cds-desayuno-buffet.jpg"
       }
     ],
     "en": [
@@ -42,35 +42,35 @@
         "text": "Begin your day full of energy. Our buffet breakfast is available from 4:00 am for all guests.",
         "buttonText": "See more",
         "link": "#",
-        "image": "/images/desayuno.jpg"
+        "image": "/images/cds/cds-desayuno-buffet.jpg"
       },
       {
         "title": "Unbeatable location",
         "text": "We're located right in front of the airport to give you maximum travel convenience.",
         "buttonText": "Explore location",
         "link": "#",
-        "image": "/images/ubicacion.jpg"
+        "image": "/images/cds/cds-desayuno-buffet.jpg"
       },
       {
         "title": "Smart rooms",
         "text": "Enjoy modern rooms with smart control of temperature, lighting, and digital entertainment.",
         "buttonText": "See rooms",
         "link": "#",
-        "image": "/images/habitacion.jpg"
+        "image": "/images/cds/cds-desayuno-buffet.jpg"
       },
       {
         "title": "We are dogfriendly",
         "text": "Travel with your best friend. We offer pet-friendly rooms and services tailored for them.",
         "buttonText": "Check policies",
         "link": "#",
-        "image": "/images/dogfriendly.jpg"
+        "image": "/images/cds/cds-desayuno-buffet.jpg"
       },
       {
         "title": "Events",
         "text": "Fully equipped venues for meetings, conferences, and special celebrations.",
         "buttonText": "See venues",
         "link": "#",
-        "image": "/images/eventos.jpg"
+        "image": "/images/cds/cds-desayuno-buffet.jpg"
       }
     ]
   }

@@ -19,7 +19,7 @@ import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
   const Intro = ({ data }) => {
     return (
       <>
-        <section className="SectionDiv pb-0">
+        <section className="SectionDiv pb-0 scroll-mt-24 lg:scroll-mt-32" id="next-section">
           <div className="ContainerFlex items-start">
             <div className="flex-1 lg:max-w-lg">
               <div className="flex gap-2 mb-4">
