@@ -121,13 +121,7 @@ li {
   
   line-height: 1.5;
 }
-input, select, button {
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  line-height: 1.25;
-  vertical-align: middle;
-}
+
 
 .rewards-parent .SectionDiv .FaqsSec ul, .grand-parent .SectionDiv .FaqsSec ul {
   list-style-type: none;
