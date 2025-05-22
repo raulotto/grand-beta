@@ -98,21 +98,22 @@ export default function Home({ hotel }) {
         <TabsContent data={tabsContent} />
         </div>
       </section>
+      <PhotoGalleryModal galleryData={galleryData} />
       <Beneficios id="beneficios" />
       <Habitaciones />
       <BeneficiosDirectos />
       <Parallax />
       <RestBar />
-      <PhotoGalleryModal galleryData={galleryData} />
       <Meeting />
+      <TripReviews />  
       <section id="faqs" className="SectionDiv">
       <div className="FaqsSec ContainerFlex flex-col p-0">
-      <h2 className="ManropeFont TitleSectionMd font-bold">Preguntas frecuentes sobre reservas</h2>
+      <h2 className="ManropeFont TitleSectionMd font-bold">Preguntas frecuentes</h2>
     <TermsToggle data={termsData} />
 
     </div>
     </section>
-<TripReviews />   
+ 
       <Footer />
 
       <Script

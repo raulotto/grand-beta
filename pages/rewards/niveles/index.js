@@ -57,11 +57,14 @@ export default function Home() {
 
       <BookingForm />
 
-      {/* Sección: Tarjetas de Rewards */}
-      <section className=" SectionDiv pb-0">
-      <GridCardsSection cards={noches} variant="clean"/>
-
-      </section>
+      <section className=" SectionDiv">
+      <div className="ContainerFlex flex-col text-center gap-3">
+      <h4 className="TitleSection CenterCenter">Quédate más noches. Desbloquea nuevos niveles y ventajas.</h4>
+      <p>
+      Cuanto más noches calificadas te alojes, más cerca estarás de alcanzar nuevos niveles de miembro y de disfrutar de todos los emocionantes beneficios que vienen con ser AZUL, ORO, PLATINO y DIAMANTE.
+      </p>
+        </div>
+        </section>
       <section className="SectionDiv pt-1">
         <div className="ContainerFlex flex-col">
       <RewardsTable data={rewardsNiveles} />

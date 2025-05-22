@@ -12,14 +12,14 @@
       "description": "Consigue noches gratuitas, el precio más bajo al reservar con nosotros, WiFi gratis y la oportunidad de obtener beneficios aún más emocionantes.",
       "image": "/images/wg-terraza_foodcourt.jpg",
       "buttonText": "Conoce más",
-      "link": "/rewards/puntos"
+      "link": "/rewards/canjear-puntos"
     },
     {
       "title": "Mayor nivel, más beneficios",
       "description": "Mientras más noches te hospedes, más cerca estarás de alcanzar nuevos niveles de miembro: Blue, Gold, Platinum y Diamond.",
       "image": "/images/cds-luxury-food.jpg",
       "buttonText": "Conoce más",
-      "link": "/rewards/miembros"
+      "link": "/rewards/niveles"
     }
   ],
   "en": [
@@ -35,14 +35,14 @@
       "description": "Enjoy free nights, the lowest price when booking with us, free WiFi, and the chance to earn even more exciting perks.",
       "image": "/images/wg-terraza_foodcourt.jpg",
       "buttonText": "Learn more",
-      "link": "/rewards/puntos"
+      "link": "/en/rewards/redeem-points"
     },
     {
       "title": "Higher level, more benefits",
       "description": "The more nights you stay, the closer you get to reaching new membership tiers: Blue, Gold, Platinum, and Diamond.",
       "image": "/images/cds-luxury-food.jpg",
       "buttonText": "Learn more",
-      "link": "/rewards/miembros"
+      "link": "/en/rewards/levels"
     }
   ]
 }

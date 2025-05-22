@@ -495,7 +495,10 @@ a:hover {
     @apply text-sm text-light-oceanic font-semibold;
   }
   .SectionDiv {
-    @apply bg-white p-10  items-center justify-center flex flex-col;
+    @apply bg-white pt-2 pb-10 px-10 lg:p-10  items-center justify-center flex flex-col;
+  }
+  .SectionDiv.bg-primary-blue {
+    @apply pt-10;
   }
   .SectionDivInnerMenu {
     @apply bg-white lg:pt-15  items-center justify-center flex flex-col;
@@ -651,7 +654,7 @@ a:hover {
   @apply w-[80%] lg:w-[30%];
 }
 .TitleBig{
-  @apply text-5xl font-extrabold text-center;
+  @apply text-2xl lg:text-5xl font-medium lg:font-extrabold text-center;
 }
 .CenterCenter{
   @apply w-full flex justify-center items-center ;

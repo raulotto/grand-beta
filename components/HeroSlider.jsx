@@ -8,30 +8,43 @@ import "swiper/css/navigation";
 import "swiper/css/effect-fade";
 import Image from "next/image";
 import sliderData from "@/data/heroSlider.json";
+import { LuMouse } from "react-icons/lu";
+import Link from 'next/link'
 
 export default function HeroSlider({ page = "home" }) {
   const { pathname } = useRouter();
   const lang = pathname.startsWith("/en") ? "en" : "es";
-
   const slideSet = sliderData[lang].find((entry) => entry.page === page);
   const slides = slideSet?.slides || [];
-
   const sliderId = slideSet?.id || "";
+
+  const handleScroll = () => {
+  if (typeof window !== "undefined") {
+    const target = document.getElementById("next-section");
+    if (target) {
+      requestAnimationFrame(() => {
+        const yOffset = -270;
+        const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+      });
+    }
+  }
+};
 
 
   return (
     <div className="w-full h-[80vh] relative" id={sliderId}>
-  <Swiper
-    modules={[Autoplay, Pagination, EffectFade, Navigation]}
-    pagination={{ clickable: true }}
-    navigation
-    loop={true}
-    effect="fade"
-    fadeEffect={{ crossFade: true }}
-    className="h-full"
-  >
+      <Swiper
+        modules={[Autoplay, Pagination, EffectFade, Navigation]}
+        navigation
+        loop={true}
+        effect="fade"
+        fadeEffect={{ crossFade: true }}
+        pagination={false}
+        className="h-full"
+      >
         {slides.map((slide, i) => (
-          <SwiperSlide key={i} className={`swiper-slide-${i}`}> {/* <--- Slide con clase dinámica */}
+          <SwiperSlide key={i} className={`swiper-slide-${i}`}>
             <div className="relative w-full h-[80vh]">
               <Image
                 src={slide.src}
@@ -53,14 +66,10 @@ export default function HeroSlider({ page = "home" }) {
                     }`}
                   >
                     {slide.titulo && (
-                      <h3 className="text-2xl md:text-4xl text-white">
-                        {slide.titulo}
-                      </h3>
+                      <h3 className="text-2xl md:text-4xl text-white">{slide.titulo}</h3>
                     )}
                     {slide.subtitulo && (
-                      <p className="mt-2 text-lg md:text-xl text-white">
-                        {slide.subtitulo}
-                      </p>
+                      <p className="mt-2 text-lg md:text-xl text-white">{slide.subtitulo}</p>
                     )}
                     {slide.arte && (
                       <Image
@@ -86,6 +95,27 @@ export default function HeroSlider({ page = "home" }) {
           </SwiperSlide>
         ))}
       </Swiper>
+
+      {/* Botón de scroll con ícono */}
+      <Link
+  href="#next-section"
+  scroll={false}
+  onClick={(e) => {
+    e.preventDefault()
+    if (typeof window !== "undefined") {
+      const target = document.getElementById("next-section")
+      if (target) {
+        target.scrollIntoView({ behavior: "smooth", block: "start" })
+      }
+    }
+  }}
+  className="cursor-pointer absolute bottom-6 left-1/2 -translate-x-1/2 z-20 text-white hover:text-gray-300 transition-colors"
+  aria-label="Scroll down"
+>
+  <LuMouse size={32} className="animate-bounce" />
+</Link>
+
+
     </div>
   );
 }

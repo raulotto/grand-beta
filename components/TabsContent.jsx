@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { FiChevronDown, FiChevronUp, FiChevronRight  } from 'react-icons/fi'
+import { motion, AnimatePresence } from 'framer-motion'
 
 export default function TabsContent({ data = [] }) {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -25,7 +26,7 @@ export default function TabsContent({ data = [] }) {
       {/* Desktop Tabs */}
       {!isMobile && (
         <>
-          <div className="flex flex-wrap gap-4 border-b border-gray-200 mb-6">
+          <div className="flex flex-wrap justify-between gap-4 border-b border-gray-200 mb-6">
             {data.map((item, index) => (
               <button
                 key={index}
@@ -42,29 +43,41 @@ export default function TabsContent({ data = [] }) {
           </div>
 
           {/* Active content */}
-          <div className="flex flex-col lg:flex-row gap-10 items-center">
-            <div className="w-full lg:w-1/2">
-              <Image
-                src={data[activeIndex].image}
-                alt={data[activeIndex].title}
-                width={800}
-                height={500}
-                className="w-full h-auto object-cover rounded-md"
-              />
-            </div>
-            <div className="w-full lg:w-1/2">
-              <h2 className="TitleSectionMd mb-4">{data[activeIndex].title}</h2>
-              <p className="text-gray-700 mb-4">{data[activeIndex].text}</p>
-              {data[activeIndex].buttonText && data[activeIndex].link && (
-                <a
-                  href={data[activeIndex].link}
-                  className="inline-block text-primary-oceanic font-semibold hover:underline"
-                >
-                  {data[activeIndex].buttonText}
-                </a>
-              )}
-            </div>
-          </div>
+          <AnimatePresence mode="wait">
+  <motion.div
+    key={activeIndex}
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    exit={{ opacity: 0 }}
+    transition={{ duration: 0.4 }}
+    className="flex flex-col lg:flex-row gap-10 items-center"
+  >
+    <div className="w-full lg:w-1/2">
+      <Image
+        src={data[activeIndex].image}
+        alt={data[activeIndex].title}
+        width={800}
+        height={500}
+        className="w-full h-auto object-cover rounded-md"
+      />
+    </div>
+    <div className="w-full lg:w-1/2">
+      <h2 className="TitleSectionMd mb-4">{data[activeIndex].title}</h2>
+      <p className="text-gray-700 mb-4">{data[activeIndex].text}</p>
+      {data[activeIndex].buttonText && data[activeIndex].link && (
+        <a
+          href={data[activeIndex].link}
+          target={data[activeIndex].target || '_self'}
+          rel={data[activeIndex].target === '_blank' ? 'noopener noreferrer' : undefined}
+          className="inline-block text-primary-oceanic font-semibold hover:underline"
+        >
+          {data[activeIndex].buttonText}
+        </a>
+      )}
+    </div>
+  </motion.div>
+</AnimatePresence>
+
         </>
       )}
 
@@ -80,31 +93,48 @@ export default function TabsContent({ data = [] }) {
                   className="w-full text-left py-4 font-semibold text-[#0f4b4c] flex justify-between items-center"
                 >
                   <span className='text-primary-oceanic w-[80%]'>{item.title}</span>
-                  <span className="text-lg">
-  {isOpen ? <FiChevronUp size={20} /> : <FiChevronDown size={20} />}
-</span>
+                  <motion.span
+  className="text-lg"
+  animate={{ rotate: isOpen ? 180 : 0 }}
+  transition={{ duration: 0.3 }}
+>
+  <FiChevronDown size={20} />
+</motion.span>
+
 
                 </button>
-                {isOpen && (
-                  <div className="pb-6 mb-4">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      width={800}
-                      height={500}
-                      className="w-full h-auto object-cover rounded-md mb-4"
-                    />
-                    <p className="text-gray-700 mb-4">{item.text}</p>
-                    {item.buttonText && item.link && (
-                      <a
-                        href={item.link}
-                        className="flex items-center text-primary-oceanic font-semibold hover:underline"
-                      >
-                        {item.buttonText} <FiChevronRight size={20} />
-                      </a>
-                    )}
-                  </div>
-                )}
+                <AnimatePresence>
+  {isOpen && (
+    <motion.div
+      key={index}
+      initial={{ opacity: 0, height: 0 }}
+      animate={{ opacity: 1, height: 'auto' }}
+      exit={{ opacity: 0, height: 0 }}
+      transition={{ duration: 0.4 }}
+      className="overflow-hidden pb-6 mb-4"
+    >
+      <Image
+        src={item.image}
+        alt={item.title}
+        width={800}
+        height={500}
+        className="w-full h-auto object-cover rounded-md mb-4"
+      />
+      <p className="text-gray-700 mb-4">{item.text}</p>
+      {item.buttonText && item.link && (
+        <a
+          href={item.link}
+          target={item.target || '_self'}
+          rel={item.target === '_blank' ? 'noopener noreferrer' : undefined}
+          className="flex items-center text-primary-oceanic font-semibold hover:underline"
+        >
+          {item.buttonText} <FiChevronRight size={20} />
+        </a>
+      )}
+    </motion.div>
+  )}
+</AnimatePresence>
+
               </div>
             )
           })}

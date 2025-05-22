@@ -18,17 +18,21 @@
     }
   ],
   "en": [
-    {
-      "title": "Go Free",
-      "description": "Redeem free nights at thousands of Wyndham Rewards® hotels starting at just 7,500 points."
-    },
-    {
-      "title": "Go Fast",
-      "description": "Get a discounted night starting at just 1,500 points."
-    },
-    {
-      "title": "Go for them",
-      "description": "For every qualified stay, earn 10 points per dollar or 1,000 points—whichever is greater."
-    }
-  ]
+  {
+    "icon": "LuCalendarPlus",
+    "title": "Go Free",
+    "description": "Book free nights at thousands of Wyndham Rewards® hotels starting at just 7,500 points."
+  },
+  {
+    "icon": "LiaHotelSolid",
+    "title": "Go Fast",
+    "description": "Get a discounted night starting at just 1,500 points."
+  },
+  {
+    "icon": "FaRegSmileWink",
+    "title": "Go for Them",
+    "description": "For every qualified stay, earn 10 points per dollar or 1,000 points—whichever is more."
+  }
+]
+
 }
