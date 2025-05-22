@@ -229,9 +229,11 @@ const [activeSubgroupIndex, setActiveSubgroupIndex] = useState(null);
                 className="flex items-center gap-2"
               >
                 <FaPhoneSquareAlt />
-                <div className="hidden sm:inline h-[23px]">
+                <p className={`hidden sm:inline  ${
+              isActive ? "text-primary-oceanic" : "text-white"
+            }`}>
                   Reservas: +51(01) 2009200
-                </div>
+                </p>
               </Link>
             </li>
           </ul>
