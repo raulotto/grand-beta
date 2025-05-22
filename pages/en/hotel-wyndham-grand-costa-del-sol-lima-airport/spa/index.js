@@ -17,22 +17,16 @@ import galleryData from '@/data/photoGallerySpa.json';
 import spaCardsDos from '@/data/spaCardsDos.json';
 import SpaAcordeon from "@/components/SpaAcordeon"; 
 import Footer from '@/components/Footer';
-import TabsContent from "@/components/TabsContent";
-import tabsData from "@/data/tabsContentSpa.json";
-import TermsToggle from '@/components/TermsToggle';
-import termsData from '@/data/termsGrandSpa.json';
-
 
 export default function HabitacionesPage() {
- const idioma = useIdioma("spa", {
+ const idioma = useIdioma("rewards", {
     cards: spaCards,
-    tabs: tabsData,
 
   })
   
   if (!idioma) return null
   
-  const { tabs,  cards, seoData } = idioma
+  const { info, iconinfo,  cards, offers, seoData } = idioma
 
   return (
     <>
@@ -52,71 +46,59 @@ export default function HabitacionesPage() {
       </section>
 
       {/* Servicios: grid en desktop / carrusel móvil */}
-      <section className="SectionDiv py-0">
+      <section className="SectionDiv py-0">asdas
       <GridCardsSection cards={cards} />
       </section>
        {/* Spa Journeys */}
-      <section className="SectionDiv pt-0">
-        <div className='ContainerFlex'>
-  <div className="GridSide flex flex-col lg:flex-row-reverse bg-primary-dune/60  h-full w-full">
-    
-    {/* Contenido del spa */}
-    <div className="flex flex-col justify-between p-6 lg:w-1/2 h-full">
-      <div>
-        <h3 className="text-xl font-bold text-[#333] mb-4 uppercase">SPA JOURNEYS</h3>
-        <div className="text-parrafos">
-          <div className="space-y-8">
-            <div>
-              <h4 className="font-serif text-base uppercase">CASTLE ESCAPE</h4>
-              <p className="mt-2">Exfoliation + Bath Ritual + Signature Warm Candle Massage</p>
-              <p className="mt-1 text-sm font-semibold">2 Hour 20 min | Solo $300.00 | For Two $575.00</p>
+      <section className="py-0 SectionDiv BgImageLeft">
+             
+             <div className="ContainerFlex gap-0 ">
+               {/* Contenedor de imágenes */}
+               <div className="w-full lg:w-[50%]">
+         <div className="relative w-full h-[200px] md:h-[296px] overflow-hidden p-5">
+           <Image
+             src="https://calista.com.tr/media/532bmoz2/spa-nedir.jpg?rmode=max&width=500&height=265"
+             alt="Piscina"
+             fill
+             className="object-cover"
+           />
+         </div>
+       </div>
+       
+       
+               {/* Contenido del hotel */}
+               <div className="w-full lg:w-[50%] bg-[#F5EFE3] p-5">
+               <h6 className="suptitle">SPA JOURNEYS</h6>
+            <div className="w-16 h-[2px] bg-gray-400 my-4"></div>
+            <div className="space-y-8">
+              <div>
+                <h4 className="font-serif text-xl uppercase">CASTLE ESCAPE</h4>
+                <p className="mt-2 text-parrafos">Exfoliation + Bath Ritual + Signature Warm Candle Massage</p>
+                <p className="mt-1 text-sm font-semibold">2 Hour 20 min | Solo $300.00 | For Two $575.00</p>
+              </div>
+              <div>
+                <h4 className="font-serif text-xl uppercase">BAMBOO RENEWAL</h4>
+                <p className="mt-2 text-parrafos">Full Body Massage + Luxury Illuminating Facial</p>
+                <p className="mt-1 text-sm font-semibold">2 Hour 20 min | Solo $260.00 | For Two $500.00</p>
+              </div>
             </div>
-            <div>
-              <h4 className="font-serif text-base uppercase">BAMBOO RENEWAL</h4>
-              <p className="mt-2">Full Body Massage + Luxury Illuminating Facial</p>
-              <p className="mt-1 text-sm font-semibold">2 Hour 20 min | Solo $260.00 | For Two $500.00</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    {/* Imagen del spa */}
-    <div className="w-full lg:w-1/2">
-      <div className="relative w-full h-[200px] lg:h-full">
-        <Image
-          src="https://calista.com.tr/media/532bmoz2/spa-nedir.jpg?rmode=max&width=500&height=265"
-          alt="Spa Journey"
-          fill
-          className="object-cover"
-        />
-      </div>
-    </div>
-</div>
-  </div>
-</section>
-
+            
+               </div>
+             </div>
+           </section>
     
      {/* Galería SPA */}
 
 
            <PhotoGallery galleryData={galleryData} />
-     <section className="SectionDiv bg-primary-dune/60 TabSpa">
-             <div className="ContainerFlex flex-col">
+     
+    <section className="SectionDiv">
+      <div className="ContainerFlex flex-col w-full">
+      <h2 className="TitleSection">Nuestros Servicios</h2>
 
-             <TabsContent data={tabs} />
-
-             </div>
-           </section>
-           <section className="SectionDiv AcordeonSpa">
-             <div className="ContainerFlex flex-col">
-<h2 className="TitleSection">Nuestros Servicios</h2>
-                        <TermsToggle data={termsData} />
-
-
-             </div>
-           </section>
-   
+           <SpaAcordeon />
+           </div>
+    </section>
 
 <section className="pt-0 SectionDiv">
 <div className="ContainerFlex flex-col w-full">

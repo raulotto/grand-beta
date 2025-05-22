@@ -37,7 +37,6 @@ import termsData from '@/data/termsData.json';
 
 
 export default function Home() {
-  const [embedMenu, setEmbedMenu] = useState(false);
 
   const iconMap = {
     LuBadgeAlert,
@@ -48,27 +47,6 @@ export default function Home() {
     // otros que uses
   };
 
-  // Efecto para manejar el scroll y mostrar/ocultar el menú
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      const triggerPoint = window.innerHeight * 0.51;
-      const margin = 20; // margen de seguridad para evitar parpadeo
-
-      if (window.innerWidth >= 1024) {
-        if (!embedMenu && scrollY > triggerPoint + margin) {
-          setEmbedMenu(true);
-        } else if (embedMenu && scrollY < triggerPoint - margin) {
-          setEmbedMenu(false);
-        }
-      } else {
-        setEmbedMenu(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [embedMenu]);
 
 
   const idioma = useIdioma("rewards", {

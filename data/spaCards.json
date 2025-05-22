@@ -1,17 +1,36 @@
-[
-  {
-    "title": "Spa y salón de belleza",
-    "description": "Disfruta de un maravilloso masaje o un tratamiento facial rejuvenecedor en el spa. También hay tratamientos como servicios de cabello, manicura y pedicura en el salón de belleza.",
-    "image": "/images/couple-oceanic.jpg"
-  },
-  {
-    "title": "Gimnasio",
-    "description": "Mantén tu rutina de ejercicios en nuestro gimnasio de vanguardia o practica tus movimientos con raqueta en nuestra cancha de tenis.",
-    "image": "/images/cds-gym.jpg"
-  },
-  {
-    "title": "Piscina",
-    "description": "Ve a nadar en la piscina cristalina o sumérgete en el reconfortante hidromasaje y, luego, relájate con un cóctel en la mano en el solárium.",
-    "image": "/images/women-oceanic.jpg"
-  }
-]
+{
+  "es": [
+    {
+      "title": "Spa y salón de belleza",
+      "description": "Disfruta de un maravilloso masaje o un tratamiento facial rejuvenecedor en el spa. También hay tratamientos como servicios de cabello, manicura y pedicura en el salón de belleza.",
+      "image": "/images/couple-oceanic.jpg"
+    },
+    {
+      "title": "Gimnasio",
+      "description": "Mantén tu rutina de ejercicios en nuestro gimnasio de vanguardia o practica tus movimientos con raqueta en nuestra cancha de tenis.",
+      "image": "/images/cds-gym.jpg"
+    },
+    {
+      "title": "Piscina",
+      "description": "Ve a nadar en la piscina cristalina o sumérgete en el reconfortante hidromasaje y, luego, relájate con un cóctel en la mano en el solárium.",
+      "image": "/images/women-oceanic.jpg"
+    }
+  ],
+  "en": [
+    {
+      "title": "Spa and Beauty Salon",
+      "description": "Enjoy a wonderful massage or a rejuvenating facial treatment at the spa. Hair services, manicures, and pedicures are also available at the beauty salon.",
+      "image": "/images/couple-oceanic.jpg"
+    },
+    {
+      "title": "Gym",
+      "description": "Stay on track with your workout routine in our state-of-the-art gym or practice your swing on our tennis court.",
+      "image": "/images/cds-gym.jpg"
+    },
+    {
+      "title": "Pool",
+      "description": "Go for a swim in the crystal-clear pool or unwind in the soothing hot tub, then relax with a cocktail in hand on the sundeck.",
+      "image": "/images/women-oceanic.jpg"
+    }
+  ]
+}

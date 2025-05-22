@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { FiChevronDown, FiChevronUp, FiChevronRight  } from 'react-icons/fi'
 import { motion, AnimatePresence } from 'framer-motion'
+import Link from 'next/link'
 
 export default function TabsContent({ data = [] }) {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -31,10 +32,10 @@ export default function TabsContent({ data = [] }) {
               <button
                 key={index}
                 onClick={() => setActiveIndex(index)}
-                className={`pb-2 border-b-2 font-semibold text-sm transition-colors ${
+                className={`pb-2 border-b-2 font-semibold uppercase cursor-pointer text-[12px] transition-colors ${
                   activeIndex === index
-                    ? 'border-[#0f4b4c] text-primary-oceanic'
-                    : 'border-transparent text-gray-500 hover:text-black'
+                    ? 'border-primary-oceanic text-primary-oceanic'
+                    : 'border-transparent text-gray-400 hover:text-primary-oceanic'
                 }`}
               >
                 {item.title}
@@ -65,15 +66,16 @@ export default function TabsContent({ data = [] }) {
       <h2 className="TitleSectionMd mb-4">{data[activeIndex].title}</h2>
       <p className="text-gray-700 mb-4">{data[activeIndex].text}</p>
       {data[activeIndex].buttonText && data[activeIndex].link && (
-        <a
-          href={data[activeIndex].link}
-          target={data[activeIndex].target || '_self'}
-          rel={data[activeIndex].target === '_blank' ? 'noopener noreferrer' : undefined}
-          className="inline-block text-primary-oceanic font-semibold hover:underline"
-        >
-          {data[activeIndex].buttonText}
-        </a>
-      )}
+  <Link
+    href={data[activeIndex].link}
+    target={data[activeIndex].target || '_self'}
+    rel={data[activeIndex].target === '_blank' ? 'noopener noreferrer' : undefined}
+    className="inline-block text-primary-oceanic font-semibold hover:underline"
+  >
+    {data[activeIndex].buttonText}
+  </Link>
+)}
+
     </div>
   </motion.div>
 </AnimatePresence>

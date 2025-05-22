@@ -4,8 +4,10 @@
       "id": "hoteles",
       "title": "Hoteles",
       "titleHref": "/hoteles",
+      "target": "_blank",
+
       "items": [
-        { "label": "Costa Del Sol Wyndham Tumbes", "href": "#" },
+        { "label": "Costa Del Sol Wyndham Tumbes", "href": "#", "target": "_blank"},
         { "label": "Costa Del Sol Wyndham Piura", "href": "#" },
         { "label": "Costa Del Sol Wyndham Chiclayo", "href": "#" },
         { "label": "Costa Del Sol Wyndham Trujillo Golf", "href": "#" },
@@ -27,8 +29,9 @@
         {
           "title": "Bancos",
           "href": "/promociones/bancos",
+          "target": "_blank",
           "items": [
-            { "label": "Interbank Cuenta Sueldo 20%", "href": "#" },
+            { "label": "Interbank Cuenta Sueldo 20%", "href": "#", "target": "_blank" },
             { "label": "Interbank 20% Saria Sky Bar", "href": "#" },
             { "label": "Interbank 20% Paprika Restaurante", "href": "#" },
             { "label": "Scotiabank 25% Saria Sky Bar", "href": "#" },

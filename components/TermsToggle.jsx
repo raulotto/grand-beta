@@ -122,10 +122,10 @@ const TermsToggle = ({ data }) => {
                           collapsed: { height: 0, opacity: 0 },
                         }}
                         transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
-                        className="overflow-hidden mt-2 text-sm text-gray-700 bg-gray-50 rounded"
+                        className="overflow-hidden mt-2 text-sm text-gray-700 "
                       >
                         <div
-                          className="p-3 text-sm"
+                          className="py-3 text-sm"
                           dangerouslySetInnerHTML={{ __html: item.respuesta }}
                         ></div>
                       </motion.div>

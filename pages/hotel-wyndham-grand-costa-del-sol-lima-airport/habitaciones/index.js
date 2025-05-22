@@ -114,7 +114,9 @@ export default function HabitacionesPage() {
 </div>
         </section>
         <section className="SectionDiv">
-          <div className="ContainerFlex">
+          <div className="ContainerFlex flex-col">
+            <h4 className="TitleSection">Lo más destacable de la habitación</h4>
+
         <GridCardsSection cards={landingOffers} />
         </div>
         </section>

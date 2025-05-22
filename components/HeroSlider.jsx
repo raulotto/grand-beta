@@ -18,18 +18,6 @@ export default function HeroSlider({ page = "home" }) {
   const slides = slideSet?.slides || [];
   const sliderId = slideSet?.id || "";
 
-  const handleScroll = () => {
-  if (typeof window !== "undefined") {
-    const target = document.getElementById("next-section");
-    if (target) {
-      requestAnimationFrame(() => {
-        const yOffset = -270;
-        const y = target.getBoundingClientRect().top + window.pageYOffset + yOffset;
-        window.scrollTo({ top: y, behavior: "smooth" });
-      });
-    }
-  }
-};
 
 
   return (
@@ -109,7 +97,7 @@ export default function HeroSlider({ page = "home" }) {
       }
     }
   }}
-  className="cursor-pointer absolute bottom-6 left-1/2 -translate-x-1/2 z-20 text-white hover:text-gray-300 transition-colors"
+  className="cursor-pointer absolute bottom-6 left-1/2 -translate-x-1/2 z-1 text-white hover:text-gray-300 transition-colors"
   aria-label="Scroll down"
 >
   <LuMouse size={32} className="animate-bounce" />

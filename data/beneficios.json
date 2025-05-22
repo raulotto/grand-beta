@@ -41,11 +41,6 @@
       "descripcion": "Renueva tu energía en nuestro spa, piscina y sauna. Atención las 24 horas."
     },
     {
-      "icon": "FaMobileAlt",
-      "titulo": "Self check-in",
-      "descripcion": "Registro rápido sin colas, sin esperas."
-    },
-    {
       "icon": "FaCheckCircle",
       "titulo": "Habitación inteligente",
       "descripcion": "Automatiza iluminación, climatización y otros servicios."
@@ -101,11 +96,6 @@
       "titulo": "Wellness",
       "descripcion": "Recharge your energy at our spa, pool, and sauna.",
       "horario": "Open 24 hours"
-    },
-    {
-      "icon": "FaMobileAlt",
-      "titulo": "Self Check-in",
-      "descripcion": "Quick registration with no lines or waiting."
     },
     {
       "icon": "FaCheckCircle",

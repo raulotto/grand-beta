@@ -98,6 +98,7 @@ body, h1, h2, h3, h4, h5, h6, p, ul, ol {
 html {
   scroll-behavior: smooth;
 }
+
 body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -185,6 +186,10 @@ input{
 }
 .grand-parent p{
   font-size: 12px;
+}
+
+.grand-parent .InnerDropdownMenu a{
+  font-family: 'HCo Gotham SSm', sans-serif;
 }
 p{
   font-family: 'HCo Gotham SSm', sans-serif;
@@ -401,7 +406,9 @@ a:hover {
   border-color: var(--color-primary-blue) ;
   color: #ffffff ;
 }
-
+.AcordeonSpa .AcordionTitle button span{
+  font-family: 'Prata', sans-serif;
+}
 
 @layer base {
   h1 {
@@ -659,7 +666,12 @@ a:hover {
 .CenterCenter{
   @apply w-full flex justify-center items-center ;
 }
-
+.TabSpa > .ContainerFlex > div > div:first-child{
+  @apply bg-primary-dune/0 lg:bg-white justify-around! lg:px-5 lg:pt-2  ;
+}
+.AcordeonSpa .AcordionTitle  {
+  @apply  pt-6 pb-8 text-2xl! text-primary-oceanic;
+}
 
 }
 

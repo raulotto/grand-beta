@@ -22,8 +22,8 @@ const MegaGroup = ({ id, title, titleHref, items = [], subgroups = [], isOpen, o
   return (
     <div className="MegaGroup">
       {/* Título principal siempre visible */}
-      <div className="MegaGroupHeader flex justify-between items-center">
-        <Link href={titleHref} className="MegaGroupTitle uppercase HCoGothamSSm">
+      <div className="MegaGroupHeader flex justify-between items-center pt-2">
+        <Link href={titleHref} className="MegaGroupTitle font-semibold HCoGothamSSm">
           {title}
         </Link>
 
@@ -76,11 +76,11 @@ const MegaGroup = ({ id, title, titleHref, items = [], subgroups = [], isOpen, o
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="pl-4 mt-1 space-y-1"
+                        className="pl-4 py-3! mt-1 space-y-1"
                       >
                         {subgroup.items.map((item, i) => (
                           <li key={i}>
-                            <Link href={item.href}>{item.label}</Link>
+                            <Link className="font-semibold text-[14px]" href={item.href}>{item.label}</Link>
                           </li>
                         ))}
                       </motion.ul>
@@ -92,7 +92,7 @@ const MegaGroup = ({ id, title, titleHref, items = [], subgroups = [], isOpen, o
               <ul className="pl-4 space-y-1">
                 {items.map((item, index) => (
                   <li key={index}>
-                    <Link href={item.href}>{item.label}</Link>
+                    <Link className="font-semibold text-[14px]" href={item.href}>{item.label}</Link>
                   </li>
                 ))}
               </ul>
