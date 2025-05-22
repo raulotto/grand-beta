@@ -226,7 +226,7 @@ const [activeSubgroupIndex, setActiveSubgroupIndex] = useState(null);
     <li>
       <Link
         href="tel:+5102009200"
-        className="flex items-center gap-2 h-[44px]"
+        className="flex items-center gap-2 h-[16px]"
       >
         <FaPhoneSquareAlt className="w-[18px] h-[18px]" />
         <span className="hidden sm:inline leading-none text-base">
