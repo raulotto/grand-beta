@@ -34,18 +34,13 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
   
   const Card = ({ card }) => {
     const Wrapper = ({ children }) =>
-       card.link ? (
-    <Link
-      href={card.link}
-      className="block h-full"
-      target={card.target || '_self'}
-      rel={card.target === '_blank' ? 'noopener noreferrer' : undefined}
-    >
-      {children}
-    </Link>
-  ) : (
-    <div className="h-full">{children}</div>
-  );
+      card.link ? (
+        <Link href={card.link} className="block h-full">
+          {children}
+        </Link>
+      ) : (
+        <div className="h-full">{children}</div>
+      )
 
     if (variant === 'side-image') {
       return (
@@ -76,17 +71,15 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
                 )}
               </div>
               {card.link && (
-  <div className="mt-6">
-    <Link
-      href={card.link}
-      target={card.target || '_self'}
-      rel={card.target === '_blank' ? 'noopener noreferrer' : undefined}
-      className="text-[#0071c2] font-semibold hover:underline"
-    >
-      {card.buttonText || 'CONOCE MÁS'}
-    </Link>
-  </div>
-)}
+                <div className="mt-6">
+                  <Link
+                    href={card.link}
+                    className="text-[#0071c2] font-semibold hover:underline"
+                  >
+                    {card.buttonText || 'CONOCE MÁS'}
+                  </Link>
+                </div>
+              )}
             </div>
           </div>
         </Wrapper>
@@ -122,9 +115,7 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
                 <p className="text-sm opacity-90 text-white!">{card.hoverText}</p>
                 {card.link && (
                   <Link
-      href={card.link}
-      target={card.target || '_self'}
-      rel={card.target === '_blank' ? 'noopener noreferrer' : undefined}
+                    href={card.link}
                     className="mt-4 border border-white px-4 py-2 text-sm font-semibold hover:bg-white hover:text-black transition"
                   >
                     {card.buttonText || 'VIEW MORE'}
@@ -165,9 +156,7 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
             {card.link && (
               <div className="mt-6">
                 <Link
-      href={card.link}
-      target={card.target || '_self'}
-      rel={card.target === '_blank' ? 'noopener noreferrer' : undefined}
+                  href={card.link}
                   className="text-[#0071c2] font-semibold hover:underline"
                 >
                   {card.buttonText || 'CONOCE MÁS'}
