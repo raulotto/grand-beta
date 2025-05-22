@@ -216,26 +216,27 @@ const [activeSubgroupIndex, setActiveSubgroupIndex] = useState(null);
         {/* Logo */}
         <LogoHeader isActive={isActive} />
 
-        {/* Centro - Teléfono */}
-        <div className="ItemsMenuCenter">
-          <ul
-            className={`MenuLight flex ${
-              isActive ? "text-primary-oceanic" : "text-white"
-            }`}
-          >
-            <li>
-              <Link
-                href="tel:+5102009200"
-                className="flex items-center gap-2"
-              >
-                <FaPhoneSquareAlt />
-                <span className="hidden sm:inline">
-                  Reservas: +51(01) 2009200
-                </span>
-              </Link>
-            </li>
-          </ul>
-        </div>
+      {/* Centro - Teléfono */}
+<div className="ItemsMenuCenter">
+  <ul
+    className={`MenuLight flex ${
+      isActive ? "text-primary-oceanic" : "text-white"
+    }`}
+  >
+    <li>
+      <Link
+        href="tel:+5102009200"
+        className="flex items-center gap-2 h-[44px]"
+      >
+        <FaPhoneSquareAlt className="w-[18px] h-[18px]" />
+        <span className="hidden sm:inline leading-none text-base">
+          <strong>Reservas:</strong> +51(01) 2009200
+        </span>
+      </Link>
+    </li>
+  </ul>
+</div>
+
 
         
 
