@@ -65,7 +65,7 @@ export default function LanguageSelector() {
           width={24}
           height={24}
         />
-        <span className="text-white">{currentLang.toUpperCase()}</span>
+        <p className="text-white">{currentLang.toUpperCase()}</p>
         <svg className="w-4 h-4 ml-1 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={menuOpen ? 'M6 18L18 6M6 6l12 12' : 'M19 9l-7 7-7-7'} />
         </svg>

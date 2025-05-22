@@ -276,7 +276,7 @@ const [activeSubgroupIndex, setActiveSubgroupIndex] = useState(null);
         </div>
          <div className="flex items-center justify-center gap-5">
           {/* Idioma */}
-          <LanguageSelector />
+          <LanguageSelector modoClaro={isActive}/>
         {/* Botón hamburguesa */}
         <div className="MobileMenuAccomadation">
           <div

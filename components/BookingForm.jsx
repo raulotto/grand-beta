@@ -120,9 +120,9 @@ export default function BookingForm({ embedMenu, initialHotel }) {
     >
       <RxCalendar />
       {startDate && endDate ? (
-        <span>
+        <p>
           {formatDate(startDate)} — {formatDate(endDate)}
-        </span>
+        </p>
       ) : (
         <span className="text-gray-400">{t.selectDates}</span>
       )}
@@ -182,7 +182,7 @@ export default function BookingForm({ embedMenu, initialHotel }) {
                 setShowDropdown(false);
               }}
             >
-              <div className="text-sm">{hotel.name}</div>
+              <div className="text-[12px]">{hotel.name}</div>
             </div>
           ))}
         </div>
@@ -240,7 +240,7 @@ export default function BookingForm({ embedMenu, initialHotel }) {
         >
           <label className="text-xs text-gray-500 uppercase tracking-wide">
           </label>
-          <div className="relative" ref={locationRef}>
+          <p className="relative" ref={locationRef}>
                         <input
                           type="text"
                           value={query}
@@ -258,7 +258,7 @@ export default function BookingForm({ embedMenu, initialHotel }) {
                           }}
                           
                           placeholder={t.selectHotel}
-                          className="border border-gray-300 px-4 py-2 text-sm w-full pr-8"
+                          className="border border-gray-300 px-4 py-2 text-[sm] w-full pr-8"
                         />
                         {selectedHotel && (
                           <button
@@ -277,7 +277,7 @@ export default function BookingForm({ embedMenu, initialHotel }) {
                             {renderGroupedHotels()}
                           </div>
                         )}
-                      </div>
+                      </p>
                     </div>
             
                     <div className="flex flex-col col-span-4 lg:col-span-3">
@@ -321,7 +321,7 @@ export default function BookingForm({ embedMenu, initialHotel }) {
           )}
           </div>
 
-          <div
+          <p
         ref={dropdownRef}
           className={`flex flex-col col-span-4 lg:col-span-2 relative  ${
             embedMenu ? "hidden" : ""
@@ -391,7 +391,7 @@ export default function BookingForm({ embedMenu, initialHotel }) {
             )}
 
 
-              </div>
+              </p>
 
           <div className="flex flex-col col-span-4 lg:col-span-3 relative">
           <button

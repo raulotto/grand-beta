@@ -522,7 +522,7 @@ a:hover {
     @apply flex justify-evenly items-center relative;
   }
   .RegionLocation {
-    @apply flex flex-col gap-2 pl-4 py-1 text-sm font-bold;
+    @apply flex flex-col gap-2 pl-4 py-1 text-[12px] font-bold;
   }
   .ResForm {
     @apply w-full grid grid-cols-1  gap-4 items-center px-6 lg:px-0 py-7;
