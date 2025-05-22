@@ -107,7 +107,7 @@ export default function Home() {
   <div className="ContainerFlex flex-col text-center gap-3">
     <h4 className="TitleSection CenterCenter">Save with our Member Rate</h4>
     <p>
-      The rewards never end for our members: Enjoy savings at thousands of hotels around the world. Plus, you'll always get the lowest price when you book directly on our website or app *.
+      The rewards never end for our members: Enjoy savings at thousands of hotels around the world. Plus, you always get the lowest price when you book directly on our website or app *.
     </p>
     <p>
       Not a Wyndham Rewards member? Sign up for free during your booking.
