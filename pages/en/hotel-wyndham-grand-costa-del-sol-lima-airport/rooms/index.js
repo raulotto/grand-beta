@@ -14,6 +14,7 @@ import SeoHead from "@/components/SeoHead"
 import useIdioma from "@/hooks/useIdioma"
 import habitacionesLandingData from "@/data/habitacionesLanding.json"
 import habitaciones from "@/data/habitaciones.json"
+import Image from "next/image"
 
 export default function HabitacionesPage() {
   const idioma = useIdioma("rooms", {
@@ -112,11 +113,13 @@ export default function HabitacionesPage() {
 
       <section className="SectionDiv relative w-full h-[500px]">
         <div className="absolute inset-0 z-0">
-          <img
-            src="/images/WG-Habitacion-Suite-2-2.jpg"
-            alt="Recorrido virtual 360°"
-            className="w-full h-full object-cover"
-          />
+          <Image
+  src="/images/WG-Habitacion-Suite-2-2.jpg"
+  alt="Recorrido virtual 360°"
+  className="w-full h-full object-cover"
+  width={800}
+  height={600}
+/>
         </div>
         <div className="ContainerFlex relative flex items-center justify-center h-full">
           <div className="bg-white max-w-xl w-full text-center p-8 shadow-lg rounded">
@@ -144,11 +147,13 @@ export default function HabitacionesPage() {
               <p className="text-gray-700 text-sm">{textos.mascotas.descripcion}</p>
             </div>
             <div className="w-full md:w-1/2 h-[300px]">
-              <img
-                src="/images/eventos-avatar-image.jpg"
-                alt="Mascotas"
-                className="w-full h-full object-cover"
-              />
+              <Image
+  src="/images/WG-Habitacion-King-1-perro.jpg"
+  alt="Mascotas"
+  width={1200} // puedes ajustar según el diseño
+  height={800} // puedes ajustar según el diseño
+  className="w-full h-full object-cover"
+/>
             </div>
           </div>
         </div>
