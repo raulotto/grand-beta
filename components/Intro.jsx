@@ -11,6 +11,8 @@ import { IoExitOutline } from "react-icons/io5";
 import TextoExpandible from '@/components/TextoExpandible';
 import { IoIosStar, IoIosStarHalf, IoIosStarOutline } from "react-icons/io";
 import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
+import { GiEntryDoor } from "react-icons/gi";
+import { GiExitDoor } from "react-icons/gi";
 
 
 
@@ -106,7 +108,7 @@ import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
                       {data.checkIn}
                     </span>
                     </div>
-                    <IoExitOutline className="text-[2em] text-primary-oceanic" />
+                    <GiExitDoor  className="text-[2em] text-primary-oceanic" />
 
                   </div>
                   <div class="px-4 flex  items-center gap-2">
@@ -116,7 +118,7 @@ import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
                       {data.checkOut}
                     </span>
                     </div>
-                    <IoEnterOutline className="text-[2em] text-primary-oceanic" />
+                    <GiEntryDoor  className="text-[2em] text-primary-oceanic" />
 
                   </div>
                 </div>

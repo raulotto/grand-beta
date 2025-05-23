@@ -4,15 +4,15 @@
       "title": "Gran experiencia de bienestar",
       "description": "Disfruta de un maravilloso masaje o un tratamiento facial rejuvenecedor en el spa. También hay tratamientos como servicios de cabello, manicura y pedicura en el salón de belleza.",
       "image": "/images/cds-spa.jpg",
-      "buttonText": "Reservar cita",
-      "link": "/bodas"
+      "buttonText": "",
+      "link": ""
     },
     {
       "title": "Gran experiencia de bienestar y gastronomía",
       "description": "Mantén tu rutina de ejercicios en nuestro gimnasio de vanguardia o practica tus movimientos con raqueta en nuestra cancha de tenis.",
       "image": "/images/wg-restaurantes-featured.jpg",
-      "buttonText": "Reservar cita",
-      "link": "/bodas"
+      "buttonText": "",
+      "link": ""
     }
   ],
   "en": [
@@ -21,14 +21,14 @@
       "description": "Enjoy a wonderful massage or a rejuvenating facial at the spa. Hair, manicure and pedicure services are also available in the beauty salon.",
       "image": "/images/cds-spa.jpg",
       "buttonText": "Book appointment",
-      "link": "/weddings"
+      "link": ""
     },
     {
       "title": "Gym",
       "description": "Keep your workout routine at our cutting-edge gym or practice your moves on our tennis court.",
       "image": "/images/cds-gym.jpg",
       "buttonText": "Book appointment",
-      "link": "/weddings"
+      "link": ""
     }
   ]
 }
