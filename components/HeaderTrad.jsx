@@ -259,21 +259,7 @@ const [activeSubgroupIndex, setActiveSubgroupIndex] = useState(null);
           </ul>
         </div>
 
-        {/* Botón reservar */}
-        <div className="ButtonBooking ActivateForm">
-          <Link
-            className="ButtonSolid"
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              if (booking?.setShowForm) {
-                booking.setShowForm(true);
-              }
-            }}
-          >
-            Reservar
-          </Link>
-        </div>
+        
          <div className="flex items-center justify-center gap-5">
           {/* Idioma */}
           <LanguageSelector modoClaro={isActive}/>

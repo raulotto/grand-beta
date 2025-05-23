@@ -12,28 +12,28 @@
         "text": "Nos encontramos justo frente al aeropuerto para brindarte máxima comodidad en tus viajes.",
         "buttonText": "Explorar ubicación",
         "link": "#",
-        "image": "/images/cds/cds-desayuno-buffet.jpg"
+        "image": "/images/wg-ubicacion.jpg"
       },
       {
         "title": "Habitaciones inteligentes",
         "text": "Disfruta de habitaciones modernas con control de temperatura, iluminación y entretenimiento digital.",
         "buttonText": "Ver habitaciones",
         "link": "#",
-        "image": "/images/cds/cds-desayuno-buffet.jpg"
+        "image": "/images/wg-domotica.jpg"
       },
       {
         "title": "Somos dogfriendly",
         "text": "Viaja con tu mejor amigo. Contamos con habitaciones y servicios pensados para mascotas.",
         "buttonText": "Conoce nuestras políticas",
         "link": "#",
-        "image": "/images/cds/cds-desayuno-buffet.jpg"
+        "image": "/images/WG-Habitacion-King-1-perro.jpg"
       },
       {
         "title": "Eventos",
         "text": "Salones equipados para reuniones, conferencias y celebraciones especiales.",
         "buttonText": "Ver salones",
         "link": "#",
-        "image": "/images/cds/cds-desayuno-buffet.jpg"
+        "image": "/images/wg-eventos.jpg"
       }
     ],
     "en": [

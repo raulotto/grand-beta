@@ -54,14 +54,15 @@ export default function TabsContent({ data = [] }) {
     className="flex flex-col lg:flex-row gap-10 items-center"
   >
     <div className="w-full lg:w-1/2">
-      <Image
-        src={data[activeIndex].image}
-        alt={data[activeIndex].title}
-        width={800}
-        height={500}
-        className="w-full h-auto object-cover rounded-md"
-      />
-    </div>
+  <Image
+    src={data[activeIndex].image}
+    alt={data[activeIndex].title}
+    width={800}
+    height={500}
+    className="w-full h-[300px] object-cover rounded-md"
+  />
+</div>
+
     <div className="w-full lg:w-1/2">
       <h2 className="TitleSectionMd mb-4">{data[activeIndex].title}</h2>
       <p className="text-gray-700 mb-4">{data[activeIndex].text}</p>

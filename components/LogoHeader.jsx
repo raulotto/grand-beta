@@ -15,12 +15,13 @@ const LogoHeader = ({ isActive }) => {
           <Image
             src={
               isActive
-                ? '/images/new-grand-costa-aeropuerto-logo-oceanic.svg'
-                : '/images/new-grand-costa-aeropuerto-logo-blanco.svg'
+                ? '/images/logo-wide-oceanic.svg'
+                : '/images/logo-wide-blanco.svg'
             }
             alt="Logo"
-            width={200}
+            width={400}
             height={isActive ? 120 : 130}
+            className='w-[270px] lg:w-[400px]'
           />
         </Link>
       </div>

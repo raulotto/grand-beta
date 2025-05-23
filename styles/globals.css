@@ -121,7 +121,12 @@ li {
   
   line-height: 1.5;
 }
-
+.rewards-parent .react-datepicker__month-container, h2.react-datepicker__current-month {
+    font-family: 'Manrope'!important;
+}
+.grand-parent .react-datepicker__month-container, h2.react-datepicker__current-month {
+    font-family: 'Gotham'!important;
+}
 
 .rewards-parent .SectionDiv .FaqsSec ul, .grand-parent .SectionDiv .FaqsSec ul {
   list-style-type: none;
@@ -410,6 +415,13 @@ a:hover {
 }
 .AcordeonSpa .AcordionTitle button span{
   font-family: 'Prata', sans-serif;
+}
+/* styles/globals.css o en tu Tailwind CSS */
+.bg-parallax-mobile {
+  background-image: url('/images/home-parallax-mobile.jpg');
+}
+.bg-parallax-desktop {
+  background-image: url('/images/home-parallax-desktop.jpg');
 }
 
 @layer base {

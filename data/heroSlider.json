@@ -5,18 +5,14 @@
       "slides": [
         {
           "src": "/images/WG-new-hotel-render.jpg",
-          "titulo": "Wyndham Grand Costa del Sol Lima City",
+          "titulo": ["Descubre la exclusividad y un servicio", "de primera clase dentro del aeropuerto."],
+          "segtitulo": "20% por apertura",
           "subtitulo": "Ubicado en la puerta de entrada más importante para los turistas en Perú.",
-          "ctaTexto": "Reserva Ahora",
-          "ctaLink": "/reserva",
-          "alineacion": "centro",
+          "ctaTexto": "Reservar",
+          "ctaLink": "https://bookings.costadelsolperu.com/es/hotel-wyndham-grand-costa-del-sol-lima-airport/book/dates-of-stay",
+          "target": "_blank",
+          "alineacion": "izquierda",
           "claseExtra": "OverlaySlide"
-        },
-        {
-          "src": "https://www.costadelsolperu.com/wp-content/uploads/2025/04/hora-imbatible-back.jpg",
-          "ctaTexto": "Reserva ahora",
-          "ctaLink": "/reserva",
-          "arte": "https://www.costadelsolperu.com/wp-content/uploads/2025/04/hora-imbatible-art.png"
         }
       ]
     },
@@ -114,14 +110,16 @@
       "page": "home",
       "slides": [
         {
-          "src": "/images/WG-new-hotel-render.jpg",
-          "titulo": "Wyndham Grand Costa del Sol Lima City",
-          "subtitulo": "Located at the main gateway for tourists in Peru.",
-          "ctaTexto": "Book Now",
-          "ctaLink": "/reserva",
-          "alineacion": "left",
-          "claseExtra": "OverlaySlide"
-        },
+  "src": "/images/WG-new-hotel-render.jpg",
+  "titulo": ["Discover exclusivity and", "first-class service inside the airport."],
+  "segtitulo": "20% Opening Offer",
+  "subtitulo": "Located at the main gateway for tourists in Peru.",
+  "ctaTexto": "Book Now",
+  "ctaLink": "https://bookings.costadelsolperu.com/hotel-wyndham-grand-costa-del-sol-lima-airport/book/dates-of-stay",
+  "target": "_blank",
+  "alineacion": "izquierda",
+  "claseExtra": "OverlaySlide"
+},
         {
           "src": "https://www.costadelsolperu.com/wp-content/uploads/2025/04/hora-imbatible-back.jpg",
           "ctaTexto": "Book now",

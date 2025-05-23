@@ -1,5 +1,6 @@
 "use client";
 import { useRouter } from "next/router";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, EffectFade, Navigation } from "swiper/modules";
 import "swiper/css";
@@ -42,7 +43,7 @@ export default function HeroSlider({ page = "home" }) {
                 priority
               />
 
-              {(slide.titulo || slide.subtitulo || slide.ctaTexto || slide.arte) && (
+              {(slide.titulo || slide.segtitulo || slide.subtitulo || slide.ctaTexto || slide.arte) && (
                 <div className={`HeroSliderData ${slide.claseExtra || ""}`}>
                   <div
                     className={`ContainerFlexSlider LightSlider text-shadow ${
@@ -53,8 +54,28 @@ export default function HeroSlider({ page = "home" }) {
                         : "items-center text-center"
                     }`}
                   >
-                    {slide.titulo && (
-                      <h3 className="text-2xl md:text-4xl text-white">{slide.titulo}</h3>
+                    {slide.titulo && Array.isArray(slide.titulo) ? (
+  <h3 className="text-2xl md:text-4xl text-white">
+    {slide.titulo.map((line, index) => (
+      <React.Fragment key={index}>
+        {line}
+        {index < slide.titulo.length - 1 && (
+          <>
+            <span className="hidden lg:inline"><br /></span>{' '}
+            <span className="inline lg:hidden">&nbsp;</span>
+          </>
+        )}
+      </React.Fragment>
+    ))}
+  </h3>
+) : (
+  <h3 className="text-2xl md:text-4xl text-white">{slide.titulo}</h3>
+)}
+
+
+
+                    {slide.segtitulo && (
+                      <h4 className="text-[1.5rem] text-white">{slide.segtitulo}</h4>
                     )}
                     {slide.subtitulo && (
                       <p className="mt-2 text-lg md:text-xl text-white">{slide.subtitulo}</p>
@@ -69,12 +90,15 @@ export default function HeroSlider({ page = "home" }) {
                       />
                     )}
                     {slide.ctaTexto && slide.ctaLink && (
-                      <a
-                        href={slide.ctaLink}
-                        className="mt-4 px-6 py-2 bg-secondary-terracota text-white hover:bg-[#2c5057]"
-                      >
-                        {slide.ctaTexto}
-                      </a>
+                      <Link
+  href={slide.ctaLink}
+  target={slide.target || "_self"}
+  rel={slide.target === "_blank" ? "noopener noreferrer" : undefined}
+  className="mt-4 px-6 py-2 bg-secondary-terracota text-white hover:bg-[#2c5057]"
+>
+  {slide.ctaTexto}
+</Link>
+
                     )}
                   </div>
                 </div>

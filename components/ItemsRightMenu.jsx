@@ -16,8 +16,8 @@ const ItemsRightMenu = ({ isVisible, modoClaro = false }) => {
     <Image
     src={
       isVisible
-        ? "/images/new-grand-costa-aeropuerto-logo-oceanic.svg"
-        : "/images/new-grand-costa-aeropuerto-logo-blanco.svg"
+        ? "/images/logo-wide-oceanic.svg"
+        : "/images/logo-wide-blanco.svg"
     }
     alt="Logo"
     width={isVisible ? 200 : 200}
@@ -26,7 +26,7 @@ const ItemsRightMenu = ({ isVisible, modoClaro = false }) => {
   
   ) : (
     <Image
-      src="/images/new-grand-costa-aeropuerto-logo-oceanic.svg"
+      src="/images/logo-wide-oceanic.svg"
       alt="Logo color"
       width={200}
       height={110}

@@ -98,7 +98,7 @@ import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
   </div>
 </div>
 
-                <div className="flex items-start mb-4 divide-x divide-gray-400 ">
+                <div className="flex justify-center items-center mb-4 divide-x divide-gray-400 ">
                 <div class="px-4 flex  items-center gap-2">
                     <div className="flex flex-col items-center">
                     <span className="text-2xl font-semibold text-gray-900">{data.checkInHora}</span>
