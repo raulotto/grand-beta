@@ -7,18 +7,18 @@
       "target": "_blank",
 
       "items": [
-        { "label": "Costa Del Sol Wyndham Tumbes", "href": "#", "target": "_blank"},
-        { "label": "Costa Del Sol Wyndham Piura", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Chiclayo", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Trujillo Golf", "href": "#" },
-        { "label": "Costa Del Sol Trujillo Centro", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Cajamarca", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Lima City", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Lima Airport", "href": "#" },
-        { "label": "Wyndham Grand Lima Airport", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Cusco", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Arequipa", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Pucallpa", "href": "#" }
+        { "label": "Tumbes", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-tumbes/", "target": "_blank"},
+        { "label": "Piura", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-piura/", "target": "_blank" },
+        { "label": "Chiclayo", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-chiclayo/", "target": "_blank" },
+        { "label": "Trujillo Golf", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-trujillo-golf/", "target": "_blank" },
+        { "label": "Trujillo Centro", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-trujillo-centro/", "target": "_blank" },
+        { "label": "Cajamarca", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-cajamarca/", "target": "_blank" },
+        { "label": "Lima City", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-lima-ciudad/", "target": "_blank" },
+        { "label": "Lima Airport", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-lima-aeropuerto/", "target": "_blank" },
+        { "label": "Wyndham Grand Lima Airport", "href": "https://www.costadelsolperu.com/hoteles/hotel-wyndham-grand-costa-del-sol-lima-airport/", "target": "_blank", "tag": "Nuevo" },
+        { "label": "Cusco", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-cusco/", "target": "_blank" },
+        { "label": "Arequipa", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-arequipa/", "target": "_blank" },
+        { "label": "Pucallpa", "href": "https://www.costadelsolperu.com/hoteles/hotel-costa-del-sol-wyndham-pucallpa/", "target": "_blank" }
       ]
     },
     {
@@ -27,34 +27,54 @@
       "titleHref": "/promociones",
       "subgroups": [
         {
+          "title": "Promociones del mes",
+          "href": "",
+          "items": [
+            { "label": "CDS Sale", "href": "https://www.costadelsolperu.com/cds-sale/", "target": "_blank" },
+    { "label": "Full Day", "href": "https://www.costadelsolperu.com/fullday/", "target": "_blank" },
+    { "label": "Pre apertura Wyndham Grand", "href": "https://www.costadelsolperu.com/hoteles/hotel-wyndham-grand-costa-del-sol-lima-airport/", "target": "_blank" },
+    { "label": "Destino del mes", "href": "https://www.costadelsolperu.com/promociones/destino-del-mes/", "target": "_blank", "tag": "Nuevo" },
+    { "label": "Paquete Rooftop & Chill", "href": "https://www.costadelsolperu.com/paquetes/paquete-rooftop-chill/", "target": "_blank", "tag": "Nuevo" },
+    { "label": "Easy Stay Lima City", "href": "https://www.costadelsolperu.com/paquetes/easy-stay-lima-city/", "target": "_blank", "tag": "Nuevo" },
+    { "label": "Modo cocktail entre amigas", "href": "https://www.costadelsolperu.com/paquetes/modo-cocktail-entre-amigas/", "target": "_blank", "tag": "Nuevo" },
+    { "label": "Vino entre amigas", "href": "https://www.costadelsolperu.com/paquetes/vino-entre-amigas/", "target": "_blank", "tag": "Nuevo" }
+  ]
+        },
+        {
           "title": "Bancos",
-          "href": "/promociones/bancos",
+          "href": "https://www.costadelsolperu.com/beneficios/",
           "target": "_blank",
           "items": [
-            { "label": "Interbank Cuenta Sueldo 20%", "href": "#", "target": "_blank" },
-            { "label": "Interbank 20% Saria Sky Bar", "href": "#" },
-            { "label": "Interbank 20% Paprika Restaurante", "href": "#" },
-            { "label": "Scotiabank 25% Saria Sky Bar", "href": "#" },
-            { "label": "Scotiabank 20% Walak Cafe Bar", "href": "#" },
-            { "label": "Scotiabank 25% Paprika Restaurante", "href": "#" },
-            { "label": "BBVA 20% Paprika Restaurante", "href": "#" },
-            { "label": "Banco Falabella 20% Restaurantes & Bares", "href": "#" }
-          ]
+            { "label": "Promoción BCP", "href": "https://www.costadelsolperu.com/beneficios/bcp-25-off/", "target": "_blank" },
+    { "label": "Beneficio BCP", "href": "https://www.costadelsolperu.com/beneficios/bcp-12-cuotas-sin-intereses/", "target": "_blank" },
+    { "label": "Beneficio BBVA", "href": "https://www.costadelsolperu.com/beneficios/bbva-cuenta-sueldo/", "target": "_blank" },
+    { "label": "Promoción iO", "href": "https://www.costadelsolperu.com/beneficios/io-25-off/", "target": "_blank" },
+    { "label": "Beneficio Oh!", "href": "https://www.costadelsolperu.com/beneficios/oh-25-dcto/", "target": "_blank" },
+    { "label": "Promoción Diners Club Miles", "href": "https://www.costadelsolperu.com/beneficios/club-miles/", "target": "_blank" }
+  ]
         },
         {
           "title": "Restaurantes",
-          "href": "/promociones/bancos",
+          "href": "https://www.costadelsolperu.com/beneficios/",
           "items": [
-            { "label": "Club El Comercio 20% Saria Sky Bar", "href": "#" },
-            { "label": "Qualitas 20% Paprika Restaurante", "href": "#" }
-          ]
+            { "label": "Ver todos", "href": "https://www.costadelsolperu.com/promociones/restaurantes/", "target": "_blank" },
+    { "label": "Scotiabank – Saria Sky Bar", "href": "https://www.costadelsolperu.com/beneficios/scotiabank-25-off-saria-sky-bar/", "target": "_blank" },
+    { "label": "Scotiabank – Walak Café Bar", "href": "https://www.costadelsolperu.com/beneficios/scotiabank-20-off-walak-cafe-bar/", "target": "_blank" },
+    { "label": "Qualitas", "href": "https://www.costadelsolperu.com/beneficios/qualitas-20-off-paprika/", "target": "_blank" },
+    { "label": "CMR", "href": "https://www.costadelsolperu.com/beneficios/cmr-banco-falabella-restaurante-bares-20-off/", "target": "_blank" },
+    { "label": "BBVA", "href": "https://www.costadelsolperu.com/beneficios/bbva-20-off-paprika/", "target": "_blank" },
+    { "label": "Club de lectores El Comercio", "href": "https://www.costadelsolperu.com/beneficios/club-de-lectores-el-comercio-saria-sky-bar/", "target": "_blank" },
+    { "label": "Desayuno Buffet", "href": "https://www.costadelsolperu.com/desayuno-buffet/", "target": "_blank" }
+  ]
         },
         {
           "title": "Aliados",
           "href": "/promociones/bancos",
           "items": [
-            { "label": "Club El Comercio 50%", "href": "#" }
-          ]
+            { "label": "Club de Suscriptores de El Comercio", "href": "https://www.costadelsolperu.com/beneficios/club-de-lectores-el-comercio/", "target": "_blank" },
+    { "label": "Auna", "href": "https://www.costadelsolperu.com/beneficios/auna-25-off/", "target": "_blank" },
+    { "label": "Bitel", "href": "https://www.costadelsolperu.com/beneficios/bitel-25-off/", "target": "_blank" }
+  ]
         }
       ]
     },
@@ -63,13 +83,36 @@
       "title": "Paquetes",
       "titleHref": "/paquetes",
       "items": [
-        { "label": "Paquete Romántico", "href": "#" },
-        { "label": "Paquete Familiar", "href": "#" },
-        { "label": "Paquete Noche de Bodas", "href": "#" },
-        { "label": "Full Day", "href": "#" },
-        { "label": "Cyber CDS", "href": "#" },
-        { "label": "Destino del Mes", "href": "#" }
-      ]
+  { "label": "Paquete Romántico", "href": "https://www.costadelsolperu.com/paquetes/romantico/", "target": "_blank" },
+  { "label": "Noche de Bodas", "href": "https://www.costadelsolperu.com/paquetes/noche-de-bodas/", "target": "_blank" },
+  { "label": "Paquete Familiar", "href": "https://www.costadelsolperu.com/paquetes/paquete-familiar/", "target": "_blank" },
+  { "label": "Full Day", "href": "https://www.costadelsolperu.com/fullday/", "target": "_blank" },
+  { "label": "Rooftop & Chill", "href": "https://www.costadelsolperu.com/paquetes/paquete-rooftop-chill/", "target": "_blank" },
+  { "label": "Easy Stay Lima City", "href": "https://www.costadelsolperu.com/paquetes/easy-stay-lima-city/", "target": "_blank" },
+  { "label": "Vino entre amigas", "href": "https://www.costadelsolperu.com/paquetes/vino-entre-amigas/", "target": "_blank" },
+  { "label": "Modo cocktail entre amigas", "href": "https://www.costadelsolperu.com/paquetes/modo-cocktail-entre-amigas/", "target": "_blank" }
+]
+
+    },
+    {
+      "id": "eventos",
+      "title": "Eventos",
+      "titleHref": "https://www.costadelsolperu.com/eventos/",
+      "target": "_blank",
+      "items": [
+  { "label": "Eventos Lima City", "href": "https://www.costadelsolperu.com/eventos/lima-city/", "target": "_blank" },
+  { "label": "Eventos Tumbes", "href": "https://www.costadelsolperu.com/eventos/tumbes/", "target": "_blank" },
+  { "label": "Eventos Piura", "href": "https://www.costadelsolperu.com/eventos/piura/", "target": "_blank" },
+  { "label": "Eventos Chiclayo", "href": "https://www.costadelsolperu.com/eventos/chiclayo/", "target": "_blank" },
+  { "label": "Eventos Trujillo Golf", "href": "https://www.costadelsolperu.com/eventos/trujillo-golf/", "target": "_blank" },
+  { "label": "Eventos Trujillo Centro", "href": "https://www.costadelsolperu.com/eventos/trujillo-centro/", "target": "_blank" },
+  { "label": "Eventos Cajamarca", "href": "https://www.costadelsolperu.com/eventos/cajamarca/", "target": "_blank" },
+  { "label": "Eventos Lima Airport", "href": "https://www.costadelsolperu.com/eventos/lima-airport/", "target": "_blank" },
+  { "label": "Eventos Arequipa", "href": "https://www.costadelsolperu.com/eventos/arequipa/", "target": "_blank" },
+  { "label": "Eventos Cusco", "href": "https://www.costadelsolperu.com/eventos/cusco/", "target": "_blank" },
+  { "label": "Eventos Pucallpa", "href": "https://www.costadelsolperu.com/eventos/pucallpa/", "target": "_blank" }
+]
+
     },
     {
       "id": "nosotros",
@@ -90,18 +133,18 @@
       "title": "Hotels",
       "titleHref": "/en/hotels",
       "items": [
-        { "label": "Costa Del Sol Wyndham Tumbes", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Piura", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Chiclayo", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Trujillo Golf", "href": "#" },
+        { "label": "Tumbes", "href": "#" },
+        { "label": "Piura", "href": "#" },
+        { "label": "Chiclayo", "href": "#" },
+        { "label": "Trujillo Golf", "href": "#" },
         { "label": "Costa Del Sol Trujillo Centro", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Cajamarca", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Lima City", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Lima Airport", "href": "#" },
+        { "label": "Cajamarca", "href": "#" },
+        { "label": "Lima City", "href": "#" },
+        { "label": "Lima Airport", "href": "#" },
         { "label": "Wyndham Grand Lima Airport", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Cusco", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Arequipa", "href": "#" },
-        { "label": "Costa Del Sol Wyndham Pucallpa", "href": "#" }
+        { "label": "Cusco", "href": "#" },
+        { "label": "Arequipa", "href": "#" },
+        { "label": "Pucallpa", "href": "#" }
       ]
     },
     {

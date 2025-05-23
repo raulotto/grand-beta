@@ -247,7 +247,7 @@ p{
 .grand-parent .text-parrafos {
   font-family: Gotham, sans-serif;
   font-weight: 200;
-  font-size: 12px;
+  font-size: 13px;
 }
 .bar {
   height: 3px;
@@ -685,6 +685,9 @@ a:hover {
 }
 .AcordeonSpa .AcordionTitle  {
   @apply  pt-6 pb-8 text-2xl! text-primary-oceanic;
+}
+.TagNuevo  {
+  @apply  bg-blue-600 text-white text-[10px] font-bold px-2 py-[2px] rounded-md uppercase;
 }
 
 }

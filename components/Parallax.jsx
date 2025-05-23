@@ -24,7 +24,7 @@ const Parallax = () => {
       }`}
     >
       <div className="ContainerFlex justify-start lg:justify-end p-0">
-        <h4 className="text-[2.5em] text-white z-1">{t.restaurantsTitle}</h4>
+        <h4 className="text-[1.5em] lg:text-[2.5em] text-white z-1">{t.restaurantsTitle}</h4>
         <div className="OverlayDiv"></div>
       </div>
     </div>

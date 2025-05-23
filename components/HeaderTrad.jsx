@@ -138,7 +138,7 @@ const [activeSubgroupIndex, setActiveSubgroupIndex] = useState(null);
     e.preventDefault();
     setActiveSubgroupIndex(idx);
   }}
-  className={`text-left font-semibold flex items-center justify-between gap-2 ${
+  className={`text-left font-semibold flex items-center justify-between gap-4 ${
     activeSubgroupIndex === idx ? "text-white" : "text-white/70"
   }`}
 >
@@ -177,7 +177,15 @@ const [activeSubgroupIndex, setActiveSubgroupIndex] = useState(null);
   target={item.target || "_self"}
   className="font-semibold block"
 >
+  <span className="flex items-center gap-2">
   {item.label}
+  {item.tag && (
+    <span className="TagNuevo">
+      {item.tag}
+    </span>
+  )}
+</span>
+
 </Link>
 
       ))
@@ -194,7 +202,15 @@ const [activeSubgroupIndex, setActiveSubgroupIndex] = useState(null);
   target={item.target || "_self"}
   className="font-semibold block"
 >
+  <span className="flex items-center gap-2">
   {item.label}
+  {item.tag && (
+    <span className="TagNuevo">
+      {item.tag}
+    </span>
+  )}
+</span>
+
 </Link>
 
       ))

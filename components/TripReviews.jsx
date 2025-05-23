@@ -39,7 +39,7 @@ export default function TripReviews() {
 
         {/* Slider de reseñas */}
         <div className="w-full lg:w-3/4 lg:pl-8 relative">
-        <div className="absolute w-full top-1/2 lg:right-8 flex space-x-4 transform -translate-y-1/2 z-10">
+        <div className="absolute w-full top-1/2 lg:right-8 flex space-x-4 transform -translate-y-1/2 z-1">
           <button ref={prevRef} className="absolute left-[-30] lg:left-0"><FaChevronLeft />
           </button>
           <button ref={nextRef} className="absolute right-[-30] lg:right-0"><FaChevronRight />

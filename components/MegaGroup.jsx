@@ -80,7 +80,14 @@ const MegaGroup = ({ id, title, titleHref, items = [], subgroups = [], isOpen, o
                       >
                         {subgroup.items.map((item, i) => (
                           <li key={i}>
-                            <Link className="font-semibold text-[14px]" href={item.href}>{item.label}</Link>
+                            <Link className="font-semibold text-[14px]" href={item.href}><span className="flex items-center gap-2">
+  {item.label}
+  {item.tag && (
+    <span className="TagNuevo">
+      {item.tag}
+    </span>
+  )}
+</span></Link>
                           </li>
                         ))}
                       </motion.ul>
@@ -92,7 +99,14 @@ const MegaGroup = ({ id, title, titleHref, items = [], subgroups = [], isOpen, o
               <ul className="pl-4 space-y-1">
                 {items.map((item, index) => (
                   <li key={index}>
-                    <Link className="font-semibold text-[14px]" href={item.href}>{item.label}</Link>
+                    <Link className="font-semibold text-[14px]" href={item.href}><span className="flex items-center gap-2">
+  {item.label}
+  {item.tag && (
+    <span className="TagNuevo">
+      {item.tag}
+    </span>
+  )}
+</span></Link>
                   </li>
                 ))}
               </ul>
