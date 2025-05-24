@@ -23,7 +23,7 @@ export default function TabsContent({ data = [] }) {
   }
 
   return (
-    <div className="w-full">
+    <div className="w-full TabsSec">
       {/* Desktop Tabs */}
       {!isMobile && (
         <>
@@ -59,13 +59,25 @@ export default function TabsContent({ data = [] }) {
     alt={data[activeIndex].title}
     width={800}
     height={500}
-    className="w-full h-[300px] object-cover rounded-md"
+    className="w-full h-[400px] object-cover rounded-md"
   />
 </div>
 
-    <div className="w-full lg:w-1/2">
+    <div className="w-full lg:w-1/2 flex flex-col gap-4">
       <h2 className="TitleSectionMd mb-4">{data[activeIndex].title}</h2>
       <p className="text-gray-700 mb-4">{data[activeIndex].text}</p>
+      {data[activeIndex].detalles?.length > 0 && (
+  <ul className="text-sm text-gray-600 list-disc pl-5 space-y-2 mb-4">
+    {data[activeIndex].detalles.map((detalle, i) => (
+      <li key={i}>
+        <span className="font-semibold">{detalle.servicio}</span>
+        {detalle.duracion && ` – ${detalle.duracion}`}
+        {detalle.precio && `: ${detalle.precio}`}
+      </li>
+    ))}
+  </ul>
+)}
+
       {data[activeIndex].buttonText && data[activeIndex].link && (
   <Link
     href={data[activeIndex].link}
@@ -124,6 +136,18 @@ export default function TabsContent({ data = [] }) {
         className="w-full h-auto object-cover rounded-md mb-4"
       />
       <p className="text-gray-700 mb-4">{item.text}</p>
+      {data[activeIndex].detalles?.length > 0 && (
+  <ul className="text-sm text-gray-600 list-disc pl-5 space-y-2 mb-4">
+    {data[activeIndex].detalles.map((detalle, i) => (
+      <li key={i}>
+        <span className="font-semibold">{detalle.servicio}</span>
+        {detalle.duracion && ` – ${detalle.duracion}`}
+        {detalle.precio && `: ${detalle.precio}`}
+      </li>
+    ))}
+  </ul>
+)}
+
       {item.buttonText && item.link && (
         <a
           href={item.link}

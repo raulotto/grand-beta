@@ -1,77 +1,126 @@
 {
   "es": [
     {
-      "title": "Colección de exfoliaciones y baños",
-      "text": "Si tienes un vuelo temprano, deseas alistar tus maletas con tiempo o darte un gusto por la mañana Holiday Inn Lima Airport ofrece desayuno buffet desde las 04:00 hasta las 10:00 para todos nuestros pasajeros. Contamos con una deliciosa y gran variedad de estaciones de jugos, cereales, huevos a la orden, opciones frías y calientes.",
-      "buttonText": "Ver más",
-      "link": "#",
+      "title": "Masajes",
+      "text": "Relájate con nuestras opciones de masajes: relajante, descontracturante, con piedras calientes, reflexología y más. Las sesiones están disponibles desde S/ 72 por 15 minutos. También ofrecemos opciones de 30 y 60 minutos.",
+      "buttonText": "",
+      "link": "",
       "image": "/images/cds/cds-desayuno-buffet.jpg",
-      "target": "_blank"
+      "target": "_blank",
+      "detalles": [
+        { "servicio": "Masaje relajante", "duracion": "30 min", "precio": "S/ 168" },
+        { "servicio": "Masaje relajante", "duracion": "60 min", "precio": "S/ 336" },
+        { "servicio": "Masaje descontracturante", "duracion": "30 min", "precio": "S/ 192" },
+        { "servicio": "Masaje descontracturante", "duracion": "60 min", "precio": "S/ 360" },
+        { "servicio": "Masaje piedras calientes", "duracion": "60 min", "precio": "S/ 360" },
+        { "servicio": "Reflexología", "duracion": "30 min", "precio": "S/ 192" },
+        { "servicio": "Masaje en silla", "duracion": "15 min", "precio": "S/ 72" },
+        { "servicio": "Adicionales de masaje", "duracion": "-", "precio": "S/ 48" }
+      ]
     },
     {
-      "title": "Colección facial",
-      "text": "Nos encontramos justo frente al aeropuerto para brindarte máxima comodidad en tus viajes.",
-      "buttonText": "Explorar ubicación",
-      "link": "#",
-      "image": "/images/cds/cds-desayuno-buffet.jpg"
+      "title": "Tratamiento facial",
+      "text": "Cuida tu piel con nuestros tratamientos faciales, incluyendo mascarillas plastificadas y de colágeno. Ideales para una piel más fresca y renovada.",
+      "buttonText": "",
+      "link": "",
+      "image": "/images/cds/cds-desayuno-buffet.jpg",
+      "detalles": [
+        { "servicio": "Facial estándar", "duracion": "30 min", "precio": "-" },
+        { "servicio": "Facial con máscara plastificada", "duracion": "60 min", "precio": "-" },
+        { "servicio": "Máscara de colágeno", "duracion": "60 min", "precio": "-" }
+      ]
     },
     {
-      "title": "Rituales del spa",
-      "text": "Disfruta de habitaciones modernas con control de temperatura, iluminación y entretenimiento digital.",
-      "buttonText": "Ver habitaciones",
-      "link": "#",
-      "image": "/images/cds/cds-desayuno-buffet.jpg"
+      "title": "Depilaciones",
+      "text": "Ofrecemos servicios de depilación para todas las zonas del cuerpo, incluyendo bozo, axilas, bikini, piernas y más. Sesiones desde S/ 45.60.",
+      "buttonText": "",
+      "link": "",
+      "image": "/images/cds/cds-desayuno-buffet.jpg",
+      "detalles": [
+        { "servicio": "Depilación de bozo", "precio": "S/ 45.60" },
+        { "servicio": "Depilación de axila", "precio": "S/ 82.08" },
+        { "servicio": "Depilación de bikini", "precio": "S/ 104.88" },
+        { "servicio": "Depilación media pierna", "precio": "S/ 104.88" },
+        { "servicio": "Depilación pierna completa", "precio": "S/ 209.66" },
+        { "servicio": "Depilación de cejas", "precio": "S/ 68.40" },
+        { "servicio": "Depilación de espalda", "precio": "S/ 177.84" }
+      ]
     },
     {
-      "title": "Almuerzo spa",
-      "text": "Viaja con tu mejor amigo. Contamos con habitaciones y servicios pensados para mascotas.",
-      "buttonText": "Conoce nuestras políticas",
-      "link": "#",
-      "image": "/images/cds/cds-desayuno-buffet.jpg"
-    },
-    {
-      "title": "Cuidado de uñas",
-      "text": "Salones equipados para reuniones, conferencias y celebraciones especiales.",
-      "buttonText": "Ver salones",
-      "link": "#",
-      "image": "/images/cds/cds-desayuno-buffet.jpg"
+      "title": "Spa",
+      "text": "Accede a nuestras instalaciones que incluyen duchas, sauna, piscina climatizada, jacuzzi y más. Desde S/ 96 por 60 minutos. También contamos con habitaciones privadas.",
+      "buttonText": "",
+      "link": "",
+      "image": "/images/cds/cds-desayuno-buffet.jpg",
+      "detalles": [
+        { "servicio": "Solo ducha", "duracion": "60 min", "precio": "S/ 96.00" },
+        { "servicio": "Spa de día", "duracion": "3 horas", "precio": "S/ 168.00" },
+        { "servicio": "Spa noche", "duracion": "8 horas", "precio": "S/ 264.00" },
+        { "servicio": "Sala privada para dos", "duracion": "8 horas", "precio": "S/ 408.00" },
+        { "servicio": "Sala privada para dos", "duracion": "6 horas", "precio": "S/ 384.00" }
+      ]
     }
   ],
   "en": [
     {
-      "title": "Scrub and Bath Collection",
-      "text": "Begin your day full of energy. Our buffet breakfast is available from 4:00 am for all guests.",
-      "buttonText": "See more",
-      "link": "#",
-      "image": "/images/cds/cds-desayuno-buffet.jpg"
+      "title": "Massages",
+      "text": "Relax with our massage options: relaxing, deep tissue, hot stone, reflexology and more. Sessions start at S/ 72 for 15 minutes, with 30 and 60-minute options also available.",
+      "buttonText": "",
+      "link": "",
+      "image": "/images/cds/masajes.jpg",
+      "target": "_blank",
+      "detalles": [
+        { "servicio": "Relaxing massage", "duracion": "30 min", "precio": "S/ 168" },
+        { "servicio": "Relaxing massage", "duracion": "60 min", "precio": "S/ 336" },
+        { "servicio": "Deep tissue massage", "duracion": "30 min", "precio": "S/ 192" },
+        { "servicio": "Deep tissue massage", "duracion": "60 min", "precio": "S/ 360" },
+        { "servicio": "Hot stone massage", "duracion": "60 min", "precio": "S/ 360" },
+        { "servicio": "Reflexology", "duracion": "30 min", "precio": "S/ 192" },
+        { "servicio": "Chair massage", "duracion": "15 min", "precio": "S/ 72" },
+        { "servicio": "Extra massage add-on", "duracion": "-", "precio": "S/ 48" }
+      ]
     },
     {
-      "title": "The Facial Collection",
-      "text": "We're located right in front of the airport to give you maximum travel convenience.",
-      "buttonText": "Explore location",
-      "link": "#",
-      "image": "/images/cds/cds-desayuno-buffet.jpg"
+      "title": "Facial Treatments",
+      "text": "Take care of your skin with our facial treatments, including plasticized and collagen masks. Perfect for a fresh and renewed appearance.",
+      "buttonText": "",
+      "link": "",
+      "image": "/images/cds/tratamientos-faciales.jpg",
+      "detalles": [
+        { "servicio": "Standard facial", "duracion": "30 min", "precio": "-" },
+        { "servicio": "Plasticized mask facial", "duracion": "60 min", "precio": "-" },
+        { "servicio": "Collagen mask facial", "duracion": "60 min", "precio": "-" }
+      ]
     },
     {
-      "title": "Spa Journeys",
-      "text": "Enjoy modern rooms with smart control of temperature, lighting, and digital entertainment.",
-      "buttonText": "See rooms",
-      "link": "#",
-      "image": "/images/cds/cds-desayuno-buffet.jpg"
+      "title": "Waxing",
+      "text": "We offer waxing services for all body areas, including facial, underarm, bikini, legs and more. Sessions start at S/ 45.60.",
+      "buttonText": "",
+      "link": "",
+      "image": "/images/cds/depilaciones.jpg",
+      "detalles": [
+        { "servicio": "Facial waxing", "precio": "S/ 45.60" },
+        { "servicio": "Underarm waxing", "precio": "S/ 82.08" },
+        { "servicio": "Bikini waxing", "precio": "S/ 104.88" },
+        { "servicio": "Half leg waxing", "precio": "S/ 104.88" },
+        { "servicio": "Complete leg waxing", "precio": "S/ 209.66" },
+        { "servicio": "Eyebrow waxing", "precio": "S/ 68.40" },
+        { "servicio": "Back waxing", "precio": "S/ 177.84" }
+      ]
     },
     {
-      "title": "Spa Lunch",
-      "text": "Travel with your best friend. We offer pet-friendly rooms and services tailored for them.",
-      "buttonText": "Check policies",
-      "link": "#",
-      "image": "/images/cds/cds-desayuno-buffet.jpg"
-    },
-    {
-      "title": "Nail Care",
-      "text": "Fully equipped venues for meetings, conferences, and special celebrations.",
-      "buttonText": "See venues",
-      "link": "#",
-      "image": "/images/cds/cds-desayuno-buffet.jpg"
+      "title": "Spa Services",
+      "text": "Access our facilities including showers, sauna, heated pool, jacuzzi and more. Starting at S/ 96 for 60 minutes. Private rooms are also available.",
+      "buttonText": "",
+      "link": "",
+      "image": "/images/cds/servicios-spa.jpg",
+      "detalles": [
+        { "servicio": "Shower only", "duracion": "60 min", "precio": "S/ 96.00" },
+        { "servicio": "Day use spa access", "duracion": "3 hours", "precio": "S/ 168.00" },
+        { "servicio": "Overnight spa access", "duracion": "8 hours", "precio": "S/ 264.00" },
+        { "servicio": "Private room for two", "duracion": "8 hours", "precio": "S/ 408.00" },
+        { "servicio": "Private room for two", "duracion": "6 hours", "precio": "S/ 384.00" }
+      ]
     }
   ]
 }

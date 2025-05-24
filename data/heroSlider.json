@@ -139,11 +139,12 @@
     },
     {
       "page": "spa",
+      "id": "slider-spa",
+
       "slides": [
         {
-          "src": "/images/cds-spa.jpg",
-          "titulo": "Spa",
-          "subtitulo": "Harmony Spa",
+          "src": "/images/women-oceanic.jpg",
+          "arte": "/images/oceanic-logo.png",
           "claseExtra": "OverlaySlide"
         }
       ]

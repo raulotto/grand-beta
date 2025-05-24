@@ -5,20 +5,32 @@
         "titulo": "",
         "items": [
           {
-            "titulo": "El Spa",
-            "respuesta": "Wyndham Rewards® (el \"Programa Wyndham Rewards\" o el \"Programa\") lo ofrece Wyndham Rewards, Inc., una subsidiaria indirecta de Wyndham Hotels & Resorts, Inc., sus sucesores y cesionarios. En ocasiones, Wyndham Rewards, Inc. se denomina individualmente como \"Patrocinador\"."
+            "titulo": "¿Cómo realizar las reservas para el Spa?",
+            "respuesta": "Le recomendamos hacer su reserva con 24 horas de anticipación si desea disfrutar de varios tratamientos durante su estadía. Puede comunicarse con nosotros al anexo ___, llamarnos al número _____ o enviando un mail a: spalima@costadelsolperu.com. \"Walk-ins\" son siempre bienvenidos."
           },
           {
-            "titulo": "Paquetes",
-            "respuesta": "El Patrocinador puede dar por terminado el Programa en cualquier momento, previa notificación de seis meses, sin ninguna otra obligación respecto del Miembro. Independientemente del tiempo que participe en el Programa, su derecho a acumular puntos de Wyndham Rewards adicionales u otros puntos/millas del Programa y de reclamar recompensas del Programa podría darse por terminado, y todos los puntos de Wyndham Rewards que se hayan acumulado en su cuenta se cancelarán seis meses después de que se anuncie la conclusión del Programa."
+            "titulo": "Política de cancelación y traslado",
+            "respuesta": "Si desea cancelar o modificar su reserva por favor no dude en contactarse con nuestra recepción al anexo ______ con 2 horas de anticipación para evitar el cargo del 50% del servicio reservado. Agradecemos nos informe algún cambio en su reserva ya que hemos reservado dicho tiempo exclusivamente para usted."
           },
           {
-            "titulo": "Masajes de autor",
-            "respuesta": "Las personas interesadas en inscribirse en el Programa deben haber alcanzado la mayoría de edad en su jurisdicción de residencia y deben proporcionar lo siguiente: (a) una dirección de e-mail única que no se comparta con un Miembro existente; y (b) un número de teléfono que no se comparta con ningún Miembro que tenga el mismo nombre y apellido. Estas personas se denominarán “Miembros” del Programa. Las corporaciones, grupos u otras entidades no son elegibles. Los Miembros no pueden mantener más de una cuenta ni compartir cuentas."
+            "titulo": "Problemas de salud",
+            "respuesta": "Para su comodidad y seguridad, le pedimos que complete una ficha de registro antes de su tratamiento. Notifíquenos cualquier requisito específico para su visita, incluido lesiones, enfermedades o alergias. Nuestro equipo estará encantado de encontrar los servicios más adecuados para usted."
           },
           {
-            "titulo": "Tratamiento exclusivos",
-            "respuesta": "Los \"Hoteles participantes\" se definen como todos los hoteles \"By Wyndham\" y otras instalaciones de hospedaje \"By Wyndham\" que operan bajo una franquicia, una licencia o un acuerdo de gestión con una \"Cadena hotelera\" participante en el momento en cuestión. Las Cadenas hoteleras participantes son actualmente hoteles con las marcas AmericInn by Wyndham®, Baymont by Wyndham®, Days Inn by Wyndham®, Dazzler by Wyndham, Dolce Hotels and Resorts® by Wyndham, Esplendor® Boutique Hotels by Wyndham, Hawthorn Suites by Wyndham®, Howard Johnson by Wyndham®, La Quinta by Wyndham®, Microtel Inn & Suites by Wyndham®, Ramada by Wyndham®, Registry CollectionSM Hotels, Super 8 by Wyndham®, Trademark Collection by Wyndham™, Travelodge by Wyndham®, TRYP by Wyndham®, Vienna House® by Wyndham, WaterWalk Extended StaySM by Wyndham, Wingate by Wyndham®, Wyndham Alltra, Wyndham Grand®, Wyndham Hotels and Resorts® y Wyndham Garden® alrededor del mundo; sin embargo, esto está sujeto a cambios en cualquier momento sin previo aviso. Sin perjuicio de lo anterior, (a) los hoteles y las instalaciones de hospedaje que tengan marca compartida con Trademark Collection by Wyndham™ y Caesars no se consideran Hoteles participantes para los fines de estos Términos y condiciones y, en su lugar, se consideran Propiedades de Caesars Rewards participantes; y (b) las siguientes propiedades no son hoteles participantes y no permiten la obtención de puntos/millas del socio de viajes: Wyndham Concorde Isla Margarita y el Instituto del Banco de Montreal para el aprendizaje. Visite el sitio web de Wyndham Rewards o llame a Servicios para Miembros de Wyndham Rewards para encontrar una propiedad en la ubicación que desea visitar. Para evitar dudas, las propiedades Travelodge fuera de Estados Unidos, Canadá y México no son propiedad de Wyndham Rewards, Inc. ni de Wyndham Hotels & Resorts, Inc., no son operadas por estas ni están afiliadas con ellas, y no participan en el Programa. En ocasiones, los Hoteles participantes podrían denominarse \"hoteles Wyndham Rewards\" en la publicidad."
+            "titulo": "Llegadas",
+            "respuesta": "Por favor, llegue 15 minutos antes del inicio de su reserva para completar la ficha de registro y prepararse para iniciar su sesión. Tenga en cuenta que el llegar tarde puede reducir el tiempo de su tratamiento. Si usted llega tarde, su cita concluirá a la hora inicialmente programada como cortesía hacia el siguiente huésped."
+          },
+          {
+            "titulo": "Uso de los servicios del spa",
+            "respuesta": "Los vestuarios, sauna de vapor, piscina climatizada, jacuzzi y sala de relajación están disponibles durante su estadía en nuestro spa. El acceso a la piscina es exclusivo para huéspedes registrados del hotel.\n\nAl estar en áreas comunes se pide mantener silencio y conversar en voz baja en consideración. De forma adicional se pide que apaguen celulares al ingresar al Spa. Una ducha previa y el uso de ropa de baño en todo momento es necesario para ingresar."
+          },
+          {
+            "titulo": "Cargo por Servicio",
+            "respuesta": "Para su comodidad, se añade a su factura un cargo por servicio del 10%. Este porcentaje es una propina discrecional, que puede ajustarse según la satisfacción con los servicios prestados."
+          },
+          {
+            "titulo": "Ubicación",
+            "respuesta": "Spa Express se encuentra en el nivel ____, la planta baja del hotel."
           }
         ]
       }
@@ -27,23 +39,35 @@
   "en": {
     "secciones": [
       {
-        "titulo": "I. General Information",
+        "titulo": "",
         "items": [
           {
-            "titulo": "Program Sponsor",
-            "respuesta": "Wyndham Rewards® (the \"Wyndham Rewards Program\" or the \"Program\") is offered by Wyndham Rewards, Inc., a wholly owned indirect subsidiary of Wyndham Hotels & Resorts, Inc., its successors and assigns. Wyndham Rewards, Inc. is sometimes individually referred to as the \"Sponsor\"."
+            "titulo": "How to Make a Spa Reservation?",
+            "respuesta": "We recommend booking your appointment 24 hours in advance if you'd like to enjoy multiple treatments during your stay. You can reach us at extension ___, call us at _____, or email: spalima@costadelsolperu.com. Walk-ins are always welcome."
           },
           {
-            "titulo": "Program Termination",
-            "respuesta": "The Sponsor may terminate the Program at any time with six months' prior notice and without any further obligation to the Member. Regardless of how long you have participated in the Program, your right to earn additional Wyndham Rewards points or other Program points/miles and to claim Program rewards may be terminated, and all Wyndham Rewards points accumulated in your account will be cancelled six months after the Program termination is announced."
+            "titulo": "Cancellation and Rescheduling Policy",
+            "respuesta": "If you need to cancel or reschedule your appointment, please contact our front desk at extension ______ at least 2 hours in advance to avoid a 50% charge of the reserved service. We appreciate you informing us of any changes as we’ve reserved this time exclusively for you."
           },
           {
-            "titulo": "Eligibility",
-            "respuesta": "Individuals interested in enrolling in the Program must be of legal age in their jurisdiction of residence and must provide: (a) a unique email address not shared with an existing Member; and (b) a phone number not shared with any Member with the same first and last name. Such individuals will be referred to as “Members” of the Program. Corporations, groups, and other entities are not eligible. Members may not maintain more than one account or share accounts."
+            "titulo": "Health Concerns",
+            "respuesta": "For your comfort and safety, we ask that you complete a registration form prior to your treatment. Please inform us of any specific requirements, including injuries, illnesses, or allergies. Our team will be happy to recommend the most suitable services for you."
           },
           {
-            "titulo": "Participating Hotels",
-            "respuesta": "“Participating Hotels” are defined as all “By Wyndham” hotels and lodging facilities that operate under a franchise, license, or management agreement with a participating hotel chain at the applicable time. Current participating chains include AmericInn by Wyndham®, Baymont by Wyndham®, Days Inn by Wyndham®, Dazzler by Wyndham, Dolce Hotels and Resorts® by Wyndham, Esplendor® Boutique Hotels by Wyndham, Hawthorn Suites by Wyndham®, Howard Johnson by Wyndham®, La Quinta by Wyndham®, Microtel Inn & Suites by Wyndham®, Ramada by Wyndham®, Registry CollectionSM Hotels, Super 8 by Wyndham®, Trademark Collection by Wyndham™, Travelodge by Wyndham®, TRYP by Wyndham®, Vienna House® by Wyndham, WaterWalk Extended StaySM by Wyndham, Wingate by Wyndham®, Wyndham Alltra, Wyndham Grand®, Wyndham Hotels and Resorts®, and Wyndham Garden® worldwide. However, this list is subject to change at any time without prior notice. Notwithstanding the foregoing, (a) hotels and lodging facilities co-branded with Trademark Collection by Wyndham™ and Caesars are not considered Participating Hotels under these Terms and Conditions and are instead considered Participating Caesars Rewards Properties; and (b) the following properties are not Participating Hotels and do not allow accrual of partner travel points/miles: Wyndham Concorde Isla Margarita and the Bank of Montreal Institute for Learning. Visit the Wyndham Rewards website or call Wyndham Rewards Member Services for assistance locating a property. For clarity, Travelodge properties outside the United States, Canada, and Mexico are not owned, operated by, or affiliated with Wyndham Rewards, Inc. or Wyndham Hotels & Resorts, Inc., and are not part of the Program. Participating Hotels may at times be referred to as “Wyndham Rewards hotels” in advertising."
+            "titulo": "Arrivals",
+            "respuesta": "Please arrive 15 minutes prior to your scheduled appointment to complete your registration and prepare for your session. Please note that arriving late may shorten your treatment time. Out of courtesy for the next guest, your session will end at the originally scheduled time."
+          },
+          {
+            "titulo": "Use of Spa Facilities",
+            "respuesta": "Changing rooms, steam sauna, heated pool, jacuzzi, and relaxation lounge are available during your visit to our spa. Pool access is exclusive to registered hotel guests.\n\nPlease maintain silence and speak softly in shared areas. We also kindly ask that you turn off your mobile phone upon entering the spa. A shower and wearing swimwear at all times are required to enter."
+          },
+          {
+            "titulo": "Service Charge",
+            "respuesta": "For your convenience, a 10% service charge is added to your bill. This is a discretionary gratuity and may be adjusted based on your satisfaction with the service provided."
+          },
+          {
+            "titulo": "Location",
+            "respuesta": "Spa Express is located on level ____, the ground floor of the hotel."
           }
         ]
       }
