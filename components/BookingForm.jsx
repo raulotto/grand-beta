@@ -196,17 +196,11 @@ export default function BookingForm({ embedMenu, initialHotel }) {
 
   return (
     <div
-  className={`FormTC
-    ${showForm
-      ? "transition-all duration-600 ease-in-out lg:transition-none opacity-100 fixed"
-      : "-translate-y-full lg:translate-y-0 z-[2] transition-all duration-600 ease-in-out lg:transition-none"}
-    ${formIsSticky
-      ? "fixed max-w-full right-0 top-0 lg:top-17 left-1/2 transform -translate-x-1/2 w-full z-50 StickyFormCar transition-all duration-600 ease-in-out"
-      : ""}
-    overflow-y-auto max-h-[100dvh] flex flex-col justify-between
-  `}
->
-
+      className={`FormTC 
+      ${showForm ? "transition-all duration-600 ease-in-out lg:transition-none opacity-100 fixed" : 
+      "-translate-y-full lg:translate-y-0  z-[2]  transition-all duration-600 ease-in-out lg:transition-none"}
+      ${formIsSticky ? "fixed max-w-full right-0 top- lg:top-17 left-50% w-full z-50   StickyFormCar transition-all duration-600 ease-in-out " : ""}bg-red-500 max-h-[100dvh]`}
+    >
       <div className="lg:hidden ContainerFlex flex-row px-6 lg:px-[0px] lg:py-[20px] justify-between items-center">
         <LogoHeader isActive={true}  />
       </div>
@@ -434,7 +428,7 @@ export default function BookingForm({ embedMenu, initialHotel }) {
     {t.textGroups}
   </Link>
 </div>
-<div className="sticky bottom-0 bg-white border-t border-gray-300 p-4 z-10">
+<div className="FooterHiddenForm">
         <Link
           href="#"
           onClick={(e) => {
