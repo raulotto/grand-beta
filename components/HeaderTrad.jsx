@@ -12,7 +12,7 @@ import LanguageSelector from "@/components/LanguageSelector";
 import SocialIcons from "./SocialIcons";
 import TopBar from "@/components/TopBar";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaChevronRight } from "react-icons/fa";
+import { FaChevronDown } from "react-icons/fa";
 
 
 const HeaderTrad = ({ modoClaro = false }) => {
@@ -105,9 +105,9 @@ const [activeSubgroupIndex, setActiveSubgroupIndex] = useState(null);
   }`}
 >
   <span>{group.title}</span>
-  <FaChevronRight
+  <FaChevronDown
     className={`transition-transform duration-300 ${
-      activeGroupId === group.id ? "rotate-90" : "rotate-0"
+      activeGroupId === group.id ? "-rotate-90" : "rotate-0"
     }`}
   />
 </Link>
@@ -143,9 +143,9 @@ const [activeSubgroupIndex, setActiveSubgroupIndex] = useState(null);
   }`}
 >
   <span>{sub.title}</span>
-  <FaChevronRight
+  <FaChevronDown
     className={`transition-transform duration-300 ${
-      activeSubgroupIndex === idx ? "rotate-90" : "rotate-0"
+      activeSubgroupIndex === idx ? "-rotate-90" : "rotate-0"
     }`}
   />
 </Link>

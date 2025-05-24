@@ -8,6 +8,7 @@ import lang from '@/data/footer.json';
 import SocialIcons from '@/components/SocialIcons';
 import { FaChevronDown } from 'react-icons/fa';
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
+import { useBooking } from "@/context/BookingContext";
 
 
 const Footer = () => {
@@ -15,6 +16,9 @@ const Footer = () => {
   const [currentLang, setCurrentLang] = useState('es');
   const [isMobile, setIsMobile] = useState(false);
   const [openSections, setOpenSections] = useState({});
+    const booking = useBooking();
+  
+  const { showForm, setShowForm, formIsSticky } = useBooking();
 
   useEffect(() => {
     setCurrentLang(pathname.startsWith('/en') ? 'en' : 'es');
@@ -120,9 +124,59 @@ const Footer = () => {
       </AnimatePresence>
     </div>
   );
-  
+  const [showFooterBooking, setShowFooterBooking] = useState(false);
+
+useEffect(() => {
+  const handleScroll = () => {
+    if (window.innerWidth < 1024) {
+      setShowFooterBooking(window.scrollY > 20);
+    } else {
+      setShowFooterBooking(false);
+    }
+  };
+
+  window.addEventListener("scroll", handleScroll);
+  window.addEventListener("resize", handleScroll); // también evalúa en cambio de tamaño
+
+  handleScroll(); // llama una vez al iniciar
+
+  return () => {
+    window.removeEventListener("scroll", handleScroll);
+    window.removeEventListener("resize", handleScroll);
+  };
+}, []);
+
 
   return (
+    <>
+    <AnimatePresence>
+  {showFooterBooking && (
+    <motion.section
+      id="FooterBooking"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 20 }}
+      transition={{ duration: 0.3 }}
+      className="SectionDiv p-0 fixed bottom-0 z-2 bg-white w-full block lg:hidden shadow-md"
+    >
+      <div className="ContainerFlex p-0">
+        <Link
+          className="ButtonSolid w-full text-center"
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            if (booking?.setShowForm) {
+              booking.setShowForm(true);
+            }
+          }}
+        >
+          Reservar
+        </Link>
+      </div>
+    </motion.section>
+  )}
+</AnimatePresence>
+
     <footer className="bg-[#40666a] SectionDiv">
 
       <div className="ContainerFlex flex-col">
@@ -185,6 +239,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </>
   );
 };
 

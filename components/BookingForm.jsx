@@ -13,6 +13,9 @@ import { useBooking } from "@/context/BookingContext";
 import MenuInterno from "./MenuInterno";
 import lang from "@/data/lang";
 import { PiUsersThreeFill } from "react-icons/pi";
+import { MdEditNote } from "react-icons/md";
+import { MdHelpOutline } from "react-icons/md";
+import LogoHeader from "./LogoHeader";
 
 registerLocale("es", es);
 
@@ -84,6 +87,17 @@ export default function BookingForm({ embedMenu, initialHotel }) {
       return () => clearTimeout(timeout);
     }
   }, [showForm]);
+useEffect(() => {
+  if (showForm) {
+    document.body.classList.add("overflow-hidden");
+  } else {
+    document.body.classList.remove("overflow-hidden");
+  }
+
+  return () => {
+    document.body.classList.remove("overflow-hidden");
+  };
+}, [showForm]);
 
   const hotelsGrouped = {
     Arequipa: [{ name: "Costa del Sol Wyndham Arequipa", id: "109836" }],
@@ -197,16 +211,8 @@ export default function BookingForm({ embedMenu, initialHotel }) {
       "-translate-y-full lg:translate-y-0  z-[2]  transition-all duration-600 ease-in-out lg:transition-none"}
       ${formIsSticky ? "fixed max-w-full right-0 top- lg:top-17 left-50% w-full z-50   StickyFormCar transition-all duration-600 ease-in-out " : ""}`}
     >
-      <div className="HeadHiddenForm">
-        <Link
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            setShowForm(false);
-          }}
-        >
-          X Cerrar
-        </Link>
+      <div className="lg:hidden ContainerFlex flex-row px-6 lg:px-[0px] lg:py-[20px] justify-between items-center">
+        <LogoHeader isActive={true}  />
       </div>
 
       <div className="ContainerFlexOSize">
@@ -400,11 +406,48 @@ export default function BookingForm({ embedMenu, initialHotel }) {
           >
             {t.bookNow}
           </button>
-          <Link href="https://www.costadelsolperu.com/landing-grupos/" target="_blank" className="LinkGrupos">
-  <PiUsersThreeFill className="text-[15px]"/> {t.textGroups}
-</Link>
+          
         </div>
         </form>
+      </div>
+    <div className="LinksAdicionales ContainerFlex  gap-3 text-sm font-semibold justify-center">
+  <Link
+    href="https://www.costadelsolperu.com/modificar-reserva"
+    target="_blank"
+    className="LinkGrupos"
+  >
+    <MdEditNote className="text-[15px]" />
+    Modificar Reserva
+  </Link>
+
+  <Link
+    href="https://www.costadelsolperu.com/ayuda"
+    target="_blank"
+    className="LinkGrupos"
+  >
+    <MdHelpOutline className="text-[15px]" />
+    ¿Necesitas Ayuda?
+  </Link>
+
+  <Link
+    href="https://www.costadelsolperu.com/landing-grupos/"
+    target="_blank"
+    className="LinkGrupos"
+  >
+    <PiUsersThreeFill className="text-[15px]" />
+    {t.textGroups}
+  </Link>
+</div>
+<div className="FooterHiddenForm">
+        <Link
+          href="#"
+          onClick={(e) => {
+            e.preventDefault();
+            setShowForm(false);
+          }}
+        >
+          X Cerrar
+        </Link>
       </div>
     </div>
   );

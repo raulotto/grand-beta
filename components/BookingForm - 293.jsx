@@ -1,394 +1,231 @@
-// BookingForm.jsx
-"use client";
-
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
-import { registerLocale } from "react-datepicker";
-import { RxCalendar } from "react-icons/rx";
-import es from "date-fns/locale/es";
+import { FaGlobe } from "react-icons/fa";
+import MegaGroup from "./MegaGroup";
+import fullMenuGroups from "@/data/menu.json";
+import { usePathname } from "next/navigation";
 import { useBooking } from "@/context/BookingContext";
-import MenuInterno from "./MenuInterno";
+import Image from "next/image";
+import { FaPhoneSquareAlt, FaCalendarAlt } from "react-icons/fa";
+import LogoHeader from '@/components/LogoHeader'
+import LanguageSelector from "@/components/LanguageSelector";
+import SocialIcons from "./SocialIcons";
+import TopBar from "@/components/TopBar";
 
-registerLocale("es", es);
-
-
-export default function BookingForm({ embedMenu }) {
-  const { showForm, setShowForm, formIsSticky } = useBooking();
-  const locationRef = useRef(null);
-  const dropdownRef = useRef(null);
-
-  const [shouldRender, setShouldRender] = useState(showForm);
-  const [showDropdown, setShowDropdown] = useState(false);
-  const [selectedRateType, setSelectedRateType] = useState("discount");
-  const [discountCode, setDiscountCode] = useState("");
-  const [corporateCode, setCorporateCode] = useState("");
-  const [showPromoBox, setShowPromoBox] = useState(false);
+const HeaderTrad = ({ modoClaro = false }) => {
+  const booking = useBooking();
+  const [isVisible, setIsVisible] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+  const [activeGroupId, setActiveGroupId] = useState("hoteles");
 
   useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-        setShowPromoBox(false);
-      }
+    const handleScroll = () => {
+      const currentScroll = window.scrollY;
+      setIsVisible(currentScroll > 300);
     };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (locationRef.current && !locationRef.current.contains(event.target)) {
-        setShowDropdown(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, []);
+    document.body.style.overflow = showMenu ? "hidden" : "";
+    return () => (document.body.style.overflow = "");
+  }, [showMenu]);
 
-  useEffect(() => {
-    if (showForm) {
-      setShouldRender(true);
-    } else {
-      const timeout = setTimeout(() => setShouldRender(false), 700);
-      return () => clearTimeout(timeout);
-    }
-  }, [showForm]);
-
-  const today = new Date();
-  const tomorrow = new Date();
-  tomorrow.setDate(today.getDate() + 1);
-  
-  const defaultHotel = {
-    name: "Wyndham Grand Costa del Sol Lima Airport",
-    id: "9878731"
-  };
-  
-  const [dateRange, setDateRange] = useState([today, tomorrow]);
-  const [startDate, endDate] = dateRange;
-  const [selectedHotel, setSelectedHotel] = useState(defaultHotel);
-  const [query, setQuery] = useState(defaultHotel.name);
-  
-
-  const hotelsGrouped = {
-    Arequipa: [{ name: "Costa del Sol Wyndham Arequipa", id: "109836" }],
-    Cajamarca: [{ name: "Costa del Sol Wyndham Cajamarca", id: "104307" }],
-    Chiclayo: [{ name: "Costa del Sol Wyndham Chiclayo", id: "104314" }],
-    Cusco: [{ name: "Costa del Sol Wyndham Cusco", id: "104313" }],
-    Lima: [
-      { name: "Costa del Sol Wyndham Lima Airport", id: "105840" },
-      { name: "Costa del Sol Wyndham Lima City", id: "104308" },
-      { name: "Wyndham Grand Costa del Sol Lima Airport", id: "9878731" },
-    ],
-    Piura: [{ name: "Costa del Sol Wyndham Piura", id: "104305" }],
-    Pucallpa: [{ name: "Costa del Sol Wyndham Pucallpa", id: "104310" }],
-    Trujillo: [
-      { name: "Costa del Sol Wyndham Trujillo Golf", id: "104309" },
-      { name: "Costa del Sol Trujillo Centro", id: "109838" },
-    ],
-    Tumbes: [{ name: "Costa del Sol Wyndham Tumbes", id: "104326" }],
+  const toggleMenu = () => {
+    const menu = document.querySelector(".dropdown_menu");
+    menu.classList.toggle("show-menu");
+    setShowMenu(!showMenu);
   };
 
-  const formatDate = (date) =>
-    date?.toLocaleDateString("es-PE", {
-      weekday: "short",
-      day: "numeric",
-      month: "short",
-    });
+  const toggleGroup = (id) => {
+    setActiveGroupId((prev) => (prev === id ? null : id));
+  };
 
-  const CustomDateInput = React.forwardRef(({ value, onClick }, ref) => (
-    <button
-      type="button"
-      onClick={onClick}
-      ref={ref}
-      className="flex items-center gap-2 border bg-white border-gray-300 px-4 py-2 text-left w-full text-sm"
+  const isActive = isVisible || modoClaro;
+  const pathname = usePathname();
+  const lang = pathname.startsWith("/en") ? "en" : "es";
+  const menuGroups = fullMenuGroups[lang];
+
+  // Nuevos states:
+const [activeSubgroupIndex, setActiveSubgroupIndex] = useState(null);
+
+  return (<>
+    <TopBar />
+    <header
+      className={`transition-all duration-500 ease-in-out z-[4] font-gotham-book w-full ${
+        isActive ? "fixed top-0 bg-white shadow-md" : "absolute"
+      }`}
     >
-      <RxCalendar />
-      {startDate && endDate ? (
-        <span>
-          {formatDate(startDate)} — {formatDate(endDate)}
-        </span>
-      ) : (
-        <span className="text-gray-400">Seleccionar fechas</span>
-      )}
-    </button>
-  ));
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!selectedHotel) {
-      alert("Selecciona un hotel");
-      return;
-    }
-
-    const baseUrl = `https://reservations.travelclick.com/${selectedHotel.id}?LanguageID=2`;
-
-    const params = new URLSearchParams();
-    if (selectedRateType === "discount" && discountCode) {
-      params.append("discount", discountCode);
-    } else if (selectedRateType === "identifier" && corporateCode) {
-      params.append("identifier", corporateCode);
-    }
-
-    if (startDate && endDate) {
-      const format = (d) =>
-        `${(d.getMonth() + 1).toString().padStart(2, "0")}/${d
-          .getDate()
-          .toString()
-          .padStart(2, "0")}/${d.getFullYear()}`;
-      params.append("datein", format(startDate));
-      params.append("dateout", format(endDate));
-    }
-
-    const finalUrl = `${baseUrl}&${params.toString()}`;
-    window.open(finalUrl, "_blank");
-
-    // Reset
-    setDiscountCode("");
-    setCorporateCode("");
-    setSelectedRateType("discount");
-    setShowPromoBox(false);
-  };
-
-  const renderGroupedHotels = () => {
-    const lowerQuery = query.toLowerCase();
-    return Object.entries(hotelsGrouped).map(([region, hotels]) => {
-      const matched = hotels.filter((h) =>
-        h.name.toLowerCase().includes(lowerQuery)
-      );
-      if (matched.length === 0) return null;
-      return (
-        <div key={region} className="py-1">
-          <div className="RegionLocation">{region}</div>
-          {matched.map((hotel) => (
-            <div
-              key={hotel.id}
-              className="px-4 py-2 text-light-oceanic hover:bg-gray-100 cursor-pointer"
-              onClick={() => {
-                setSelectedHotel(hotel);
-                setQuery(hotel.name);
-                setShowDropdown(false);
-              }}
-            >
-              <div className="text-sm">{hotel.name}</div>
-            </div>
-          ))}
+      {/* Dropdown megamenú */}
+      <div className="dropdown_menu BgImageIso">
+        <div className="ContainerFlex px-6 lg:px-0 items-start">
+        <LogoHeader isActive={false}  />
         </div>
-      );
-    });
-  };
-
-  return (
-    <div
-      className={`FormTC 
-      ${showForm ? "transition-all duration-600 ease-in-out lg:transition-none opacity-100 fixed" : 
-      "-translate-y-full  z-[2]  transition-all duration-600 ease-in-out lg:transition-none"}
-      ${formIsSticky ? "fixed max-w-full right-0 top- lg:top-34 left-50% w-full z-50   StickyFormCar transition-all duration-600 ease-in-out " : ""}`}
-    >
-      <div className="HeadHiddenForm">
-        <Link
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            setShowForm(false);
-          }}
-        >
-          X Cerrar
-        </Link>
-      </div>
-
-      <div className="ContainerFlexOSize">
-      {embedMenu && (
-  <div className="transition-all duration-500 ease-in-out">
-    <MenuInterno
-  embedMenu={true}
-  className={`${embedMenu ? 'block' : 'hidden'}`}
-/>
+        
+        <div className="InnerDropdownMenu ContainerFlex MegaMenu w-full">
+  {/* Mobile: acordeón */}
+  <div className="block lg:hidden w-full">
+    {menuGroups.map((group) => (
+      <MegaGroup
+        key={group.id}
+        id={group.id}
+        title={group.title}
+        titleHref={group.titleHref}
+        isOpen={activeGroupId === group.id}
+        onToggle={toggleGroup}
+        items={group.items}
+        subgroups={group.subgroups || []}
+      />
+    ))}
   </div>
-)}
 
-<form
-  name="resform"
-  id="resform"
-  className={`ResForm ${embedMenu ? "lg:grid-cols-6" : "lg:grid-cols-12"}`}
-  method="get"
-  target="_blank"
-  onSubmit={handleSubmit}
->
-
-        <input name="LanguageID" type="hidden" value="2" />
-        {selectedHotel && (
-          <input type="hidden" name="HotelID" value={selectedHotel.id} />
-        )}
-
-        <div
-          className={`flex flex-col col-span-4 lg:col-span-4 relative ${
-            embedMenu ? "hidden" : ""
-          }`}
-        >
-          <label className="text-xs text-gray-500 uppercase tracking-wide">
-          </label>
-          <div className="relative" ref={locationRef}>
-            <input
-              type="text"
-              value={query}
-              onChange={(e) => {
-                setQuery(e.target.value);
-                setShowDropdown(true);
-                setSelectedHotel(null);
-              }}
-              onFocus={() => {
-                if (query !== "") {
-                  setQuery("");
-                  setSelectedHotel(null);
-                }
-                setShowDropdown(true);
-              }}
-              
-              placeholder="Seleccionar Hotel"
-              className="border border-gray-300 px-4 py-2 text-sm w-full pr-8"
-            />
-            {selectedHotel && (
-              <button
-                type="button"
-                onClick={() => {
-                  setSelectedHotel(null);
-                  setQuery("");
-                }}
-                className="absolute right-2 top-2 text-secondary-terracota font-bold hover:text-red-600 text-sm"
-              >
-                ✕
-              </button>
-            )}
-            {showDropdown && (
-              <div className="absolute z-10 bg-white border border-gray-200 w-full mt-1  max-h-64 overflow-y-auto">
-                {renderGroupedHotels()}
-              </div>
-            )}
+  {/* Desktop: columnas visibles solo si el grupo está abierto */}
+  <div className="hidden lg:flex gap-12 w-full text-white">
+    {menuGroups
+      .filter((group) => group.id === activeGroupId)
+      .map((group) =>
+        group.subgroups && group.subgroups.length > 0 ? (
+          group.subgroups.map((subgroup, idx) => (
+            <div key={idx} className="flex-1 min-w-[180px]">
+              <h4 className="font-bold uppercase mb-3">{subgroup.title}</h4>
+              <ul className="space-y-1">
+                {subgroup.items.map((item, i) => (
+                  <li key={i}>
+                    <Link href={item.href} className="hover:underline block">
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        ) : (
+          <div key={group.id} className="flex-1 min-w-[180px]">
+            <h4 className="font-bold uppercase mb-3">{group.title}</h4>
+            <ul className="space-y-1">
+              {group.items.map((item, i) => (
+                <li key={i}>
+                  <Link href={item.href} className="hover:underline block">
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
-        </div>
+        )
+      )}
+  </div>
+</div>
 
-        <div className="flex flex-col col-span-4 lg:col-span-3">
-          <span className="text-xs text-gray-500 uppercase tracking-wide">
-          </span>
-          <DatePicker
-            selectsRange={true}
-            startDate={startDate}
-            endDate={endDate}
-            onChange={(update) => setDateRange(update)}
-            monthsShown={2}
-            minDate={today}
-            locale="es"
-            customInput={<CustomDateInput />}
-            dateFormat="MM/dd/yyyy"
-          />
-          {startDate && endDate && (
-            <>
-              <input
-                type="hidden"
-                name="datein"
-                value={`${(startDate.getMonth() + 1)
-                  .toString()
-                  .padStart(2, "0")}/${startDate
-                  .getDate()
-                  .toString()
-                  .padStart(2, "0")}/${startDate.getFullYear()}`}
-              />
-              <input
-                type="hidden"
-                name="dateout"
-                value={`${(endDate.getMonth() + 1)
-                  .toString()
-                  .padStart(2, "0")}/${endDate
-                  .getDate()
-                  .toString()
-                  .padStart(2, "0")}/${endDate.getFullYear()}`}
-              />
-            </>
-          )}
-        </div>
-        <div
-        ref={dropdownRef}
-          className={`flex flex-col col-span-4 lg:col-span-2 relative  ${
-            embedMenu ? "hidden" : ""
-          }`}
-        >
-            <input
-              type="text"
-              readOnly
-              value={
-                selectedRateType === "discount" ? discountCode : corporateCode
-              }
-              onClick={() => setShowPromoBox(!showPromoBox)}
-              placeholder="Código"
-              className="border border-gray-300 px-4 py-2 text-sm"
-            />
+        <SocialIcons /> 
 
-            {showPromoBox && (
-              <div className="absolute z-10 bg-white border border-gray-200 w-[230px] mt-9  p-4 space-y-4">
-                <p className="text-sm font-semibold ">Seleccionar tipo de tarifa</p>
-
-                <div>
-                  <label className="flex items-center gap-2">
-                    <input
-                      type="radio"
-                      name="rateType"
-                      value="discount"
-                      checked={selectedRateType === "discount"}
-                      onChange={() => setSelectedRateType("discount")}
-                    />
-                    Código Promocional
-                  </label>
-                  {selectedRateType === "discount" && (
-  <input
-    type="text"
-    className="border border-gray-300 mt-1 px-2 py-1 w-full text-sm"
-    placeholder="Ingresar código"
-    value={discountCode}
-    onChange={(e) => setDiscountCode(e.target.value)}
-  />
-)}
-
-                </div>
-
-                <div>
-                  <label className="flex items-center gap-2">
-                    <input
-                      type="radio"
-                      name="rateType"
-                      value="identifier"
-                      checked={selectedRateType === "identifier"}
-                      onChange={() => setSelectedRateType("identifier")}
-                    />
-                    Código Corporativo
-                  </label>
-                  {selectedRateType === "identifier" && (
-  <input
-    type="text"
-    className="border border-gray-300 mt-1 px-2 py-1 w-full text-sm"
-    placeholder="Ingresar código"
-    value={corporateCode}
-    onChange={(e) => setCorporateCode(e.target.value)}
-  />
-)}
-
-                </div>
-              </div>
-            )}
-          </div>
-
-        <div className="flex flex-col col-span-4 lg:col-span-3">
-          <button
-            type="submit"
-            className="ColorButton1 h-[36px] w-full px-4 py-1 transition duration-300 flex items-center justify-center cursor-pointer text-[.7em] font-[800] "
-          >
-            Reservar Ahora
-          </button>
-        </div>
-      </form>
       </div>
-    </div>
+
+      {/* Top header con logo, menú hamburguesa y opciones */}
+      <div className="ContainerFlex flex-row px-6 lg:px-[0px] lg:py-[20px] justify-between items-center">
+        {/* Logo */}
+        <LogoHeader isActive={isActive} />
+
+        {/* Centro - Teléfono */}
+        <div className="ItemsMenuCenter">
+          <ul
+            className={`MenuLight flex ${
+              isActive ? "text-primary-oceanic" : "text-white"
+            }`}
+          >
+            <li>
+              <Link
+                href="tel:+5102009200"
+                className="flex items-center gap-2"
+              >
+                <FaPhoneSquareAlt />
+                <span className="hidden sm:inline">
+                  Reservas: +51(01) 2009200
+                </span>
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        
+
+       
+
+        {/* Modificar reserva */}
+        <div className="hidden ml-5">
+          <ul
+            className={`MenuLight flex ${
+              isActive ? "text-primary-oceanic" : "text-white"
+            }`}
+          >
+            <li>
+              <Link href="#" className="flex items-center gap-2">
+                <FaCalendarAlt />
+                <span className="hidden sm:inline">Modificar Reserva</span>
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Botón reservar */}
+        <div className="ButtonBooking ActivateForm">
+          <Link
+            className="ButtonSolid"
+            href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              if (booking?.setShowForm) {
+                booking.setShowForm(true);
+              }
+            }}
+          >
+            Reservar
+          </Link>
+        </div>
+         <div className="flex items-center justify-center gap-5">
+          {/* Idioma */}
+          <LanguageSelector />
+        {/* Botón hamburguesa */}
+        <div className="MobileMenuAccomadation">
+          <div
+            className="HamburgerIcon  lg:top-[25px] cursor-pointer block"
+            onClick={toggleMenu}
+          >
+            <div
+              className={`bar ${showMenu ? "bar1" : ""} ${
+                showMenu
+                  ? "bg-white"
+                  : isActive
+                  ? "bg-primary-oceanic"
+                  : "bg-white"
+              }`}
+            />
+            <div
+              className={`bar ${showMenu ? "bar2" : ""} ${
+                showMenu
+                  ? "bg-white"
+                  : isActive
+                  ? "bg-primary-oceanic"
+                  : "bg-white"
+              }`}
+            />
+            <div
+              className={`bar ${showMenu ? "bar3" : ""} ${
+                showMenu
+                  ? "bg-white"
+                  : isActive
+                  ? "bg-primary-oceanic"
+                  : "bg-white"
+              }`}
+            />
+          </div>
+        </div>
+         </div>
+      </div>
+    </header></>
   );
-}
+};
+
+export default HeaderTrad;

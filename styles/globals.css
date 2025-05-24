@@ -495,7 +495,10 @@ a:hover {
     @apply lg:items-center lg:flex gap-[10px] text-white;
   }
   .HeadHiddenForm {
-    @apply flex p-10 lg:hidden justify-end;
+    @apply flex p-10 lg:hidden justify-start;
+  }
+  .FooterHiddenForm {
+    @apply absolute bottom-0 flex p-10 lg:hidden justify-end w-full;
   }
   .FormTC {
     @apply    lg:block absolute lg:relative left-1/2 z-[6] top-0 lg:top-[83%]  h-screen lg:h-auto lg:h-[85px] bg-[#f0f0f0] translate-x-[-50%] m-0   w-full mx-auto shadow-md flex flex-col justify-start lg:items-center;
@@ -654,7 +657,7 @@ a:hover {
   @apply flex justify-between w-full items-center;
 }
 .LinkGrupos{
-  @apply w-full text-primary-oceanic hover:text-secondary-terracota text-[11px] absolute bottom-[-22] flex items-center  gap-1;
+  @apply w-max flex justify-center items-center text-primary-oceanic hover:text-secondary-terracota text-[11px] flex items-center  gap-1;
 }
 .FormTC .ContainerFlexOSize{
   @apply grid-cols-6;
@@ -689,7 +692,9 @@ a:hover {
 .TagNuevo  {
   @apply  bg-blue-600 text-white text-[10px] font-bold px-2 py-[2px] rounded-md uppercase;
 }
-
+.LinksAdicionales{
+  @apply lg:p-0 lg:absolute bottom-1 left-0 right-0;
+}
 }
 
 
