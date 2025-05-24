@@ -444,7 +444,7 @@ useEffect(() => {
     {t.textGroups}
   </Link>
 </div>
-<div className="FooterHiddenForm sticky bottom-0 bg-white z-10 border-t border-gray-200 p-4">
+<div className="sticky bottom-0 bg-white border-t border-gray-300 p-4 z-10">
         <Link
           href="#"
           onClick={(e) => {
