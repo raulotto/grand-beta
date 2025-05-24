@@ -67,7 +67,7 @@
       "text": "Relax with our massage options: relaxing, deep tissue, hot stone, reflexology and more. Sessions start at S/ 72 for 15 minutes, with 30 and 60-minute options also available.",
       "buttonText": "",
       "link": "",
-      "image": "/images/cds/masajes.jpg",
+      "image": "/images/cds/cds-desayuno-buffet.jpg",
       "target": "_blank",
       "detalles": [
         { "servicio": "Relaxing massage", "duracion": "30 min", "precio": "S/ 168" },
@@ -85,7 +85,7 @@
       "text": "Take care of your skin with our facial treatments, including plasticized and collagen masks. Perfect for a fresh and renewed appearance.",
       "buttonText": "",
       "link": "",
-      "image": "/images/cds/tratamientos-faciales.jpg",
+      "image": "/images/cds/cds-desayuno-buffet.jpg",
       "detalles": [
         { "servicio": "Standard facial", "duracion": "30 min", "precio": "-" },
         { "servicio": "Plasticized mask facial", "duracion": "60 min", "precio": "-" },
@@ -97,7 +97,7 @@
       "text": "We offer waxing services for all body areas, including facial, underarm, bikini, legs and more. Sessions start at S/ 45.60.",
       "buttonText": "",
       "link": "",
-      "image": "/images/cds/depilaciones.jpg",
+      "image": "/images/cds/cds-desayuno-buffet.jpg",
       "detalles": [
         { "servicio": "Facial waxing", "precio": "S/ 45.60" },
         { "servicio": "Underarm waxing", "precio": "S/ 82.08" },
@@ -113,7 +113,7 @@
       "text": "Access our facilities including showers, sauna, heated pool, jacuzzi and more. Starting at S/ 96 for 60 minutes. Private rooms are also available.",
       "buttonText": "",
       "link": "",
-      "image": "/images/cds/servicios-spa.jpg",
+      "image": "/images/cds/cds-desayuno-buffet.jpg",
       "detalles": [
         { "servicio": "Shower only", "duracion": "60 min", "precio": "S/ 96.00" },
         { "servicio": "Day use spa access", "duracion": "3 hours", "precio": "S/ 168.00" },
