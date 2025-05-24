@@ -209,7 +209,7 @@ useEffect(() => {
       className={`FormTC 
       ${showForm ? "transition-all duration-600 ease-in-out lg:transition-none opacity-100 fixed" : 
       "-translate-y-full lg:translate-y-0  z-[2]  transition-all duration-600 ease-in-out lg:transition-none"}
-      ${formIsSticky ? "fixed max-w-full right-0 top- lg:top-17 left-50% w-full z-50   StickyFormCar transition-all duration-600 ease-in-out " : ""}`}
+      ${formIsSticky ? "max-h-screen overflow-y-auto lg:overflow-visible " : ""}`}
     >
       <div className="lg:hidden ContainerFlex flex-row px-6 lg:px-[0px] lg:py-[20px] justify-between items-center">
         <LogoHeader isActive={true}  />
