@@ -43,7 +43,7 @@ export default function HabitacionesPage() {
 {/* Intro */}
       <section className="SectionDiv pb-0 scroll-mt-24 lg:scroll-mt-52" id="next-section">
   <div className="ContainerFlex flex-col text-center">
-    <h2 className="TitleSection">It's time to reconnect with yourself</h2>
+    <h2 className="TitleSection">It&apos;s time to reconnect with yourself</h2>
     <p className="max-w-3xl text-base text-gray-600 leading-relaxed mt-4">
       Discover a space where wellness is lived in every detail. Relax with exclusive treatments at our Wellness & Spa, stay active in our fully equipped gym, or enjoy a refreshing break in our indoor pool with controlled temperature. Here, sophistication and tranquility combine to offer you an unparalleled experience of comfort and renewal.
     </p>
