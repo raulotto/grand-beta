@@ -18,7 +18,7 @@ const TextoExpandible = ({ parrafos, masInfo, menosInfo }) => {
           transition={{ duration: 0.5, ease: 'easeInOut' }}
           className="overflow-hidden relative"
         >
-          <div ref={ref}>
+          <div className='flex flex-col gap-3' ref={ref}>
             {parrafos.map((p, i) => (
               <p key={i} className="text-parrafos mb-4 last:mb-0">
                 {p}

@@ -17,6 +17,7 @@ import { MdEditNote } from "react-icons/md";
 import { MdHelpOutline } from "react-icons/md";
 import LogoHeader from "./LogoHeader";
 import { RxCross2 } from 'react-icons/rx';
+import { motion, AnimatePresence } from 'framer-motion';
 
 registerLocale("es", es);
 
@@ -31,9 +32,55 @@ export default function BookingForm({ embedMenu, initialHotel }) {
   const [corporateCode, setCorporateCode] = useState("");
   const [showPromoBox, setShowPromoBox] = useState(false);
 
-  const pathname = usePathname();
-  const currentLang = pathname.startsWith("/en") ? "en" : "es";
+const [showModifyModal, setShowModifyModal] = useState(false);
+const [selectedHotelId, setSelectedHotelId] = useState('');
+const [confirmId, setConfirmId] = useState('');
+const pathname = usePathname();
+const currentLang = pathname.startsWith('/en') ? 'en' : 'es';
+
   const t = lang[currentLang];
+
+const modalRef = useRef(null);
+
+useEffect(() => {
+  if (!showModifyModal) return;
+
+  const handleClickOutside = (event) => {
+    if (modalRef.current && !modalRef.current.contains(event.target)) {
+      setShowModifyModal(false);
+    }
+  };
+
+  const handleEscKey = (event) => {
+    if (event.key === 'Escape') {
+      setShowModifyModal(false);
+    }
+  };
+
+  document.addEventListener('mousedown', handleClickOutside);
+  document.addEventListener('keydown', handleEscKey);
+
+  return () => {
+    document.removeEventListener('mousedown', handleClickOutside);
+    document.removeEventListener('keydown', handleEscKey);
+  };
+}, [showModifyModal]);
+
+  const hotelList = [
+  { id: '104326', name: 'Tumbes' },
+  { id: '104305', name: 'Piura' },
+  { id: '104314', name: 'Chiclayo' },
+  { id: '104309', name: 'Trujillo Golf' },
+  { id: '109838', name: 'Trujillo Centro' },
+  { id: '104307', name: 'Cajamarca' },
+  { id: '105840', name: 'Lima Aeropuerto' },
+  { id: '9878731', name: 'Wyndham Grand' },
+  { id: '104308', name: 'Lima Ciudad' },
+  { id: '109836', name: 'Arequipa' },
+  { id: '104313', name: 'Cusco' },
+  { id: '104310', name: 'Pucallpa' },
+];
+
 
   const today = new Date();
   const tomorrow = new Date();
@@ -204,8 +251,11 @@ useEffect(() => {
       );
     });
   };
+const [errorHotel, setErrorHotel] = useState(false);
+const [errorConfirmId, setErrorConfirmId] = useState(false);
 
   return (
+    <>
     <div
       className={`FormTC 
       ${showForm ? "transition-all duration-600 ease-in-out lg:transition-none opacity-100 fixed" : 
@@ -421,17 +471,18 @@ useEffect(() => {
     {t.textGroups}
   </Link>          
 
-  <Link
-    href="https://www.costadelsolperu.com/modificar-reserva"
-    target="_blank"
-    className="LinkGrupos"
-  >
-    <MdEditNote className="text-[15px]" />
-    {t.textModify}
-  </Link>
+  <button
+  type="button"
+  className="LinkGrupos"
+  onClick={() => setShowModifyModal(true)}
+>
+  <MdEditNote className="text-[15px]" />
+  {t.textModify}
+</button>
+
 
   <Link
-    href="https://www.costadelsolperu.com/ayuda"
+    href="https://www.costadelsolperu.com/contacto"
     target="_blank"
     className="LinkGrupos"
   >
@@ -453,6 +504,108 @@ useEffect(() => {
           <RxCross2 size={20} /> Cerrar
         </Link>
       </div>
+      
     </div>
+    <AnimatePresence>
+  {showModifyModal && (
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center px-4"
+    >
+      <motion.div
+        initial={{ scale: 0.95, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        exit={{ scale: 0.95, opacity: 0 }}
+        transition={{ duration: 0.2 }}
+        ref={modalRef}
+        className="bg-white w-full max-w-md p-6 rounded-lg relative shadow-lg"
+      >
+      <button
+        onClick={() => setShowModifyModal(false)}
+        className="absolute top-3 right-3 text-gray-600 hover:text-red-500"
+      >
+        <RxCross2 size={20} />
+      </button>
+
+      <h2 className="text-lg font-bold mb-4">
+        {t.textModifyTitle}
+      </h2>
+      <p>
+        {t.textModifySubTitle}
+      </p>
+
+      <div className="mb-4">
+  {errorHotel && (
+    <p className="text-sm text-red-500 mb-1">
+      {currentLang === 'en' ? 'Please select a hotel' : 'Selecciona un hotel'}
+    </p>
+  )}
+  <select
+    value={selectedHotelId}
+    onChange={(e) => {
+      setSelectedHotelId(e.target.value);
+      setErrorHotel(false);
+    }}
+    className={`w-full border px-3 py-2 rounded ${errorHotel ? 'border-red-500' : 'border-gray-300'}`}
+  >
+    <option value="">{currentLang === 'en' ? 'Select a Hotel' : 'Seleccionar Hotel'}</option>
+    {hotelList.map((hotel) => (
+      <option key={hotel.id} value={hotel.id}>
+        {hotel.name}
+      </option>
+    ))}
+  </select>
+</div>
+
+
+      <div className="mb-4">
+  {errorConfirmId && (
+    <p className="text-sm text-red-500 mb-1">
+      {currentLang === 'en' ? 'Enter your confirmation ID' : 'Ingresa tu código de confirmación'}
+    </p>
+  )}
+  <input
+    type="text"
+    placeholder="Confirm ID"
+    value={confirmId}
+    onChange={(e) => {
+      setConfirmId(e.target.value);
+      setErrorConfirmId(false);
+    }}
+    className={`w-full border px-3 py-2 rounded ${errorConfirmId ? 'border-red-500' : 'border-gray-300'}`}
+  />
+  
+</div>
+
+
+      <button
+  onClick={() => {
+    const hotelMissing = !selectedHotelId;
+    const confirmMissing = !confirmId.trim();
+
+    setErrorHotel(hotelMissing);
+    setErrorConfirmId(confirmMissing);
+
+    if (hotelMissing || confirmMissing) return;
+
+    const baseUrl = `https://reservations.travelclick.com/${selectedHotelId}?LanguageID=${currentLang === "en" ? "1" : "2"}`;
+    const url = `${baseUrl}&confirmId=${encodeURIComponent(confirmId)}#modify-booking`;
+
+    window.open(url, '_blank');
+  }}
+  className="bg-primary-oceanic text-white px-4 py-2 rounded w-full"
+>
+  {currentLang === 'en' ? 'Search' : 'Buscar'}
+</button>
+
+    </motion.div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
+    </>
   );
 }

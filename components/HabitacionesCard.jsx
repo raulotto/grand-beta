@@ -1,11 +1,15 @@
 import React from "react";
+import { usePathname } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Autoplay  } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import { CiRuler } from "react-icons/ci";
-import { FaCheck } from "react-icons/fa6";
-import { IoBedOutline, IoPeopleOutline  } from "react-icons/io5";
+import { IoCheckmark } from "react-icons/io5";
+import { IoChevronForward } from "react-icons/io5";
+
+import { IoBedOutline, IoPeopleOutline } from "react-icons/io5";
+import lang from "@/data/lang";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -13,41 +17,23 @@ import useIdioma from "@/hooks/useIdioma";
 
 const HabitacionCard = ({ habitacion }) => {
   const idioma = useIdioma("habitaciones");
-if (!idioma) return null;
-
-const { lang } = idioma;
+  if (!idioma) return null;
 
 
-      const textos = {
-        es: {
-          verMas: "Ver más",
-          reservar: "Reservar"
-        },
-        en: {
-          verMas: "View more",
-          reservar: "Book now"
-        }
-      };
-
-  const descripcionCorta =
-    habitacion.descripcion.length > 150
-      ? habitacion.descripcion.substring(0, 150) + "..."
-      : habitacion.descripcion;
-      
-
+  const pathname = usePathname();
+const currentLang = pathname.startsWith("/en") ? "en" : "es";
+const t = lang[currentLang];
   return (
     <div className="overflow-hidden shadow-md bg-white flex flex-col">
-      {/* Swiper Gallery */}
       <div className="relative w-full h-56">
-      <Swiper
-  modules={[Pagination, Autoplay]} // <== AÑADIDO
-  pagination={{ clickable: true }}
-  autoplay={{ delay: 3000, disableOnInteraction: false }} // <== CONFIGURACIÓN
-  spaceBetween={0}
-  slidesPerView={1}
-  className="w-full h-full"
->
-
+        <Swiper
+          modules={[Pagination, Autoplay]}
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          spaceBetween={0}
+          slidesPerView={1}
+          className="w-full h-full"
+        >
           {habitacion.imagenes.map((img, idx) => (
             <SwiperSlide key={idx}>
               <Image
@@ -84,42 +70,41 @@ const { lang } = idioma;
 
         {habitacion?.servicios?.length > 0 && (
           <>
-          <h3 className="text-xs font-semibold mt-5 mb-2">Servicios Adicionales</h3>
-                    <div className="CardExtraServices">
-                      
-                      {habitacion.servicios.map((servicio, idx) => (
-                        <div key={idx} className="flex items-center gap-2 text-xs">
-                          {(
-                            <FaCheck className="w-4 h-4 text-primary-oceanic" />
-                          )}
-                          {servicio}
-                        </div>
-                      ))}
-                    </div>
-                    </>
-                  )}
+            <h3 className="text-xs font-semibold mt-5! mb-2!">
+              {t.roomServicesTitle}
+            </h3>
+            <div className="CardExtraServices">
+              {habitacion.servicios.map((servicio, idx) => (
+                <div key={idx} className="flex items-center gap-2 text-xs">
+                  <IoCheckmark   className="w-4 h-4 text-primary-oceanic" />
+                  {servicio}
+                </div>
+              ))}
+            </div>
+          </>
+        )}
 
-<div className="CardButtons">
-      {habitacion.urlInterna && (
-        <Link
-          href={habitacion.urlInterna}
-          className="mt-2 inline-block text-center text-oceanic-primary underline text-sm"
-        >
-          {textos[lang].verMas}
-        </Link>
-      )}
-      {habitacion.urlReserva && (
-        <Link
-          href={habitacion.urlReserva}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="ButtonOutline text-[10px] font-semibold"
-        >
-          {textos[lang].reservar}
-        </Link>
-      )}
-    </div>
+        <div className="CardButtons">
+          {habitacion.urlInterna && (
+            <Link
+              href={habitacion.urlInterna}
+              className="mt-2 flex justify-center items-center text-center text-oceanic-primary underline text-sm"
+            >
+              {t.roomSeeMore} <IoChevronForward  />
 
+            </Link>
+          )}
+          {habitacion.urlReserva && (
+            <Link
+              href={habitacion.urlReserva}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ButtonOutline text-[10px] font-semibold"
+            >
+              {t.roomBook}
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );

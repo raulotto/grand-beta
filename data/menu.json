@@ -1,9 +1,10 @@
 {
   "es": [
+    
     {
       "id": "hoteles",
       "title": "Hoteles",
-      "titleHref": "/hoteles",
+      "titleHref": "https://www.costadelsolperu.com/hoteles/",
       "target": "_blank",
 
       "items": [
@@ -24,7 +25,7 @@
     {
       "id": "promociones",
       "title": "Promociones",
-      "titleHref": "/promociones",
+      "titleHref": "",
       "subgroups": [
         {
           "title": "Promociones del mes",
@@ -56,6 +57,7 @@
         {
           "title": "Restaurantes",
           "href": "https://www.costadelsolperu.com/beneficios/",
+          "target": "_blank",
           "items": [
             { "label": "Ver todos", "href": "https://www.costadelsolperu.com/promociones/restaurantes/", "target": "_blank" },
     { "label": "Scotiabank – Saria Sky Bar", "href": "https://www.costadelsolperu.com/beneficios/scotiabank-25-off-saria-sky-bar/", "target": "_blank" },
@@ -69,7 +71,7 @@
         },
         {
           "title": "Aliados",
-          "href": "/promociones/bancos",
+          "href": "",
           "items": [
             { "label": "Club de Suscriptores de El Comercio", "href": "https://www.costadelsolperu.com/beneficios/club-de-lectores-el-comercio/", "target": "_blank" },
     { "label": "Auna", "href": "https://www.costadelsolperu.com/beneficios/auna-25-off/", "target": "_blank" },
@@ -81,7 +83,8 @@
     {
       "id": "paquetes",
       "title": "Paquetes",
-      "titleHref": "/paquetes",
+      "titleHref": "https://www.costadelsolperu.com/paquetes",
+      "target": "_blank",
       "items": [
   { "label": "Paquete Romántico", "href": "https://www.costadelsolperu.com/paquetes/romantico/", "target": "_blank" },
   { "label": "Noche de Bodas", "href": "https://www.costadelsolperu.com/paquetes/noche-de-bodas/", "target": "_blank" },
@@ -119,11 +122,10 @@
       "title": "Nosotros",
       "titleHref": "/nosotros",
       "items": [
-        { "label": "Eventos", "href": "#" },
-        { "label": "Blog", "href": "#" },
-        { "label": "Dog Friendly", "href": "#" },
-        { "label": "Reclamos", "href": "#" },
-        { "label": "Contáctenos", "href": "#" }
+        { "label": "Lee nuestro Blog", "href": "https://www.costadelsolperu.com/blog/", "target": "_blank" },
+        { "label": "Dog Friendly", "href": "https://www.costadelsolperu.com/terminos-y-condiciones-dog-friendly/", "target": "_blank" },
+        { "label": "Libro de Reclamos", "href": "https://www.costadelsolperu.com/libro-de-reclamaciones/", "target": "_blank" },
+        { "label": "Contáctenos", "href": "https://www.costadelsolperu.com/contacto/", "target": "_blank" }
       ]
     }
   ],
@@ -201,5 +203,17 @@
         { "label": "Contact Us", "href": "#" }
       ]
     }
-  ]
+  ],
+  "extraMobileLink": {
+    "es": {
+      "label": "CDS SALE",
+      "href": "https://www.costadelsolperu.com/cds-sale/",
+      "target": "_blank"
+    },
+    "en": {
+      "label": "CDS SALE",
+      "href": "https://www.costadelsolperu.com/en/cds-sale/",
+      "target": "_blank"
+    }
+  }
 }

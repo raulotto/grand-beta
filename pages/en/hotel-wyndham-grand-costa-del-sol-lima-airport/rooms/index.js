@@ -15,6 +15,8 @@ import useIdioma from "@/hooks/useIdioma"
 import habitacionesLandingData from "@/data/habitacionesLanding.json"
 import habitaciones from "@/data/habitaciones.json"
 import Image from "next/image"
+import TextoExpandible from "@/components/TextoExpandible";
+
 
 export default function HabitacionesPage() {
   const idioma = useIdioma("rooms", {
@@ -64,7 +66,13 @@ export default function HabitacionesPage() {
           <div>
             <h4 className="TitleSection">{textos.tituloPrincipal}</h4>
           </div>
-          <p className="w-full lg:w-[70%]">{textos.parrafoPrincipal}</p>
+          <div className="w-full lg:w-[70%] mx-auto">
+  <TextoExpandible
+    parrafos={textos?.textoExpandible?.parrafos || []}
+    masInfo={textos?.textoExpandible?.masInfo || "Ver más"}
+    menosInfo={textos?.textoExpandible?.menosInfo || "Ver menos"}
+  />
+</div>
         </div>
 
         <div className="ContainerFlex flex-col pb-0">

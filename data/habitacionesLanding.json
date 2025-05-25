@@ -1,8 +1,14 @@
 {
     "es": {
       "tituloPrincipal": "Opciones de Suites",
-      "parrafoPrincipal": "Relájese en una de nuestras 249 modernas y tecnológicas habitaciones, diseñadas para ofrecer el máximo confort y eficiencia, donde puede solicitar servicio a la habitación las 24 horas o lavandería con solo tocar un botón. Disfrute de nuestra piscina climatizada, relájese en el spa o mantenga su rutina de ejercicios en nuestro gimnasio completamente equipado. Organice eventos con estilo en nuestras seis modernas salas, con impresionantes vistas y lo mejor de la gastronomía peruana.",
-      "tabs": ["Superior", "Suite"],
+"textoExpandible": {
+  "parrafos": [
+    "Wyndham Grand Costa del Sol Lima Airport ofrece a sus huéspedes una estancia enriquecedora en pleno corazón del aeropuerto más importante del Perú. Con 249 habitaciones inteligentes, este hotel cinco estrellas ha sido diseñado para ofrecer el máximo confort y eficiencia al viajero global. Cada espacio refleja una elegante inspiración en la cultura peruana, con texturas de madera natural, tonos ocres y detalles decorativos que rinden homenaje al legado artístico de la antigua civilización Paracas. Desde los amplios ventanales, se aprecian vistas directas al terminal aéreo y la pista de aterrizaje, todo en un entorno silencioso y acogedor.",
+    "Para nuestros viajeros de negocios, contamos con WiFi gratuito, cómodos escritorios de trabajo y canales de cable premium. Además, podrá manejar la iluminación, climatización y diferentes servicios desde un punto de control inteligente, permitiendo personalizar cada momento de la estancia con solo tocar un botón. Disfrute de una experiencia exclusiva sin salir de su habitación, con baños de mármol, duchas tipo lluvia y artículos de tocador revitalizantes. Para una experiencia verdaderamente lujosa, nuestras habitaciones superiores ofrecen aún más amplitud, exclusividad y una atención a los detalles que marcan la diferencia."
+  ],
+  "masInfo": "Ver más",
+  "menosInfo": "Ver menos"
+},      "tabs": ["Superior", "Suite"],
       "recorrido360": {
         "titulo": "Recorrido virtual 360°",
         "descripcion": "Explora cada rincón de la habitación y sumérgete en sus detalles.\nDescubre la armonía de sus texturas, la cuidada distribución del espacio\ny el diseño exclusivo que define cada ambiente.",
@@ -14,9 +20,17 @@
       }
     },
     "en": {
-      "tituloPrincipal": "Suite Options",
-      "parrafoPrincipal": "Relax in one of our 249 modern, technologically advanced rooms, designed for maximum comfort and efficiency. You can request 24-hour room service or laundry service at the touch of a button. Enjoy our heated pool, relax in the spa, or maintain your workout routine in our fully equipped gym. Host events in style in our six modern function rooms, featuring stunning views and the finest Peruvian cuisine.",
-      "tabs": ["Superior", "Suite"],
+      "tituloPrincipal": "Suites",
+      "textoExpandible": {
+  "parrafos": [
+  "Wyndham Grand Costa del Sol Lima Airport offers guests a fulfilling stay in the heart of Peru’s most important airport. With 249 smart rooms, this five-star hotel is designed to provide maximum comfort and efficiency for the global traveler. Each space is elegantly inspired by Peruvian culture, featuring natural wood textures, ochre tones, and decorative details that pay tribute to the artistic legacy of the ancient Paracas civilization. From the large windows, guests can enjoy direct views of the terminal and runway, all within a quiet and cozy atmosphere.",
+  "For business travelers, we offer free Wi-Fi, comfortable work desks, and premium cable channels. Guests can control lighting, temperature, and various services from a smart control panel, allowing them to personalize every moment of their stay at the touch of a button. Enjoy an exclusive experience without leaving your room, with marble bathrooms, rain showers, and revitalizing toiletries. For a truly luxurious stay, our superior rooms offer even more space, exclusivity, and attention to detail that makes all the difference."
+]
+,
+  "masInfo": "Read more",
+  "menosInfo": "Read less"
+},
+"tabs": ["Superior", "Suite"],
       "recorrido360": {
         "titulo": "Virtual Tour 360°",
         "descripcion": "Explore every corner of the room and immerse yourself in its details.\nDiscover the harmony of its textures, the careful layout of the space,\nand the exclusive design that defines each environment.",

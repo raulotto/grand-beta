@@ -507,7 +507,7 @@ a:hover {
     @apply w-full z-[99] absolute top-0 left-0 bg-gradient-to-b from-[rgba(0,0,0,0.4)] to-transparent h-full pointer-events-none;
   }
   .TitleSection {
-    @apply text-[1.5em] font-normal ;
+    @apply lg:text-[1.5em] font-normal ;
   }
   .TitleGridCards{
     @apply text-[14px]! font-normal;
@@ -657,7 +657,7 @@ a:hover {
   @apply flex justify-between w-full items-center;
 }
 .LinkGrupos{
-  @apply w-max flex justify-center items-center text-primary-oceanic hover:text-secondary-terracota text-[11px] flex items-center  gap-1;
+  @apply w-max flex justify-center items-center text-primary-oceanic hover:text-secondary-terracota text-[13px] lg:text-[11px] flex items-center  gap-1 cursor-pointer;
 }
 .FormTC .ContainerFlexOSize{
   @apply grid-cols-6;

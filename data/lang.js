@@ -20,7 +20,13 @@ const lang = {
       restaurantsTitle: "Restaurantes & Bares",
       textGroups: "Grupos +10 personas",
       textModify: "Modificar Reserva",
-      textHelp: "¿Necesitas Ayuda?"
+      textHelp: "¿Necesitas Ayuda?",
+      textModifyTitle: "Modificar o Cancelar Reserva",
+      textModifySubTitle: "Por favor, seleccione el hotel e introduzca su número de confirmación",
+      roomServicesTitle: "Servicios de la habitación",
+roomSeeMore: "Ver más",
+roomBook: "Reservar"
+
       
     },
     en: {
@@ -42,7 +48,16 @@ const lang = {
       loading: "Loading...",
       selectRoom: "Select Room",
       restaurantsTitle: "Restaurants & Bars",
-      textGroups: "+10 People groups"
+      textGroups: "+10 People groups",
+      textModify: "Modify Reservation",
+textHelp: "Need Help?",
+textModifyTitle: "Modify or Cancel Reservation",
+textModifySubTitle: "Please select the hotel and enter your confirmation number",
+roomServicesTitle: "Room Services",
+roomSeeMore: "See more",
+roomBook: "Book"
+
+
     }
   };
   

@@ -51,6 +51,9 @@ const HeaderTrad = ({ modoClaro = false }) => {
   const lang = pathname.startsWith("/en") ? "en" : "es";
   const menuGroups = fullMenuGroups[lang];
 
+
+const extraLink = fullMenuGroups.extraMobileLink?.[lang];
+
   // Nuevos states:
 const [activeSubgroupIndex, setActiveSubgroupIndex] = useState(null);
 
@@ -71,6 +74,18 @@ const [activeSubgroupIndex, setActiveSubgroupIndex] = useState(null);
         <div className="InnerDropdownMenu ContainerFlex MegaMenu w-full flex-grow">
 
   {/* MOBILE - sigue igual */}
+  {extraLink?.href && (
+  <div className="w-full ">
+    <Link
+      href={extraLink.href}
+      target={extraLink.target || "_self"}
+      className="border border-white text-white text-center text-sm font-semibold py-2 px-4 hover:text-primary-oceanic hover:bg-white transition"
+    >
+      {extraLink.label}
+    </Link>
+  </div>
+)}
+
   <div className="block lg:hidden w-full">
     {menuGroups.map((group) => (
       <MegaGroup

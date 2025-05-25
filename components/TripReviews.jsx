@@ -24,6 +24,19 @@ export default function TripReviews() {
 
   return (
     <section className="SectionDiv BgConections">
+
+    <div className='flex flex-col justify-center items-center gap-2 font-semibold'>
+      <Image
+                    src="/images/stars-reviews.svg"
+                    alt="TripAdvisor"
+                    width={80}
+                    height={120}
+                    className="object-contain"
+                  />
+                  Nuestros huéspedes dicen lo mejor
+    </div>
+
+
       <div className="ContainerFlex justify-between items-center relative">
         {/* Icono fijo de TripAdvisor */}
         <div className="w-full lg:w-1/4 flex flex-col items-center">
@@ -39,7 +52,7 @@ export default function TripReviews() {
 
         {/* Slider de reseñas */}
         <div className="w-full lg:w-3/4 lg:pl-8 relative">
-        <div className="absolute w-full top-1/2 lg:right-8 flex space-x-4 transform -translate-y-1/2 z-1">
+        <div className="absolute w-full top-1/2 lg:right-8 flex space-x-4 transform -translate-y-1/2 z-3">
           <button ref={prevRef} className="absolute left-[-30] lg:left-0"><FaChevronLeft />
           </button>
           <button ref={nextRef} className="absolute right-[-30] lg:right-0"><FaChevronRight />
