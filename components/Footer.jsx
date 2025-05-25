@@ -161,7 +161,7 @@ useEffect(() => {
     >
       <div className="ContainerFlex p-0">
         <Link
-          className="ButtonSolid w-full text-center"
+          className="ButtonSolid w-full text-center py-4"
           href="#"
           onClick={(e) => {
             e.preventDefault();

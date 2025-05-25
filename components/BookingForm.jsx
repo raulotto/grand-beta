@@ -16,6 +16,7 @@ import { PiUsersThreeFill } from "react-icons/pi";
 import { MdEditNote } from "react-icons/md";
 import { MdHelpOutline } from "react-icons/md";
 import LogoHeader from "./LogoHeader";
+import { RxCross2 } from 'react-icons/rx';
 
 registerLocale("es", es);
 
@@ -209,7 +210,7 @@ useEffect(() => {
       className={`FormTC 
       ${showForm ? "transition-all duration-600 ease-in-out lg:transition-none opacity-100 fixed" : 
       "-translate-y-full lg:translate-y-0  z-[2]  transition-all duration-600 ease-in-out lg:transition-none"}
-      ${formIsSticky ? "fixed max-w-full right-0 top- lg:top-17 left-50% w-full z-50   StickyFormCar transition-all duration-600 ease-in-out " : ""}bg-red-500 max-h-[100vh]`}
+      ${formIsSticky ? "fixed max-w-full right-0 top- lg:top-17 left-50% w-full z-50   StickyFormCar transition-all duration-600 ease-in-out " : ""}overflow-y-auto lg:overflow-visible max-h-[100dvh] flex flex-col `}
     >
       <div className="lg:hidden ContainerFlex flex-row px-6 lg:px-[0px] lg:py-[20px] justify-between items-center">
         <LogoHeader isActive={true}  />
@@ -410,14 +411,23 @@ useEffect(() => {
         </div>
         </form>
       </div>
-    <div className="LinksAdicionales ContainerFlex  gap-3 text-sm font-semibold justify-center">
+    <div className="LinksAdicionales ContainerFlex  gap-3 text-sm justify-end">
+  <Link
+    href="https://www.costadelsolperu.com/landing-grupos/"
+    target="_blank"
+    className="LinkGrupos"
+  >
+    <PiUsersThreeFill className="text-[15px]" />
+    {t.textGroups}
+  </Link>          
+
   <Link
     href="https://www.costadelsolperu.com/modificar-reserva"
     target="_blank"
     className="LinkGrupos"
   >
     <MdEditNote className="text-[15px]" />
-    Modificar Reserva
+    {t.textModify}
   </Link>
 
   <Link
@@ -426,27 +436,21 @@ useEffect(() => {
     className="LinkGrupos"
   >
     <MdHelpOutline className="text-[15px]" />
-    ¿Necesitas Ayuda?
+    {t.textHelp}
   </Link>
 
-  <Link
-    href="https://www.costadelsolperu.com/landing-grupos/"
-    target="_blank"
-    className="LinkGrupos"
-  >
-    <PiUsersThreeFill className="text-[15px]" />
-    {t.textGroups}
-  </Link>
+  
 </div>
 <div className="FooterHiddenForm">
         <Link
+        className="bg-secondary-terracota ButtonSolid w-full text-center py-4 flex justify-center items-center"
           href="#"
           onClick={(e) => {
             e.preventDefault();
             setShowForm(false);
           }}
         >
-          X Cerrar
+          <RxCross2 size={20} /> Cerrar
         </Link>
       </div>
     </div>

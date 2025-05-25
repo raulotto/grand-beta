@@ -498,7 +498,7 @@ a:hover {
     @apply flex p-10 lg:hidden justify-start;
   }
   .FooterHiddenForm {
-    @apply absolute bottom-0 flex p-10 lg:hidden justify-end w-full;
+    @apply absolute bottom-0 flex  lg:hidden justify-end w-full;
   }
   .FormTC {
     @apply    lg:block absolute lg:relative left-1/2 z-[6] top-0 lg:top-[83%]  h-screen lg:h-auto lg:h-[85px] bg-[#f0f0f0] translate-x-[-50%] m-0   w-full mx-auto shadow-md flex flex-col justify-start lg:items-center;
@@ -534,7 +534,7 @@ a:hover {
     @apply flex flex-col gap-2 pl-4 py-1 text-[12px] font-bold;
   }
   .ResForm {
-    @apply w-full grid grid-cols-1  gap-4 items-center px-6 lg:px-0 py-7;
+    @apply w-full grid grid-cols-1  gap-4 items-center px-6 lg:px-0 pt-4 pb-7;
   }
   .ButtonSolid  {
     @apply bg-[#405d65] text-white px-4 py-2  font-semibold hover:bg-[#2e4448] transition;

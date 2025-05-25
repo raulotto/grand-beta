@@ -21,7 +21,7 @@ const LogoHeader = ({ isActive }) => {
             alt="Logo"
             width={400}
             height={isActive ? 120 : 130}
-            className='w-[270px] lg:w-[400px]'
+            className='w-[300px] lg:w-[400px]'
           />
         </Link>
       </div>

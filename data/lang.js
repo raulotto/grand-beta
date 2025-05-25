@@ -18,7 +18,9 @@ const lang = {
       loading: "Cargando...",
       selectRoom: "Seleccionar habitación",
       restaurantsTitle: "Restaurantes & Bares",
-      textGroups: "Grupos +10 personas"
+      textGroups: "Grupos +10 personas",
+      textModify: "Modificar Reserva",
+      textHelp: "¿Necesitas Ayuda?"
       
     },
     en: {
