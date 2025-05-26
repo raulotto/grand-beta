@@ -1,10 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
-  output: "export",
+  output: 'export',
   trailingSlash: true,
+  //basePath: '/banner-ts/test',
   images: {
-    unoptimized: true, // Deshabilita la optimización de imágenes para exportación estática
+    unoptimized: true,
   },
 };
 

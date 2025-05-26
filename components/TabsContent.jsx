@@ -79,14 +79,16 @@ export default function TabsContent({ data = [] }) {
 )}
 
       {data[activeIndex].buttonText && data[activeIndex].link && (
+        <div className="ButtonInfoStatic mt-4">
   <Link
     href={data[activeIndex].link}
     target={data[activeIndex].target || '_self'}
     rel={data[activeIndex].target === '_blank' ? 'noopener noreferrer' : undefined}
-    className="inline-block text-primary-oceanic font-semibold hover:underline"
+      className="ColorButton1 ButtonRounded"
   >
     {data[activeIndex].buttonText}
   </Link>
+  </div>
 )}
 
     </div>
@@ -149,14 +151,16 @@ export default function TabsContent({ data = [] }) {
 )}
 
       {item.buttonText && item.link && (
-        <a
-          href={item.link}
-          target={item.target || '_self'}
-          rel={item.target === '_blank' ? 'noopener noreferrer' : undefined}
-          className="flex items-center text-primary-oceanic font-semibold hover:underline"
-        >
-          {item.buttonText} <FiChevronRight size={20} />
-        </a>
+        <div className="ButtonInfoStatic mt-4">
+        <Link
+  href={item.link}
+  target={item.target || '_self'}
+  rel={item.target === '_blank' ? 'noopener noreferrer' : undefined}
+  className="ColorButton1 ButtonRounded"
+>
+  {item.buttonText} 
+</Link>
+</div>
       )}
     </motion.div>
   )}

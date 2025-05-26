@@ -24,26 +24,9 @@ import { GiExitDoor } from "react-icons/gi";
         <section className="SectionDiv pb-0 scroll-mt-24 lg:scroll-mt-52" id="next-section">
           <div className="ContainerFlex items-start">
             <div className="flex-1 lg:max-w-lg">
-              <div className="grid gap-4 grid-cols-5 w-full mb-5">
+              <div className="grid gap-4 grid-cols-5 w-full mb-6">
 
-              <Image
-  src="/images/best-of-wyndham-grand-logo.jpg"
-  alt="Sello Best of Wyndham Grand"
-  width={80}
-  height={80}
-/>
-<Image
-  src="/images/WG-nivel-2.png"
-  alt="Certificación Wyndham Green Level 2"
-  width={80}
-  height={80}
-/>
-<Image
-  src="/images/tc_2024_botb_badge_green.png"
-  alt="Tripadvisor Travelers' Choice Awards 2024"
-  width={84}
-  height={80}
-/>
+             
 <Image
   src="/images/safetravels-logo.png"
   alt="Certificación Safe Travels del World Travel & Tourism Council"

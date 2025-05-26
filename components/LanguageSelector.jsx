@@ -4,11 +4,14 @@ import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { AnimatePresence, motion } from 'framer-motion';
 import localizedRoutes from '@/utils/localizedRoutes';
+import { BASE_PATH } from '@/utils/config';
+
 
 const LANGUAGES = [
-  { code: 'es', label: 'ES', flag: '/images/lang/es.svg' },
-  { code: 'en', label: 'EN', flag: '/images/lang/en.svg' }
+  { code: 'es', label: 'ES', flag: `${BASE_PATH}/images/lang/es.svg` },
+  { code: 'en', label: 'EN', flag: `${BASE_PATH}/images/lang/en.svg` }
 ];
+
 
 export default function LanguageSelector() {
   const pathname = usePathname();

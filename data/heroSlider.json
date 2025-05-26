@@ -4,15 +4,18 @@
       "page": "home",
       "slides": [
         {
-          "src": "/images/WG-new-hotel-render.jpg",
+          "src": "/images/home-video-low.mp4",
           "titulo": ["Descubre la exclusividad y un servicio", "de primera clase dentro del aeropuerto."],
           "segtitulo": "20% por apertura",
           "subtitulo": "Ubicado en la puerta de entrada más importante para los turistas en Perú.",
           "ctaTexto": "Reservar",
           "ctaLink": "https://bookings.costadelsolperu.com/es/hotel-wyndham-grand-costa-del-sol-lima-airport/book/dates-of-stay",
           "target": "_blank",
-          "alineacion": "izquierda",
-          "claseExtra": "OverlaySlide"
+          "alineacion": "izquierda"        },
+          {
+          "src": "/images/WG-Habitacion-Doble-1.jpg",
+          "titulo": "Nuestras Habitaciones",
+          "subtitulo": "Elige la comodidad que mereces"
         }
       ]
     },
@@ -84,7 +87,7 @@
           "page": "restaurantes",
           "slides": [
             {
-              "src": "/images/Costa-del-sol-Desayuno-buffet-mobile.jpg",
+              "src": "/images/banner-paprika-restaurante.jpg",
               "titulo": "Restaurantes",
               "subtitulo": "",
       "claseExtra": "OverlaySlide"          

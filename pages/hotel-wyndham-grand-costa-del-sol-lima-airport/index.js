@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { useState, useEffect } from "react";
 import Script from "next/script";
+  import { BASE_PATH } from '@/utils/config';
 
 import HeaderTrad from "@/components/HeaderTrad";
 import HeroSlider from "@/components/HeroSlider";
@@ -43,8 +44,13 @@ export default function Home({ hotel }) {
   const [embedMenu, setEmbedMenu] = useState(false);
   const router = useRouter();
   const lang = router.pathname.startsWith('/en') ? 'en' : 'es';
-  const tabsContent = tabsData[lang] || tabsData["es"];
+  const tabsContent = (tabsData[lang] || tabsData["es"]).map(tab => ({
+    ...tab,
+    image: `${BASE_PATH}${tab.image}`
+  }));
 
+
+  
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -102,7 +108,9 @@ export default function Home({ hotel }) {
       <Beneficios id="beneficios" />
       <Habitaciones />
       <BeneficiosDirectos />
+      <section id="restaurant">
       <Parallax />
+      </section>
       <RestBar />
       <Meeting />
       <TripReviews />  

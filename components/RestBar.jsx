@@ -22,7 +22,7 @@ const RestBar = () => {
   const data = restBarData[lang];
 
   return (
-    <section id="restaurantes" className="SectionDiv py-0 BgImageLeft">
+    <section  className="SectionDiv py-0 BgImageLeft">
       <div className="ContainerFlex flex-col-reverse lg:flex-row">
         {/* Contenedor de texto */}
         <div className="flex-1 max-w-md lg:max-w-lg">

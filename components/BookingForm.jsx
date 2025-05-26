@@ -461,7 +461,7 @@ const [errorConfirmId, setErrorConfirmId] = useState(false);
         </div>
         </form>
       </div>
-    <div className="LinksAdicionales ContainerFlex  gap-3 text-sm justify-end">
+    <div className="LinksAdicionales ContainerFlex  gap-3 text-sm justify-center">
   <Link
     href="https://www.costadelsolperu.com/landing-grupos/"
     target="_blank"

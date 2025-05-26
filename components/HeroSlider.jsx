@@ -1,5 +1,5 @@
 "use client";
-import { useRouter } from "next/router";
+import { useRouter, useRef } from "next/router";
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, EffectFade, Navigation } from "swiper/modules";
@@ -11,6 +11,8 @@ import Image from "next/image";
 import sliderData from "@/data/heroSlider.json";
 import { LuMouse } from "react-icons/lu";
 import Link from 'next/link'
+import { BASE_PATH } from "@/utils/config";
+import { FaPlay, FaPause } from "react-icons/fa"; // Íconos de control
 
 export default function HeroSlider({ page = "home" }) {
   const { pathname } = useRouter();
@@ -19,7 +21,12 @@ export default function HeroSlider({ page = "home" }) {
   const slides = slideSet?.slides || [];
   const sliderId = slideSet?.id || "";
 
-
+  // Agregar BASE_PATH a las imágenes
+  const slidesWithBasePath = slides.map((slide) => ({
+    ...slide,
+    src: `${BASE_PATH}${slide.src}`,
+    arte: slide.arte ? `${BASE_PATH}${slide.arte}` : null,
+  }));
 
   return (
     <div className="w-full h-[80vh] relative" id={sliderId}>
@@ -32,16 +39,28 @@ export default function HeroSlider({ page = "home" }) {
         pagination={false}
         className="h-full"
       >
-        {slides.map((slide, i) => (
-          <SwiperSlide key={i} className={`swiper-slide-${i}`}>
-            <div className="relative w-full h-[80vh]">
-              <Image
-                src={slide.src}
-                alt={`Slide ${i + 1}`}
-                fill
-                className="object-cover"
-                priority
-              />
+        {slidesWithBasePath.map((slide, i) => (
+  <SwiperSlide key={i} className={`swiper-slide-${i}`}>
+    <div className="relative w-full h-[80vh]">
+      {slide.src.endsWith(".mp4") ? (
+  <video
+    src={slide.src}
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="object-cover w-full h-full absolute top-0 left-0"
+  />
+) : (
+  <Image
+    src={slide.src}
+    alt={`Slide ${i + 1}`}
+    fill
+    className="object-cover"
+    priority
+  />
+)}
+
 
               {(slide.titulo || slide.segtitulo || slide.subtitulo || slide.ctaTexto || slide.arte) && (
                 <div className={`HeroSliderData ${slide.claseExtra || ""}`}>

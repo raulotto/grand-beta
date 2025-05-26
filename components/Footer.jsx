@@ -9,6 +9,7 @@ import SocialIcons from '@/components/SocialIcons';
 import { FaChevronDown } from 'react-icons/fa';
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope } from 'react-icons/fa';
 import { useBooking } from "@/context/BookingContext";
+import { BASE_PATH } from "@/utils/config";
 
 
 const Footer = () => {
@@ -200,30 +201,31 @@ useEffect(() => {
         {/* Logos centrales */}
         <div className="flex justify-center items-center flex-wrap gap-8 border-y border-white/30 py-8 w-full">
           <Image
-            src="/images/logo-vertical-mail.png"
-            alt="30 años Costa del Sol"
-            width={200}
-            height={80}
-            className='w-[70%] lg:w-[200]'
-          />
-          <Image
-            src="/images/tc_2024_botb_badge_green.png"
-            alt="Tripadvisor Travelers' Choice"
-            width={80}
-            height={60}
-          />
-          <Image
-            src="/images/footer/world-travel-award.png"
-            alt="World Travel Awards"
-            width={85}
-            height={60}
-          />
-          <Image
-            src="/images/footer/lux-awards.svg"
-            alt="Lux Awards"
-            width={90}
-            height={50}
-          />
+  src={`${BASE_PATH}/images/logo-vertical-mail.png`}
+  alt="30 años Costa del Sol"
+  width={200}
+  height={80}
+  className='w-[70%] lg:w-[200]'
+/>
+<Image
+  src={`${BASE_PATH}/images/tc_2024_botb_badge_green.png`}
+  alt="Tripadvisor Travelers' Choice"
+  width={80}
+  height={60}
+/>
+<Image
+  src={`${BASE_PATH}/images/footer/world-travel-award.png`}
+  alt="World Travel Awards"
+  width={85}
+  height={60}
+/>
+<Image
+  src={`${BASE_PATH}/images/footer/lux-awards.svg`}
+  alt="Lux Awards"
+  width={90}
+  height={50}
+/>
+
         </div>
 
         <div className="text-center text-xs text-white/80 py-6 px-4 space-y-2">

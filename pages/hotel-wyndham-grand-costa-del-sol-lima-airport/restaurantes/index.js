@@ -99,7 +99,7 @@ export default function Restaurantes() {
                <div className="w-full lg:w-[60%]">
          <div className="relative w-full h-[200px] md:h-[300px] overflow-hidden">
            <Image
-             src="/images/cds/cds-amigas-paprika.jpg"
+             src="/images/paprika-restaurante-opcion-1-restaurante.jpg"
              alt="Piscina"
              fill
              className="object-cover"
@@ -204,7 +204,7 @@ Opening times: 5 pm to midnight (service)
                <div className="w-full lg:w-[60%]">
          <div className="relative w-full h-[200px] md:h-[300px] overflow-hidden">
            <Image
-             src="/images/wg-paprika.jpg"
+             src="/images/paraka-restaurante-opcion-1-restaurante.jpg"
              alt="Piscina"
              fill
              className="object-cover"

@@ -2,31 +2,40 @@ const fs = require('fs');
 const path = require('path');
 
 const baseDir = path.join(__dirname, 'out');
+const basePath = '/banner-ts/test/'; // Ruta base real en el servidor
 
-// Función para contar niveles de directorios y generar rutas correctas
 const fixLinks = (filePath) => {
   let content = fs.readFileSync(filePath, 'utf8');
 
-  // Obtener la profundidad de la carpeta donde está el archivo HTML
-  const relativePath = path.relative(baseDir, path.dirname(filePath));
-  const depth = relativePath === '' ? 0 : relativePath.split(path.sep).length;
+  // Reemplaza rutas absolutas /_next, /images, etc. por la ruta base real
+  const patterns = [
+    { regex: /href="\/_next/g, replacement: `href="${basePath}_next` },
+    { regex: /src="\/_next/g, replacement: `src="${basePath}_next` },
+    { regex: /src='\/_next/g, replacement: `src='${basePath}_next` },
 
-  // Generar prefijo correcto para la ruta (_next debería estar siempre en la raíz)
-  const prefix = depth === 0 ? './' : '../'.repeat(depth);
+    { regex: /src="\/images/g, replacement: `src="${basePath}images` },
+    { regex: /src='\/images/g, replacement: `src='${basePath}images` },
+    { regex: /href="\/images/g, replacement: `href="${basePath}images` },
+    { regex: /href='\/images/g, replacement: `href='${basePath}images` },
 
-  // Reemplazar rutas absolutas con rutas relativas
-  content = content.replace(/href="\/_next/g, `href="${prefix}_next`);
-  content = content.replace(/src="\/_next/g, `src="${prefix}_next`);
+    { regex: /data-src="\/images/g, replacement: `data-src="${basePath}images` },
+    { regex: /data-src='\/images/g, replacement: `data-src='${basePath}images` },
+    { regex: /url\("\/images/g, replacement: `url("${basePath}images` },
+    { regex: /url\('\/images/g, replacement: `url('${basePath}images` },
+  ];
+
+  patterns.forEach(({ regex, replacement }) => {
+    content = content.replace(regex, replacement);
+  });
 
   fs.writeFileSync(filePath, content, 'utf8');
 };
 
-// Recorrer todos los archivos en `out/` y ajustar rutas en los `.html`
 const processDir = (dir) => {
   fs.readdirSync(dir).forEach(file => {
     const filePath = path.join(dir, file);
     if (fs.statSync(filePath).isDirectory()) {
-      processDir(filePath); // Recursivo para subcarpetas
+      processDir(filePath);
     } else if (file.endsWith('.html')) {
       fixLinks(filePath);
     }
@@ -34,4 +43,4 @@ const processDir = (dir) => {
 };
 
 processDir(baseDir);
-console.log('✅ Rutas corregidas en todos los archivos HTML.');
+console.log('✅ Rutas corregidas con base en /banner-ts/test/');

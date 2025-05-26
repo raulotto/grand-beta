@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "postexport": "node relative-links.js"
-  },
+  "dev": "next dev --turbopack",
+  "build": "next build && next export",
+  "start": "next start",
+  "lint": "next lint",
+  "postexport": "node relative-links.js"
+},
   "dependencies": {
     "@tailwindcss/postcss": "^4.0.14",
     "date-fns": "^4.1.0",
