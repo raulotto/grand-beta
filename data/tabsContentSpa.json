@@ -59,7 +59,45 @@
         { "servicio": "Sala privada para dos", "duracion": "8 horas", "precio": "S/ 408.00" },
         { "servicio": "Sala privada para dos", "duracion": "6 horas", "precio": "S/ 384.00" }
       ]
+    },
+    {
+  "title": "Promociones",
+  "buttonText": "",
+  "link": "",
+  "image": "/images/Carrusel_imagenes_SPA_1.jpg",
+  "detalles": [
+    {
+      "servicio": "Domingo sereno",
+      "duracion": "",
+      "precio": "Masaje deluxe con vela + espumante (valor S/360)"
+    },
+    {
+      "servicio": "Lunes maravilloso",
+      "duracion": "30 min + facial express",
+      "precio": "S/299 (valor S/360)"
+    },
+    {
+      "servicio": "Martes fantástico",
+      "duracion": "",
+      "precio": "10% descuento en masaje/facial + jugo detox"
+    },
+    {
+      "servicio": "Miércoles de Winedown",
+      "duracion": "60 min",
+      "precio": "S/259 (incluye copa de espumante)"
+    },
+    {
+      "servicio": "Jueves terapéutico",
+      "duracion": "20 min",
+      "precio": "S/159 (incluye jugo detox)"
+    },
+    {
+      "servicio": "Viernes Grand Wellness",
+      "duracion": "15 min cuello y hombros",
+      "precio": "Cortesía al reservar facial"
     }
+  ]
+}
   ],
   "en": [
     {
