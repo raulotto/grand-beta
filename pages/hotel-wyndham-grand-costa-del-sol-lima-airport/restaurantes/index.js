@@ -122,7 +122,7 @@ export default function Restaurantes() {
                  <p className="text-parrafos">
                  A chic bistro concept, with the signature of Olivier da Costa. The restaurant takes over with a menu that exposes the connection between respect for traditions, with the irreverence of restaurateur Olivier, where highlights are the Monkfish Picanha or Lobster steak.
                  Opening times: 5 pm to midnight (service)
-5 pm to 10:30 pm (kitchen)  
+5 pm to 10:30 pm (kitchen) .
             </p>
             <div className="ButtonInfoStatic">
             <Link
