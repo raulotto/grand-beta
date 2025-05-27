@@ -5,7 +5,7 @@
       "text": "Relájate con nuestras opciones de masajes: relajante, descontracturante, con piedras calientes, reflexología y más. Las sesiones están disponibles desde S/ 72 por 15 minutos. También ofrecemos opciones de 30 y 60 minutos.",
       "buttonText": "",
       "link": "",
-      "image": "/images/cds/cds-desayuno-buffet.jpg",
+      "image": "/images/Opcion_1_masaje_WG.jpg",
       "target": "_blank",
       "detalles": [
         { "servicio": "Masaje relajante", "duracion": "30 min", "precio": "S/ 168" },
@@ -23,7 +23,7 @@
       "text": "Cuida tu piel con nuestros tratamientos faciales, incluyendo mascarillas plastificadas y de colágeno. Ideales para una piel más fresca y renovada.",
       "buttonText": "",
       "link": "",
-      "image": "/images/cds/cds-desayuno-buffet.jpg",
+      "image": "/images/Opcion2_tratamiento_facial_WG.jpg",
       "detalles": [
         { "servicio": "Facial estándar", "duracion": "30 min", "precio": "-" },
         { "servicio": "Facial con máscara plastificada", "duracion": "60 min", "precio": "-" },
@@ -35,7 +35,7 @@
       "text": "Ofrecemos servicios de depilación para todas las zonas del cuerpo, incluyendo bozo, axilas, bikini, piernas y más. Sesiones desde S/ 45.60.",
       "buttonText": "",
       "link": "",
-      "image": "/images/cds/cds-desayuno-buffet.jpg",
+      "image": "/images/Opcion_3_depilaciones_WG.jpg",
       "detalles": [
         { "servicio": "Depilación de bozo", "precio": "S/ 45.60" },
         { "servicio": "Depilación de axila", "precio": "S/ 82.08" },
@@ -51,7 +51,7 @@
       "text": "Accede a nuestras instalaciones que incluyen duchas, sauna, piscina climatizada, jacuzzi y más. Desde S/ 96 por 60 minutos. También contamos con habitaciones privadas.",
       "buttonText": "",
       "link": "",
-      "image": "/images/cds/cds-desayuno-buffet.jpg",
+      "image": "/images/Opcion_4_SPA_WG.jpg",
       "detalles": [
         { "servicio": "Solo ducha", "duracion": "60 min", "precio": "S/ 96.00" },
         { "servicio": "Spa de día", "duracion": "3 horas", "precio": "S/ 168.00" },

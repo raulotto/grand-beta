@@ -1,14 +1,9 @@
 {
   "Spa y bienestar": [
-    { "src": "/images/women-oceanic.jpg", "alt": "Cabina de relajación en el spa" },
-    { "src": "/images/couple-oceanic.jpg", "alt": "Masaje en pareja" },
-    { "src": "/images/cds-piscina.jpg", "alt": "Terapias de agua revitalizantes" },
-    { "src": "https://picsum.photos/id/1035/800/600", "alt": "Circuito termal de relajación" },
-    { "src": "https://picsum.photos/id/1045/800/600", "alt": "Sesión de aromaterapia" },
-    { "src": "https://picsum.photos/id/1055/800/600", "alt": "Tratamiento facial de lujo" },
-    { "src": "https://picsum.photos/id/1065/800/600", "alt": "Piscina climatizada interior" },
-    { "src": "https://picsum.photos/id/1075/800/600", "alt": "Zona de meditación rodeada de naturaleza" },
-    { "src": "https://picsum.photos/id/1085/800/600", "alt": "Masaje con piedras calientes" },
-    { "src": "https://picsum.photos/id/1095/800/600", "alt": "Sala de descanso con vista al jardín" }
+    { "src": "/images/Carrusel_imagenes_SPA_1.jpg", "alt": "Cabina de relajación en el spa" },
+    { "src": "/images/Carrusel_imagenes_SPA_2.jpg", "alt": "Masaje en pareja" },
+    { "src": "/images/Carrusel_imagenes_SPA_3.jpg", "alt": "Terapias de agua revitalizantes" },
+    { "src": "/images/Carrusel_imagenes_SPA_4.jpg", "alt": "Circuito termal de relajación" },
+    { "src": "/images/Carrusel_imagenes_SPA_5.jpg", "alt": "Sesión de aromaterapia" }
   ]
 }

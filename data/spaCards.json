@@ -1,17 +1,17 @@
 {
   "es": [
     {
-      "title": "Spa y salón de belleza",
+      "title": "Un respiro de exclusividad antes de despegar.",
       "description": "Disfruta de un maravilloso masaje o un tratamiento facial rejuvenecedor en el spa. También hay tratamientos como servicios de cabello, manicura y pedicura en el salón de belleza.",
       "image": "/images/couple-oceanic.jpg"
     },
     {
-      "title": "Gimnasio",
+      "title": "Energía que te acompaña en cada destino.",
       "description": "Mantén tu rutina de ejercicios en nuestro gimnasio de vanguardia o practica tus movimientos con raqueta en nuestra cancha de tenis.",
       "image": "/images/wg-gym-mancuerna.jpg"
     },
     {
-      "title": "Piscina",
+      "title": "Sumérgete en la pausa perfecta.",
       "description": "Ve a nadar en la piscina cristalina o sumérgete en el reconfortante hidromasaje y, luego, relájate con un cóctel en la mano en el solárium.",
       "image": "/images/women-oceanic.jpg"
     }
