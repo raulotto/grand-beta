@@ -248,7 +248,7 @@ const [activeSubgroupIndex, setActiveSubgroupIndex] = useState(null);
         <LogoHeader isActive={isActive} />
 
         {/* Centro - Teléfono */}
-        <div className="ItemsMenuCenter">
+        <div className="hidden ItemsMenuCenter">
           <ul
             className={`MenuLight flex ${
               isActive ? "text-primary-oceanic" : "text-white"

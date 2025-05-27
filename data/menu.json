@@ -206,13 +206,13 @@
   ],
   "extraMobileLink": {
     "es": {
-      "label": "CDS SALE",
-      "href": "https://www.costadelsolperu.com/cds-sale/",
+      "label": "Destino del mes",
+      "href": "https://www.costadelsolperu.com/detino-del-mes/",
       "target": "_blank"
     },
     "en": {
       "label": "CDS SALE",
-      "href": "https://www.costadelsolperu.com/en/cds-sale/",
+      "href": "https://www.costadelsolperu.com/en/destination-of-the-month/",
       "target": "_blank"
     }
   }
