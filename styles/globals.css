@@ -91,10 +91,10 @@ body.grand-parent{
   box-sizing: border-box;
 }
 
-body, h1, h2, h3, h4, h5, h6, p, ul, ol {
+/*body, h1, h2, h3, h4, h5, h6, p, ul, ol {
   margin: 0;
   padding: 0;
-}
+}*/
 html {
   scroll-behavior: smooth;
 }
@@ -198,11 +198,11 @@ input{
 .grand-parent .InnerDropdownMenu a{
   font-family: 'HCo Gotham SSm', sans-serif;
 }
-p{
+/*p{
   font-family: 'HCo Gotham SSm', sans-serif;
   font-size: var(--text-parrafos);
   font-weight: 300;
-}
+}*/
 .infohotelbox{
   font-family: 'HCo Gotham SSm', sans-serif;
 

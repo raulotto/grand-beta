@@ -124,10 +124,10 @@ const TermsToggle = ({ data }) => {
                         transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
                         className="overflow-hidden mt-2 text-sm text-gray-700 "
                       >
-                        <div
-                          className="py-3 text-sm"
+                        <p
+                          className="text-parrafos"
                           dangerouslySetInnerHTML={{ __html: item.respuesta }}
-                        ></div>
+                        ></p>
                       </motion.div>
                     )}
                   </AnimatePresence>

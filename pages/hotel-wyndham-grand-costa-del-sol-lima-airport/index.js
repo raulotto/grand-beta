@@ -112,6 +112,7 @@ export default function Home({ hotel }) {
       <Parallax />
       </section>
       <RestBar />
+      <Meeting />
       <TripReviews />  
       <section id="faqs" className="SectionDiv">
       <div className="FaqsSec ContainerFlex flex-col p-0">

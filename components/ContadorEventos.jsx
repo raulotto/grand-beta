@@ -13,7 +13,7 @@ export default function ContadorEventos() {
     <section className="SectionDiv">
       <div className="ContainerFlex p-0 flex-col text-center" ref={ref}>
         <h2 className="TitleSectionMd">Espacios para eventos</h2>
-        <p className="max-w-3xl text-base text-gray-600 leading-relaxed mb-10">
+        <p className="text-parrafos">
           Celebra tu evento en nuestros salones para eventos en Cusco diseñados para adaptarse a lo que tú necesitas.
           Sin importar el tamaño o tipo del evento, contamos con los espacios idóneos. Desde un salón impresionante
           hasta una pequeña sala para juntas, nos complace poder configurar cada espacio según tus necesidades.

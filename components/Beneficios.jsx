@@ -54,7 +54,7 @@ const Beneficios = () => {
                 {IconComponent && <IconComponent className="text-3xl text-light-oceanic mb-3" />}
                 <h4 className="Gotham text-[1em]">{item.titulo}</h4>
                 {item.descripcion && (
-                <p className="text-xs text-gray-700 text-[11px]!">{item.descripcion}</p>
+                <p className="text-parrafos">{item.descripcion}</p>
               )}
                 {item.horario && (
   <p className="text-[11px]! font-bold!">{item.horario}</p>

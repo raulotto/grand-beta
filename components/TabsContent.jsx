@@ -65,7 +65,7 @@ export default function TabsContent({ data = [] }) {
 
     <div className="w-full lg:w-1/2 flex flex-col gap-4">
       <h2 className="TitleSectionMd mb-4">{data[activeIndex].title}</h2>
-      <p className="text-gray-700 mb-4">{data[activeIndex].text}</p>
+      <p className="text-parrafos">{data[activeIndex].text}</p>
       {data[activeIndex].detalles?.length > 0 && (
   <ul className="text-sm text-gray-600 list-disc pl-5 space-y-2 mb-4">
     {data[activeIndex].detalles.map((detalle, i) => (
@@ -137,7 +137,7 @@ export default function TabsContent({ data = [] }) {
         height={500}
         className="w-full h-auto object-cover rounded-md mb-4"
       />
-      <p className="text-gray-700 mb-4">{item.text}</p>
+      <p className="text-parrafos">{item.text}</p>
       {data[activeIndex].detalles?.length > 0 && (
   <ul className="text-sm text-gray-600 list-disc pl-5 space-y-2 mb-4">
     {data[activeIndex].detalles.map((detalle, i) => (

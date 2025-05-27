@@ -156,7 +156,7 @@ export default function Eventos() {
       <section className="SectionDiv BgImageLeft">
         <div className="ContainerFlex flex-col text-center">
           <h2 className="TitleSection">Organiza un evento inolvidable y empieza a planificar con nosotros​</h2>
-          <p className="max-w-3xl text-base text-gray-600 leading-relaxed mt-4">
+          <p className="text-parrafos">
           Ofrecemos más de 70 salones a nivel nacional diseñados para todo tipo de reuniones, desde grandes eventos hasta juntas ejecutivas. Adaptamos cada espacio a tus necesidades y brindamos acceso a internet en todas las áreas. Además, contamos con equipos audiovisuales de alta gama para garantizar la mejor experiencia en imagen y sonido.
           </p>
         </div>
@@ -200,7 +200,7 @@ export default function Eventos() {
                 </h4>
                   <p className="suptitle">Un lugar inspirador para dar vida a grandes ideas</p>
                 </div>
-                <p className="text-gray-700 leading-relaxed text-parrafos">
+                <p className="text-parrafos">
                   Ubicado dentro de la Ciudad aeropuerto (Jorge Chávez - LIM), Wyndham
                   Grand Costa del Sol Lima Airport te evita la caminata de ida y vuelta
                   por tiempo, al estar en una ciudad estratégica, con acceso directo a la

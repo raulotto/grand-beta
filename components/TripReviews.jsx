@@ -33,7 +33,7 @@ export default function TripReviews() {
                     height={120}
                     className="object-contain"
                   />
-                  Nuestros huéspedes dicen lo mejor
+                  <h3 className="TitleSection mt-4!">Nuestros huéspedes dicen lo mejor</h3>
     </div>
 
 
@@ -75,12 +75,12 @@ export default function TripReviews() {
             {reviews.map((item, idx) => (
               <SwiperSlide key={idx}>
                 <div className="lg:flex  backdrop-blur-sm text-gray-800 rounded-lg items-center gap-8">
-                   <div className='w-full lg:w-auto lg:flex w-1/3'>
-                        <h3 className="TitleSection">{item.title}</h3>
+                   <div className='w-full lg:w-auto lg:flex w-1/3 pb-2'>
+                        <h3 className="TitleSection text-[1.1rem]!">{item.title}</h3>
                     
                     </div> 
                     <div className='w-full lg:w-2/3 border-t-1 lg:border-l-1 lg:border-t-0 lg:pl-8 lg:pr-12'>
-                    <p className="mt-2">{item.comment}</p>
+                    <p className="text-parrafos">{item.comment}</p>
                   <div className="TaUsuario mt-4 flex items-center justify-between">
                     <span className="font-medium">- {item.author}</span>
                     <div className="flex">

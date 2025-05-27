@@ -29,7 +29,7 @@ export default function Restaurantes() {
       <section className="SectionDiv pb-0">
         <div className="ContainerFlex flex-col text-center">
           <h2 className="TitleSection">Déjate envolver por los sabores de Lima</h2>
-          <p className="max-w-3xl text-base text-gray-600 leading-relaxed mt-4">
+          <p className="text-parrafos">
             Descubre la reconocida escena culinaria de Perú junto con un ambiente sofisticado y un servicio excepcional en Wyndham Grand Costa del Sol Lima Airport. Comienza el día con energía disfrutando de un variado desayuno buffet que combina lo mejor de la gastronomía peruana y mundial en nuestro restaurante internacional abierto todo el día.
             Nuestro elegante bar 24/7 ofrece cócteles elaborados por expertos, además de una selecta carta de vinos, licores y bebidas sin alcohol. Para quienes buscan algo rápido y delicioso, nuestro snack bar presenta opciones de comida callejera al estilo peruano, perfectas para viajeros en movimiento.
             Y para la máxima comodidad, el servicio a la habitación disponible las 24 horas lleva hasta tu puerta una exquisita selección de platos locales e internacionales.
@@ -134,8 +134,9 @@ export default function Restaurantes() {
     </Link>
     <Link
       className="ColorButton1 ButtonRounded ml-2"
-      href="/grand/habitaciones"
+      href="https://www.costadelsolperu.com/wp-content/uploads/2025/05/CJM-Paprika-carta-web.pdf"
       aria-label="Descubre nuestras habitaciones"
+      target='_blank'
     >
       Menu
     </Link>

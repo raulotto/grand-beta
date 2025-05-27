@@ -1,5 +1,6 @@
 'use client'
 import React from 'react';
+import { BASE_PATH } from "@/utils/config";
 
 
 
@@ -57,7 +58,7 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
               <div className="relative w-full h-[200px] lg:h-full">
               {card.image && (
                 <Image
-                  src={card.image}
+                  src={`${BASE_PATH}${card.image}`}
                   alt={card.title}
                   fill
                   className="object-cover"
@@ -106,7 +107,7 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
             }}
           >
             <Image
-              src={card.image}
+              src={`${BASE_PATH}${card.image}`}
               alt={card.title}
               fill
               className="object-cover transition-transform duration-500 group-hover:scale-105"
@@ -146,7 +147,7 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
           {card.image && (
             <div className="relative w-full h-[220px]">
               <Image
-                src={card.image}
+                src={`${BASE_PATH}${card.image}`}
                 alt={card.title}
                 fill
                 className="object-cover"
@@ -187,7 +188,7 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
         <Wrapper>
           <div className="GridOverlay relative group h-[340px] overflow-hidden shadow-md">
             <Image
-              src={card.image}
+              src={`${BASE_PATH}${card.image}`}
               alt={card.title}
               fill
               className="object-cover transform transition-transform duration-500 group-hover:scale-110"
@@ -231,7 +232,7 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
           <div className="relative w-full h-[380px]">
               {card.image && (
                 <Image
-                  src={card.image}
+                  src={`${BASE_PATH}${card.image}`}
                   alt={card.title}
                   fill
                   className="object-cover"
@@ -241,7 +242,7 @@ export default function GridCardsSection({ cards, variant = 'default' }) {
           <div className="p-5 flex-1 flex flex-col text-center">
             <h3 className="TitleGridCards">{card.title}</h3>
             {card.description && (
-              <div
+              <p
                 className="text-parrafos mt-2"
                 dangerouslySetInnerHTML={{
                   __html: card.description.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>'),
